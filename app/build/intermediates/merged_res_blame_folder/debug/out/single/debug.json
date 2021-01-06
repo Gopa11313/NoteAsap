@@ -40,12 +40,12 @@
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_delete.png"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_search_24.png.flat",
-        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_search_24.png"
-    },
-    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_search_24.png.flat",
+        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_search_24.png"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",

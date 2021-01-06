@@ -25,11 +25,8 @@ class HomeBlankFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
         }
     }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,7 +44,6 @@ class HomeBlankFragment : Fragment() {
         recyclehome.layoutManager = GridLayoutManager(activity,2)
         recyclehome.adapter=adpater;
     }
-
     private fun loadvlaue(){
         listPosts.add(Home(1,2,"Coventry university","IT","This is note"))
         listPosts.add(Home(101,201,"Trivuban university ","Physics","This is note"))
@@ -61,10 +57,7 @@ class HomeBlankFragment : Fragment() {
         listPosts.add(Home(101,201,"Trivuban university ","Physics","This is note"))
         listPosts.add(Home(1001,2001,"Coventry university ","Chemistry","This is note"))
     }
-
-
     companion object {
-
         fun newInstance(param1: String, param2: String) =
             HomeBlankFragment().apply {
                 arguments = Bundle().apply {
