@@ -1,4 +1,4 @@
-package com.example.noteasap.adapter
+package com.example.noteasap.UI.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
-import com.example.noteasap.model.Home
+import com.example.noteasap.UI.model.Home
 
 class HomeAdapterval(
         val listpost:ArrayList<Home>,

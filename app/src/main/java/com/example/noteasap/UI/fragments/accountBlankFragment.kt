@@ -1,19 +1,24 @@
-package com.example.noteasap.fragments
+package com.example.noteasap.UI.fragments
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.LoginActivity
-import com.example.noteasap.Pupup.EditProfileActivity
-import com.example.noteasap.Pupup.MessageActivity
+import com.example.noteasap.UI.pupup.EditProfileActivity
+import com.example.noteasap.UI.pupup.MessageActivity
 import com.example.noteasap.R
+import com.example.noteasap.UI.adapter.BookmarkAdpater
+import com.example.noteasap.UI.adapter.OwnNotesAdpater
+import com.example.noteasap.UI.model.Bookmark
+import com.example.noteasap.UI.model.OwnNotesval
 import com.example.noteasap.UploadNotesActivity
 
 
@@ -24,6 +29,8 @@ class accountBlankFragment : Fragment() {
     private lateinit var btnlog:Button;
     private lateinit var uploadnotesframe:FrameLayout;
     private lateinit var imageviewfor3menus:ImageView;
+    private val listNotes=ArrayList<OwnNotesval>();
+    private lateinit var recyleview: RecyclerView;
     private var param1: String? = null
     private var param2: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +52,7 @@ class accountBlankFragment : Fragment() {
         account=view.findViewById(R.id.ic_account)
         btnlog=view.findViewById(R.id.btnlog)
         uploadnotesframe=view.findViewById(R.id.uploadnotesframe)
+        recyleview=view.findViewById(R.id.recycler_view)
         btnlog.setOnClickListener(){
             requireActivity().run{
                 startActivity(Intent(this, LoginActivity::class.java))
@@ -63,13 +71,13 @@ class accountBlankFragment : Fragment() {
                 when(iteam.itemId){
                     R.id.edit ->{
                         requireActivity().run{
-                        startActivity(Intent(this,EditProfileActivity::class.java))
+                        startActivity(Intent(this, EditProfileActivity::class.java))
                         }
                         true
                     }
                     R.id.message -> {
                         requireActivity().run{
-                            startActivity(Intent(this,MessageActivity::class.java))
+                            startActivity(Intent(this, MessageActivity::class.java))
                         }
                         true
                     }
@@ -82,6 +90,12 @@ class accountBlankFragment : Fragment() {
             }
             popupMenu.show()
         }
+
+        loadvlaue()
+        val adpater= context?.let { OwnNotesAdpater(listNotes, it) }
+        recyleview.setHasFixedSize(true);
+        recyleview.layoutManager = LinearLayoutManager(activity)
+        recyleview.adapter=adpater;
     }
     companion object {
         fun newInstance(param1: String, param2: String) =
@@ -92,10 +106,13 @@ class accountBlankFragment : Fragment() {
                 }
             }
     }
-//    fun showPopup(v: View) {
-//        val popup = PopupMenu(activity, v)
-//        val inflater: MenuInflater = popup.menuInflater
-//        inflater.inflate(R.menu.menu2, popup.menu)
-//        popup.show()
-//    }
+    private fun loadvlaue(){
+        listNotes.add(OwnNotesval(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
+        listNotes.add(OwnNotesval(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
+        listNotes.add(OwnNotesval(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+
+        listNotes.add(OwnNotesval(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
+        listNotes.add(OwnNotesval(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
+        listNotes.add(OwnNotesval(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+    }
 }

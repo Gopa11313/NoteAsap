@@ -10,7 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/mybutton"
-    tools:context=".fragments.accountBlankFragment"
+    tools:context=".UI.fragments.accountBlankFragment"
     android:gravity="center"
     android:padding="20dp"
     >
@@ -30,7 +30,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic__person" />
+                    android:src="@drawable/noimg" />
     </androidx.cardview.widget.CardView>
 
     <Button
@@ -116,7 +116,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="270dp"
         android:background="@drawable/shapelogin"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="20dp"

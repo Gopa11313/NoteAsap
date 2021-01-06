@@ -24,12 +24,12 @@
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic__person.png"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_download.png.flat",
-        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_download.png"
-    },
-    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_settings_24.png.flat",
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_settings_24.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_download.png.flat",
+        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_download.png"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
@@ -40,12 +40,12 @@
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_delete.png"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\anim\\fade_out.xml"
-    },
-    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_search_24.png.flat",
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_search_24.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\anim\\fade_out.xml"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -64,12 +64,12 @@
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_login_24.png"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_update.png.flat",
-        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_update.png"
-    },
-    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic__star.png.flat",
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic__star.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_update.png.flat",
+        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_update.png"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_next.png.flat",
@@ -82,6 +82,10 @@
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_upload.png.flat",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable-v24\\upload.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_message.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_message.xml"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_send.png.flat",
@@ -212,12 +216,12 @@
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_send.png"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_more.png.flat",
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_more.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
@@ -288,6 +292,10 @@
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\shapelogin.xml"
     },
     {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_noimg.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\noimg.png"
+    },
+    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic__star.xml.flat",
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic__star.xml"
     },
@@ -330,6 +338,10 @@
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_ownnotes.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\ownnotes.xml"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_bookmark.png.flat",

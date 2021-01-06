@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteAsap">
-        <activity android:name=".Pupup.EditProfileActivity"></activity>
+        <activity android:name="com.example.noteasap.UI.pupup.MessageActivity"></activity>
+        <activity android:name="com.example.noteasap.UI.pupup.EditProfileActivity">
+
+        </activity>
         <activity
             android:name=".ContentActivity"
             android:label="@string/title_activity_bookmark_content"
@@ -17,7 +20,7 @@
         <activity android:name=".UploadNotesActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".Third_Activity" />
+        <activity android:name="com.example.noteasap.UI.ThirdActivity.Third_Activity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

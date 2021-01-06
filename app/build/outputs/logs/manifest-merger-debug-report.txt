@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\b1f462db2113e62bbeddb447b88c9105\navigation-fragment-ktx-2.3.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\2cbca42a78d61d3116e4d867ef71ae91\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\479c24a9749b70fba57e9a9b4a0c2996\navigation-ui-ktx-2.3.2\AndroidManifest.xml:17:1-24:12
@@ -22,6 +22,8 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\gopal\.gradle\cac
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\95ced69cafe6805b58e9dd0dffd59649\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\0374e4f6c0146dad3627e6a932104d52\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\4cdc4d15bd8e40fa5dedb6f3c6c1ced4\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\50e16c1e5800d1a7dd1cb1ec893735f6\jetified-circleimageview-3.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\c5931619903ecc9430f5959a588016d3\jetified-glide-4.8.0\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\866a6791e8083f045b6388af6b7adb19\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\4eadab53ead467fc9f8fc09cb3d98f36\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\18b16aa5ed02f5e0b00484bf9f1fa3d3\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -44,6 +46,7 @@ MERGED from [androidx.activity:activity:1.1.0] C:\Users\gopal\.gradle\caches\tra
 MERGED from [androidx.navigation:navigation-common:2.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\6a2d87bf6fce338646528edb7a1e4333\navigation-common-2.3.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\3414d4f8c6d2974484da138475b51c4f\core-1.3.2\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9a632407174e76d252cf735e6fa5479e\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9906c1db3bfcfff77d1d1057dfb907e5\jetified-gifdecoder-4.8.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\7c2cad3e78ad42de7cf077768b385948\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\6b484bc30989fc8c978987e8364cc2c3\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\8a7d8a8e39620c81ff29a207de019f67\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -57,31 +60,37 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\gopal\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\f0995e59098d4d05d686d82278eaa905\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\67edcd56c619de0defb91fc37085cc6d\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\2d9959f3a90288d3a16c8d3481853e50\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
 		INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:5:5-29:19
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:5:5-32:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\30ad1e15796e6079032b90678b801862\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\30ad1e15796e6079032b90678b801862\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\2817580fb52b01b6a3b967c0143d9134\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\2817580fb52b01b6a3b967c0143d9134\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\50e16c1e5800d1a7dd1cb1ec893735f6\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\50e16c1e5800d1a7dd1cb1ec893735f6\jetified-circleimageview-3.1.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\c5931619903ecc9430f5959a588016d3\jetified-glide-4.8.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\c5931619903ecc9430f5959a588016d3\jetified-glide-4.8.0\AndroidManifest.xml:10:5-20
 MERGED from [androidx.core:core:1.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\3414d4f8c6d2974484da138475b51c4f\core-1.3.2\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\3414d4f8c6d2974484da138475b51c4f\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9906c1db3bfcfff77d1d1057dfb907e5\jetified-gifdecoder-4.8.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9906c1db3bfcfff77d1d1057dfb907e5\jetified-gifdecoder-4.8.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\7c2cad3e78ad42de7cf077768b385948\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\7c2cad3e78ad42de7cf077768b385948\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
@@ -98,52 +107,56 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\go
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:11:9-46
-activity#com.example.noteasap.Pupup.EditProfileActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:12:9-72
+activity#com.example.noteasap.UI.pupup.MessageActivity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:12:9-91
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:12:19-60
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:12:19-79
+activity#com.example.noteasap.UI.pupup.EditProfileActivity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:13:9-15:20
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:13:19-83
 activity#com.example.noteasap.ContentActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:13:9-16:65
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:16:9-19:65
 	android:label
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:15:13-68
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:18:13-68
 	android:theme
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:16:13-62
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:19:13-62
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:14:13-44
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:17:13-44
 activity#com.example.noteasap.UploadNotesActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:17:9-57
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:9-57
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:17:19-54
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:19-54
 activity#com.example.noteasap.SignUpActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:18:9-52
-	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:18:19-49
-activity#com.example.noteasap.LoginActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:19:9-51
-	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:19:19-48
-activity#com.example.noteasap.Third_Activity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:9-52
-	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:19-49
-activity#com.example.noteasap.SecondActivity
 ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-52
 	android:name
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-49
+activity#com.example.noteasap.LoginActivity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:22:9-51
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:22:19-48
+activity#com.example.noteasap.UI.ThirdActivity.Third_Activity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-89
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:23:19-86
+activity#com.example.noteasap.SecondActivity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:24:9-52
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:24:19-49
 activity#com.example.noteasap.MainActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:22:9-28:20
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:25:9-31:20
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:22:19-47
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:25:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:23:13-27:29
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:24:17-69
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:24:25-66
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:29:27-74
 uses-sdk
 INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml
@@ -184,6 +197,10 @@ MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gopal\.gradle\caches
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\0374e4f6c0146dad3627e6a932104d52\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\4cdc4d15bd8e40fa5dedb6f3c6c1ced4\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\4cdc4d15bd8e40fa5dedb6f3c6c1ced4\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\50e16c1e5800d1a7dd1cb1ec893735f6\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\50e16c1e5800d1a7dd1cb1ec893735f6\jetified-circleimageview-3.1.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\c5931619903ecc9430f5959a588016d3\jetified-glide-4.8.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\c5931619903ecc9430f5959a588016d3\jetified-glide-4.8.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\866a6791e8083f045b6388af6b7adb19\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\866a6791e8083f045b6388af6b7adb19\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\4eadab53ead467fc9f8fc09cb3d98f36\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
@@ -228,6 +245,8 @@ MERGED from [androidx.core:core:1.3.2] C:\Users\gopal\.gradle\caches\transforms-
 MERGED from [androidx.core:core:1.3.2] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\3414d4f8c6d2974484da138475b51c4f\core-1.3.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9a632407174e76d252cf735e6fa5479e\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9a632407174e76d252cf735e6fa5479e\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9906c1db3bfcfff77d1d1057dfb907e5\jetified-gifdecoder-4.8.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\9906c1db3bfcfff77d1d1057dfb907e5\jetified-gifdecoder-4.8.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\7c2cad3e78ad42de7cf077768b385948\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\7c2cad3e78ad42de7cf077768b385948\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\gopal\.gradle\caches\transforms-2\files-2.1\6b484bc30989fc8c978987e8364cc2c3\documentfile-1.0.0\AndroidManifest.xml:20:5-44

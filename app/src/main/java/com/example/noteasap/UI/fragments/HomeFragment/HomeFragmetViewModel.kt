@@ -1,4 +1,4 @@
-package com.example.noteasap.fragments
+package com.example.noteasap.UI.fragments.HomeFragment
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.example.noteasap.model
+package com.example.noteasap.UI.model
 
 class Home(
         val N_id:Int?=null,

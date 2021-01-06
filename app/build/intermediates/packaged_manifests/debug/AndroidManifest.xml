@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.NoteAsap" >
-        <activity android:name="com.example.noteasap.Pupup.EditProfileActivity" />
+        <activity android:name="com.example.noteasap.UI.pupup.MessageActivity" />
+        <activity android:name="com.example.noteasap.UI.pupup.EditProfileActivity" >
+        </activity>
         <activity
             android:name="com.example.noteasap.ContentActivity"
             android:label="@string/title_activity_bookmark_content"
@@ -26,7 +28,7 @@
         <activity android:name="com.example.noteasap.UploadNotesActivity" />
         <activity android:name="com.example.noteasap.SignUpActivity" />
         <activity android:name="com.example.noteasap.LoginActivity" />
-        <activity android:name="com.example.noteasap.Third_Activity" />
+        <activity android:name="com.example.noteasap.UI.ThirdActivity.Third_Activity" />
         <activity android:name="com.example.noteasap.SecondActivity" />
         <activity android:name="com.example.noteasap.MainActivity" >
             <intent-filter>

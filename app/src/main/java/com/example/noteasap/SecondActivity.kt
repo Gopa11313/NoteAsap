@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import java.nio.file.attribute.AclEntryFlag
+import com.example.noteasap.UI.ThirdActivity.Third_Activity
 
 private lateinit var notif: Button;
 var flag=false;
@@ -20,7 +20,7 @@ class SecondActivity : AppCompatActivity() {
         }
     }
     fun nexatact(){
-        startActivity(Intent(this,Third_Activity::class.java))
+        startActivity(Intent(this, Third_Activity::class.java))
         finish();
     }
 }

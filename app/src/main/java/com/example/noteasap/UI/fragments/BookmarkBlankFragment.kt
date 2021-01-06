@@ -1,4 +1,4 @@
-package com.example.noteasap.fragments
+package com.example.noteasap.UI.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
-import com.example.noteasap.adapter.BookmarkAdpater
-import com.example.noteasap.model.Bookmark
+import com.example.noteasap.UI.adapter.BookmarkAdpater
+import com.example.noteasap.UI.model.Bookmark
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
