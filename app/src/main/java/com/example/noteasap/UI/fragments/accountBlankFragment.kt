@@ -1,10 +1,10 @@
 package com.example.noteasap.fragments
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -12,14 +12,13 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.noteasap.LoginActivity
 import com.example.noteasap.Pupup.EditProfileActivity
+import com.example.noteasap.Pupup.MessageActivity
 import com.example.noteasap.R
 import com.example.noteasap.UploadNotesActivity
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
-
 class accountBlankFragment : Fragment() {
     private lateinit var account:CardView;
     private lateinit var btnlog:Button;
@@ -27,7 +26,6 @@ class accountBlankFragment : Fragment() {
     private lateinit var imageviewfor3menus:ImageView;
     private var param1: String? = null
     private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,16 +33,10 @@ class accountBlankFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
-    @SuppressLint("InflateParams")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_account_blank, null);
     }
 
@@ -63,31 +55,33 @@ class accountBlankFragment : Fragment() {
                 startActivity(Intent(this, UploadNotesActivity::class.java))
             }
         }
-//        imageviewfor3menus=view.findViewById(R.id.imageView)
-//        imageviewfor3menus.setOnClickListener(){
-//            val popupMenu=PopupMenu(activity, it)
-//            popupMenu.setOnMenuItemClickListener { iteam->
-//                when(iteam.itemId){
-//                    R.id.edit ->{
-//                        requireActivity().run{
-//                        startActivity(Intent(this,EditProfileActivity::class.java))
-//                        }
-//                    }
-//                    R.id.message -> {
-//                        requireActivity().run{
-//                            startActivity(Intent(this,EditProfileActivity::class.java))
-//                        }
-//                    }
-//                    R.id.About->{
-//                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://Gopal")))
-//                     true
-//                    }
-//                    else -> false
-//                }
-//                popupMenu.inflate(R.menu.menu2)
-//                popupMenu.show()
-//            }
-//        }
+        imageviewfor3menus=view.findViewById(R.id.imageView)
+        imageviewfor3menus.setOnClickListener(){
+            val popupMenu=PopupMenu(activity, it)
+            popupMenu.menuInflater.inflate(R.menu.menu2,popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { iteam->
+                when(iteam.itemId){
+                    R.id.edit ->{
+                        requireActivity().run{
+                        startActivity(Intent(this,EditProfileActivity::class.java))
+                        }
+                        true
+                    }
+                    R.id.message -> {
+                        requireActivity().run{
+                            startActivity(Intent(this,MessageActivity::class.java))
+                        }
+                        true
+                    }
+                    R.id.About->{
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://Gopal")))
+                     true
+                    }
+                    else -> false
+                }
+            }
+            popupMenu.show()
+        }
     }
     companion object {
         fun newInstance(param1: String, param2: String) =
@@ -98,4 +92,10 @@ class accountBlankFragment : Fragment() {
                 }
             }
     }
+//    fun showPopup(v: View) {
+//        val popup = PopupMenu(activity, v)
+//        val inflater: MenuInflater = popup.menuInflater
+//        inflater.inflate(R.menu.menu2, popup.menu)
+//        popup.show()
+//    }
 }
