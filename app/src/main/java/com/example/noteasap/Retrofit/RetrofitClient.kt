@@ -1,4 +1,4 @@
 package com.example.noteasap.Retrofit
 
-class RetrofitClient {
+object RetrofitClient {
 }
