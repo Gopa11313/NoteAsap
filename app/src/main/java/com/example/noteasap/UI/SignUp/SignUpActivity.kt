@@ -1,9 +1,11 @@
-package com.example.noteasap.SignUp
+package com.example.noteasap.UI.SignUp
 
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.*
 import com.example.noteasap.LoginActivity
@@ -12,7 +14,6 @@ import com.example.noteasap.Retrofit.RetrofitClient
 import com.example.noteasap.UI.model.Signup
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
@@ -23,7 +24,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var termsnCon:CheckBox;
     private  lateinit var register:Button;
     private lateinit var already:TextView;
-    private lateinit var reister:Button;
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,40 +34,16 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         con_pass=findViewById(R.id.con_pss)
         pass=findViewById(R.id.pass);
         termsnCon=findViewById(R.id.termsnCon);
-        reister=findViewById(R.id.reister)
-        register=findViewById(R.id.reister);
+        register=findViewById(R.id.reister)
         already=findViewById(R.id.already)
-        register.setOnClickListener(this);
         already.setOnClickListener(this);
         register.setOnClickListener {
-            if(validate()==true){
-                val Signup1=Signup(1,fullname.toString(),email.toString(),pass.toString(),"")
-                var regist= RetrofitClient.getInstance().registerUser(Signup1)
-                regist.enqueue(object: retrofit2.Callback<Signup>{
-                    override fun onResponse(call: Call<Signup>, response: Response<Signup>) {
-                        if(response.code()==200){
-                            if(response.code()==200){
-                                Toast.makeText(this@SignUpActivity,"User registered successfully",Toast.LENGTH_SHORT).show()
-                            }else{
-                                Toast.makeText(this@SignUpActivity,response.errorBody().toString(),Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }
-
-                    override fun onFailure(call: Call<Signup>, t: Throwable) {
-                        Toast.makeText(this@SignUpActivity,t.localizedMessage,Toast.LENGTH_LONG).show()
-                    }
-
-                })
-            }
+            adduser()
         }
     }
 
     override fun onClick(p: View?) {
         when(p?.id){
-            R.id.reister->{
-                validate()
-            }
             R.id.already->{
                 nextact()
             }
@@ -81,7 +57,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
             if (em.matches(emailPattern.toRegex())) {
                 if(pas==cpass){
                     if(termsnCon.isChecked){
-                        Toast.makeText(this, "validated", Toast.LENGTH_SHORT).show()
                         flag=true;
                     }
                     else{
@@ -95,7 +70,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
                 }
             }
         else{
-                Toast.makeText(this, "invalid emaial", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "invalid email", Toast.LENGTH_SHORT).show()
                 flag=false
             }
         return flag
@@ -106,5 +81,43 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
 
     override fun onBackPressed() {
         super.onBackPressed()
+    }
+    fun adduser(){
+        if(validate()==true){
+            val map = HashMap<String, String>()
+            map["name"] = fullname.text.toString()
+            map["email"] = email.text.toString()
+            map["password"]=pass.text.toString()
+            map["image"]=""
+            val call: Call<Void?>? = RetrofitClient.getInstance().registerUser(map)
+            if (call != null) {
+                call.enqueue(object: retrofit2.Callback<Void?>{
+                    override fun onResponse(call:Call<Void?>?, response: Response<Void?>) {
+                        if(response.code()==200){
+                            if(response.code()==200){
+                                Toast.makeText(this@SignUpActivity,"User registered successfully",Toast.LENGTH_SHORT).show()
+                                Handler(Looper.getMainLooper()).postDelayed({
+                                    clear()
+                                }, 1000)
+                            }else{
+                                Toast.makeText(this@SignUpActivity,response.errorBody().toString(),Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onFailure(call: Call<Void?>?, t: Throwable) {
+                        Toast.makeText(this@SignUpActivity,t.localizedMessage,Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
+        }
+
+    }
+    fun clear(){
+
+        fullname.setText("")
+        email.setText("")
+        pass.setText("")
+        con_pass.setText("")
+        termsnCon.isChecked=false
     }
 }

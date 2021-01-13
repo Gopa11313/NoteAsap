@@ -1747,7 +1747,6 @@ id asConfigured
 id async
 id auto
 id autoComplete
-id autoCompleteTextView
 id autoCompleteToEnd
 id autoCompleteToStart
 id barrier
@@ -1761,10 +1760,10 @@ id bottom_navigation
 id bounce
 id btnlog
 id button
-id button2
 id buttonPanel
 id button_first
 id button_second
+id c_name
 id cache_measures
 id cancel_action
 id cancel_button
@@ -1806,6 +1805,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id desc
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1833,8 +1833,6 @@ id easeOut
 id edit
 id editText
 id editTextTextPersonName
-id editTextTextPersonName2
-id editTextTextPersonName3
 id edit_query
 id email
 id end
@@ -2051,6 +2049,7 @@ id status_bar_latest_event_content
 id stop
 id stretch
 id submenuarrow
+id submit
 id submit_area
 id tabMode
 id tag_accessibility_actions
