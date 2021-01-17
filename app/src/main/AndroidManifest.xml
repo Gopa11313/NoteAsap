@@ -16,7 +16,6 @@
         tools:targetApi="m">
         <activity android:name="com.example.noteasap.UI.pupup.MessageActivity" />
         <activity android:name="com.example.noteasap.UI.pupup.EditProfileActivity">
-
         </activity>
         <activity
             android:name=".ContentActivity"
