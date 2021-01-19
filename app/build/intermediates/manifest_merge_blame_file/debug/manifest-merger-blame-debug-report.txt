@@ -15,7 +15,7 @@
 11-->D:\NoteAsap\app\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application
-13-->D:\NoteAsap\app\src\main\AndroidManifest.xml:8:5-37:19
+13-->D:\NoteAsap\app\src\main\AndroidManifest.xml:8:5-36:19
 14        android:allowBackup="true"
 14-->D:\NoteAsap\app\src\main\AndroidManifest.xml:10:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -38,44 +38,44 @@
 24-->D:\NoteAsap\app\src\main\AndroidManifest.xml:17:9-82
 24-->D:\NoteAsap\app\src\main\AndroidManifest.xml:17:19-79
 25        <activity android:name="com.example.noteasap.UI.pupup.EditProfileActivity" >
-25-->D:\NoteAsap\app\src\main\AndroidManifest.xml:18:9-20:20
+25-->D:\NoteAsap\app\src\main\AndroidManifest.xml:18:9-19:20
 25-->D:\NoteAsap\app\src\main\AndroidManifest.xml:18:19-83
 26        </activity>
 27        <activity
-27-->D:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-24:65
+27-->D:\NoteAsap\app\src\main\AndroidManifest.xml:20:9-23:65
 28            android:name="com.example.noteasap.ContentActivity"
-28-->D:\NoteAsap\app\src\main\AndroidManifest.xml:22:13-44
+28-->D:\NoteAsap\app\src\main\AndroidManifest.xml:21:13-44
 29            android:label="@string/title_activity_bookmark_content"
-29-->D:\NoteAsap\app\src\main\AndroidManifest.xml:23:13-68
+29-->D:\NoteAsap\app\src\main\AndroidManifest.xml:22:13-68
 30            android:theme="@style/Theme.NoteAsap.NoActionBar" />
-30-->D:\NoteAsap\app\src\main\AndroidManifest.xml:24:13-62
+30-->D:\NoteAsap\app\src\main\AndroidManifest.xml:23:13-62
 31        <activity android:name="com.example.noteasap.UploadNotesActivity" />
-31-->D:\NoteAsap\app\src\main\AndroidManifest.xml:25:9-57
-31-->D:\NoteAsap\app\src\main\AndroidManifest.xml:25:19-54
+31-->D:\NoteAsap\app\src\main\AndroidManifest.xml:24:9-57
+31-->D:\NoteAsap\app\src\main\AndroidManifest.xml:24:19-54
 32        <activity android:name="com.example.noteasap.UI.SignUp.SignUpActivity" />
-32-->D:\NoteAsap\app\src\main\AndroidManifest.xml:26:9-82
-32-->D:\NoteAsap\app\src\main\AndroidManifest.xml:26:19-79
+32-->D:\NoteAsap\app\src\main\AndroidManifest.xml:25:9-82
+32-->D:\NoteAsap\app\src\main\AndroidManifest.xml:25:19-79
 33        <activity android:name="com.example.noteasap.LoginActivity" />
-33-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:9-51
-33-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:19-48
+33-->D:\NoteAsap\app\src\main\AndroidManifest.xml:26:9-51
+33-->D:\NoteAsap\app\src\main\AndroidManifest.xml:26:19-48
 34        <activity android:name="com.example.noteasap.UI.ThirdActivity.Third_Activity" />
-34-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-89
-34-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-86
+34-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:9-89
+34-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:19-86
 35        <activity android:name="com.example.noteasap.SecondActivity" />
-35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:29:9-52
-35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:29:19-49
+35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-52
+35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-49
 36        <activity android:name="com.example.noteasap.MainActivity" >
-36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:30:9-36:20
-36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:30:19-47
+36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:29:9-35:20
+36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:29:19-47
 37            <intent-filter>
-37-->D:\NoteAsap\app\src\main\AndroidManifest.xml:31:13-35:29
+37-->D:\NoteAsap\app\src\main\AndroidManifest.xml:30:13-34:29
 38                <action android:name="android.intent.action.MAIN" />
-38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:32:17-69
-38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:32:25-66
+38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:31:17-69
+38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:31:25-66
 39
 40                <category android:name="android.intent.category.LAUNCHER" />
-40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:34:17-77
-40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:34:27-74
+40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:33:17-77
+40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:33:27-74
 41            </intent-filter>
 42        </activity>
 43    </application>
