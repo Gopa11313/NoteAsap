@@ -392,6 +392,10 @@
         "source": "D:\\NoteAsap\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_next.png"
     },
     {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu3.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\menu\\menu3.xml"
+    },
+    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_comment.xml.flat",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\comment.xml"
     },
