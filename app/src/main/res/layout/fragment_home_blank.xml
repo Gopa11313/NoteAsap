@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.fragments.HomeBlankFragment"
+    tools:context="UI.fragments.HomeFragment.HomeBlankFragment"
     android:orientation="vertical"
     android:background="@drawable/mybutton"
     android:gravity="top"
@@ -13,10 +13,9 @@
     android:layout_width="match_parent"
     android:background="@drawable/shapeemail"
     android:layout_height="40dp"
+    android:textColor="#808080"
     android:text="Enter topic/university/college name"
     android:drawableLeft="@drawable/ic_baseline_search_24"
-    android:gravity="center"
-    android:textColor="@color/white"
     />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

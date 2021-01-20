@@ -2183,10 +2183,10 @@ layout abc_tooltip
 layout activity_content
 layout activity_edit_profile
 layout activity_login
-layout activity_main
 layout activity_message
 layout activity_second
 layout activity_sign_up
+layout activity_splash
 layout activity_third_
 layout activity_upload_notes
 layout bookmark
