@@ -14,7 +14,6 @@ import com.example.noteasap.Retrofit.RetrofitClient
 import retrofit2.Call
 import retrofit2.Response
 
-
 class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var fullname:EditText;
     private lateinit var email:EditText;
@@ -37,7 +36,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         already=findViewById(R.id.already)
         already.setOnClickListener(this);
         register.setOnClickListener {
-//            adduser()
+            adduser()
         }
     }
 
@@ -81,36 +80,36 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     override fun onBackPressed() {
         super.onBackPressed()
     }
-//    fun adduser(){
-//        if(validate()==true){
-//            val map = HashMap<String, String>()
-//            map["name"] = fullname.text.toString()
-//            map["email"] = email.text.toString()
-//            map["password"]=pass.text.toString()
-//            map["image"]=""
-//            val call: Call<Void?>? = RetrofitClient.getInstance().registerUser(map)
-//            if (call != null) {
-//                call.enqueue(object: retrofit2.Callback<Void?>{
-//                    override fun onResponse(call:Call<Void?>?, response: Response<Void?>) {
-//                        if(response.code()==200){
-//                            if(response.code()==200){
-//                                Toast.makeText(this@SignUpActivity,"User registered successfully",Toast.LENGTH_SHORT).show()
-//                                Handler(Looper.getMainLooper()).postDelayed({
-//                                    clear()
-//                                }, 1000)
-//                            }else{
-//                                Toast.makeText(this@SignUpActivity,response.errorBody().toString(),Toast.LENGTH_SHORT).show()
-//                            }
-//                        }
-//                    }
-//                    override fun onFailure(call: Call<Void?>?, t: Throwable) {
-//                        Toast.makeText(this@SignUpActivity,t.localizedMessage,Toast.LENGTH_LONG).show()
-//                    }
-//                })
-//            }
-//        }
-//
-//    }
+    fun adduser(){
+        if(validate()==true){
+            val map = HashMap<String, String>()
+            map["name"] = fullname.text.toString()
+            map["email"] = email.text.toString()
+            map["password"]=pass.text.toString()
+            map["image"]=""
+            val call: Call<Void?>? = RetrofitClient.getInstance().registerUser(map)
+            if (call != null) {
+                call.enqueue(object: retrofit2.Callback<Void?>{
+                    override fun onResponse(call:Call<Void?>?, response: Response<Void?>) {
+                        if(response.code()==200){
+                            if(response.code()==200){
+                                Toast.makeText(this@SignUpActivity,"User registered successfully",Toast.LENGTH_SHORT).show()
+                                Handler(Looper.getMainLooper()).postDelayed({
+                                    clear()
+                                }, 1000)
+                            }else{
+                                Toast.makeText(this@SignUpActivity,response.errorBody().toString(),Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onFailure(call: Call<Void?>?, t: Throwable) {
+                        Toast.makeText(this@SignUpActivity,t.localizedMessage,Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
+        }
+
+    }
     fun clear(){
 
         fullname.setText("")
