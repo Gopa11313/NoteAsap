@@ -11,6 +11,10 @@ import android.widget.*
 import com.example.noteasap.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
+import com.example.noteasap.RoomDatabase.db.Db
+import com.example.noteasap.RoomDatabase.entity.User
+import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers.Main
 import retrofit2.Call
 import retrofit2.Response
 
@@ -36,7 +40,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         already=findViewById(R.id.already)
         already.setOnClickListener(this);
         register.setOnClickListener {
-            adduser()
+//            adduser()
+            addUSerInRoomDatabse()
         }
     }
 
@@ -117,5 +122,14 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         pass.setText("")
         con_pass.setText("")
         termsnCon.isChecked=false
+    }
+    fun addUSerInRoomDatabse(){
+        val user=User(fullname.text.toString(),email.text.toString(),pass.text.toString())
+        CoroutineScope(Dispatchers.IO).launch {
+            Db.getInstance(this@SignUpActivity).getUserDao().AddUSer(user)
+            withContext(Main){
+                Toast.makeText(this@SignUpActivity, "Register Succefully", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
