@@ -22,7 +22,6 @@ class Third_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third_)
-
         thirdViewModel = ViewModelProvider(this).get(thirdActivityViewModel::class.java)
         thirdViewModel.fragment.observe(this,{
 

@@ -24,6 +24,7 @@
         android:src="@drawable/ic_baseline_login_24"/>
 
     <EditText
+        android:id="@+id/email"
         android:lines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
         android:textColorHighlight="@color/white"/>
 
     <EditText
+        android:id="@+id/password"
         android:lines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,6 +88,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Log In"
