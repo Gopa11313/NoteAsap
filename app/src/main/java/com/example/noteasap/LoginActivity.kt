@@ -16,8 +16,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
-
 class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var signup:Button;
     private lateinit var forgetpassword:TextView;
