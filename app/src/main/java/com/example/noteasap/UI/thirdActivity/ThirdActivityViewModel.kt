@@ -1,15 +1,14 @@
-package com.example.noteasap.UI.ThirdActivity
+package com.example.noteasap.UI.thirdActivity
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class thirdActivityViewModel:ViewModel() {
+class ThirdActivityViewModel:ViewModel() {
     private val _currentfragment = MutableLiveData<Fragment>().apply {
         value = Fragment.HOME
     }
     val fragment: LiveData<Fragment> = _currentfragment
-
 
     fun setFragment(fragment: Fragment){
         _currentfragment.apply {

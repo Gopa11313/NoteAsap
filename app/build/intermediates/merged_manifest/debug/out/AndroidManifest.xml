@@ -8,7 +8,10 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="30" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -31,10 +34,11 @@
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
         <activity android:name="com.example.noteasap.UploadNotesActivity" />
         <activity android:name="com.example.noteasap.UI.SignUp.SignUpActivity" />
-        <activity android:name="com.example.noteasap.LoginActivity" />
-        <activity android:name="com.example.noteasap.UI.ThirdActivity.Third_Activity" />
+        <activity android:name="com.example.noteasap.LoginActivity" >
+        </activity>
+        <activity android:name="com.example.noteasap.UI.thirdActivity.Third_Activity" />
         <activity android:name="com.example.noteasap.SecondActivity" />
-        <activity android:name="com.example.noteasap.MainActivity" >
+        <activity android:name="com.example.noteasap.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

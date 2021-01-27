@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.ThirdActivity
+package com.example.noteasap.UI.thirdActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,26 +18,26 @@ class Third_Activity : AppCompatActivity() {
     private val Bookmark= BookmarkBlankFragment();
     private val Account=accountBlankFragment();
     private lateinit var bottom_navigation:BottomNavigationView;
-    private lateinit var thirdViewModel: thirdActivityViewModel
+    private lateinit var thirdViewModel: ThirdActivityViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third_)
-        thirdViewModel = ViewModelProvider(this).get(thirdActivityViewModel::class.java)
+        thirdViewModel = ViewModelProvider(this).get(ThirdActivityViewModel::class.java)
         thirdViewModel.fragment.observe(this,{
 
             when(thirdViewModel.getFragment()){
-                thirdActivityViewModel.Fragment.HOME ->replaceFragments(Home)
-                thirdActivityViewModel.Fragment.BOOKMARK ->replaceFragments(Bookmark)
-                thirdActivityViewModel.Fragment.ACCOUNT ->replaceFragments(Account)
+                ThirdActivityViewModel.Fragment.HOME ->replaceFragments(Home)
+                ThirdActivityViewModel.Fragment.BOOKMARK ->replaceFragments(Bookmark)
+                ThirdActivityViewModel.Fragment.ACCOUNT ->replaceFragments(Account)
             }
         })
         frament_container=findViewById(R.id.fragment_container)
         bottom_navigation=findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(){
         when(it.itemId){
-            R.id.ic_home ->thirdViewModel.setFragment(thirdActivityViewModel.Fragment.HOME)
-            R.id.ic_bookmark ->thirdViewModel.setFragment(thirdActivityViewModel.Fragment.BOOKMARK)
-            R.id.ic_account ->thirdViewModel.setFragment(thirdActivityViewModel.Fragment.ACCOUNT)
+            R.id.ic_home ->thirdViewModel.setFragment(ThirdActivityViewModel.Fragment.HOME)
+            R.id.ic_bookmark ->thirdViewModel.setFragment(ThirdActivityViewModel.Fragment.BOOKMARK)
+            R.id.ic_account ->thirdViewModel.setFragment(ThirdActivityViewModel.Fragment.ACCOUNT)
         }
         true;
     }

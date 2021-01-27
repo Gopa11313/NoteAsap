@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import com.example.noteasap.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
@@ -116,7 +117,6 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
 
     }
     fun clear(){
-
         fullname.setText("")
         email.setText("")
         pass.setText("")
@@ -129,7 +129,10 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
             Db.getInstance(this@SignUpActivity).getUserDao().AddUSer(user)
             withContext(Main){
                 Toast.makeText(this@SignUpActivity, "Register Succefully", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
+
+
 }

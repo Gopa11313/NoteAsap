@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noteasap.RoomDatabase.db.Db
 import com.example.noteasap.RoomDatabase.entity.User
@@ -54,10 +55,27 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
                     user = Db.getInstance(this@LoginActivity).getUserDao()
                         .checkUSer(email.text.toString(), password.text.toString())
                     if (user != null) {
+
                         withContext(Main) {
-                            Toast.makeText(this@LoginActivity,
-                                "Login Successfull",
-                                Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@LoginActivity, "Login Successfull",Toast.LENGTH_SHORT).show()
+
+                            val builder= AlertDialog.Builder(this@LoginActivity);
+                            builder.setMessage("Do You Want to Save this email and password!!")
+                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+                            builder.setPositiveButton("Yes"){dialogInterface,which->
+                                saveSharedPref()
+                            }
+
+                            builder.setNeutralButton("Calcel"){dialogInterface,which->
+
+                            }
+                            builder.setNegativeButton("No"){
+                                    dialogInterface,which->
+
+                            }
+                            val alertDialog: AlertDialog =builder.create()
+                            alertDialog.setCancelable(false)
+                            alertDialog.show()
                         }
                     } else {
                         withContext(Main) {
@@ -73,4 +91,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         startActivity(Intent(this, SignUpActivity::class.java))
     }
 
+    fun saveSharedPref(){
+        val username=email.text.toString()
+        val password=password.text.toString()
+        val sharedPref=getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor=sharedPref.edit()
+        editor.putString("username",username)
+        editor.putString("password",password)
+        editor.apply()
+        Toast.makeText(this@LoginActivity, "Username and password save", Toast.LENGTH_SHORT).show()
+    }
 }
