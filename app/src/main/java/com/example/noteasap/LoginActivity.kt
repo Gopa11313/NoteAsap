@@ -11,7 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.noteasap.RoomDatabase.db.Db
 import com.example.noteasap.RoomDatabase.entity.User
-import com.example.noteasap.UI.SignUp.SignUpActivity
+import com.example.noteasap.UI.signUp.SignUpActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main

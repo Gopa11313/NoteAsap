@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.SignUp
+package com.example.noteasap.UI.signUp
 
 
 import android.content.Intent
@@ -8,7 +8,6 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import com.example.noteasap.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient

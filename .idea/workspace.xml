@@ -18,7 +18,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c159c787-164a-4892-8092-1e63397c8cdc" name="Default Changelist" comment="" />
+    <list default="true" id="c159c787-164a-4892-8092-1e63397c8cdc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/LoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/UI/SignUp/SignUpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/UI/signUp/SignUpActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/UI/SignUp/SignUpViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/UI/signUp/SignUpViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,9 +338,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/noteasap/UI/SignUp/SignUpActivity.kt</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/noteasap/UI/signUp/SignUpActivity.kt</url>
           <line>88</line>
-          <properties class="com.example.noteasap.UI.SignUp.SignUpActivity" method="adduser">
+          <properties class="com.example.noteasap.UI.signUp.SignUpActivity" method="adduser">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="2" />
