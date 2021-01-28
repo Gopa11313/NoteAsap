@@ -9,6 +9,8 @@ class SignUpViewModel:ViewModel() {
     val _email=MutableLiveData<String>()
     val _password=MutableLiveData<String>()
 
+    val _conPassword=MutableLiveData<String>()
+
     val fullname:LiveData<String>
         get() = _fullname
 
@@ -17,5 +19,8 @@ class SignUpViewModel:ViewModel() {
 
     val password:LiveData<String>
         get()=_password
+
+    val conPassword:LiveData<String>
+        get() = _conPassword
 
 }
