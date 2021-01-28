@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
+import androidx.databinding.DataBindingUtil
 import com.example.noteasap.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
@@ -25,11 +26,14 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var con_pass:EditText;
     private lateinit var termsnCon:CheckBox;
     private  lateinit var register:Button;
+    private lateinit var signupViewModel: SignUpViewModel
     private lateinit var already:TextView;
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        val binding:Activity = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
+        binding.lifecycleOwner = this
+//        setContentView(R.layout.activity_sign_up)
         fullname=findViewById(R.id.fullName)
         email=findViewById(R.id.email);
         pass=findViewById(R.id.pass);
