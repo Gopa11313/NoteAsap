@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+                                                              
+                                                       
+                                                   
+    
+                 
+                                       
+                                                                                    
+           
+
+
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true" android:tag="layout/activity_edit_profile_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -60,6 +69,7 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:tag="binding_1"                    
             android:layout_marginLeft="8dp"
             android:layout_height="30dp"
             android:background="@drawable/shapelogin"
@@ -92,6 +102,7 @@
             android:id="@+id/editText"
             android:layout_width="0dp"
             android:layout_height="30dp"
+            android:tag="binding_2"                     
             android:layout_marginLeft="8dp"
             android:layout_marginTop="24dp"
             android:layout_weight="1"
@@ -127,6 +138,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="24dp"
+            android:tag="binding_3"                        
             android:layout_weight="1"
             android:background="@drawable/shapelogin"
             android:hint="Password"
@@ -164,6 +176,7 @@
             android:layout_weight="1"
             android:background="@drawable/shapelogin"
             android:hint="Con-Password"
+            android:tag="binding_4"                           
             android:textColor="@color/black"
             android:textSize="17dp" />
     </LinearLayout>
@@ -178,4 +191,4 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
-</androidx.constraintlayout.widget.ConstraintLayout></ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout></ScrollView>         

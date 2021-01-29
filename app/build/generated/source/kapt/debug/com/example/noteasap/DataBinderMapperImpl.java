@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.example.noteasap.databinding.ActivityEditProfileBindingImpl;
 import com.example.noteasap.databinding.ActivityLoginBindingImpl;
 import com.example.noteasap.databinding.ActivityMessageBindingImpl;
 import com.example.noteasap.databinding.ActivitySignUpBindingImpl;
@@ -20,15 +21,18 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_ACTIVITYLOGIN = 1;
+  private static final int LAYOUT_ACTIVITYEDITPROFILE = 1;
 
-  private static final int LAYOUT_ACTIVITYMESSAGE = 2;
+  private static final int LAYOUT_ACTIVITYLOGIN = 2;
 
-  private static final int LAYOUT_ACTIVITYSIGNUP = 3;
+  private static final int LAYOUT_ACTIVITYMESSAGE = 3;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
+  private static final int LAYOUT_ACTIVITYSIGNUP = 4;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_edit_profile, LAYOUT_ACTIVITYEDITPROFILE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_message, LAYOUT_ACTIVITYMESSAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_sign_up, LAYOUT_ACTIVITYSIGNUP);
@@ -43,6 +47,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_ACTIVITYEDITPROFILE: {
+          if ("layout/activity_edit_profile_0".equals(tag)) {
+            return new ActivityEditProfileBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_edit_profile is invalid. Received: " + tag);
+        }
         case  LAYOUT_ACTIVITYLOGIN: {
           if ("layout/activity_login_0".equals(tag)) {
             return new ActivityLoginBindingImpl(component, view);
@@ -106,20 +116,22 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(4);
+    static final SparseArray<String> sKeys = new SparseArray<String>(5);
 
     static {
-      sKeys.put(1, "LoginViewModel");
-      sKeys.put(2, "MessageViewModel");
-      sKeys.put(3, "SignUpViewModel");
+      sKeys.put(1, "EditProfileViewModel");
+      sKeys.put(2, "LoginViewModel");
+      sKeys.put(3, "MessageViewModel");
+      sKeys.put(4, "SignUpViewModel");
       sKeys.put(0, "_all");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
 
     static {
+      sKeys.put("layout/activity_edit_profile_0", com.example.noteasap.R.layout.activity_edit_profile);
       sKeys.put("layout/activity_login_0", com.example.noteasap.R.layout.activity_login);
       sKeys.put("layout/activity_message_0", com.example.noteasap.R.layout.activity_message);
       sKeys.put("layout/activity_sign_up_0", com.example.noteasap.R.layout.activity_sign_up);

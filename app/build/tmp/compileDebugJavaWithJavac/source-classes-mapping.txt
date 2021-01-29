@@ -11,11 +11,15 @@ com/example/noteasap/databinding/ActivityMessageBinding.java
  com.example.noteasap.databinding.ActivityMessageBinding
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
+com/example/noteasap/databinding/ActivityEditProfileBinding.java
+ com.example.noteasap.databinding.ActivityEditProfileBinding
 com/example/noteasap/RoomDatabase/dao/UserDao_Impl.java
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl$1
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl$2
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl$3
+com/example/noteasap/databinding/ActivityEditProfileBindingImpl.java
+ com.example.noteasap.databinding.ActivityEditProfileBindingImpl
 com/example/noteasap/databinding/ActivityLoginBindingImpl.java
  com.example.noteasap.databinding.ActivityLoginBindingImpl
 com/example/noteasap/databinding/ActivitySignUpBinding.java
