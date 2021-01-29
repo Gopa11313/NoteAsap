@@ -6,9 +6,8 @@ import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
-import com.example.noteasap.databinding.ActivityLoginBinding
 import com.example.noteasap.databinding.ActivityMessageBinding
-import com.example.noteasap.ui.login.LoginViewModel
+
 
 class MessageActivity : AppCompatActivity() {
     private lateinit var message:EditText;
