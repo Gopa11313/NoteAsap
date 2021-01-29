@@ -9,10 +9,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ForgetpasswordFragment
 import com.example.noteasap.R
 import com.example.noteasap.RoomDatabase.db.Db
 import com.example.noteasap.RoomDatabase.entity.User
+import com.example.noteasap.databinding.ActivityLoginBinding
 import com.example.noteasap.ui.signUpViewModel.SignUpActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,15 +28,19 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var email:EditText;
     private lateinit var password:EditText;
     private lateinit var login:Button;
+    private lateinit var loginViewModel: loginViewModel
     private val forget= ForgetpasswordFragment();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        val binding:ActivityLoginBinding=DataBindingUtil.setContentView(this,R.layout.activity_login)
+        binding.lifecycleOwner=this
         signup=findViewById(R.id.signup)
         forgetpassword=findViewById(R.id.forgetpassword);
         login=findViewById(R.id.login)
         email=findViewById(R.id.email)
         password=findViewById(R.id.password)
+        loginViewModel=ViewModelProvider(this).get(com.example.noteasap.ui.login.loginViewModel::class.java)
+        binding.loginViewModel=loginViewModel
         signup.setOnClickListener(this);
         forgetpassword.setOnClickListener(this);
         login.setOnClickListener(this)
