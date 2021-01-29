@@ -1,6 +1,5 @@
 package com.example.noteasap.Retrofit
 
-import com.example.noteasap.UI.model.Signup
 import retrofit2.Call
 import retrofit2.http.*
 

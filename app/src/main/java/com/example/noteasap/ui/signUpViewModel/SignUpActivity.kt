@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.signUp
+package com.example.noteasap.ui.signUpViewModel
 
 
 import android.content.Intent
@@ -9,11 +9,13 @@ import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.databinding.DataBindingUtil
-import com.example.noteasap.LoginActivity
+import androidx.lifecycle.ViewModelProvider
+import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
 import com.example.noteasap.RoomDatabase.db.Db
 import com.example.noteasap.RoomDatabase.entity.User
+import com.example.noteasap.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Main
 import retrofit2.Call
@@ -31,9 +33,9 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding:Activity = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
+        val binding:ActivitySignUpBinding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
         binding.lifecycleOwner = this
-//        setContentView(R.layout.activity_sign_up)
+
         fullname=findViewById(R.id.fullName)
         email=findViewById(R.id.email);
         pass=findViewById(R.id.pass);
@@ -43,6 +45,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         register=findViewById(R.id.reister)
         already=findViewById(R.id.already)
         already.setOnClickListener(this);
+        signupViewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
+        binding.signUpViewModel=(signupViewModel)
         register.setOnClickListener {
 //            adduser()
             addUSerInRoomDatabse()

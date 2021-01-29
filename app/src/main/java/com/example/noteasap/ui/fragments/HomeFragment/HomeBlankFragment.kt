@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.fragments.HomeFragment
+package com.example.noteasap.ui.fragments.HomeFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
-import com.example.noteasap.UI.adapter.HomeAdapterval
-import com.example.noteasap.UI.model.Home
+import com.example.noteasap.ui.adapter.HomeAdapterval
+import com.example.noteasap.ui.model.Home
 
 
 private const val ARG_PARAM1 = "param1"

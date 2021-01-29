@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.adapter
+package com.example.noteasap.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
-import com.example.noteasap.UI.model.OwnNotesval
+import com.example.noteasap.ui.model.OwnNotesval
 
 class OwnNotesAdpater( val listpost:ArrayList<OwnNotesval>,
 val context: Context):RecyclerView.Adapter<OwnNotesAdpater.OwnnotesviewHolder>() {

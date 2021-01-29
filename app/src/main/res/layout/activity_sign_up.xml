@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="SignupViewModel"
-            type="com.example.noteasap.UI.signUp.SignUpViewModel" />
+            name="SignUpViewModel"
+            type="com.example.noteasap.ui.signUpViewModel.SignUpViewModel" />
     </data>
 
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:padding="15dp"
-        android:text="@{SignupViewModel.fullname}"
+        android:text="@{SignUpViewModel.fullname}"
         android:background="@drawable/shapeemail"
         android:drawablePadding="10dp"
         android:hint="Full Name"
@@ -49,7 +49,7 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{SignupViewModel.email}"
+        android:text="@{SignUpViewModel.email}"
         android:layout_margin="10dp"
         android:padding="15dp"
         android:background="@drawable/shapeemail"
@@ -64,7 +64,7 @@
         android:id="@+id/pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@{SignupViewModel.password}"
+        android:text="@{SignUpViewModel.password}"
         android:layout_margin="10dp"
         android:padding="15dp"
         android:inputType="textPassword"
@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@{SignupViewModel.conPassword}"
+        android:text="@{SignUpViewModel.conPassword}"
         android:padding="15dp"
         android:background="@drawable/shapeemail"
         android:drawablePadding="10dp"

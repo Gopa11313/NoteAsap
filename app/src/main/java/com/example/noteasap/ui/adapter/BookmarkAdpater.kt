@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.adapter
+package com.example.noteasap.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.ContentActivity
 import com.example.noteasap.R
-import com.example.noteasap.UI.model.Bookmark
+import com.example.noteasap.ui.model.Bookmark
 import android.content.Intent as Intent
 
 class BookmarkAdpater(

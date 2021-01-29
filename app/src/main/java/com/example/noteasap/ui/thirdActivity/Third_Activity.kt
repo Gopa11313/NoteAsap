@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.thirdActivity
+package com.example.noteasap.ui.thirdActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
-import com.example.noteasap.UI.fragments.BookmarkBlankFragment
-import com.example.noteasap.UI.fragments.HomeFragment.HomeBlankFragment
-import com.example.noteasap.UI.fragments.accountBlankFragment
+import com.example.noteasap.ui.fragments.BookmarkBlankFragment
+import com.example.noteasap.ui.fragments.HomeFragment.HomeBlankFragment
+import com.example.noteasap.ui.fragments.accountBlankFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

@@ -8,6 +8,7 @@ public final class ForgetpasswordFragment extends androidx.fragment.app.Fragment
     private java.lang.String param2;
     @org.jetbrains.annotations.NotNull()
     public static final com.example.noteasap.ForgetpasswordFragment.Companion Companion = null;
+    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     public void onCreate(@org.jetbrains.annotations.Nullable()

@@ -6,9 +6,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.noteasap.UI.adapter.CommentAdpater
-import com.example.noteasap.UI.model.Bookmark
-import com.example.noteasap.UI.model.Comment
+import com.example.noteasap.ui.adapter.CommentAdpater
+import com.example.noteasap.ui.model.Bookmark
+import com.example.noteasap.ui.model.Comment
 
 private lateinit var topic:TextView;
 private lateinit var universityname:TextView;

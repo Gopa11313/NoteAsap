@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.model
+package com.example.noteasap.ui.model
 
 import android.os.Parcel
 import android.os.Parcelable

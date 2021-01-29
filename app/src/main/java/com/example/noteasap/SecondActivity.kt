@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.core.app.ActivityCompat
-import com.example.noteasap.UI.thirdActivity.Third_Activity
+import com.example.noteasap.ui.thirdActivity.Third_Activity
 
 private lateinit var notif: Button;
 var flag=false;

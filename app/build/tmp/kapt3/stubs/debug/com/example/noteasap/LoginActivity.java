@@ -10,6 +10,7 @@ public final class LoginActivity extends androidx.appcompat.app.AppCompatActivit
     private android.widget.EditText password;
     private android.widget.Button login;
     private final com.example.noteasap.ForgetpasswordFragment forget = null;
+    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     protected void onCreate(@org.jetbrains.annotations.Nullable()

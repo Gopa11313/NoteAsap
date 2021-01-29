@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.thirdActivity
+package com.example.noteasap.ui.thirdActivity
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

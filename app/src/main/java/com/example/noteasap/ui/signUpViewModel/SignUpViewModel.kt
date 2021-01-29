@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.signUp
+package com.example.noteasap.ui.signUpViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

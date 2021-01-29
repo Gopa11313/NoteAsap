@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.fragments
+package com.example.noteasap.ui.fragments
 
 import android.content.Intent
 import android.net.Uri
@@ -11,14 +11,12 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.noteasap.LoginActivity
-import com.example.noteasap.UI.pupup.EditProfileActivity
-import com.example.noteasap.UI.pupup.MessageActivity
+import com.example.noteasap.ui.login.LoginActivity
+import com.example.noteasap.ui.pupup.EditProfileActivity
+import com.example.noteasap.ui.pupup.MessageActivity
 import com.example.noteasap.R
-import com.example.noteasap.UI.adapter.BookmarkAdpater
-import com.example.noteasap.UI.adapter.OwnNotesAdpater
-import com.example.noteasap.UI.model.Bookmark
-import com.example.noteasap.UI.model.OwnNotesval
+import com.example.noteasap.ui.adapter.OwnNotesAdpater
+import com.example.noteasap.ui.model.OwnNotesval
 import com.example.noteasap.UploadNotesActivity
 
 

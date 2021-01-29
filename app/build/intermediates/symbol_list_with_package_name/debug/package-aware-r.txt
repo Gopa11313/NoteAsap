@@ -1800,6 +1800,7 @@ id cos
 id custom
 id customPanel
 id cut
+id dataBinding
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1885,7 +1886,6 @@ id imageView
 id imageView2
 id imageView3
 id imageView4
-id img
 id info
 id invisible
 id italic
@@ -1959,6 +1959,8 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id onAttachStateChangeListener
+id onDateChanged
 id outline
 id packed
 id parallax
@@ -2078,6 +2080,7 @@ id textView
 id textView2
 id textView3
 id textView6
+id textWatcher
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter

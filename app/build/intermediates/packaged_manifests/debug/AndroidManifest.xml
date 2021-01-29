@@ -25,25 +25,26 @@
         android:testOnly="true"
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.noteasap.UI.pupup.MessageActivity" />
-        <activity android:name="com.example.noteasap.UI.pupup.EditProfileActivity" >
+        <activity android:name="com.example.noteasap.ui.pupup.MessageActivity" />
+        <activity android:name="com.example.noteasap.ui.pupup.EditProfileActivity" >
         </activity>
         <activity
             android:name="com.example.noteasap.ContentActivity"
             android:label="@string/title_activity_bookmark_content"
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
         <activity android:name="com.example.noteasap.UploadNotesActivity" />
-        <activity android:name="com.example.noteasap.UI.SignUp.SignUpActivity" />
-        <activity android:name="com.example.noteasap.LoginActivity" >
-        </activity>
-        <activity android:name="com.example.noteasap.UI.thirdActivity.Third_Activity" />
-        <activity android:name="com.example.noteasap.SecondActivity" />
-        <activity android:name="com.example.noteasap.SplashActivity" >
+        <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.noteasap.LoginActivity" >
+        </activity>
+        <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
+        <activity android:name="com.example.noteasap.SecondActivity" />
+        <activity android:name="com.example.noteasap.SplashActivity" >
         </activity>
 
         <service

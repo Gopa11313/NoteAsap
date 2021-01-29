@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.adapter
+package com.example.noteasap.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.example.noteasap.R
 
 
 class CommentAdpater(
-    val listcomment: ArrayList<com.example.noteasap.UI.model.Comment>,
+    val listcomment: ArrayList<com.example.noteasap.ui.model.Comment>,
     val context: Context,
 ):RecyclerView.Adapter<CommentAdpater.CommentviewHolder>()
 {
