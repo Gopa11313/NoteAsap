@@ -483,7 +483,8 @@
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/noteasap/UploadNotesActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/example/noteasap/UploadNotesActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ContentActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ContentActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/LoginActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ForgetpasswordFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ForgetpasswordFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/login/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/Retrofit/IMyServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/Retrofit/IMyServices.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/SecondActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/SecondActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/adapter/BookmarkAdpater.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/adapter/BookmarkAdpater.kt" afterDir="false" />
@@ -506,6 +507,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/thirdActivity/ThirdActivityViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/thirdActivity/ThirdActivityViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/thirdActivity/Third_Activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/noteasap/ui/thirdActivity/Third_Activity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_message.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_message.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account_blank.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account_blank.xml" afterDir="false" />
@@ -530,8 +532,8 @@
         <option value="layoutResourceFile" />
         <option value="Kotlin Object" />
         <option value="resourceFile" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
