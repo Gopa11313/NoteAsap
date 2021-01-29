@@ -11,7 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.noteasap.ForgetpasswordFragment
+import com.example.noteasap.ui.forgetPassword.ForgetpasswordFragment
 import com.example.noteasap.R
 import com.example.noteasap.RoomDatabase.db.Db
 import com.example.noteasap.RoomDatabase.entity.User
