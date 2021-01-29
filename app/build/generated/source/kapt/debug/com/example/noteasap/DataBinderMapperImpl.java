@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.example.noteasap.databinding.ActivityLoginBindingImpl;
 import com.example.noteasap.databinding.ActivitySignUpBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -18,11 +19,14 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_ACTIVITYSIGNUP = 1;
+  private static final int LAYOUT_ACTIVITYLOGIN = 1;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(1);
+  private static final int LAYOUT_ACTIVITYSIGNUP = 2;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_sign_up, LAYOUT_ACTIVITYSIGNUP);
   }
 
@@ -35,6 +39,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_ACTIVITYLOGIN: {
+          if ("layout/activity_login_0".equals(tag)) {
+            return new ActivityLoginBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_login is invalid. Received: " + tag);
+        }
         case  LAYOUT_ACTIVITYSIGNUP: {
           if ("layout/activity_sign_up_0".equals(tag)) {
             return new ActivitySignUpBindingImpl(component, view);
@@ -86,18 +96,20 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(2);
+    static final SparseArray<String> sKeys = new SparseArray<String>(3);
 
     static {
-      sKeys.put(1, "SignUpViewModel");
+      sKeys.put(1, "LoginViewModel");
+      sKeys.put(2, "SignUpViewModel");
       sKeys.put(0, "_all");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(1);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(2);
 
     static {
+      sKeys.put("layout/activity_login_0", com.example.noteasap.R.layout.activity_login);
       sKeys.put("layout/activity_sign_up_0", com.example.noteasap.R.layout.activity_sign_up);
     }
   }

@@ -63,22 +63,22 @@
 35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:9-57
 35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:19-54
 36        <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" >
-36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-35:20
+36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-31:20
 36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-68
-37            <intent-filter>
-37-->D:\NoteAsap\app\src\main\AndroidManifest.xml:30:13-34:29
-38                <action android:name="android.intent.action.MAIN" />
-38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:31:17-69
-38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:31:25-66
-39
-40                <category android:name="android.intent.category.LAUNCHER" />
-40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:33:17-77
-40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:33:27-74
-41            </intent-filter>
-42        </activity>
-43        <activity android:name="com.example.noteasap.LoginActivity" >
-43-->D:\NoteAsap\app\src\main\AndroidManifest.xml:36:9-38:20
-43-->D:\NoteAsap\app\src\main\AndroidManifest.xml:36:19-48
+37        </activity>
+38        <activity android:name="com.example.noteasap.ui.login.LoginActivity" >
+38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-38:20
+38-->D:\NoteAsap\app\src\main\AndroidManifest.xml:32:19-57
+39            <intent-filter>
+39-->D:\NoteAsap\app\src\main\AndroidManifest.xml:33:13-37:29
+40                <action android:name="android.intent.action.MAIN" />
+40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:34:17-69
+40-->D:\NoteAsap\app\src\main\AndroidManifest.xml:34:25-66
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->D:\NoteAsap\app\src\main\AndroidManifest.xml:36:17-77
+42-->D:\NoteAsap\app\src\main\AndroidManifest.xml:36:27-74
+43            </intent-filter>
 44        </activity>
 45        <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
 45-->D:\NoteAsap\app\src\main\AndroidManifest.xml:39:9-89

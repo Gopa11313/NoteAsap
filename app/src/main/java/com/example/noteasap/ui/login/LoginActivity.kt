@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var email:EditText;
     private lateinit var password:EditText;
     private lateinit var login:Button;
-    private lateinit var loginViewModel: loginViewModel
+    private lateinit var loginViewModel: LoginViewModel
     private val forget= ForgetpasswordFragment();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         login=findViewById(R.id.login)
         email=findViewById(R.id.email)
         password=findViewById(R.id.password)
-        loginViewModel=ViewModelProvider(this).get(com.example.noteasap.ui.login.loginViewModel::class.java)
+        loginViewModel=ViewModelProvider(this).get(com.example.noteasap.ui.login.LoginViewModel::class.java)
         binding.loginViewModel=loginViewModel
         signup.setOnClickListener(this);
         forgetpassword.setOnClickListener(this);

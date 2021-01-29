@@ -159,23 +159,23 @@ ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:27:9-57
 	android:name
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:27:19-54
 activity#com.example.noteasap.ui.signUpViewModel.SignUpActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-35:20
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-31:20
 	android:name
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-68
+activity#com.example.noteasap.ui.login.LoginActivity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-38:20
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:32:19-57
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:30:13-34:29
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:31:17-69
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:31:25-66
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:33:17-77
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:33:27-74
-activity#com.example.noteasap.LoginActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:9-38:20
-	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:19-48
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:27-74
 activity#com.example.noteasap.ui.thirdActivity.Third_Activity
 ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:39:9-89
 	android:name

@@ -34,13 +34,13 @@
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
         <activity android:name="com.example.noteasap.UploadNotesActivity" />
         <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" >
+        </activity>
+        <activity android:name="com.example.noteasap.ui.login.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.example.noteasap.LoginActivity" >
         </activity>
         <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
         <activity android:name="com.example.noteasap.SecondActivity" />
