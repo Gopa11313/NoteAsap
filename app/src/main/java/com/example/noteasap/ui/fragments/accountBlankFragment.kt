@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.ui.login.LoginActivity
-import com.example.noteasap.ui.pupup.EditProfileActivity
-import com.example.noteasap.ui.pupup.MessageActivity
+import com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
+import com.example.noteasap.ui.pupup.message.MessageActivity
 import com.example.noteasap.R
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
 import com.example.noteasap.ui.model.OwnNotesval

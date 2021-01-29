@@ -11,7 +11,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/mybutton"
     android:padding="10dp"
-    tools:context=".ui.pupup.EditProfileActivity">
+    tools:context=".ui.pupup.editProfile.EditProfileActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile"

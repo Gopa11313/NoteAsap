@@ -1,4 +1,4 @@
-package com.example.noteasap.ui.pupup
+package com.example.noteasap.ui.pupup.message
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

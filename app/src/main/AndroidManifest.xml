@@ -17,8 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteAsap"
         tools:targetApi="m">
-        <activity android:name="com.example.noteasap.ui.pupup.MessageActivity" />
-        <activity android:name="com.example.noteasap.ui.pupup.EditProfileActivity">
+        <activity android:name="com.example.noteasap.ui.pupup.message.MessageActivity" />
+        <activity android:name="com.example.noteasap.ui.pupup.editProfile.EditProfileActivity">
         </activity>
         <activity
             android:name=".ContentActivity"
