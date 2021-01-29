@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_message.xml",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_message.xml"
+    },
+    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_login.xml"
     },

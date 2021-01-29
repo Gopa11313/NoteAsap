@@ -138,14 +138,14 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] C:\Users\gopal\.gradle\
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:18:9-46
 	android:usesCleartextTraffic
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:12:9-44
-activity#com.example.noteasap.ui.pupup.MessageActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:9-82
+activity#com.example.noteasap.ui.pupup.message.MessageActivity
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:9-90
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:19-79
-activity#com.example.noteasap.ui.pupup.EditProfileActivity
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:20:19-87
+activity#com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
 ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-22:20
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-83
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-95
 activity#com.example.noteasap.ContentActivity
 ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-26:65
 	android:label
@@ -163,31 +163,31 @@ ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-31:20
 	android:name
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-68
 activity#com.example.noteasap.ui.login.LoginActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-38:20
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-34:20
 	android:name
 		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:32:19-57
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:33:13-37:29
-action#android.intent.action.MAIN
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:34:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:17-77
-	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:27-74
 activity#com.example.noteasap.ui.thirdActivity.Third_Activity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:39:9-89
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:35:9-89
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:39:19-86
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:35:19-86
 activity#com.example.noteasap.SecondActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:40:9-52
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:9-52
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:40:19-49
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:36:19-49
 activity#com.example.noteasap.SplashActivity
-ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:41:9-43:20
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:37:9-43:20
 	android:name
-		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:41:19-49
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:37:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:38:13-42:29
+action#android.intent.action.MAIN
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:39:17-69
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:39:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:41:17-77
+	android:name
+		ADDED from D:\NoteAsap\app\src\main\AndroidManifest.xml:41:27-74
 uses-sdk
 INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\NoteAsap\app\src\main\AndroidManifest.xml

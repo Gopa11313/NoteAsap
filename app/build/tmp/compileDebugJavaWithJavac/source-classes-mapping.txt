@@ -1,10 +1,14 @@
 com/example/noteasap/RoomDatabase/db/Db_Impl.java
  com.example.noteasap.RoomDatabase.db.Db_Impl
  com.example.noteasap.RoomDatabase.db.Db_Impl$1
+com/example/noteasap/databinding/ActivityMessageBindingImpl.java
+ com.example.noteasap.databinding.ActivityMessageBindingImpl
 com/example/noteasap/BuildConfig.java
  com.example.noteasap.BuildConfig
 androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
+com/example/noteasap/databinding/ActivityMessageBinding.java
+ com.example.noteasap.databinding.ActivityMessageBinding
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/example/noteasap/RoomDatabase/dao/UserDao_Impl.java

@@ -25,8 +25,8 @@
         android:testOnly="true"
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.noteasap.ui.pupup.MessageActivity" />
-        <activity android:name="com.example.noteasap.ui.pupup.EditProfileActivity" >
+        <activity android:name="com.example.noteasap.ui.pupup.message.MessageActivity" />
+        <activity android:name="com.example.noteasap.ui.pupup.editProfile.EditProfileActivity" >
         </activity>
         <activity
             android:name="com.example.noteasap.ContentActivity"
@@ -36,15 +36,15 @@
         <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" >
         </activity>
         <activity android:name="com.example.noteasap.ui.login.LoginActivity" >
+        </activity>
+        <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
+        <activity android:name="com.example.noteasap.SecondActivity" />
+        <activity android:name="com.example.noteasap.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
-        <activity android:name="com.example.noteasap.SecondActivity" />
-        <activity android:name="com.example.noteasap.SplashActivity" >
         </activity>
 
         <service
