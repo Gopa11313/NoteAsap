@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 
 class ForgetPasswordViewModel:ViewModel(){
 
-    val _email=MutableLiveData<String>()
+    val _Forgetemail=MutableLiveData<String>()
 
-    val email:LiveData<String>
-        get() = _email
+    val forgetemail:LiveData<String>
+        get() = _Forgetemail
 }

@@ -87,11 +87,11 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeForgetPasswordViewModelEmail((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
+                return onChangeForgetPasswordViewModelForgetemail((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
         }
         return false;
     }
-    private boolean onChangeForgetPasswordViewModelEmail(androidx.lifecycle.LiveData<java.lang.String> ForgetPasswordViewModelEmail, int fieldId) {
+    private boolean onChangeForgetPasswordViewModelForgetemail(androidx.lifecycle.LiveData<java.lang.String> ForgetPasswordViewModelForgetemail, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;
@@ -109,30 +109,30 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
             mDirtyFlags = 0;
         }
         com.example.noteasap.ui.forgetPassword.ForgetPasswordViewModel forgetPasswordViewModel = mForgetPasswordViewModel;
-        java.lang.String forgetPasswordViewModelEmailGetValue = null;
-        androidx.lifecycle.LiveData<java.lang.String> forgetPasswordViewModelEmail = null;
+        androidx.lifecycle.LiveData<java.lang.String> forgetPasswordViewModelForgetemail = null;
+        java.lang.String forgetPasswordViewModelForgetemailGetValue = null;
 
         if ((dirtyFlags & 0x7L) != 0) {
 
 
 
                 if (forgetPasswordViewModel != null) {
-                    // read ForgetPasswordViewModel.email
-                    forgetPasswordViewModelEmail = forgetPasswordViewModel.getEmail();
+                    // read ForgetPasswordViewModel.forgetemail
+                    forgetPasswordViewModelForgetemail = forgetPasswordViewModel.getForgetemail();
                 }
-                updateLiveDataRegistration(0, forgetPasswordViewModelEmail);
+                updateLiveDataRegistration(0, forgetPasswordViewModelForgetemail);
 
 
-                if (forgetPasswordViewModelEmail != null) {
-                    // read ForgetPasswordViewModel.email.getValue()
-                    forgetPasswordViewModelEmailGetValue = forgetPasswordViewModelEmail.getValue();
+                if (forgetPasswordViewModelForgetemail != null) {
+                    // read ForgetPasswordViewModel.forgetemail.getValue()
+                    forgetPasswordViewModelForgetemailGetValue = forgetPasswordViewModelForgetemail.getValue();
                 }
         }
         // batch finished
         if ((dirtyFlags & 0x7L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextTextPersonName, forgetPasswordViewModelEmailGetValue);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextTextPersonName, forgetPasswordViewModelForgetemailGetValue);
         }
     }
     // Listener Stub Implementations
@@ -140,7 +140,7 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): ForgetPasswordViewModel.email
+        flag 0 (0x1L): ForgetPasswordViewModel.forgetemail
         flag 1 (0x2L): ForgetPasswordViewModel
         flag 2 (0x3L): null
     flag mapping end*/

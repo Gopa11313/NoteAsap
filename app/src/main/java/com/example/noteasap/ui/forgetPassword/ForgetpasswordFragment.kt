@@ -45,9 +45,8 @@ class ForgetpasswordFragment : Fragment() {
         )
         Log.i("ForgetPasswordFragment", "Called ViewModelProvider.get")
         forgetPasswordViewModel = ViewModelProvider(this).get(ForgetPasswordViewModel::class.java)
-        binding.forgetPasswordViewModel = forgetPasswordViewModel
         binding.lifecycleOwner = viewLifecycleOwner
-
+        binding.forgetPasswordViewModel = forgetPasswordViewModel
         return binding.root
     }
 
