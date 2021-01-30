@@ -53,8 +53,8 @@
 30        </activity>
 31        <activity
 31-->D:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-26:65
-32            android:name="com.example.noteasap.ContentActivity"
-32-->D:\NoteAsap\app\src\main\AndroidManifest.xml:24:13-44
+32            android:name="com.example.noteasap.ui.content.ContentActivity"
+32-->D:\NoteAsap\app\src\main\AndroidManifest.xml:24:13-55
 33            android:label="@string/title_activity_bookmark_content"
 33-->D:\NoteAsap\app\src\main\AndroidManifest.xml:25:13-68
 34            android:theme="@style/Theme.NoteAsap.NoActionBar" />

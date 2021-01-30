@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.noteasap.ContentActivity
+import com.example.noteasap.ui.content.ContentActivity
 import com.example.noteasap.R
 import com.example.noteasap.ui.model.Bookmark
 import android.content.Intent as Intent

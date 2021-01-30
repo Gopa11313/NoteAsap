@@ -1,4 +1,4 @@
-package com.example.noteasap;
+package com.example.noteasap.ui.content;
 
 import java.lang.System;
 

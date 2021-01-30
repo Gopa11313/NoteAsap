@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.example.noteasap.databinding.ActivityContentBindingImpl;
 import com.example.noteasap.databinding.ActivityEditProfileBindingImpl;
 import com.example.noteasap.databinding.ActivityLoginBindingImpl;
 import com.example.noteasap.databinding.ActivityMessageBindingImpl;
@@ -22,19 +23,22 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_ACTIVITYEDITPROFILE = 1;
+  private static final int LAYOUT_ACTIVITYCONTENT = 1;
 
-  private static final int LAYOUT_ACTIVITYLOGIN = 2;
+  private static final int LAYOUT_ACTIVITYEDITPROFILE = 2;
 
-  private static final int LAYOUT_ACTIVITYMESSAGE = 3;
+  private static final int LAYOUT_ACTIVITYLOGIN = 3;
 
-  private static final int LAYOUT_ACTIVITYSIGNUP = 4;
+  private static final int LAYOUT_ACTIVITYMESSAGE = 4;
 
-  private static final int LAYOUT_FRAGMENTFORGETPASSWORD = 5;
+  private static final int LAYOUT_ACTIVITYSIGNUP = 5;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);
+  private static final int LAYOUT_FRAGMENTFORGETPASSWORD = 6;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_content, LAYOUT_ACTIVITYCONTENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_edit_profile, LAYOUT_ACTIVITYEDITPROFILE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_message, LAYOUT_ACTIVITYMESSAGE);
@@ -51,6 +55,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_ACTIVITYCONTENT: {
+          if ("layout/activity_content_0".equals(tag)) {
+            return new ActivityContentBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_content is invalid. Received: " + tag);
+        }
         case  LAYOUT_ACTIVITYEDITPROFILE: {
           if ("layout/activity_edit_profile_0".equals(tag)) {
             return new ActivityEditProfileBindingImpl(component, view);
@@ -126,22 +136,24 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(6);
+    static final SparseArray<String> sKeys = new SparseArray<String>(7);
 
     static {
-      sKeys.put(1, "EditProfileViewModel");
-      sKeys.put(2, "ForgetPasswordViewModel");
-      sKeys.put(3, "LoginViewModel");
-      sKeys.put(4, "MessageViewModel");
-      sKeys.put(5, "SignUpViewModel");
+      sKeys.put(1, "ContentViewModel");
+      sKeys.put(2, "EditProfileViewModel");
+      sKeys.put(3, "ForgetPasswordViewModel");
+      sKeys.put(4, "LoginViewModel");
+      sKeys.put(5, "MessageViewModel");
+      sKeys.put(6, "SignUpViewModel");
       sKeys.put(0, "_all");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(5);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
 
     static {
+      sKeys.put("layout/activity_content_0", com.example.noteasap.R.layout.activity_content);
       sKeys.put("layout/activity_edit_profile_0", com.example.noteasap.R.layout.activity_edit_profile);
       sKeys.put("layout/activity_login_0", com.example.noteasap.R.layout.activity_login);
       sKeys.put("layout/activity_message_0", com.example.noteasap.R.layout.activity_message);

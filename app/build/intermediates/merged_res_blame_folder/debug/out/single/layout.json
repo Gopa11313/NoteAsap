@@ -16,6 +16,10 @@
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
     },
     {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_content.xml",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
+    },
+    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     }
