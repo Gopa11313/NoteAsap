@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.contentValuesOf
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
+import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
+import com.example.noteasap.ui.thirdActivity.ThirdActivityViewModel
 
 private lateinit var topic:TextView;
 private lateinit var universityname:TextView;
@@ -19,9 +24,13 @@ private lateinit var commentbar:TextView;
 class ContentActivity : AppCompatActivity() {
     private val listcommet=ArrayList<Comment>();
     private lateinit var recyleview: RecyclerView;
+    private lateinit var contentviewModel: ContentviewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_content)
+        val binnding:ActivityContentBinding=DataBindingUtil.setContentView(this,R.layout.activity_content)
+        binnding.lifecycleOwner=this
+        contentviewModel=ViewModelProvider(this).get(ContentviewModel::class.java)
+        binnding.contentViewModel=contentviewModel
         topic = findViewById(R.id.topic)
         universityname = findViewById(R.id.Universityname)
         discriotion = findViewById(R.id.dis);
