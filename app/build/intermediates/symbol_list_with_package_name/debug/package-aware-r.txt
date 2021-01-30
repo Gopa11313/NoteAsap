@@ -1665,6 +1665,7 @@ id BOTTOM_START
 id CTRL
 id Edit
 id FUNCTION
+id Femail
 id FirstFragment
 id META
 id NO_DEBUG
@@ -1835,7 +1836,6 @@ id easeInOut
 id easeOut
 id edit
 id editText
-id editTextTextPersonName
 id edit_query
 id email
 id end

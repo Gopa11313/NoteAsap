@@ -14,6 +14,7 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
+        sViewsWithIds.put(R.id.Femail, 1);
         sViewsWithIds.put(R.id.imageView2, 2);
         sViewsWithIds.put(R.id.textView, 3);
         sViewsWithIds.put(R.id.sendbtn, 4);
@@ -30,13 +31,12 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
         this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private FragmentForgetpasswordBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 1
+        super(bindingComponent, root, 0
             , (android.widget.EditText) bindings[1]
             , (android.widget.ImageView) bindings[2]
             , (android.widget.Button) bindings[4]
             , (android.widget.TextView) bindings[3]
             );
-        this.editTextTextPersonName.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
@@ -47,7 +47,7 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -76,27 +76,11 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
 
     public void setForgetPasswordViewModel(@Nullable com.example.noteasap.ui.forgetPassword.ForgetPasswordViewModel ForgetPasswordViewModel) {
         this.mForgetPasswordViewModel = ForgetPasswordViewModel;
-        synchronized(this) {
-            mDirtyFlags |= 0x2L;
-        }
-        notifyPropertyChanged(BR.ForgetPasswordViewModel);
-        super.requestRebind();
     }
 
     @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
-            case 0 :
-                return onChangeForgetPasswordViewModelForgetemail((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-        }
-        return false;
-    }
-    private boolean onChangeForgetPasswordViewModelForgetemail(androidx.lifecycle.LiveData<java.lang.String> ForgetPasswordViewModelForgetemail, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x1L;
-            }
-            return true;
         }
         return false;
     }
@@ -108,41 +92,15 @@ public class FragmentForgetpasswordBindingImpl extends FragmentForgetpasswordBin
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.example.noteasap.ui.forgetPassword.ForgetPasswordViewModel forgetPasswordViewModel = mForgetPasswordViewModel;
-        androidx.lifecycle.LiveData<java.lang.String> forgetPasswordViewModelForgetemail = null;
-        java.lang.String forgetPasswordViewModelForgetemailGetValue = null;
-
-        if ((dirtyFlags & 0x7L) != 0) {
-
-
-
-                if (forgetPasswordViewModel != null) {
-                    // read ForgetPasswordViewModel.forgetemail
-                    forgetPasswordViewModelForgetemail = forgetPasswordViewModel.getForgetemail();
-                }
-                updateLiveDataRegistration(0, forgetPasswordViewModelForgetemail);
-
-
-                if (forgetPasswordViewModelForgetemail != null) {
-                    // read ForgetPasswordViewModel.forgetemail.getValue()
-                    forgetPasswordViewModelForgetemailGetValue = forgetPasswordViewModelForgetemail.getValue();
-                }
-        }
         // batch finished
-        if ((dirtyFlags & 0x7L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editTextTextPersonName, forgetPasswordViewModelForgetemailGetValue);
-        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): ForgetPasswordViewModel.forgetemail
-        flag 1 (0x2L): ForgetPasswordViewModel
-        flag 2 (0x3L): null
+        flag 0 (0x1L): ForgetPasswordViewModel
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

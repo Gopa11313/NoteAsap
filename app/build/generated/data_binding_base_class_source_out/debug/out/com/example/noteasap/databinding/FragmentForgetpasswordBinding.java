@@ -20,7 +20,7 @@ import java.lang.Object;
 
 public abstract class FragmentForgetpasswordBinding extends ViewDataBinding {
   @NonNull
-  public final EditText editTextTextPersonName;
+  public final EditText Femail;
 
   @NonNull
   public final ImageView imageView2;
@@ -35,10 +35,10 @@ public abstract class FragmentForgetpasswordBinding extends ViewDataBinding {
   protected ForgetPasswordViewModel mForgetPasswordViewModel;
 
   protected FragmentForgetpasswordBinding(Object _bindingComponent, View _root,
-      int _localFieldCount, EditText editTextTextPersonName, ImageView imageView2, Button sendbtn,
+      int _localFieldCount, EditText Femail, ImageView imageView2, Button sendbtn,
       TextView textView) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.editTextTextPersonName = editTextTextPersonName;
+    this.Femail = Femail;
     this.imageView2 = imageView2;
     this.sendbtn = sendbtn;
     this.textView = textView;

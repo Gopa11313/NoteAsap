@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -26,6 +27,7 @@ class ForgetpasswordFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var sendbtn:Button;
+    private lateinit var Femail:EditText;
     private lateinit var forgetPasswordViewModel: ForgetPasswordViewModel
     private lateinit var binding:FragmentForgetpasswordBinding;
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +36,7 @@ class ForgetpasswordFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        binding= FragmentForgetpasswordBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
@@ -45,8 +48,10 @@ class ForgetpasswordFragment : Fragment() {
         )
         Log.i("ForgetPasswordFragment", "Called ViewModelProvider.get")
         forgetPasswordViewModel = ViewModelProvider(this).get(ForgetPasswordViewModel::class.java)
-        binding.lifecycleOwner = viewLifecycleOwner
+        binding.lifecycleOwner = this
         binding.forgetPasswordViewModel = forgetPasswordViewModel
+//        forgetPasswordViewModel.forgetemail.observe(for)
+        binding.Femail.text
         return binding.root
     }
 

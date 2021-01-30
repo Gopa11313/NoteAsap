@@ -20,22 +20,22 @@ com/example/noteasap/RoomDatabase/dao/UserDao_Impl.java
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl$3
 com/example/noteasap/databinding/ActivityEditProfileBindingImpl.java
  com.example.noteasap.databinding.ActivityEditProfileBindingImpl
-com/example/noteasap/databinding/ActivitySignUpBindingImpl.java
- com.example.noteasap.databinding.ActivitySignUpBindingImpl
+com/example/noteasap/databinding/FragmentForgetpasswordBinding.java
+ com.example.noteasap.databinding.FragmentForgetpasswordBinding
 com/example/noteasap/databinding/ActivityLoginBindingImpl.java
  com.example.noteasap.databinding.ActivityLoginBindingImpl
 com/example/noteasap/databinding/ActivitySignUpBinding.java
  com.example.noteasap.databinding.ActivitySignUpBinding
 com/example/noteasap/BR.java
  com.example.noteasap.BR
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+com/example/noteasap/databinding/ActivitySignUpBindingImpl.java
+ com.example.noteasap.databinding.ActivitySignUpBindingImpl
 com/example/noteasap/databinding/ActivityLoginBinding.java
  com.example.noteasap.databinding.ActivityLoginBinding
 com/example/noteasap/DataBindingTriggerClass.java
  com.example.noteasap.DataBindingTriggerClass
-com/example/noteasap/databinding/FragmentForgetpasswordBinding.java
- com.example.noteasap.databinding.FragmentForgetpasswordBinding
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
 com/example/noteasap/DataBinderMapperImpl.java
  com.example.noteasap.DataBinderMapperImpl
  com.example.noteasap.DataBinderMapperImpl$InnerBrLookup
