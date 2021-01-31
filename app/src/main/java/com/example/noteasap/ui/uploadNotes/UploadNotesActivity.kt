@@ -1,4 +1,4 @@
-package com.example.noteasap
+package com.example.noteasap.ui.uploadNotes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
+import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
 import retrofit2.Call
 import retrofit2.Response

@@ -17,7 +17,7 @@ import com.example.noteasap.ui.pupup.message.MessageActivity
 import com.example.noteasap.R
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
 import com.example.noteasap.ui.model.OwnNotesval
-import com.example.noteasap.UploadNotesActivity
+import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
 
 
 private const val ARG_PARAM1 = "param1"
