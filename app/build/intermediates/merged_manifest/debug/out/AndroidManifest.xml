@@ -32,7 +32,7 @@
             android:name="com.example.noteasap.ui.content.ContentActivity"
             android:label="@string/title_activity_bookmark_content"
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
-        <activity android:name="com.example.noteasap.UploadNotesActivity" />
+        <activity android:name="com.example.noteasap.ui.uploadNotes.UploadNotesActivity" />
         <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" >
         </activity>
         <activity android:name="com.example.noteasap.ui.login.LoginActivity" >

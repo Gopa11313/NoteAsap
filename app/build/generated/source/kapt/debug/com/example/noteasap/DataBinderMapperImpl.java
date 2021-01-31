@@ -11,6 +11,7 @@ import com.example.noteasap.databinding.ActivityEditProfileBindingImpl;
 import com.example.noteasap.databinding.ActivityLoginBindingImpl;
 import com.example.noteasap.databinding.ActivityMessageBindingImpl;
 import com.example.noteasap.databinding.ActivitySignUpBindingImpl;
+import com.example.noteasap.databinding.ActivityUploadNotesBindingImpl;
 import com.example.noteasap.databinding.FragmentForgetpasswordBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -33,9 +34,11 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYSIGNUP = 5;
 
-  private static final int LAYOUT_FRAGMENTFORGETPASSWORD = 6;
+  private static final int LAYOUT_ACTIVITYUPLOADNOTES = 6;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
+  private static final int LAYOUT_FRAGMENTFORGETPASSWORD = 7;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_content, LAYOUT_ACTIVITYCONTENT);
@@ -43,6 +46,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_message, LAYOUT_ACTIVITYMESSAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_sign_up, LAYOUT_ACTIVITYSIGNUP);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_upload_notes, LAYOUT_ACTIVITYUPLOADNOTES);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.fragment_forgetpassword, LAYOUT_FRAGMENTFORGETPASSWORD);
   }
 
@@ -84,6 +88,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivitySignUpBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_sign_up is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYUPLOADNOTES: {
+          if ("layout/activity_upload_notes_0".equals(tag)) {
+            return new ActivityUploadNotesBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_upload_notes is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTFORGETPASSWORD: {
           if ("layout/fragment_forgetpassword_0".equals(tag)) {
@@ -136,7 +146,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(7);
+    static final SparseArray<String> sKeys = new SparseArray<String>(8);
 
     static {
       sKeys.put(1, "ContentViewModel");
@@ -145,12 +155,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put(4, "LoginViewModel");
       sKeys.put(5, "MessageViewModel");
       sKeys.put(6, "SignUpViewModel");
+      sKeys.put(7, "UploadNoteViewModel");
       sKeys.put(0, "_all");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
 
     static {
       sKeys.put("layout/activity_content_0", com.example.noteasap.R.layout.activity_content);
@@ -158,6 +169,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_login_0", com.example.noteasap.R.layout.activity_login);
       sKeys.put("layout/activity_message_0", com.example.noteasap.R.layout.activity_message);
       sKeys.put("layout/activity_sign_up_0", com.example.noteasap.R.layout.activity_sign_up);
+      sKeys.put("layout/activity_upload_notes_0", com.example.noteasap.R.layout.activity_upload_notes);
       sKeys.put("layout/fragment_forgetpassword_0", com.example.noteasap.R.layout.fragment_forgetpassword);
     }
   }

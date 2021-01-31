@@ -13,5 +13,7 @@ public class BR {
 
   public static final int SignUpViewModel = 6;
 
+  public static final int UploadNoteViewModel = 7;
+
   public static final int _all = 0;
 }

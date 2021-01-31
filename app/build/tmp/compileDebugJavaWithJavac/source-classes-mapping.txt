@@ -26,8 +26,12 @@ com/example/noteasap/databinding/ActivityLoginBindingImpl.java
  com.example.noteasap.databinding.ActivityLoginBindingImpl
 com/example/noteasap/databinding/ActivitySignUpBinding.java
  com.example.noteasap.databinding.ActivitySignUpBinding
+com/example/noteasap/databinding/ActivityUploadNotesBinding.java
+ com.example.noteasap.databinding.ActivityUploadNotesBinding
 com/example/noteasap/BR.java
  com.example.noteasap.BR
+com/example/noteasap/databinding/ActivityUploadNotesBindingImpl.java
+ com.example.noteasap.databinding.ActivityUploadNotesBindingImpl
 com/example/noteasap/databinding/ActivityContentBindingImpl.java
  com.example.noteasap.databinding.ActivityContentBindingImpl
 com/example/noteasap/DataBinderMapperImpl.java

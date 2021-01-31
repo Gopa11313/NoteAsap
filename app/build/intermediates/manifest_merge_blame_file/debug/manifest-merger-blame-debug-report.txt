@@ -59,9 +59,9 @@
 33-->D:\NoteAsap\app\src\main\AndroidManifest.xml:25:13-68
 34            android:theme="@style/Theme.NoteAsap.NoActionBar" />
 34-->D:\NoteAsap\app\src\main\AndroidManifest.xml:26:13-62
-35        <activity android:name="com.example.noteasap.UploadNotesActivity" />
-35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:9-57
-35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:19-54
+35        <activity android:name="com.example.noteasap.ui.uploadNotes.UploadNotesActivity" />
+35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:9-72
+35-->D:\NoteAsap\app\src\main\AndroidManifest.xml:27:19-69
 36        <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" >
 36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-31:20
 36-->D:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-68
