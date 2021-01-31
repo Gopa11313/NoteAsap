@@ -6,8 +6,11 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.*
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
+import com.example.noteasap.databinding.ActivityUploadNotesBinding
 import retrofit2.Call
 import retrofit2.Response
 
@@ -19,12 +22,16 @@ class UploadNotesActivity : AppCompatActivity() {
     private lateinit var topic:EditText;
     private lateinit var description: TextView;
     private lateinit var submit:Button;
+    private lateinit var uploadNotesViewModel: UploadNotesViewModel
     var selectedItem:String=""
     var level= arrayOf("University","Masters","Bachelors","+2","9/10")
     var subject= arrayOf("Science","Management")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_upload_notes)
+        val binding:ActivityUploadNotesBinding=DataBindingUtil.setContentView(this,R.layout.activity_upload_notes)
+        binding.lifecycleOwner=this
+        uploadNotesViewModel=ViewModelProvider(this).get(UploadNotesViewModel::class.java)
+        binding.uploadNoteViewModel=uploadNotesViewModel
         spinner1=findViewById(R.id.spinner1)
         spinner2=findViewById(R.id.spinner2)
         c_name=findViewById(R.id.c_name)
