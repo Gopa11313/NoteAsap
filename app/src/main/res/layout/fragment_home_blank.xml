@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.fragments.HomeFragment.HomeBlankFragment"
+    tools:context="ui.fragments.homeFragment.HomeBlankFragment"
     android:orientation="vertical"
     android:background="@drawable/mybutton"
     android:gravity="top"

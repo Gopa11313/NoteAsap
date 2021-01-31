@@ -1,4 +1,4 @@
-package com.example.noteasap.ui.fragments.HomeFragment
+package com.example.noteasap.ui.fragments.homeFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
