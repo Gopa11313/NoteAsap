@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="UploadNoteViewModel"
+            type="com.example.noteasap.ui.uploadNotes.UploadNotesViewModel" />
+    </data>
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -64,6 +74,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/shapelogin"
         android:gravity="center"
+        android:text="@{UploadNoteViewModel.CName}"
         android:hint="Enter your university/college/school name"
         android:lines="1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +88,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/shapelogin"
         android:ems="10"
+        android:text="@{UploadNoteViewModel.topic}"
         android:gravity="center"
         android:hint="Enter topic name"
         android:inputType="textPersonName"
@@ -91,6 +103,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/shapelogin"
         android:ems="10"
+        android:text="@{UploadNoteViewModel.desc}"
         android:gravity="top"
         android:hint="Describe Your note"
         android:inputType="textPersonName"
@@ -113,4 +126,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc"
         app:layout_constraintVertical_bias="0.431" />
-</androidx.constraintlayout.widget.ConstraintLayout></ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout></ScrollView></layout>
