@@ -9,6 +9,10 @@
             name="HomeFragmentViewModel"
             type="com.example.noteasap.ui.fragments.homeFragment.HomeFragmetViewModel" />
     </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -19,10 +23,12 @@
     android:gravity="top"
     android:padding="20dp">
 <AutoCompleteTextView
+    android:id="@+id/search"
     android:layout_width="match_parent"
     android:background="@drawable/shapeemail"
+    android:text="@{HomeFragmentViewModel.attemptText}"
     android:layout_height="40dp"
-    android:text="@{HomeFragmentViewModel.autocmptText}"
+    android:lines="1"
     android:textColorHint="@color/gray"
     android:hint="Enter topic/university/college name"
     android:drawableStart="@drawable/ic_baseline_search_24"
@@ -33,4 +39,4 @@
         android:layout_marginTop="10dp"
         android:id="@+id/recyclehome"/>
 
-</LinearLayout></layout>
+</LinearLayout></ScrollView></layout>

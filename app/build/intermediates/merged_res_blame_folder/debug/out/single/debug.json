@@ -1,0 +1,262 @@
+[
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_star_1.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_star_1.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_ownnotes.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\ownnotes.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_bookmark_blank.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_bookmark_blank.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_second.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_search_24.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_download.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_download.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_out.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu3.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\menu\\menu3.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_comment.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\comment.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_upload.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable-v24\\upload.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_message.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_message.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_bookmark_content.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\content_bookmark_content.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_account_blank.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_account_blank.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_third_.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_third_.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_login_24.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_login_24.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_send.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_send.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\anim_fade_in.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_page1.jpg.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable-v24\\page1.jpg"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_upload_notes.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_upload_notes.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_delete.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_delete.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_blank.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_home_blank.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_profile.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_settings_24.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_settings_24.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic__person.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic__person.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shapeemail.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\shapeemail.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_first.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_first.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_bookmark.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_bookmark.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_bookmark.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\bookmark.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_notifications.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_notifications.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_remove_red_eye_24.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_remove_red_eye_24.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_forhome.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\forhome.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_next.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_next.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_second.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_second.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shapesignup.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\shapesignup.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_content.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_more.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_more.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\menu\\menu.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shapelogin.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\shapelogin.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_noimg.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\noimg.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_lock_24.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_navigate.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_navigate.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic__star.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic__star.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mybutton.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\mybutton.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu2.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\menu\\menu2.xml"
+    },
+    {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_update.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_update.xml"
+    }
+]
