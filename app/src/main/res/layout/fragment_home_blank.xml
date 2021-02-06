@@ -25,7 +25,7 @@
     android:text="@{HomeFragmentViewModel.autocmptText}"
     android:textColorHint="@color/gray"
     android:hint="Enter topic/university/college name"
-    android:drawableLeft="@drawable/ic_baseline_search_24"
+    android:drawableStart="@drawable/ic_baseline_search_24"
     />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

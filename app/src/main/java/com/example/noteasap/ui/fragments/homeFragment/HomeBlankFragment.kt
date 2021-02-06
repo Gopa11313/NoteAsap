@@ -1,13 +1,17 @@
 package com.example.noteasap.ui.fragments.homeFragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
+import com.example.noteasap.databinding.FragmentHomeBlankBinding
 import com.example.noteasap.ui.adapter.HomeAdapterval
 import com.example.noteasap.ui.model.Home
 
@@ -20,6 +24,8 @@ class HomeBlankFragment : Fragment() {
     private var param2: String? = null
     private val listPosts=ArrayList<Home>();
     private lateinit var recyclehome:RecyclerView;
+    private lateinit var homeFragmetViewModel: HomeFragmetViewModel
+    private lateinit var binding:FragmentHomeBlankBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -27,12 +33,16 @@ class HomeBlankFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_blank, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
+       binding=DataBindingUtil.inflate(inflater,
+       R.layout.fragment_home_blank,
+       container,
+       false)
+        Log.i("HomeFragment","called viewmodelProvider.get")
+        homeFragmetViewModel=ViewModelProvider(this).get(HomeFragmetViewModel::class.java)
+        binding.lifecycleOwner=this
+        binding.homeFragmentViewModel=homeFragmetViewModel
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
