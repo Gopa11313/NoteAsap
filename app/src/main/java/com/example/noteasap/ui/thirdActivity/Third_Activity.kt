@@ -6,7 +6,7 @@ import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
-import com.example.noteasap.ui.fragments.BookmarkBlankFragment
+import com.example.noteasap.ui.fragments.bookmarkFragment.BookmarkBlankFragment
 import com.example.noteasap.ui.fragments.homeFragment.HomeBlankFragment
 import com.example.noteasap.ui.fragments.accountBlankFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView

@@ -4,16 +4,16 @@
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_star_1.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_ownnotes.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\ownnotes.xml"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_ownnotes.xml.flat",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\ownnotes.xml"
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
     },
     {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",

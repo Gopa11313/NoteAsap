@@ -32,8 +32,12 @@ com/example/noteasap/databinding/FragmentHomeBlankBindingImpl.java
 com/example/noteasap/RoomDatabase/db/Db_Impl.java
  com.example.noteasap.RoomDatabase.db.Db_Impl
  com.example.noteasap.RoomDatabase.db.Db_Impl$1
+com/example/noteasap/databinding/FragmentBookmarkBlankBindingImpl.java
+ com.example.noteasap.databinding.FragmentBookmarkBlankBindingImpl
 com/example/noteasap/BuildConfig.java
  com.example.noteasap.BuildConfig
+com/example/noteasap/databinding/FragmentBookmarkBlankBinding.java
+ com.example.noteasap.databinding.FragmentBookmarkBlankBinding
 com/example/noteasap/databinding/ActivityMessageBinding.java
  com.example.noteasap.databinding.ActivityMessageBinding
 com/example/noteasap/databinding/ActivityEditProfileBinding.java
