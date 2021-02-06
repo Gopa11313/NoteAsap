@@ -28,6 +28,10 @@
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
     },
     {
+        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_bookmark_blank.xml",
+        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_bookmark_blank.xml"
+    },
+    {
         "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
         "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     }

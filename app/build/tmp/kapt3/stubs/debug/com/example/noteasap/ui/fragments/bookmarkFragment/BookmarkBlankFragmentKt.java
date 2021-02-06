@@ -1,4 +1,4 @@
-package com.example.noteasap.ui.fragments;
+package com.example.noteasap.ui.fragments.bookmarkFragment;
 
 import java.lang.System;
 
