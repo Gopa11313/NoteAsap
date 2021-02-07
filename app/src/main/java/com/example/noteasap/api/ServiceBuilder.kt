@@ -1,22 +1,28 @@
 package com.example.noteasap.api
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
-    private val client = OkHttpClient.Builder().build()
-    private var instance: Retrofit?=null;
-    fun getInstance():SignupApi{
-        if(instance==null){
-            instance= Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:3000/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build()
-        }
-        return instance!!.create(SignupApi::class.java)
+    private const val BASE_URL="http://10.0.2.2:3000/"
+    var token:String?=null
+    private val okhttp=OkHttpClient.Builder()
+    var gson: Gson = GsonBuilder()
+        .setLenient()
+        .create()
+    private val retrofitBuilder=Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .client(okhttp.build())
+
+
+    private val retrofit= retrofitBuilder.build()
+
+    fun <T> buildServices(serviceType: Class<T>):T{
+        return retrofit.create(serviceType)
     }
 }
