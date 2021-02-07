@@ -1,38 +1,38 @@
 [
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_message.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_message.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_content.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_message.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_message.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_forgetpassword.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_forgetpassword.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_edit_profile.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_edit_profile.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home_blank.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_home_blank.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_upload_notes.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_upload_notes.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_content.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_upload_notes.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_upload_notes.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_bookmark_blank.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_bookmark_blank.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_bookmark_blank.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_bookmark_blank.xml"
     },
     {
-        "merged": "D:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
-        "source": "D:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home_blank.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_home_blank.xml"
     }
 ]

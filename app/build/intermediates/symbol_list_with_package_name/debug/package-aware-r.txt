@@ -2188,6 +2188,7 @@ layout abc_tooltip
 layout activity_content
 layout activity_edit_profile
 layout activity_login
+layout activity_main
 layout activity_message
 layout activity_second
 layout activity_sign_up

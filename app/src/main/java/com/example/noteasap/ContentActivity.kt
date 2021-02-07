@@ -6,7 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.noteasap.UI.adapter.CommentAdpater
+import com.example.noteasap.UI.it adapter.CommentAdpater
 import com.example.noteasap.UI.model.Bookmark
 import com.example.noteasap.UI.model.Comment
 
