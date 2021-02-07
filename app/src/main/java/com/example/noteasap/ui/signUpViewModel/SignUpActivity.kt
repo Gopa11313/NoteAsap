@@ -13,8 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.Retrofit.RetrofitClient
-import com.example.noteasap.RoomDatabase.db.Db
-import com.example.noteasap.RoomDatabase.entity.User
 import com.example.noteasap.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Main
@@ -131,14 +129,14 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         termsnCon.isChecked=false
     }
     fun addUSerInRoomDatabse(){
-        val user=User(fullname.text.toString(),email.text.toString(),pass.text.toString())
-        CoroutineScope(Dispatchers.IO).launch {
-            Db.getInstance(this@SignUpActivity).getUserDao().AddUSer(user)
-            withContext(Main){
-                Toast.makeText(this@SignUpActivity, "Register Succefully", Toast.LENGTH_SHORT).show()
-
-            }
-        }
+//        val user=User(fullname.text.toString(),email.text.toString(),pass.text.toString())
+//        CoroutineScope(Dispatchers.IO).launch {
+//            Db.getInstance(this@SignUpActivity).getUserDao().AddUSer(user)
+//            withContext(Main){
+//                Toast.makeText(this@SignUpActivity, "Register Succefully", Toast.LENGTH_SHORT).show()
+//
+//            }
+//        }
     }
 
 

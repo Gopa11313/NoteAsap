@@ -13,8 +13,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.forgetPassword.ForgetpasswordFragment
 import com.example.noteasap.R
-import com.example.noteasap.RoomDatabase.db.Db
-import com.example.noteasap.RoomDatabase.entity.User
 import com.example.noteasap.databinding.ActivityLoginBinding
 import com.example.noteasap.ui.signUpViewModel.SignUpActivity
 import kotlinx.coroutines.CoroutineScope
@@ -63,39 +61,39 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
                 }
             }
             R.id.login -> {
-                var user: User? = null
-                CoroutineScope(Dispatchers.IO).launch {
-                    user = Db.getInstance(this@LoginActivity).getUserDao()
-                        .checkUSer(email.text.toString(), password.text.toString())
-                    if (user != null) {
-
-                        withContext(Main) {
-                            Toast.makeText(this@LoginActivity, "Login Successfull",Toast.LENGTH_SHORT).show()
-
-                            val builder= AlertDialog.Builder(this@LoginActivity);
-                            builder.setMessage("Do You Want to Save this email and password!!")
-                            builder.setIcon(android.R.drawable.ic_dialog_alert);
-                            builder.setPositiveButton("Yes"){dialogInterface,which->
-                                saveSharedPref()
-                            }
-
-                            builder.setNeutralButton("Calcel"){dialogInterface,which->
-
-                            }
-                            builder.setNegativeButton("No"){
-                                    dialogInterface,which->
-
-                            }
-                            val alertDialog: AlertDialog =builder.create()
-                            alertDialog.setCancelable(false)
-                            alertDialog.show()
-                        }
-                    } else {
-                        withContext(Main) {
-                            Toast.makeText(this@LoginActivity, "Inavalid User", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
+//                var user: User? = null
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    user = Db.getInstance(this@LoginActivity).getUserDao()
+//                        .checkUSer(email.text.toString(), password.text.toString())
+//                    if (user != null) {
+//
+//                        withContext(Main) {
+//                            Toast.makeText(this@LoginActivity, "Login Successfull",Toast.LENGTH_SHORT).show()
+//
+//                            val builder= AlertDialog.Builder(this@LoginActivity);
+//                            builder.setMessage("Do You Want to Save this email and password!!")
+//                            builder.setIcon(android.R.drawable.ic_dialog_alert);
+//                            builder.setPositiveButton("Yes"){dialogInterface,which->
+//                                saveSharedPref()
+//                            }
+//
+//                            builder.setNeutralButton("Calcel"){dialogInterface,which->
+//
+//                            }
+//                            builder.setNegativeButton("No"){
+//                                    dialogInterface,which->
+//
+//                            }
+//                            val alertDialog: AlertDialog =builder.create()
+//                            alertDialog.setCancelable(false)
+//                            alertDialog.show()
+//                        }
+//                    } else {
+//                        withContext(Main) {
+//                            Toast.makeText(this@LoginActivity, "Inavalid User", Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//                }
 
             }
         }
