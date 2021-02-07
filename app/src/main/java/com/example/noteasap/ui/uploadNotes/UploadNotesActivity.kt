@@ -9,7 +9,7 @@ import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
-import com.example.noteasap.Retrofit.RetrofitClient
+import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityUploadNotesBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -83,7 +83,7 @@ class UploadNotesActivity : AppCompatActivity() {
             map["c_name"]=c_name.text.toString()
             map["topic"]=topic.text.toString()
             map["description"]=description.text.toString()
-            val call:Call<Void?>?=RetrofitClient.getInstance().uploadNotes(map)
+            val call:Call<Void?>?=ServiceBuilder.getInstance().uploadNotes(map)
             if(call!=null){
                 call.enqueue(object : retrofit2.Callback<Void?> {
                     override fun onResponse(call: Call<Void?>, response: Response<Void?>) {

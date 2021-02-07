@@ -12,10 +12,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.R
-import com.example.noteasap.Retrofit.RetrofitClient
+import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivitySignUpBinding
 import kotlinx.coroutines.*
-import kotlinx.coroutines.Dispatchers.Main
 import retrofit2.Call
 import retrofit2.Response
 
@@ -98,7 +97,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
             map["email"] = email.text.toString()
             map["password"]=pass.text.toString()
             map["image"]=""
-            val call: Call<Void?>? = RetrofitClient.getInstance().registerUser(map)
+            val call: Call<Void?>? = ServiceBuilder.getInstance().registerUser(map)
             if (call != null) {
                 call.enqueue(object: retrofit2.Callback<Void?>{
                     override fun onResponse(call:Call<Void?>?, response: Response<Void?>) {
