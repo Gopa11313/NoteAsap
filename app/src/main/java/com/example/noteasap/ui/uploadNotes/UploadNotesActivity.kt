@@ -75,40 +75,40 @@ class UploadNotesActivity : AppCompatActivity() {
     }
 
     fun uploadnotes(){
-        if(validation()){
-            var map=HashMap<String,String>()
-            map["file"]=""
-            map["level"]=spinner1.selectedItem.toString()
-            map["subject"]=spinner2.selectedItem.toString()
-            map["c_name"]=c_name.text.toString()
-            map["topic"]=topic.text.toString()
-            map["description"]=description.text.toString()
-            val call:Call<Void?>?=ServiceBuilder.getInstance().uploadNotes(map)
-            if(call!=null){
-                call.enqueue(object : retrofit2.Callback<Void?> {
-                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
-                        if (response.code() == 200) {
-                            Toast.makeText(this@UploadNotesActivity,
-                                "Upload note successfully",
-                                Toast.LENGTH_SHORT).show()
-                            Handler(Looper.getMainLooper()).postDelayed({
-                                clear()
-                            }, 1000)
-                        } else {
-                            Toast.makeText(this@UploadNotesActivity,
-                                response.errorBody().toString(),
-                                Toast.LENGTH_SHORT).show()
-                        }
-
-                    }
-
-                    override fun onFailure(call: Call<Void?>, t: Throwable) {
-                        Toast.makeText(this@UploadNotesActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
-                    }
-
-                })
-            }
-        }
+//        if(validation()){
+//            var map=HashMap<String,String>()
+//            map["file"]=""
+//            map["level"]=spinner1.selectedItem.toString()
+//            map["subject"]=spinner2.selectedItem.toString()
+//            map["c_name"]=c_name.text.toString()
+//            map["topic"]=topic.text.toString()
+//            map["description"]=description.text.toString()
+//            val call:Call<Void?>?=ServiceBuilder.getInstance().uploadNotes(map)
+//            if(call!=null){
+//                call.enqueue(object : retrofit2.Callback<Void?> {
+//                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+//                        if (response.code() == 200) {
+//                            Toast.makeText(this@UploadNotesActivity,
+//                                "Upload note successfully",
+//                                Toast.LENGTH_SHORT).show()
+//                            Handler(Looper.getMainLooper()).postDelayed({
+//                                clear()
+//                            }, 1000)
+//                        } else {
+//                            Toast.makeText(this@UploadNotesActivity,
+//                                response.errorBody().toString(),
+//                                Toast.LENGTH_SHORT).show()
+//                        }
+//
+//                    }
+//
+//                    override fun onFailure(call: Call<Void?>, t: Throwable) {
+//                        Toast.makeText(this@UploadNotesActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+//                    }
+//
+//                })
+//            }
+//        }
     }
     fun validation():Boolean{
         var flag=false;

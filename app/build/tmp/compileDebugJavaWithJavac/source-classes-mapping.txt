@@ -6,8 +6,6 @@ androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
 com/example/noteasap/databinding/ActivityEditProfileBindingImpl.java
  com.example.noteasap.databinding.ActivityEditProfileBindingImpl
 com/example/noteasap/databinding/FragmentForgetpasswordBinding.java
@@ -26,8 +24,6 @@ com/example/noteasap/databinding/ActivitySignUpBindingImpl.java
  com.example.noteasap.databinding.ActivitySignUpBindingImpl
 com/example/noteasap/databinding/FragmentHomeBlankBindingImpl.java
  com.example.noteasap.databinding.FragmentHomeBlankBindingImpl
-com/example/noteasap/databinding/FragmentForgetpasswordBindingImpl.java
- com.example.noteasap.databinding.FragmentForgetpasswordBindingImpl
 com/example/noteasap/databinding/FragmentBookmarkBlankBindingImpl.java
  com.example.noteasap.databinding.FragmentBookmarkBlankBindingImpl
 com/example/noteasap/BuildConfig.java
@@ -50,3 +46,7 @@ com/example/noteasap/databinding/ActivityLoginBinding.java
  com.example.noteasap.databinding.ActivityLoginBinding
 com/example/noteasap/DataBindingTriggerClass.java
  com.example.noteasap.DataBindingTriggerClass
+com/example/noteasap/databinding/FragmentForgetpasswordBindingImpl.java
+ com.example.noteasap.databinding.FragmentForgetpasswordBindingImpl
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
