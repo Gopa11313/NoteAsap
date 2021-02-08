@@ -14,9 +14,12 @@ import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivitySignUpBinding
+import com.example.noteasap.repository.UserRepository
+import com.example.noteasap.ui.model.User
 import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Response
+import java.lang.Exception
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var fullname:EditText;
@@ -45,8 +48,8 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         signupViewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         binding.signUpViewModel=(signupViewModel)
         register.setOnClickListener {
-//            adduser()
-            addUSerInRoomDatabse()
+           adduser()
+            //addUSerInRoomDatabse()
         }
     }
 
@@ -91,33 +94,28 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         super.onBackPressed()
     }
     fun adduser(){
-      //  if(validate()==true){
-//            val map = HashMap<String, String>()
-//            map["name"] = fullname.text.toString()
-//            map["email"] = email.text.toString()
-//            map["password"]=pass.text.toString()
-//            map["image"]=""
-//            val call: Call<Void?>? = ServiceBuilder.getInstance().registerUser(map)
-//            if (call != null) {
-//                call.enqueue(object: retrofit2.Callback<Void?>{
-//                    override fun onResponse(call:Call<Void?>?, response: Response<Void?>) {
-//                        if(response.code()==200){
-//                            if(response.code()==200){
-//                                Toast.makeText(this@SignUpActivity,"User registered successfully",Toast.LENGTH_SHORT).show()
-//                                Handler(Looper.getMainLooper()).postDelayed({
-//                                    clear()
-//                                }, 1000)
-//                            }else{
-//                                Toast.makeText(this@SignUpActivity,response.errorBody().toString(),Toast.LENGTH_SHORT).show()
-//                            }
-//                        }
-//                    }
-//                    override fun onFailure(call: Call<Void?>?, t: Throwable) {
-//                        Toast.makeText(this@SignUpActivity,t.localizedMessage,Toast.LENGTH_LONG).show()
-//                    }
-//                })
-//            }
-//        }
+        if(validate()==true){
+            val user=User(name = fullname.text.toString(),email = email.text.toString(),password = pass.text.toString(),image = "")
+            try{
+            CoroutineScope(Dispatchers.IO).launch {
+                val repository=UserRepository()
+                val response=repository.registerUSer(user)
+                if(response.success==true){
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@SignUpActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                        clear()
+                    }
+                }
+                else{
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@SignUpActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            }catch (e:Exception){
+                Toast.makeText(this, "${e.toString()}", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     }
     fun clear(){

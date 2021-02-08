@@ -1,4 +1,7 @@
 package com.example.noteasap.response
 
-class SignupResponse {
-}
+data class SignupResponse (
+    val success:Boolean?=null,
+    val token:String?=null,
+    val msg:String?=null
+)

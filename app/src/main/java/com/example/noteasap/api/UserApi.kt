@@ -7,7 +7,7 @@ import retrofit2.http.*
 
 interface UserApi {
 
-    @POST("/insert")
+    @POST("user/add")
     fun registerUser(@Body user: User):Response<SignupResponse>
 
     @FormUrlEncoded
