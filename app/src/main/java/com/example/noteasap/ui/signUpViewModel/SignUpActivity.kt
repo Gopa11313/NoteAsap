@@ -4,21 +4,18 @@ package com.example.noteasap.ui.signUpViewModel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.R
-import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivitySignUpBinding
 import com.example.noteasap.repository.UserRepository
+import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.User
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
-import retrofit2.Call
-import retrofit2.Response
 import java.lang.Exception
 
 class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
@@ -27,6 +24,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var pass:EditText;
     private lateinit var con_pass:EditText;
     private lateinit var termsnCon:CheckBox;
+    private lateinit var signup:LinearLayout;
     private  lateinit var register:Button;
     private lateinit var signupViewModel: SignUpViewModel
     private lateinit var already:TextView;
@@ -43,6 +41,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         pass=findViewById(R.id.pass);
         termsnCon=findViewById(R.id.termsnCon);
         register=findViewById(R.id.reister)
+        signup=findViewById(R.id.signup)
         already=findViewById(R.id.already)
         already.setOnClickListener(this);
         signupViewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
@@ -95,14 +94,19 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     }
     fun adduser(){
         if(validate()==true){
-            val user=User(name = fullname.text.toString(),email = email.text.toString(),password = pass.text.toString(),image = "")
+            val user= User(name = fullname.text.toString(),email = email.text.toString(),password = pass.text.toString(),image = "")
             try{
             CoroutineScope(Dispatchers.IO).launch {
                 val repository=UserRepository()
-                val response=repository.registerUSer(user)
+                val response=repository.registerUser(user)
                 if(response.success==true){
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(this@SignUpActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+
+                        val snack=  Snackbar.make(signup,"${response.msg}", Snackbar.LENGTH_SHORT)
+                        snack.setAction("Ok") {
+                            snack.dismiss()
+                        }
+                        snack.show()
                         clear()
                     }
                 }

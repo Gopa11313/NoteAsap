@@ -1,4 +1,4 @@
-package com.example.noteasap.UI.fragments;
+package com.example.noteasap.ui.fragments;
 
 import java.lang.System;
 

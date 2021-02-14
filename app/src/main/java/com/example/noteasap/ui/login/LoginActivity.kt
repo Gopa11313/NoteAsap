@@ -13,7 +13,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.forgetPassword.ForgetpasswordFragment
 import com.example.noteasap.R
+import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityLoginBinding
+import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.signUpViewModel.SignUpActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -61,7 +63,48 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
                 }
             }
             R.id.login -> {
-//                var user: User? = null
+                login()
+
+            }
+        }
+    }
+    fun nextact(){
+        startActivity(Intent(this, SignUpActivity::class.java))
+    }
+
+    fun saveSharedPref(){
+        val username=email.text.toString()
+        val password=password.text.toString()
+        val sharedPref=getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor=sharedPref.edit()
+        editor.putString("username",username)
+        editor.putString("password",password)
+        editor.apply()
+        Toast.makeText(this@LoginActivity, "Username and password save", Toast.LENGTH_SHORT).show()
+    }
+    fun login(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val repository=UserRepository()
+            val response=repository.checkUSer(email.text.toString(),password.text.toString())
+            if(response.success==true){
+                ServiceBuilder.token=response.token
+                withContext(Main){
+                Toast.makeText(this@LoginActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@LoginActivity,SignUpActivity::class.java))
+            }
+        }
+            else{
+                withContext(Main){
+                    Toast.makeText(this@LoginActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        }
+    }
+}
+
+
+//var user: User? = null
 //                CoroutineScope(Dispatchers.IO).launch {
 //                    user = Db.getInstance(this@LoginActivity).getUserDao()
 //                        .checkUSer(email.text.toString(), password.text.toString())
@@ -94,22 +137,3 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
 //                        }
 //                    }
 //                }
-
-            }
-        }
-    }
-    fun nextact(){
-        startActivity(Intent(this, SignUpActivity::class.java))
-    }
-
-    fun saveSharedPref(){
-        val username=email.text.toString()
-        val password=password.text.toString()
-        val sharedPref=getSharedPreferences("MyPref", MODE_PRIVATE)
-        val editor=sharedPref.edit()
-        editor.putString("username",username)
-        editor.putString("password",password)
-        editor.apply()
-        Toast.makeText(this@LoginActivity, "Username and password save", Toast.LENGTH_SHORT).show()
-    }
-}

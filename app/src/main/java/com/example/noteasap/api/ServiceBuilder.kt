@@ -4,10 +4,9 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-object ServiceBuilder {
+object ServiceBuilder:MyApiRequest() {
     private const val BASE_URL="http://10.0.2.2:3000/"
     var token:String?=null
     private val okhttp=OkHttpClient.Builder()
@@ -25,4 +24,6 @@ object ServiceBuilder {
     fun <T> buildServices(serviceType: Class<T>):T{
         return retrofit.create(serviceType)
     }
+
+
 }

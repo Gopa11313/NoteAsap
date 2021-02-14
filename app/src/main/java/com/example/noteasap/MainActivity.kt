@@ -1,15 +1,15 @@
-package com.example.noteasap
+package com.example.noteasap.ui.model
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.text.Layout
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.noteasap.R
+import com.example.noteasap.SecondActivity
 
 private lateinit var note:TextView;
 private lateinit var fadein:Animation;

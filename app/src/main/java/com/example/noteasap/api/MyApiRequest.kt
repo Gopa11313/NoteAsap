@@ -26,8 +26,8 @@ abstract class MyApiRequest {
                 message.append("Error code : ${response.code()}")
                 throw IOException(message.toString())
             }
-        } catch (e: Exception) {
-            Toast.makeText(throw e, "$e", Toast.LENGTH_SHORT).show()
+        }catch (e:Exception){
+            Toast.makeText(throw e , "$e", Toast.LENGTH_SHORT).show()
         }
     }
 }

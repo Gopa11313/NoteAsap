@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.example.noteasap.R;
 import com.example.noteasap.ui.signUpViewModel.SignUpViewModel;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -32,10 +34,13 @@ public abstract class ActivitySignUpBinding extends ViewDataBinding {
   public final EditText fullName;
 
   @NonNull
-  public final EditText pass;
+  public final TextInputLayout pass;
 
   @NonNull
   public final Button reister;
+
+  @NonNull
+  public final LinearLayout signup;
 
   @NonNull
   public final CheckBox termsnCon;
@@ -44,8 +49,8 @@ public abstract class ActivitySignUpBinding extends ViewDataBinding {
   protected SignUpViewModel mSignUpViewModel;
 
   protected ActivitySignUpBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView already, EditText conPss, EditText email, EditText fullName, EditText pass,
-      Button reister, CheckBox termsnCon) {
+      TextView already, EditText conPss, EditText email, EditText fullName, TextInputLayout pass,
+      Button reister, LinearLayout signup, CheckBox termsnCon) {
     super(_bindingComponent, _root, _localFieldCount);
     this.already = already;
     this.conPss = conPss;
@@ -53,6 +58,7 @@ public abstract class ActivitySignUpBinding extends ViewDataBinding {
     this.fullName = fullName;
     this.pass = pass;
     this.reister = reister;
+    this.signup = signup;
     this.termsnCon = termsnCon;
   }
 

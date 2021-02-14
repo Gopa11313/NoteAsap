@@ -14,9 +14,11 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.termsnCon, 5);
-        sViewsWithIds.put(R.id.reister, 6);
-        sViewsWithIds.put(R.id.already, 7);
+        sViewsWithIds.put(R.id.signup, 4);
+        sViewsWithIds.put(R.id.pass, 5);
+        sViewsWithIds.put(R.id.termsnCon, 6);
+        sViewsWithIds.put(R.id.reister, 7);
+        sViewsWithIds.put(R.id.already, 8);
     }
     // views
     @NonNull
@@ -27,24 +29,24 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
     // Inverse Binding Event Handlers
 
     public ActivitySignUpBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private ActivitySignUpBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 4
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.EditText) bindings[4]
+        super(bindingComponent, root, 3
+            , (android.widget.TextView) bindings[8]
+            , (android.widget.EditText) bindings[3]
             , (android.widget.EditText) bindings[2]
             , (android.widget.EditText) bindings[1]
-            , (android.widget.EditText) bindings[3]
-            , (android.widget.Button) bindings[6]
-            , (android.widget.CheckBox) bindings[5]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[5]
+            , (android.widget.Button) bindings[7]
+            , (android.widget.LinearLayout) bindings[4]
+            , (android.widget.CheckBox) bindings[6]
             );
         this.conPss.setTag(null);
         this.email.setTag(null);
         this.fullName.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
-        this.pass.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -53,7 +55,7 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x20L;
+                mDirtyFlags = 0x10L;
         }
         requestRebind();
     }
@@ -83,7 +85,7 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
     public void setSignUpViewModel(@Nullable com.example.noteasap.ui.signUpViewModel.SignUpViewModel SignUpViewModel) {
         this.mSignUpViewModel = SignUpViewModel;
         synchronized(this) {
-            mDirtyFlags |= 0x10L;
+            mDirtyFlags |= 0x8L;
         }
         notifyPropertyChanged(BR.SignUpViewModel);
         super.requestRebind();
@@ -93,17 +95,15 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
             case 0 :
-                return onChangeSignUpViewModelPassword((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-            case 1 :
                 return onChangeSignUpViewModelFullname((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-            case 2 :
+            case 1 :
                 return onChangeSignUpViewModelEmail((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-            case 3 :
+            case 2 :
                 return onChangeSignUpViewModelConPassword((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
         }
         return false;
     }
-    private boolean onChangeSignUpViewModelPassword(androidx.lifecycle.LiveData<java.lang.String> SignUpViewModelPassword, int fieldId) {
+    private boolean onChangeSignUpViewModelFullname(androidx.lifecycle.LiveData<java.lang.String> SignUpViewModelFullname, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x1L;
@@ -112,7 +112,7 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
         }
         return false;
     }
-    private boolean onChangeSignUpViewModelFullname(androidx.lifecycle.LiveData<java.lang.String> SignUpViewModelFullname, int fieldId) {
+    private boolean onChangeSignUpViewModelEmail(androidx.lifecycle.LiveData<java.lang.String> SignUpViewModelEmail, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
                     mDirtyFlags |= 0x2L;
@@ -121,19 +121,10 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
         }
         return false;
     }
-    private boolean onChangeSignUpViewModelEmail(androidx.lifecycle.LiveData<java.lang.String> SignUpViewModelEmail, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x4L;
-            }
-            return true;
-        }
-        return false;
-    }
     private boolean onChangeSignUpViewModelConPassword(androidx.lifecycle.LiveData<java.lang.String> SignUpViewModelConPassword, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x8L;
+                    mDirtyFlags |= 0x4L;
             }
             return true;
         }
@@ -147,8 +138,6 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        androidx.lifecycle.LiveData<java.lang.String> signUpViewModelPassword = null;
-        java.lang.String signUpViewModelPasswordGetValue = null;
         java.lang.String signUpViewModelConPasswordGetValue = null;
         com.example.noteasap.ui.signUpViewModel.SignUpViewModel signUpViewModel = mSignUpViewModel;
         androidx.lifecycle.LiveData<java.lang.String> signUpViewModelFullname = null;
@@ -157,30 +146,16 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
         java.lang.String signUpViewModelFullnameGetValue = null;
         java.lang.String signUpViewModelEmailGetValue = null;
 
-        if ((dirtyFlags & 0x3fL) != 0) {
+        if ((dirtyFlags & 0x1fL) != 0) {
 
 
-            if ((dirtyFlags & 0x31L) != 0) {
-
-                    if (signUpViewModel != null) {
-                        // read SignUpViewModel.password
-                        signUpViewModelPassword = signUpViewModel.getPassword();
-                    }
-                    updateLiveDataRegistration(0, signUpViewModelPassword);
-
-
-                    if (signUpViewModelPassword != null) {
-                        // read SignUpViewModel.password.getValue()
-                        signUpViewModelPasswordGetValue = signUpViewModelPassword.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x32L) != 0) {
+            if ((dirtyFlags & 0x19L) != 0) {
 
                     if (signUpViewModel != null) {
                         // read SignUpViewModel.fullname
                         signUpViewModelFullname = signUpViewModel.getFullname();
                     }
-                    updateLiveDataRegistration(1, signUpViewModelFullname);
+                    updateLiveDataRegistration(0, signUpViewModelFullname);
 
 
                     if (signUpViewModelFullname != null) {
@@ -188,13 +163,13 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
                         signUpViewModelFullnameGetValue = signUpViewModelFullname.getValue();
                     }
             }
-            if ((dirtyFlags & 0x34L) != 0) {
+            if ((dirtyFlags & 0x1aL) != 0) {
 
                     if (signUpViewModel != null) {
                         // read SignUpViewModel.email
                         signUpViewModelEmail = signUpViewModel.getEmail();
                     }
-                    updateLiveDataRegistration(2, signUpViewModelEmail);
+                    updateLiveDataRegistration(1, signUpViewModelEmail);
 
 
                     if (signUpViewModelEmail != null) {
@@ -202,13 +177,13 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
                         signUpViewModelEmailGetValue = signUpViewModelEmail.getValue();
                     }
             }
-            if ((dirtyFlags & 0x38L) != 0) {
+            if ((dirtyFlags & 0x1cL) != 0) {
 
                     if (signUpViewModel != null) {
                         // read SignUpViewModel.conPassword
                         signUpViewModelConPassword = signUpViewModel.getConPassword();
                     }
-                    updateLiveDataRegistration(3, signUpViewModelConPassword);
+                    updateLiveDataRegistration(2, signUpViewModelConPassword);
 
 
                     if (signUpViewModelConPassword != null) {
@@ -218,25 +193,20 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
             }
         }
         // batch finished
-        if ((dirtyFlags & 0x38L) != 0) {
+        if ((dirtyFlags & 0x1cL) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.conPss, signUpViewModelConPasswordGetValue);
         }
-        if ((dirtyFlags & 0x34L) != 0) {
+        if ((dirtyFlags & 0x1aL) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.email, signUpViewModelEmailGetValue);
         }
-        if ((dirtyFlags & 0x32L) != 0) {
+        if ((dirtyFlags & 0x19L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.fullName, signUpViewModelFullnameGetValue);
-        }
-        if ((dirtyFlags & 0x31L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.pass, signUpViewModelPasswordGetValue);
         }
     }
     // Listener Stub Implementations
@@ -244,12 +214,11 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): SignUpViewModel.password
-        flag 1 (0x2L): SignUpViewModel.fullname
-        flag 2 (0x3L): SignUpViewModel.email
-        flag 3 (0x4L): SignUpViewModel.conPassword
-        flag 4 (0x5L): SignUpViewModel
-        flag 5 (0x6L): null
+        flag 0 (0x1L): SignUpViewModel.fullname
+        flag 1 (0x2L): SignUpViewModel.email
+        flag 2 (0x3L): SignUpViewModel.conPassword
+        flag 3 (0x4L): SignUpViewModel
+        flag 4 (0x5L): null
     flag mapping end*/
     //end
 }

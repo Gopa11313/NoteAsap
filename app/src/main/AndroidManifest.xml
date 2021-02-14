@@ -28,9 +28,9 @@
         <activity android:name=".ui.uploadNotes.UploadNotesActivity" />
         <activity android:name=".ui.signUpViewModel.SignUpActivity" >
 
-
         </activity>
         <activity android:name=".ui.login.LoginActivity" >
+
 
         </activity>
         <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
