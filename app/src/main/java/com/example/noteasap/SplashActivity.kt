@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.example.noteasap.ui.login.LoginActivity
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Main
 
@@ -39,8 +40,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun stratactivity() {
-        val intent = Intent(this, SecondActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this,LoginActivity::class.java))
         finish()
     }
 

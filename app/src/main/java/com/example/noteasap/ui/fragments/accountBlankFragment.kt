@@ -24,7 +24,6 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 class accountBlankFragment : Fragment() {
     private lateinit var account:CardView;
-    private lateinit var btnlog:Button;
     private lateinit var uploadnotesframe:FrameLayout;
     private lateinit var imageviewfor3menus:ImageView;
     private val listNotes=ArrayList<OwnNotesval>();
@@ -48,14 +47,14 @@ class accountBlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         account=view.findViewById(R.id.ic_account)
-        btnlog=view.findViewById(R.id.btnlog)
+//        btnlog=view.findViewById(R.id.btnlog)
         uploadnotesframe=view.findViewById(R.id.uploadnotesframe)
         recyleview=view.findViewById(R.id.recycler_view)
-        btnlog.setOnClickListener(){
-            requireActivity().run{
-                startActivity(Intent(this, LoginActivity::class.java))
-            }
-        }
+//        btnlog.setOnClickListener(){
+//            requireActivity().run{
+//                startActivity(Intent(this, LoginActivity::class.java))
+//            }
+//        }
         uploadnotesframe.setOnClickListener(){
             requireActivity().run{
                 startActivity(Intent(this, UploadNotesActivity::class.java))

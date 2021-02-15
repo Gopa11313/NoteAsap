@@ -40,6 +40,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_logout.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },

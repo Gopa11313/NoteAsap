@@ -13,10 +13,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.forgetPassword.ForgetpasswordFragment
 import com.example.noteasap.R
+import com.example.noteasap.SecondActivity
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityLoginBinding
 import com.example.noteasap.repository.UserRepository
+import com.example.noteasap.ui.model.User
 import com.example.noteasap.ui.signUpViewModel.SignUpActivity
+import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -83,14 +86,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         Toast.makeText(this@LoginActivity, "Username and password save", Toast.LENGTH_SHORT).show()
     }
     fun login(){
+        Toast.makeText(this@LoginActivity, "${email.text.toString()+password.text.toString()}", Toast.LENGTH_SHORT).show()
+        val user=User(email = email.text.toString(),password = password.text.toString())
         CoroutineScope(Dispatchers.IO).launch {
             val repository=UserRepository()
-            val response=repository.checkUSer(email.text.toString(),password.text.toString())
+            val response=repository.checkUSer(user)
             if(response.success==true){
                 ServiceBuilder.token=response.token
                 withContext(Main){
                 Toast.makeText(this@LoginActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@LoginActivity,SignUpActivity::class.java))
+                    startActivity(Intent(this@LoginActivity,SecondActivity::class.java))
             }
         }
             else{
