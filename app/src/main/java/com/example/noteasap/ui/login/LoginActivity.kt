@@ -7,19 +7,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.ui.forgetPassword.ForgetpasswordFragment
 import com.example.noteasap.R
+import com.example.noteasap.RoomDatabase.NoteAsapDb
 import com.example.noteasap.SecondActivity
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityLoginBinding
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.model.User
 import com.example.noteasap.ui.signUpViewModel.SignUpActivity
-import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -91,7 +90,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         CoroutineScope(Dispatchers.IO).launch {
             val repository=UserRepository()
             val response=repository.checkUSer(user)
+            val data=response.data
+            val us: List<User>? =data
             if(response.success==true){
+                NoteAsapDb.getInstance(this@LoginActivity).getUserDao().RegisterUser(us)
                 ServiceBuilder.token=response.token
                 withContext(Main){
                 Toast.makeText(this@LoginActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
