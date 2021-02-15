@@ -13,6 +13,7 @@ com/example/noteasap/RoomDatabase/dao/UserDao_Impl.java
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl$1
  com.example.noteasap.RoomDatabase.dao.UserDao_Impl$2
+ com.example.noteasap.RoomDatabase.dao.UserDao_Impl$3
 com/example/noteasap/databinding/ActivityEditProfileBindingImpl.java
  com.example.noteasap.databinding.ActivityEditProfileBindingImpl
 com/example/noteasap/databinding/FragmentForgetpasswordBinding.java
