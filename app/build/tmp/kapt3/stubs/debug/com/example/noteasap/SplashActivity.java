@@ -7,7 +7,6 @@ public final class SplashActivity extends androidx.appcompat.app.AppCompatActivi
     private android.widget.TextView note;
     private android.view.animation.Animation fadein;
     private android.widget.TextView slogan;
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     protected void onCreate(@org.jetbrains.annotations.Nullable()

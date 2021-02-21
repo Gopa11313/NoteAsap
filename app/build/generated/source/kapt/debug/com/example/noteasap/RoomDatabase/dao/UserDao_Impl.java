@@ -29,12 +29,16 @@ public final class UserDao_Impl implements UserDao {
     this.__insertionAdapterOfUser = new EntityInsertionAdapter<User>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `User` (`userId`,`name`,`email`,`password`,`image`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR ABORT INTO `User` (`_id`,`name`,`email`,`password`,`image`) VALUES (?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, User value) {
-        stmt.bindLong(1, value.getUserId());
+        if (value.get_id() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.get_id());
+        }
         if (value.getName() == null) {
           stmt.bindNull(2);
         } else {
@@ -98,13 +102,15 @@ public final class UserDao_Impl implements UserDao {
       public User call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
-          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "_id");
           final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
           final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
           final int _cursorIndexOfPassword = CursorUtil.getColumnIndexOrThrow(_cursor, "password");
           final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
           final User _result;
           if(_cursor.moveToFirst()) {
+            final String _tmp_id;
+            _tmp_id = _cursor.getString(_cursorIndexOfId);
             final String _tmpName;
             _tmpName = _cursor.getString(_cursorIndexOfName);
             final String _tmpEmail;
@@ -113,10 +119,7 @@ public final class UserDao_Impl implements UserDao {
             _tmpPassword = _cursor.getString(_cursorIndexOfPassword);
             final String _tmpImage;
             _tmpImage = _cursor.getString(_cursorIndexOfImage);
-            _result = new User(_tmpName,_tmpEmail,_tmpPassword,_tmpImage);
-            final int _tmpUserId;
-            _tmpUserId = _cursor.getInt(_cursorIndexOfUserId);
-            _result.setUserId(_tmpUserId);
+            _result = new User(_tmp_id,_tmpName,_tmpEmail,_tmpPassword,_tmpImage);
           } else {
             _result = null;
           }

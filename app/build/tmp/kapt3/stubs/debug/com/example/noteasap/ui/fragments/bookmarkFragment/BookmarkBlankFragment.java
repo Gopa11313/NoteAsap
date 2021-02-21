@@ -10,7 +10,6 @@ public final class BookmarkBlankFragment extends androidx.fragment.app.Fragment 
     private androidx.recyclerview.widget.RecyclerView recyleview;
     @org.jetbrains.annotations.NotNull()
     public static final com.example.noteasap.ui.fragments.bookmarkFragment.BookmarkBlankFragment.Companion Companion = null;
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     public void onCreate(@org.jetbrains.annotations.Nullable()

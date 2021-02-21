@@ -13,7 +13,6 @@ public final class HomeBlankFragment extends androidx.fragment.app.Fragment {
     private com.example.noteasap.databinding.FragmentHomeBlankBinding binding;
     @org.jetbrains.annotations.NotNull()
     public static final com.example.noteasap.ui.fragments.homeFragment.HomeBlankFragment.Companion Companion = null;
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     public void onCreate(@org.jetbrains.annotations.Nullable()

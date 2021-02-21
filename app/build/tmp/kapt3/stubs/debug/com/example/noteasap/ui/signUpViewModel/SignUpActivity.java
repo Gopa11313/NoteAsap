@@ -14,7 +14,6 @@ public final class SignUpActivity extends androidx.appcompat.app.AppCompatActivi
     private com.example.noteasap.ui.signUpViewModel.SignUpViewModel signupViewModel;
     private android.widget.TextView already;
     private final java.lang.String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     protected void onCreate(@org.jetbrains.annotations.Nullable()

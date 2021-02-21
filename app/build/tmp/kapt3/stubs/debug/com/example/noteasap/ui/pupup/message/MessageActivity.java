@@ -6,7 +6,6 @@ import java.lang.System;
 public final class MessageActivity extends androidx.appcompat.app.AppCompatActivity {
     private android.widget.EditText message;
     private com.example.noteasap.ui.pupup.message.MessageViewModel messageViewModel;
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     protected void onCreate(@org.jetbrains.annotations.Nullable()

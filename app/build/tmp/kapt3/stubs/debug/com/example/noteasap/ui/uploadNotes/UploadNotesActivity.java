@@ -17,7 +17,6 @@ public final class UploadNotesActivity extends androidx.appcompat.app.AppCompatA
     private java.lang.String[] level = {"University", "Masters", "Bachelors", "+2", "9/10"};
     @org.jetbrains.annotations.NotNull()
     private java.lang.String[] subject = {"Science", "Management"};
-    private java.util.HashMap _$_findViewCache;
     
     @org.jetbrains.annotations.NotNull()
     public final java.lang.String getSelectedItem() {

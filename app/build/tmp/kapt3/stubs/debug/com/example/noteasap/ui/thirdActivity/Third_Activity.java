@@ -10,7 +10,6 @@ public final class Third_Activity extends androidx.appcompat.app.AppCompatActivi
     private final com.example.noteasap.ui.fragments.accountBlankFragment Account = null;
     private com.google.android.material.bottomnavigation.BottomNavigationView bottom_navigation;
     private com.example.noteasap.ui.thirdActivity.ThirdActivityViewModel thirdViewModel;
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     protected void onCreate(@org.jetbrains.annotations.Nullable()

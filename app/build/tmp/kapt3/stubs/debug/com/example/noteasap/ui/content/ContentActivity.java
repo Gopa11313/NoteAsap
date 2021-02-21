@@ -7,7 +7,6 @@ public final class ContentActivity extends androidx.appcompat.app.AppCompatActiv
     private final java.util.ArrayList<com.example.noteasap.ui.model.Comment> listcommet = null;
     private androidx.recyclerview.widget.RecyclerView recyleview;
     private com.example.noteasap.ui.content.ContentviewModel contentviewModel;
-    private java.util.HashMap _$_findViewCache;
     
     @java.lang.Override()
     protected void onCreate(@org.jetbrains.annotations.Nullable()

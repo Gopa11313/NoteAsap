@@ -27,17 +27,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.099">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/noimg" />
+
+        <ImageView
+            android:id="@+id/imagebtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/noimg" />
+
+
     </androidx.cardview.widget.CardView>
 
     <ImageButton
         android:id="@+id/btnlog"
         android:layout_width="100dp"
         android:layout_height="43dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="13dp"
         android:src="@drawable/ic_logout"
         android:textColor="#000000"
         android:textSize="19sp"
@@ -141,6 +145,15 @@
                             android:textColor="@color/green"
                             android:textSize="10sp" />
     </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imabtn2"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ic_account"
+        app:layout_constraintEnd_toEndOf="@+id/ic_account"
+        app:layout_constraintStart_toEndOf="@+id/ic_account"
+        app:srcCompat="@drawable/ic_camera" />
 
     <!--    <FrameLayout-->
 <!--        android:layout_width="match_parent"-->

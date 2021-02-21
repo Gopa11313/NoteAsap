@@ -1023,6 +1023,7 @@ color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color fadedblack
 color foreground_material_dark
 color foreground_material_light
 color gray
@@ -1605,6 +1606,7 @@ drawable ic_baseline_search_24
 drawable ic_baseline_settings_24
 drawable ic_baseline_star_1
 drawable ic_bookmark
+drawable ic_camera
 drawable ic_delete
 drawable ic_download
 drawable ic_home
@@ -1770,6 +1772,7 @@ id button_first
 id button_second
 id c_name
 id cache_measures
+id camera
 id cancel_action
 id cancel_button
 id center
@@ -1862,6 +1865,7 @@ id fragment_container
 id fragment_container_view_tag
 id frameLayout
 id fullName
+id gallery
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
@@ -1883,11 +1887,13 @@ id icon_group
 id ifRoom
 id ignore
 id ignoreRequest
+id imabtn2
 id image
 id imageView
 id imageView2
 id imageView3
 id imageView4
+id imagebtn
 id info
 id invisible
 id italic
@@ -2288,6 +2294,7 @@ layout text_view_without_line_height
 menu menu
 menu menu2
 menu menu3
+menu pmenu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
