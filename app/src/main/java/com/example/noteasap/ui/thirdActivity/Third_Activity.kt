@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import com.example.noteasap.R
 import com.example.noteasap.ui.fragments.bookmarkFragment.BookmarkBlankFragment
 import com.example.noteasap.ui.fragments.homeFragment.HomeBlankFragment
@@ -23,14 +24,13 @@ class Third_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third_)
         thirdViewModel = ViewModelProvider(this).get(ThirdActivityViewModel::class.java)
-        thirdViewModel.fragment.observe(this,{
-
+        thirdViewModel.fragment.observe(this) {
             when(thirdViewModel.getFragment()){
                 ThirdActivityViewModel.Fragment.HOME ->replaceFragments(Home)
                 ThirdActivityViewModel.Fragment.BOOKMARK ->replaceFragments(Bookmark)
                 ThirdActivityViewModel.Fragment.ACCOUNT ->replaceFragments(Account)
             }
-        })
+        }
         frament_container=findViewById(R.id.fragment_container)
         bottom_navigation=findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(){

@@ -21,10 +21,10 @@ import java.lang.Object;
 
 public abstract class ActivityUploadNotesBinding extends ViewDataBinding {
   @NonNull
-  public final Button button;
+  public final AutoCompleteTextView cName;
 
   @NonNull
-  public final AutoCompleteTextView cName;
+  public final Button chooseFile;
 
   @NonNull
   public final EditText desc;
@@ -48,11 +48,11 @@ public abstract class ActivityUploadNotesBinding extends ViewDataBinding {
   protected UploadNotesViewModel mUploadNoteViewModel;
 
   protected ActivityUploadNotesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button button, AutoCompleteTextView cName, EditText desc, Spinner spinner1, Spinner spinner2,
-      Button submit, TextView textView3, EditText topic) {
+      AutoCompleteTextView cName, Button chooseFile, EditText desc, Spinner spinner1,
+      Spinner spinner2, Button submit, TextView textView3, EditText topic) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.button = button;
     this.cName = cName;
+    this.chooseFile = chooseFile;
     this.desc = desc;
     this.spinner1 = spinner1;
     this.spinner2 = spinner2;

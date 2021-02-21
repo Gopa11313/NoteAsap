@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.ui.model.User
@@ -49,7 +50,9 @@ class SplashActivity : AppCompatActivity() {
                     val user = User(email = emailPref, password = passwordPref)
                     val response = repository.checkUSer(user)
                     if (response.success == true) {
-
+                        ServiceBuilder.token="Bearer ${response.token}"
+                        ServiceBuilder.id=response.id
+                        delay(500)
                         startActivity(Intent(this@SplashActivity, SecondActivity::class.java)
                         )
                         finish()

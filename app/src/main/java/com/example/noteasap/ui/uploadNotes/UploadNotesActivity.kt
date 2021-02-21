@@ -1,5 +1,6 @@
 package com.example.noteasap.ui.uploadNotes
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -16,8 +17,11 @@ import retrofit2.Response
 
 
 class UploadNotesActivity : AppCompatActivity() {
+    private val REQUEST_FILE_CODE=0;
+    private var fileUrl:String?=null;
     private lateinit var spinner1:Spinner;
     private lateinit var spinner2:Spinner;
+    private lateinit var chooseFile:Button;
     private lateinit var c_name:EditText;
     private lateinit var topic:EditText;
     private lateinit var description: TextView;
@@ -35,9 +39,13 @@ class UploadNotesActivity : AppCompatActivity() {
         spinner1=findViewById(R.id.spinner1)
         spinner2=findViewById(R.id.spinner2)
         c_name=findViewById(R.id.c_name)
+        chooseFile=findViewById(R.id.chooseFile)
         topic=findViewById(R.id.topic)
         description=findViewById(R.id.desc)
         submit=findViewById(R.id.submit)
+        chooseFile.setOnClickListener(){
+            openFile()
+        }
             val adapter1 = ArrayAdapter(
                     this,
                     android.R.layout.simple_list_item_1,
@@ -70,45 +78,15 @@ class UploadNotesActivity : AppCompatActivity() {
 
         }
         submit.setOnClickListener(){
-            uploadnotes()
+           // uploadnotes()
         }
     }
 
-    fun uploadnotes(){
-//        if(validation()){
-//            var map=HashMap<String,String>()
-//            map["file"]=""
-//            map["level"]=spinner1.selectedItem.toString()
-//            map["subject"]=spinner2.selectedItem.toString()
-//            map["c_name"]=c_name.text.toString()
-//            map["topic"]=topic.text.toString()
-//            map["description"]=description.text.toString()
-//            val call:Call<Void?>?=ServiceBuilder.getInstance().uploadNotes(map)
-//            if(call!=null){
-//                call.enqueue(object : retrofit2.Callback<Void?> {
-//                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
-//                        if (response.code() == 200) {
-//                            Toast.makeText(this@UploadNotesActivity,
-//                                "Upload note successfully",
-//                                Toast.LENGTH_SHORT).show()
-//                            Handler(Looper.getMainLooper()).postDelayed({
-//                                clear()
-//                            }, 1000)
-//                        } else {
-//                            Toast.makeText(this@UploadNotesActivity,
-//                                response.errorBody().toString(),
-//                                Toast.LENGTH_SHORT).show()
-//                        }
-//
-//                    }
-//
-//                    override fun onFailure(call: Call<Void?>, t: Throwable) {
-//                        Toast.makeText(this@UploadNotesActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
-//                    }
-//
-//                })
-//            }
-//        }
+        private fun openFile(){
+            val intent= Intent(Intent.ACTION_PICK)
+            intent.type="file/*"
+            startActivityForResult(intent,REQUEST_FILE_CODE)
+
     }
     fun validation():Boolean{
         var flag=false;

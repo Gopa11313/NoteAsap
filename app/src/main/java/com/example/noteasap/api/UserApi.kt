@@ -3,6 +3,7 @@ package com.example.noteasap.api
 import androidx.room.Update
 import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.User
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -16,6 +17,12 @@ interface UserApi {
     ):Response<UserResponse>
 
 
-//    @PUT("/user/update/{UserID}")
-//    suspend fun updateUser(@Path("id") String id)
+    @Multipart
+    @PUT("upload/user/image/{id}")
+    suspend fun uploadImage(
+        @Header("Authorization") token:String,
+        @Path("id") id:String,
+        @Part file: MultipartBody.Part
+    ): Response<UserResponse>
+
 }

@@ -15,7 +15,7 @@ public class ActivityUploadNotesBindingImpl extends ActivityUploadNotesBinding  
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.textView3, 4);
-        sViewsWithIds.put(R.id.button, 5);
+        sViewsWithIds.put(R.id.chooseFile, 5);
         sViewsWithIds.put(R.id.spinner1, 6);
         sViewsWithIds.put(R.id.spinner2, 7);
         sViewsWithIds.put(R.id.submit, 8);
@@ -33,8 +33,8 @@ public class ActivityUploadNotesBindingImpl extends ActivityUploadNotesBinding  
     }
     private ActivityUploadNotesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 3
-            , (android.widget.Button) bindings[5]
             , (android.widget.AutoCompleteTextView) bindings[1]
+            , (android.widget.Button) bindings[5]
             , (android.widget.EditText) bindings[3]
             , (android.widget.Spinner) bindings[6]
             , (android.widget.Spinner) bindings[7]

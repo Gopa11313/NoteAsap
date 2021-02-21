@@ -5,6 +5,7 @@ import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.api.UserApi
 import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.User
+import okhttp3.MultipartBody
 
 class UserRepository:MyApiRequest(){
     val myApi= ServiceBuilder.buildServices(UserApi::class.java)
@@ -17,6 +18,11 @@ class UserRepository:MyApiRequest(){
     suspend fun checkUSer(user: User):UserResponse{
         return apiRequest {
             myApi.checkUSer(user) }
+    }
+    suspend fun uploadimage(id:String,file:MultipartBody.Part):UserResponse{
+        return apiRequest {
+            myApi.uploadImage(ServiceBuilder.token!!,id,file)
+        }
     }
 }
 

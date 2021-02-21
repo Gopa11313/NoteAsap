@@ -86,7 +86,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         Toast.makeText(this@LoginActivity, "Username and password save", Toast.LENGTH_SHORT).show()
     }
     fun login(){
-        Toast.makeText(this@LoginActivity, "${email.text.toString()+password.text.toString()}", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this@LoginActivity, "${email.text.toString()+password.text.toString()}", Toast.LENGTH_SHORT).show()
         val user=User(email = email.text.toString(),password = password.text.toString())
         CoroutineScope(Dispatchers.IO).launch {
             val repository=UserRepository()
@@ -97,13 +97,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
             val email=listdata?.email
 
             if(response.success==true){
-                val us=User(name=name,email = email,password = password.text.toString())
+                val us=User(_id= response.id!!,email = email,password = password.text.toString())
                 NoteAsapDb.getInstance(this@LoginActivity).getUserDao().RegisterUser(us)
-                
-                saveSharedPref(email.toString(),password.text.toString(),name.toString())
-                ServiceBuilder.token=response.token
+                saveSharedPref(_id = response.id!!, email = email.toString(), password =  password.text.toString(), name =  name.toString())
+                ServiceBuilder.token="Bearer ${response.token}"
+                ServiceBuilder.id=response.id
                 withContext(Main){
-                Toast.makeText(this@LoginActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "${response.id}", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@LoginActivity,SecondActivity::class.java))
             }
         }
@@ -117,37 +117,3 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     }
 }
 
-
-//var user: User? = null
-//                CoroutineScope(Dispatchers.IO).launch {
-//                    user = Db.getInstance(this@LoginActivity).getUserDao()
-//                        .checkUSer(email.text.toString(), password.text.toString())
-//                    if (user != null) {
-//
-//                        withContext(Main) {
-//                            Toast.makeText(this@LoginActivity, "Login Successfull",Toast.LENGTH_SHORT).show()
-//
-//                            val builder= AlertDialog.Builder(this@LoginActivity);
-//                            builder.setMessage("Do You Want to Save this email and password!!")
-//                            builder.setIcon(android.R.drawable.ic_dialog_alert);
-//                            builder.setPositiveButton("Yes"){dialogInterface,which->
-//                                saveSharedPref()
-//                            }
-//
-//                            builder.setNeutralButton("Calcel"){dialogInterface,which->
-//
-//                            }
-//                            builder.setNegativeButton("No"){
-//                                    dialogInterface,which->
-//
-//                            }
-//                            val alertDialog: AlertDialog =builder.create()
-//                            alertDialog.setCancelable(false)
-//                            alertDialog.show()
-//                        }
-//                    } else {
-//                        withContext(Main) {
-//                            Toast.makeText(this@LoginActivity, "Inavalid User", Toast.LENGTH_SHORT).show()
-//                        }
-//                    }
-//                }

@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.noteasap.ImageUploadActivity
 import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
 import com.example.noteasap.ui.pupup.message.MessageActivity
@@ -127,15 +128,13 @@ class accountBlankFragment : Fragment() {
     }
     private fun popup(){
         val popupMenu= PopupMenu(context,imagebtn)
-        popupMenu.menuInflater.inflate(R.menu.pmenu,popupMenu.menu)
+        popupMenu.menuInflater.inflate(R.menu.pmenu2,popupMenu.menu)
         popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.gallery -> {
-                    openGallery()
-                    true
-                }
-                R.id.camera -> {
-                    openCamera()
+                R.id.update_image -> {
+                    requireActivity().run{
+                        startActivity(Intent(this, ImageUploadActivity::class.java))
+                    }
                     true
                 }
                 else -> false
@@ -144,39 +143,7 @@ class accountBlankFragment : Fragment() {
         })
         popupMenu.show()
     }
-    private fun openGallery(){
-        val intent=Intent(Intent.ACTION_PICK)
-        intent.type="image/*"
-        startActivityForResult(intent,REQUEST_GALLERY_CODE)
-    }
-    private fun openCamera(){
-        val cameraIntent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent,REQUEST_CAMERA_CODE)
-    }
-    private fun bitmapToFile(
-        bitmap: Bitmap,
-        fileNameToSave: String
-    ): File? {
-        var file: File? = null
-        return try {
-            file = File(
-                activity?.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-                    .toString() + File.separator + fileNameToSave
-            )
-            file.createNewFile()
-            //Convert bitmap to byte array
-            val bos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.PNG, 0, bos) // YOU can also save it in JPEG
-            val bitMapData = bos.toByteArray()
-            //write the bytes in file
-            val fos = FileOutputStream(file)
-            fos.write(bitMapData)
-            fos.flush()
-            fos.close()
-            file
-        } catch (e: java.lang.Exception) {
-            e.printStackTrace()
-            file // it will return null
-        }
+    private fun gotoAnotherFragment(){
+
     }
 }
