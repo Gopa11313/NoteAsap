@@ -20,7 +20,7 @@ import com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
 import com.example.noteasap.ui.pupup.message.MessageActivity
 import com.example.noteasap.R
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
-import com.example.noteasap.ui.model.OwnNotesval
+import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -38,7 +38,7 @@ class accountBlankFragment : Fragment() {
     private lateinit var imageviewfor3menus:ImageView;
     private lateinit var imagebtn:ImageView;
     private lateinit var imagebtn2:ImageView;
-    private val listNotes=ArrayList<OwnNotesval>();
+    private val listNotes=ArrayList<OwnNotes>();
     private lateinit var recyleview: RecyclerView;
     private var param1: String? = null
     private var param2: String? = null
@@ -118,13 +118,13 @@ class accountBlankFragment : Fragment() {
             }
     }
     private fun loadvlaue(){
-        listNotes.add(OwnNotesval(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
-        listNotes.add(OwnNotesval(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
-        listNotes.add(OwnNotesval(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
-
-        listNotes.add(OwnNotesval(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
-        listNotes.add(OwnNotesval(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
-        listNotes.add(OwnNotesval(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+//        listNotes.add(OwnNotes(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
+//        listNotes.add(OwnNotes(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
+//        listNotes.add(OwnNotes(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+//
+//        listNotes.add(OwnNotes(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
+//        listNotes.add(OwnNotes(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
+//        listNotes.add(OwnNotes(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
     }
     private fun popup(){
         val popupMenu= PopupMenu(context,imagebtn)

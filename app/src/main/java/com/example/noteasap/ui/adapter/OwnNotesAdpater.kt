@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
-import com.example.noteasap.ui.model.OwnNotesval
+import com.example.noteasap.ui.model.OwnNotes
 
-class OwnNotesAdpater( val listpost:ArrayList<OwnNotesval>,
+class OwnNotesAdpater( val listpost:ArrayList<OwnNotes>,
 val context: Context):RecyclerView.Adapter<OwnNotesAdpater.OwnnotesviewHolder>() {
 
     class OwnnotesviewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,7 +33,7 @@ val context: Context):RecyclerView.Adapter<OwnNotesAdpater.OwnnotesviewHolder>()
     override fun onBindViewHolder(holder: OwnnotesviewHolder, position: Int) {
         val post=listpost[position]
         holder.t_name.text=post.topic
-        holder.u_name.text=post.universityname
+        holder.u_name.text=post.c_name
         holder.dis.text=post.describption
     }
 

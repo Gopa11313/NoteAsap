@@ -12,6 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityUploadNotesBinding
+import com.example.noteasap.repository.NoteRepository
+import com.example.noteasap.ui.model.OwnNotes
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Response
 
@@ -27,7 +34,9 @@ class UploadNotesActivity : AppCompatActivity() {
     private lateinit var description: TextView;
     private lateinit var submit:Button;
     private lateinit var uploadNotesViewModel: UploadNotesViewModel
-    var selectedItem:String=""
+    var selectedlevel:String=""
+    var selectedsubject:String=""
+
     var level= arrayOf("University","Masters","Bachelors","+2","9/10")
     var subject= arrayOf("Science","Management")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +68,7 @@ class UploadNotesActivity : AppCompatActivity() {
         spinner1.adapter = adapter1
         spinner1.onItemSelectedListener=object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedItem = parent?.getItemAtPosition(position).toString();
+                selectedlevel = parent?.getItemAtPosition(position).toString();
 
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -70,7 +79,7 @@ class UploadNotesActivity : AppCompatActivity() {
             spinner2.adapter = adapter2
         spinner2.onItemSelectedListener=object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                selectedItem = parent?.getItemAtPosition(position).toString();
+                selectedsubject = parent?.getItemAtPosition(position).toString();
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 TODO("Not yet implemented")
@@ -78,7 +87,7 @@ class UploadNotesActivity : AppCompatActivity() {
 
         }
         submit.setOnClickListener(){
-           // uploadnotes()
+           uploadnotes()
         }
     }
 
@@ -98,5 +107,22 @@ class UploadNotesActivity : AppCompatActivity() {
         topic.setText("")
         description.setText("")
     }
-
+private fun uploadnotes(){
+    Toast.makeText(this, "${ServiceBuilder.id!!}", Toast.LENGTH_SHORT).show()
+    val ownnote=OwnNotes(userID = ServiceBuilder.id!!,file= "nofile",level=selectedlevel,c_name = c_name.text.toString(),topic = topic.text.toString(),describption = description.text.toString())
+    CoroutineScope(Dispatchers.IO).launch{
+        val repository=NoteRepository()
+        val response=repository.uploadnotes(ownnote)
+        if(response.success==true){
+            withContext(Main){
+                Toast.makeText(this@UploadNotesActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+            }
+        }
+        else{
+            withContext(Main){
+                Toast.makeText(this@UploadNotesActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}
 }

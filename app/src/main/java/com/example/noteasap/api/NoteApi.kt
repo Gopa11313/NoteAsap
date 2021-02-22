@@ -4,9 +4,10 @@ import com.example.noteasap.response.NoteResponse
 import com.example.noteasap.ui.model.OwnNotes
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface NoteApi {
     @POST("upload/note")
-    suspend fun uploadnote(@Body ownnotes:OwnNotes):Response<NoteResponse>
+    suspend fun uploadnote(@Header("Authorization") token:String, @Body ownnotes:OwnNotes):Response<NoteResponse>
 }
