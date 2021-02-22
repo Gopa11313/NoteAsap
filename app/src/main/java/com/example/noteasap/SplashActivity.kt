@@ -58,7 +58,6 @@ class SplashActivity : AppCompatActivity() {
                         finish()
                     }
                 }
-
             } else {
                 withContext(Main){
                     startActivity(
@@ -68,8 +67,6 @@ class SplashActivity : AppCompatActivity() {
                         )
                     )
                 }
-
-
                 finish()
             }
         }

@@ -45,15 +45,6 @@ class HomeBlankFragment : Fragment() {
         binding.lifecycleOwner=this
         binding.homeFragmentViewModel=homeFragmetViewModel
         binding.search.text
-//        homeFragmetViewModel.autocmptText.observe(viewLifecycleOwner, Observer {text->
-//            binding.search.text=text.toString()
-//        })
-
-
-//        viewModel.score.observe(viewLifecycleOwner, Observer { newScore ->
-//            binding.scoreText.text = newScore.toString()
-//
-//        })
         return binding.root
     }
 

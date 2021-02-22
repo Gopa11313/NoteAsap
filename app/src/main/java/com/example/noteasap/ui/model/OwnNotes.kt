@@ -3,7 +3,7 @@ package com.example.noteasap.ui.model
 import android.os.Parcel
 import android.os.Parcelable
 
-class OwnNotesval(c_id:Int?=null,
+class OwnNotes(    val c_id:Int?=null,
                   val id: Int? =null,
                   val universityname:String?=null,
                   val file:String?=null,
@@ -29,12 +29,12 @@ class OwnNotesval(c_id:Int?=null,
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<OwnNotesval> {
-        override fun createFromParcel(parcel: Parcel): OwnNotesval {
-            return OwnNotesval(parcel)
+    companion object CREATOR : Parcelable.Creator<OwnNotes> {
+        override fun createFromParcel(parcel: Parcel): OwnNotes {
+            return OwnNotes(parcel)
         }
 
-        override fun newArray(size: Int): Array<OwnNotesval?> {
+        override fun newArray(size: Int): Array<OwnNotes?> {
             return arrayOfNulls(size)
         }
     }
