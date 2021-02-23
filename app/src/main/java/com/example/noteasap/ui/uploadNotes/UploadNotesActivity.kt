@@ -109,7 +109,7 @@ class UploadNotesActivity : AppCompatActivity() {
     }
 private fun uploadnotes(){
     Toast.makeText(this, "${ServiceBuilder.id!!}", Toast.LENGTH_SHORT).show()
-    val ownnote=OwnNotes(userID = ServiceBuilder.id!!,file= "nofile",level=selectedlevel,c_name = c_name.text.toString(),topic = topic.text.toString(),describption = description.text.toString())
+    val ownnote=OwnNotes(userId = ServiceBuilder.id!!,file= "nofile",subject = selectedsubject,level=selectedlevel,c_name = c_name.text.toString(),topic = topic.text.toString(),description = description.text.toString())
     CoroutineScope(Dispatchers.IO).launch{
         val repository=NoteRepository()
         val response=repository.uploadnotes(ownnote)
@@ -120,7 +120,7 @@ private fun uploadnotes(){
         }
         else{
             withContext(Main){
-                Toast.makeText(this@UploadNotesActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@UploadNotesActivity, "here", Toast.LENGTH_SHORT).show()
             }
         }
     }

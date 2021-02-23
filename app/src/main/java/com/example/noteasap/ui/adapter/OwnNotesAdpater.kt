@@ -34,7 +34,7 @@ val context: Context):RecyclerView.Adapter<OwnNotesAdpater.OwnnotesviewHolder>()
         val post=listpost[position]
         holder.t_name.text=post.topic
         holder.u_name.text=post.c_name
-        holder.dis.text=post.describption
+        holder.dis.text=post.description
     }
 
     override fun getItemCount(): Int {

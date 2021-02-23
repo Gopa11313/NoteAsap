@@ -3,13 +3,13 @@ package com.example.noteasap.ui.model
 import android.os.Parcel
 import android.os.Parcelable
 
-class OwnNotes(    val userID: String? =null,
+class OwnNotes(    val userId: String? =null,
                    val level:String?=null,
                    val subject:String?=null,
                   val c_name:String?=null,
                   val file:String?=null,
                   val topic:String?=null,
-                  val describption:String?=null ):Parcelable{
+                  val description:String?=null ):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -20,13 +20,13 @@ class OwnNotes(    val userID: String? =null,
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeValue(userID)
+        parcel.writeValue(userId)
         parcel.writeString(c_name)
         parcel.writeString(level)
         parcel.writeString(subject)
         parcel.writeString(file)
         parcel.writeString(topic)
-        parcel.writeString(describption)
+        parcel.writeString(description)
     }
 
     override fun describeContents(): Int {
