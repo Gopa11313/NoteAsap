@@ -146,5 +146,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:id="@+id/bookmark"
+        android:layout_width="45dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toEndOf="@+id/download"
+        app:layout_constraintTop_toBottomOf="@+id/dis"
+        app:srcCompat="@drawable/ic__star" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView></layout>

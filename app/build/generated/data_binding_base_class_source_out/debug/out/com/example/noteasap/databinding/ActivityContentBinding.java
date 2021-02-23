@@ -26,6 +26,9 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
   public final TextView Universityname;
 
   @NonNull
+  public final ImageView bookmark;
+
+  @NonNull
   public final ImageView comment;
 
   @NonNull
@@ -59,11 +62,12 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
   protected ContentviewModel mContentViewModel;
 
   protected ActivityContentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView Universityname, ImageView comment, EditText commentbar, TextView dis,
-      Button download, LinearLayout linearLayout, LinearLayout linearLayout2, RatingBar ratingBar1,
-      RecyclerView recyclerView1, TextView textView6, TextView topic) {
+      TextView Universityname, ImageView bookmark, ImageView comment, EditText commentbar,
+      TextView dis, Button download, LinearLayout linearLayout, LinearLayout linearLayout2,
+      RatingBar ratingBar1, RecyclerView recyclerView1, TextView textView6, TextView topic) {
     super(_bindingComponent, _root, _localFieldCount);
     this.Universityname = Universityname;
+    this.bookmark = bookmark;
     this.comment = comment;
     this.commentbar = commentbar;
     this.dis = dis;

@@ -20,6 +20,7 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
         sViewsWithIds.put(R.id.linearLayout2, 9);
         sViewsWithIds.put(R.id.comment, 10);
         sViewsWithIds.put(R.id.recycler_view1, 11);
+        sViewsWithIds.put(R.id.bookmark, 12);
     }
     // views
     @NonNull
@@ -30,11 +31,12 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityContentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
     }
     private ActivityContentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 5
             , (android.widget.TextView) bindings[2]
+            , (android.widget.ImageView) bindings[12]
             , (android.widget.ImageView) bindings[10]
             , (android.widget.EditText) bindings[5]
             , (android.widget.TextView) bindings[3]

@@ -1,10 +1,13 @@
 package com.example.noteasap.ui.content
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.content.contentValuesOf
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +27,7 @@ private lateinit var commentbar:TextView;
 class ContentActivity : AppCompatActivity() {
     private val listcommet=ArrayList<Comment>();
     private lateinit var recyleview: RecyclerView;
+    private lateinit var bookamark: ImageView;
     private lateinit var contentviewModel: ContentviewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +40,11 @@ class ContentActivity : AppCompatActivity() {
         discriotion = findViewById(R.id.dis);
         recyleview=findViewById(R.id.recycler_view1)
         img=findViewById(R.id.comment)
+        bookamark=findViewById(R.id.bookmark)
         commentbar=findViewById(R.id.commentbar)
+        bookamark.setOnClickListener(){
+            //bookamark.imageTintMode(DrawableCompat.setTintMode(R.color.black,true));
+        }
         val intent = intent.getParcelableExtra<Bookmark>("notes")
         if (intent != null) {
             val name = intent.topic;
