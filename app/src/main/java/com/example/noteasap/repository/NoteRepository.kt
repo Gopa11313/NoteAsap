@@ -14,5 +14,10 @@ class NoteRepository:MyApiRequest(){
             myApi.uploadnote(ServiceBuilder.token!!,ownNotes)
         }
     }
+    suspend fun getAllNote(userId:String):NoteResponse{
+        return apiRequest {
+            myApi.getAllNotes(ServiceBuilder.token!!,userId)
+        }
+    }
 
 }
