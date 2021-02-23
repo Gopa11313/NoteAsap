@@ -3,8 +3,6 @@ package com.example.noteasap.ui.uploadNotes
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.*
 import androidx.databinding.DataBindingUtil
@@ -19,8 +17,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Call
-import retrofit2.Response
 
 
 class UploadNotesActivity : AppCompatActivity() {
@@ -109,7 +105,14 @@ class UploadNotesActivity : AppCompatActivity() {
     }
 private fun uploadnotes(){
     Toast.makeText(this, "${ServiceBuilder.id!!}", Toast.LENGTH_SHORT).show()
-    val ownnote=OwnNotes(userId = ServiceBuilder.id!!,file= "nofile",subject = selectedsubject,level=selectedlevel,c_name = c_name.text.toString(),topic = topic.text.toString(),description = description.text.toString())
+    val ownnote=OwnNotes(
+        userId = ServiceBuilder.id!!,
+        file = "nofile",
+        subject = selectedsubject,
+        level =selectedlevel,
+        c_name = c_name.text.toString(),
+        topic = topic.text.toString(),
+        description = description.text.toString())
     CoroutineScope(Dispatchers.IO).launch{
         val repository=NoteRepository()
         val response=repository.uploadnotes(ownnote)

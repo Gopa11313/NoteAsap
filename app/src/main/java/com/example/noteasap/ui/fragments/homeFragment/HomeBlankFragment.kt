@@ -7,22 +7,34 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AutoCompleteTextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
+import com.example.noteasap.RoomDatabase.NoteAsapDb
+import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.FragmentHomeBlankBinding
-import com.example.noteasap.ui.adapter.HomeAdapterval
+import com.example.noteasap.repository.NoteRepository
+import com.example.noteasap.ui.adapter.HomeAdapter
 import com.example.noteasap.ui.model.Home
+import com.example.noteasap.ui.model.OwnNotes
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.IOException
+
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class HomeBlankFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    private val listPosts=ArrayList<Home>();
+    var listStudent:List<OwnNotes>?=null
     private lateinit var recyclehome:RecyclerView;
     private lateinit var search:AutoCompleteTextView;
     private lateinit var homeFragmetViewModel: HomeFragmetViewModel
@@ -52,24 +64,40 @@ class HomeBlankFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclehome=view.findViewById(R.id.recyclehome);
         search=view.findViewById(R.id.search)
-        loadvlaue()
-        val adpater= context?.let { HomeAdapterval(listPosts, it) }
+        getvalues()
         recyclehome.setHasFixedSize(true);
-        recyclehome.layoutManager = GridLayoutManager(activity,2)
-        recyclehome.adapter=adpater;
+
+
     }
-    private fun loadvlaue(){
-        listPosts.add(Home(1,2,"Coventry university","IT","This is note"))
-        listPosts.add(Home(101,201,"Trivuban university ","Physics","This is note"))
-        listPosts.add(Home(1001,2001,"Coventry university ","Chemistry","This is note"))
+    fun getvalues() {
+        try {
+            CoroutineScope(Dispatchers.IO).launch {
+                val repository=NoteRepository()
+                val response=repository.getAllNote(ServiceBuilder.id!!);
+                listStudent=response.data
+                if(response.success==true) {
+                    context?.let { NoteAsapDb.getInstance(it).getNoteDao().droptable() }
+                    context?.let { NoteAsapDb.getInstance(it).getNoteDao().RegisterNote(listStudent) }
+                    val list= context?.let { NoteAsapDb.getInstance(it).getNoteDao().getAllNote() }
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(context, "this is recycle", Toast.LENGTH_SHORT).show()
+//                        val reversedLits=list!!.asReversed()
+                        val adpater= context?.let { HomeAdapter(list as ArrayList<OwnNotes>, it) }
+                        recyclehome.layoutManager = GridLayoutManager(activity,2)
+                        recyclehome.adapter=adpater;
+                    }
+                }
+                else{
+                    withContext(Dispatchers.Main){
+                        Toast.makeText(context, "data is empty", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
 
-        listPosts.add(Home(1,2,"Coventry university ","IT","This is note"))
-        listPosts.add(Home(101,201,"Trivuban university ","Physics","This is note"))
-        listPosts.add(Home(1001,2001,"Coventry university ","Chemistry","This is note"))
+        } catch (e: IOException) {
+            Toast.makeText(context, "Error ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
+        }
 
-        listPosts.add(Home(1,2,"Coventry university ","IT","This is note"))
-        listPosts.add(Home(101,201,"Trivuban university ","Physics","This is note"))
-        listPosts.add(Home(1001,2001,"Coventry university ","Chemistry","This is note"))
     }
     companion object {
         fun newInstance(param1: String, param2: String) =

@@ -2,8 +2,8 @@ package com.example.noteasap.RoomDatabase;
 
 import java.lang.System;
 
-@androidx.room.Database(entities = {com.example.noteasap.ui.model.User.class}, version = 2, exportSchema = false)
-@kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\'\u0018\u0000 \u00052\u00020\u0001:\u0001\u0005B\u0005\u00a2\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H&\u00a8\u0006\u0006"}, d2 = {"Lcom/example/noteasap/RoomDatabase/NoteAsapDb;", "Landroidx/room/RoomDatabase;", "()V", "getUserDao", "Lcom/example/noteasap/RoomDatabase/dao/UserDao;", "Companion", "app_debug"})
+@androidx.room.Database(entities = {com.example.noteasap.ui.model.User.class, com.example.noteasap.ui.model.OwnNotes.class}, version = 3, exportSchema = false)
+@kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\'\u0018\u0000 \u00072\u00020\u0001:\u0001\u0007B\u0005\u00a2\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H&J\b\u0010\u0005\u001a\u00020\u0006H&\u00a8\u0006\b"}, d2 = {"Lcom/example/noteasap/RoomDatabase/NoteAsapDb;", "Landroidx/room/RoomDatabase;", "()V", "getNoteDao", "Lcom/example/noteasap/RoomDatabase/dao/NoteDao;", "getUserDao", "Lcom/example/noteasap/RoomDatabase/dao/UserDao;", "Companion", "app_debug"})
 public abstract class NoteAsapDb extends androidx.room.RoomDatabase {
     private static volatile com.example.noteasap.RoomDatabase.NoteAsapDb instance;
     @org.jetbrains.annotations.NotNull()
@@ -11,6 +11,9 @@ public abstract class NoteAsapDb extends androidx.room.RoomDatabase {
     
     @org.jetbrains.annotations.NotNull()
     public abstract com.example.noteasap.RoomDatabase.dao.UserDao getUserDao();
+    
+    @org.jetbrains.annotations.NotNull()
+    public abstract com.example.noteasap.RoomDatabase.dao.NoteDao getNoteDao();
     
     public NoteAsapDb() {
         super();

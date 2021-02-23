@@ -14,6 +14,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
 import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
+import com.example.noteasap.RoomDatabase.dao.NoteDao;
+import com.example.noteasap.RoomDatabase.dao.NoteDao_Impl;
 import com.example.noteasap.RoomDatabase.dao.UserDao;
 import com.example.noteasap.RoomDatabase.dao.UserDao_Impl;
 import java.lang.Override;
@@ -27,19 +29,23 @@ import java.util.Set;
 public final class NoteAsapDb_Impl extends NoteAsapDb {
   private volatile UserDao _userDao;
 
+  private volatile NoteDao _noteDao;
+
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(3) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `User` (`_id` TEXT NOT NULL, `name` TEXT, `email` TEXT, `password` TEXT, `image` TEXT, PRIMARY KEY(`_id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `OwnNotes` (`_id` TEXT NOT NULL, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT, PRIMARY KEY(`_id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1b21d5d2ef03985c1b711b4519db762b')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5bd53be261f1bbec6cb5304bdface2d4')");
       }
 
       @Override
       public void dropAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("DROP TABLE IF EXISTS `User`");
+        _db.execSQL("DROP TABLE IF EXISTS `OwnNotes`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -93,9 +99,27 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
                   + " Expected:\n" + _infoUser + "\n"
                   + " Found:\n" + _existingUser);
         }
+        final HashMap<String, TableInfo.Column> _columnsOwnNotes = new HashMap<String, TableInfo.Column>(8);
+        _columnsOwnNotes.put("_id", new TableInfo.Column("_id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("userId", new TableInfo.Column("userId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("level", new TableInfo.Column("level", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("subject", new TableInfo.Column("subject", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("c_name", new TableInfo.Column("c_name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("file", new TableInfo.Column("file", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("topic", new TableInfo.Column("topic", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsOwnNotes.put("description", new TableInfo.Column("description", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysOwnNotes = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesOwnNotes = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoOwnNotes = new TableInfo("OwnNotes", _columnsOwnNotes, _foreignKeysOwnNotes, _indicesOwnNotes);
+        final TableInfo _existingOwnNotes = TableInfo.read(_db, "OwnNotes");
+        if (! _infoOwnNotes.equals(_existingOwnNotes)) {
+          return new RoomOpenHelper.ValidationResult(false, "OwnNotes(com.example.noteasap.ui.model.OwnNotes).\n"
+                  + " Expected:\n" + _infoOwnNotes + "\n"
+                  + " Found:\n" + _existingOwnNotes);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "1b21d5d2ef03985c1b711b4519db762b", "281473e606d4fb9da8f3f9932b2710d3");
+    }, "5bd53be261f1bbec6cb5304bdface2d4", "6d97f07f7490e5691c57071fa6683a60");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -108,7 +132,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "User");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "User","OwnNotes");
   }
 
   @Override
@@ -118,6 +142,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
     try {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `User`");
+      _db.execSQL("DELETE FROM `OwnNotes`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -138,6 +163,20 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
           _userDao = new UserDao_Impl(this);
         }
         return _userDao;
+      }
+    }
+  }
+
+  @Override
+  public NoteDao getNoteDao() {
+    if (_noteDao != null) {
+      return _noteDao;
+    } else {
+      synchronized(this) {
+        if(_noteDao == null) {
+          _noteDao = new NoteDao_Impl(this);
+        }
+        return _noteDao;
       }
     }
   }

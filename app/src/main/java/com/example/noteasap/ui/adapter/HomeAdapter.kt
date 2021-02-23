@@ -8,10 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
 import com.example.noteasap.ui.model.Home
+import com.example.noteasap.ui.model.OwnNotes
 
-class HomeAdapterval(
-        val listpost:ArrayList<Home>,
-        val context: Context):RecyclerView.Adapter<HomeAdapterval.HomwviewHolder>() {
+class HomeAdapter(
+        val listpost:ArrayList<OwnNotes>,
+        val context: Context):RecyclerView.Adapter<HomeAdapter.HomwviewHolder>() {
 
     class HomwviewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val t_name: TextView;
@@ -28,14 +29,14 @@ class HomeAdapterval(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomwviewHolder {
         val view= LayoutInflater.from(parent.context)
                 .inflate(R.layout.forhome,parent,false)
-        return HomeAdapterval.HomwviewHolder(view)
+        return HomeAdapter.HomwviewHolder(view)
     }
 
     override fun onBindViewHolder(holder: HomwviewHolder, position: Int) {
         val post=listpost[position]
         holder.t_name.text=post.topic
-        holder.u_name.text=post.u_name
-        holder.dis.text=post.dis
+        holder.u_name.text=post.c_name
+        holder.dis.text=post.description
     }
 
     override fun getItemCount(): Int {
