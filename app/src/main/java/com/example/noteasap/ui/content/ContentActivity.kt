@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.contentValuesOf
-import androidx.core.graphics.drawable.DrawableCompat
+
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +15,7 @@ import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
-import com.example.noteasap.ui.thirdActivity.ThirdActivityViewModel
+
 
 private lateinit var topic:TextView;
 private lateinit var universityname:TextView;

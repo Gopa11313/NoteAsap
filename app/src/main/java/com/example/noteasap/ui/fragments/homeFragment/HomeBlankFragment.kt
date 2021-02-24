@@ -82,7 +82,7 @@ class HomeBlankFragment : Fragment() {
                     val list= context?.let { NoteAsapDb.getInstance(it).getNoteDao().getAllNote() }
                     withContext(Dispatchers.Main) {
                         Toast.makeText(context, "this is recycle", Toast.LENGTH_SHORT).show()
-//                        val reversedLits=list!!.asReversed()
+                       val reversedLits=list!!.asReversed()
                         val adpater= context?.let { HomeAdapter(list as ArrayList<OwnNotes>, it) }
                         recyclehome.layoutManager = GridLayoutManager(activity,2)
                         recyclehome.adapter=adpater;
