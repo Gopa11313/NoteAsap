@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
 import com.example.noteasap.ui.content.ContentActivity
-import com.example.noteasap.ui.model.Home
 import com.example.noteasap.ui.model.OwnNotes
 
 class HomeAdapter(
@@ -40,11 +39,14 @@ class HomeAdapter(
     }
 
     override fun onBindViewHolder(holder: HomwviewHolder, position: Int) {
-        val post=listpost[position]
-        holder.t_name.text=post.topic
-        holder.u_name.text=post.c_name
-        holder.dis.text=post.description
+        val note=listpost[position]
+        holder.t_name.text=note.topic
+        holder.u_name.text=note.c_name
+        holder.dis.text=note.description
         holder.home.setOnClickListener(){
+            val intent = Intent(context, ContentActivity::class.java)
+            intent.putExtra("notes",note)
+            context.startActivity(intent);
             ContextCompat.startActivity(context, Intent(context,ContentActivity::class.java),
                 Bundle()
             )

@@ -1,8 +1,10 @@
 package com.example.noteasap.ui.model
 
+import android.os.Parcel
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 @Entity
 data class OwnNotes(
@@ -13,6 +15,42 @@ data class OwnNotes(
                val c_name:String?=null,
                val file:String?=null,
                val topic:String?=null,
-               val description:String?=null ){
+               val description:String?=null ):Parcelable{
+    constructor(parcel: Parcel) : this(
+        parcel.toString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(_id)
+        parcel.writeString(userId)
+        parcel.writeString(level)
+        parcel.writeString(subject)
+        parcel.writeString(c_name)
+        parcel.writeString(file)
+        parcel.writeString(topic)
+        parcel.writeString(description)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<OwnNotes> {
+        override fun createFromParcel(parcel: Parcel): OwnNotes {
+            return OwnNotes(parcel)
+        }
+
+        override fun newArray(size: Int): Array<OwnNotes?> {
+            return arrayOfNulls(size)
+        }
+    }
 
 }

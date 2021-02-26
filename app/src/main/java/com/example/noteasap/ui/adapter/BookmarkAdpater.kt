@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.ui.content.ContentActivity
 import com.example.noteasap.R
 import com.example.noteasap.ui.model.Bookmark
+import com.example.noteasap.ui.model.OwnNotes
 import android.content.Intent as Intent
 
 class BookmarkAdpater(
-        val listbookmark:ArrayList<Bookmark>,
+        val listbookmark:ArrayList<OwnNotes>,
         val context: Context):RecyclerView.Adapter<BookmarkAdpater.NoteresViewholder>() {
          class NoteresViewholder(view:View):RecyclerView.ViewHolder(view){
             val universityname:TextView;
@@ -34,24 +35,24 @@ class BookmarkAdpater(
 
     override fun onBindViewHolder(holder: NoteresViewholder, position: Int) {
         val notes=listbookmark[position]
-        holder.universityname.text=notes.universityname;
+        holder.universityname.text=notes.c_name;
         holder.topic.text=notes.topic;
-        holder.description.text=notes.describption
+        holder.description.text=notes.description
         holder.list_item.setOnClickListener(){
             val intent = Intent(context, ContentActivity::class.java)
             intent.putExtra("notes",notes)
             context.startActivity(intent);
         }
-        holder.universityname.setOnClickListener(){
-            val intent = Intent(context, ContentActivity::class.java)
-            intent.putExtra("notes",notes)
-            context.startActivity(intent);
-        }
-        holder.topic.setOnClickListener() {
-            val intent = Intent(context, ContentActivity::class.java)
-            intent.putExtra("notes",notes)
-            context.startActivity(intent);
-        }
+//        holder.universityname.setOnClickListener(){
+//            val intent = Intent(context, ContentActivity::class.java)
+//            intent.putExtra("notes",notes)
+//            context.startActivity(intent);
+//        }
+//        holder.topic.setOnClickListener() {
+//            val intent = Intent(context, ContentActivity::class.java)
+//            intent.putExtra("notes",notes)
+//            context.startActivity(intent);
+//        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteresViewholder {

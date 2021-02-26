@@ -1,8 +1,14 @@
 package com.example.noteasap.ui.uploadNotes
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.databinding.DataBindingUtil
@@ -11,12 +17,19 @@ import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityUploadNotesBinding
 import com.example.noteasap.repository.NoteRepository
+import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.model.OwnNotes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class UploadNotesActivity : AppCompatActivity() {
@@ -78,7 +91,6 @@ class UploadNotesActivity : AppCompatActivity() {
                 selectedsubject = parent?.getItemAtPosition(position).toString();
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
@@ -88,8 +100,9 @@ class UploadNotesActivity : AppCompatActivity() {
     }
 
         private fun openFile(){
-            val intent= Intent(Intent.ACTION_PICK)
-            intent.type="file/*"
+            val intent= Intent()
+                .setType("*/*")
+                .setAction(Intent.ACTION_GET_CONTENT)
             startActivityForResult(intent,REQUEST_FILE_CODE)
 
     }
@@ -117,9 +130,22 @@ private fun uploadnotes(){
         val repository=NoteRepository()
         val response=repository.uploadnotes(ownnote)
         if(response.success==true){
-            withContext(Main){
-                Toast.makeText(this@UploadNotesActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+            val id=response.id.toString()
+            if(fileUrl != null){
+                uploadImage(id!!)
+                withContext(Dispatchers.Main) {
+                    clear()
+                    Toast.makeText(this@UploadNotesActivity, "Student Added Successfully", Toast.LENGTH_SHORT).show()
+                }
             }
+            else
+            {
+                withContext(Dispatchers.Main) {
+                    clear()
+                    Toast.makeText(this@UploadNotesActivity, "error here", Toast.LENGTH_SHORT).show()
+                }
+            }
+
         }
         else{
             withContext(Main){
@@ -127,5 +153,56 @@ private fun uploadnotes(){
             }
         }
     }
-}
+}override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode== Activity.RESULT_OK){
+            if(requestCode == REQUEST_FILE_CODE && data != null) {
+                val selectedFile = data.data
+                val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
+                val contentResolver = contentResolver
+                val cursor =
+                    contentResolver.query(selectedFile!!, filePathColumn, null, null, null)
+                cursor!!.moveToFirst()
+                val columnIndex = cursor.getColumnIndex(filePathColumn[0])
+                fileUrl = cursor.getString(columnIndex)
+                chooseFile.setBackgroundColor(Color.GREEN)
+                cursor.close()
+            }
+
+        }
+    }
+    private fun uploadImage(studentId: String) {
+        if (fileUrl != null) {
+            val file = File(fileUrl!!)
+            val reqFile =
+                RequestBody.create(MediaType.parse("file/${file.extension}"), file)
+            val body =
+                MultipartBody.Part.createFormData("file", file.name, reqFile)
+
+            CoroutineScope(Dispatchers.IO).launch {
+                try{
+                    val studentRepository = NoteRepository()
+                    val response = studentRepository.uploadfile(studentId, body)
+                    if (response.success == true) {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(this@UploadNotesActivity, "Uploaded", Toast.LENGTH_SHORT)
+                                .show()
+                            finish()
+                        }
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            Toast.makeText(this@UploadNotesActivity, "${response.msg}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+                catch (ex: Exception) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@UploadNotesActivity, "error", Toast.LENGTH_SHORT).show()
+                        Log.d("Error uploading file ", ex.toString())
+                        Toast.makeText(this@UploadNotesActivity, ex.localizedMessage, Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+    }
 }

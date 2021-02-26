@@ -1,2 +1,0 @@
-com/example/noteasap/test/BuildConfig.java
- com.example.noteasap.test.BuildConfig

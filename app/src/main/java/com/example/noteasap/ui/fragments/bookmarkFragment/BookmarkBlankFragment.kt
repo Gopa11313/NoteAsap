@@ -10,13 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
 import com.example.noteasap.ui.adapter.BookmarkAdpater
 import com.example.noteasap.ui.model.Bookmark
+import com.example.noteasap.ui.model.OwnNotes
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 class BookmarkBlankFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    private val listNotes=ArrayList<Bookmark>();
+    private val listNotes=ArrayList<OwnNotes>();
     private lateinit var recyleview: RecyclerView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,13 +57,13 @@ class BookmarkBlankFragment : Fragment() {
         }
 
     private fun loadvlaue(){
-        listNotes.add(Bookmark(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
-        listNotes.add(Bookmark(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
-        listNotes.add(Bookmark(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
-
-        listNotes.add(Bookmark(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
-        listNotes.add(Bookmark(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
-        listNotes.add(Bookmark(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+        listNotes.add(OwnNotes(_id = "3",userId = "2",c_name =  "Coventry university ",file = "Not Aviable now",subject = "IT",description = "This is note"))
+//        listNotes.add(Bookmark(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
+//        listNotes.add(Bookmark(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+//
+//        listNotes.add(Bookmark(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
+//        listNotes.add(Bookmark(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
+//        listNotes.add(Bookmark(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
     }
     }
 

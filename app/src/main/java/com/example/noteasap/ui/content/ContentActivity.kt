@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -15,18 +16,20 @@ import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
+import com.example.noteasap.ui.model.OwnNotes
 
 
-private lateinit var topic:TextView;
-private lateinit var universityname:TextView;
-private lateinit var discriotion:TextView;
-private lateinit var img:ImageView;
-private lateinit var commentbar:TextView;
+
 class ContentActivity : AppCompatActivity() {
     private val listcommet=ArrayList<Comment>();
     private lateinit var recyleview: RecyclerView;
     private lateinit var bookamark: ImageView;
     private lateinit var contentviewModel: ContentviewModel
+    private lateinit var topic:TextView;
+    private lateinit var universityname:TextView;
+    private lateinit var discriotion:TextView;
+    private lateinit var img:ImageView;
+    private lateinit var commentbar:TextView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binnding:ActivityContentBinding=DataBindingUtil.setContentView(this,R.layout.activity_content)
@@ -41,16 +44,20 @@ class ContentActivity : AppCompatActivity() {
         bookamark=findViewById(R.id.bookmark)
         commentbar=findViewById(R.id.commentbar)
         bookamark.setOnClickListener(){
-            //bookamark.imageTintMode(DrawableCompat.setTintMode(R.color.black,true));
+            bookamark.setImageDrawable(
+                ContextCompat.getDrawable(
+                applicationContext, // Context
+                R.drawable.ic_star_orange // Drawable
+            ))
         }
-        val intent = intent.getParcelableExtra<Bookmark>("notes")
+        val intent = intent.getParcelableExtra<OwnNotes>("notes")
         if (intent != null) {
             val name = intent.topic;
-            val uname = intent.universityname
-            val dis = intent.describption
-            topic.text = name;
-            universityname.text = uname;
-            discriotion.text = dis
+            val uname = intent.c_name
+            val dis = intent.description
+            topic.text = name.toString()
+            universityname.text = uname.toString()
+            discriotion.text = dis.toString()
         }
         loadcomment()
         val adapter=CommentAdpater(listcommet,this)

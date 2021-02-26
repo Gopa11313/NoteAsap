@@ -1,7 +1,9 @@
 package com.example.noteasap.api
 
 import com.example.noteasap.response.NoteResponse
+import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.OwnNotes
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -13,5 +15,19 @@ interface NoteApi {
     suspend fun getAllNotes(
         @Header("Authorization") token:String,
         @Path("userId") userId:String,
+    ):Response<NoteResponse>
+
+    @Multipart
+    @PUT("upload/user/file/{id}")
+    suspend fun uploadFile(
+        @Header("Authorization") token:String,
+        @Path("id") id:String,
+        @Part file: MultipartBody.Part
+    ): Response<NoteResponse>
+
+    @GET("note/by/notid/{id}")
+    suspend fun getAllbookmarkedNotes(
+        @Header("Authorization") token:String,
+        @Path("id") userId:String,
     ):Response<NoteResponse>
 }
