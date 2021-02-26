@@ -26,5 +26,10 @@ class NoteRepository:MyApiRequest(){
             myApi.uploadFile(ServiceBuilder.token!!,id,file)
         }
     }
+    suspend fun getAllbookmarkedNotes(id:String):NoteResponse{
+        return apiRequest {
+            myApi.getAllNotes(ServiceBuilder.token!!,id)
+        }
+    }
 
 }
