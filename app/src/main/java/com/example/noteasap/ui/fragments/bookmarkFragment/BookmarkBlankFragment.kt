@@ -75,7 +75,6 @@ class BookmarkBlankFragment : Fragment() {
                 NoteAsapDb.getInstance(requireContext()).getBookmarkDao().droptable()
                 for (i in data!!.indices){
                     allnoteid=data[i].noteId
-
                     //----------getting note from noteid------------/////////
                     val noteRepository=NoteRepository()
                     val noteResponse=noteRepository.getAllbookmarkedNotes(allnoteid!!)
@@ -84,11 +83,7 @@ class BookmarkBlankFragment : Fragment() {
                         NoteAsapDb.getInstance(requireContext()).getBookmarkDao().bookmarkNote(noteResponse.data)
                        // listNotes=(noteResponse.data)
                     }
-
                 }
-
-
-
                 //----------getting note from roomdatabase--------------//
                 val bookmarkedList=NoteAsapDb.getInstance(requireContext()).getBookmarkDao().getBookmarkNote()
                 withContext(Main){
