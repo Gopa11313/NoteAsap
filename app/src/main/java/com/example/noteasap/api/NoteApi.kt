@@ -1,5 +1,6 @@
 package com.example.noteasap.api
 
+import com.example.noteasap.response.ForBookmarkedNotesResponse
 import com.example.noteasap.response.NoteResponse
 import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.OwnNotes
@@ -29,5 +30,5 @@ interface NoteApi {
     suspend fun getAllbookmarkedNotes(
         @Header("Authorization") token:String,
         @Path("id") userId:String,
-    ):Response<NoteResponse>
+    ):Response<ForBookmarkedNotesResponse>
 }

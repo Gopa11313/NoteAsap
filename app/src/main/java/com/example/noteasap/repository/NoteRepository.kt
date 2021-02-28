@@ -4,6 +4,7 @@ import com.example.noteasap.api.MyApiRequest
 import com.example.noteasap.api.NoteApi
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.api.UserApi
+import com.example.noteasap.response.ForBookmarkedNotesResponse
 import com.example.noteasap.response.NoteResponse
 import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.OwnNotes
@@ -26,9 +27,9 @@ class NoteRepository:MyApiRequest(){
             myApi.uploadFile(ServiceBuilder.token!!,id,file)
         }
     }
-    suspend fun getAllbookmarkedNotes(id:String):NoteResponse{
+    suspend fun getAllbookmarkedNotes(id:String):ForBookmarkedNotesResponse{
         return apiRequest {
-            myApi.getAllNotes(ServiceBuilder.token!!,id)
+            myApi.getAllbookmarkedNotes(ServiceBuilder.token!!,id)
         }
     }
 

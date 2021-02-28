@@ -64,38 +64,38 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public Object RegisterUser(final User user, final Continuation<? super Unit> p1) {
+  public Object RegisterUser(final User arg0, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfUser.insert(user);
+          __insertionAdapterOfUser.insert(arg0);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
         }
       }
-    }, p1);
+    }, arg1);
   }
 
   @Override
-  public Object checkUSer(final String email, final String password,
-      final Continuation<? super User> p2) {
+  public Object checkUSer(final String arg0, final String arg1,
+      final Continuation<? super User> arg2) {
     final String _sql = "select * from User where email=(?) and password=(?)";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
-    if (email == null) {
+    if (arg0 == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, email);
+      _statement.bindString(_argIndex, arg0);
     }
     _argIndex = 2;
-    if (password == null) {
+    if (arg1 == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, password);
+      _statement.bindString(_argIndex, arg1);
     }
     return CoroutinesRoom.execute(__db, false, new Callable<User>() {
       @Override
@@ -129,6 +129,6 @@ public final class UserDao_Impl implements UserDao {
           _statement.release();
         }
       }
-    }, p2);
+    }, arg2);
   }
 }
