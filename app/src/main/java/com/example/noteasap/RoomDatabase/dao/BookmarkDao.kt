@@ -14,9 +14,9 @@ interface BookmarkDao {
     suspend fun droptable()
 
     @Insert
-    suspend fun bookmarkNote(list: List<OwnNotes>?)
+    suspend fun bookmarkNote(list: List<BookMarkNotes>?)
 
 
     @Query("select * from BookMarkNotes")
-    suspend fun getBookmarkNote(): List<OwnNotes>
+    suspend fun getBookmarkNote(): List<BookMarkNotes>
 }

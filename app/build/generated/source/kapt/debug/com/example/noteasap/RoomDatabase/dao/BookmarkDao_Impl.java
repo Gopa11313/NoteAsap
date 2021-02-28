@@ -9,7 +9,7 @@ import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
-import com.example.noteasap.ui.model.OwnNotes;
+import com.example.noteasap.ui.model.BookMarkNotes;
 import java.lang.Exception;
 import java.lang.Object;
 import java.lang.Override;
@@ -25,20 +25,20 @@ import kotlin.coroutines.Continuation;
 public final class BookmarkDao_Impl implements BookmarkDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter<OwnNotes> __insertionAdapterOfOwnNotes;
+  private final EntityInsertionAdapter<BookMarkNotes> __insertionAdapterOfBookMarkNotes;
 
   private final SharedSQLiteStatement __preparedStmtOfDroptable;
 
   public BookmarkDao_Impl(RoomDatabase __db) {
     this.__db = __db;
-    this.__insertionAdapterOfOwnNotes = new EntityInsertionAdapter<OwnNotes>(__db) {
+    this.__insertionAdapterOfBookMarkNotes = new EntityInsertionAdapter<BookMarkNotes>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `OwnNotes` (`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`) VALUES (?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `BookMarkNotes` (`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`) VALUES (?,?,?,?,?,?,?,?)";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, OwnNotes value) {
+      public void bind(SupportSQLiteStatement stmt, BookMarkNotes value) {
         if (value.get_id() == null) {
           stmt.bindNull(1);
         } else {
@@ -91,13 +91,13 @@ public final class BookmarkDao_Impl implements BookmarkDao {
   }
 
   @Override
-  public Object bookmarkNote(final List<OwnNotes> list, final Continuation<? super Unit> p1) {
+  public Object bookmarkNote(final List<BookMarkNotes> list, final Continuation<? super Unit> p1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfOwnNotes.insert(list);
+          __insertionAdapterOfBookMarkNotes.insert(list);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -127,12 +127,12 @@ public final class BookmarkDao_Impl implements BookmarkDao {
   }
 
   @Override
-  public Object getBookmarkNote(final Continuation<? super List<OwnNotes>> p0) {
+  public Object getBookmarkNote(final Continuation<? super List<BookMarkNotes>> p0) {
     final String _sql = "select * from BookMarkNotes";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return CoroutinesRoom.execute(__db, false, new Callable<List<OwnNotes>>() {
+    return CoroutinesRoom.execute(__db, false, new Callable<List<BookMarkNotes>>() {
       @Override
-      public List<OwnNotes> call() throws Exception {
+      public List<BookMarkNotes> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "_id");
@@ -143,9 +143,9 @@ public final class BookmarkDao_Impl implements BookmarkDao {
           final int _cursorIndexOfFile = CursorUtil.getColumnIndexOrThrow(_cursor, "file");
           final int _cursorIndexOfTopic = CursorUtil.getColumnIndexOrThrow(_cursor, "topic");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
-          final List<OwnNotes> _result = new ArrayList<OwnNotes>(_cursor.getCount());
+          final List<BookMarkNotes> _result = new ArrayList<BookMarkNotes>(_cursor.getCount());
           while(_cursor.moveToNext()) {
-            final OwnNotes _item;
+            final BookMarkNotes _item;
             final String _tmp_id;
             _tmp_id = _cursor.getString(_cursorIndexOfId);
             final String _tmpUserId;
@@ -162,7 +162,7 @@ public final class BookmarkDao_Impl implements BookmarkDao {
             _tmpTopic = _cursor.getString(_cursorIndexOfTopic);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            _item = new OwnNotes(_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription);
+            _item = new BookMarkNotes(_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription);
             _result.add(_item);
           }
           return _result;

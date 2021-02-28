@@ -9,12 +9,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.ui.content.ContentActivity
 import com.example.noteasap.R
+import com.example.noteasap.ui.model.BookMarkNotes
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.OwnNotes
 import android.content.Intent as Intent
 
 class BookmarkAdpater(
-        val listbookmark:ArrayList<OwnNotes>,
+        val listbookmark:ArrayList<BookMarkNotes>,
         val context: Context):RecyclerView.Adapter<BookmarkAdpater.NoteresViewholder>() {
          class NoteresViewholder(view:View):RecyclerView.ViewHolder(view){
             val universityname:TextView;

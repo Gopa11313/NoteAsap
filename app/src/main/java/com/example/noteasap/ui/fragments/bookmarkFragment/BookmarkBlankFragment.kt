@@ -92,7 +92,7 @@ class BookmarkBlankFragment : Fragment() {
                 //----------getting note from roomdatabase--------------//
                 val bookmarkedList=NoteAsapDb.getInstance(requireContext()).getBookmarkDao().getBookmarkNote()
                 withContext(Main){
-                    val adpater= context?.let { BookmarkAdpater(bookmarkedList as ArrayList<OwnNotes>, it) }
+                    val adpater= context?.let { BookmarkAdpater(bookmarkedList as ArrayList<BookMarkNotes>, it) }
                 recyleview.setHasFixedSize(true);
                 recyleview.layoutManager = LinearLayoutManager(activity)
                 recyleview.adapter=adpater;
