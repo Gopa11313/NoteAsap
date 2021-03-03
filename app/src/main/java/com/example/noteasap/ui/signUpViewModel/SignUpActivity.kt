@@ -12,7 +12,6 @@ import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.R
 import com.example.noteasap.databinding.ActivitySignUpBinding
 import com.example.noteasap.repository.UserRepository
-import com.example.noteasap.response.UserResponse
 import com.example.noteasap.ui.model.User
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
@@ -26,6 +25,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
     private lateinit var termsnCon:CheckBox;
     private lateinit var signup:LinearLayout;
     private  lateinit var register:Button;
+
     private lateinit var signupViewModel: SignUpViewModel
     private lateinit var already:TextView;
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
@@ -35,13 +35,14 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener  {
         binding.lifecycleOwner = this
 
         fullname=findViewById(R.id.fullName)
-        email=findViewById(R.id.email);
+        email=findViewById(R.id.log_email);
         pass=findViewById(R.id.pass);
         con_pass=findViewById(R.id.con_pss)
         pass=findViewById(R.id.pass);
         termsnCon=findViewById(R.id.termsnCon);
         register=findViewById(R.id.reister)
         signup=findViewById(R.id.signup)
+
         already=findViewById(R.id.already)
         already.setOnClickListener(this);
         signupViewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)

@@ -47,9 +47,6 @@ class HomeAdapter(
             val intent = Intent(context, ContentActivity::class.java)
             intent.putExtra("notes",note)
             context.startActivity(intent);
-            ContextCompat.startActivity(context, Intent(context,ContentActivity::class.java),
-                Bundle()
-            )
         }
     }
 

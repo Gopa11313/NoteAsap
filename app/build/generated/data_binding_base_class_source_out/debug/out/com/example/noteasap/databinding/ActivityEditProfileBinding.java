@@ -41,10 +41,10 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
   public final LinearLayout linearLayout6;
 
   @NonNull
-  public final EditText name;
+  public final EditText logPassword;
 
   @NonNull
-  public final EditText password;
+  public final EditText name;
 
   @NonNull
   public final CircleImageView profile;
@@ -55,7 +55,7 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
   protected ActivityEditProfileBinding(Object _bindingComponent, View _root, int _localFieldCount,
       Button chnageprofile, EditText conpassword, EditText editText, LinearLayout linearLayout3,
       LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6,
-      EditText name, EditText password, CircleImageView profile) {
+      EditText logPassword, EditText name, CircleImageView profile) {
     super(_bindingComponent, _root, _localFieldCount);
     this.chnageprofile = chnageprofile;
     this.conpassword = conpassword;
@@ -64,8 +64,8 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
     this.linearLayout4 = linearLayout4;
     this.linearLayout5 = linearLayout5;
     this.linearLayout6 = linearLayout6;
+    this.logPassword = logPassword;
     this.name = name;
-    this.password = password;
     this.profile = profile;
   }
 

@@ -8,27 +8,32 @@ import kotlinx.android.parcel.Parcelize
 
 @Entity
 data class OwnNotes(
-    @PrimaryKey (autoGenerate = false) val _id:String="",
+    @PrimaryKey (autoGenerate = true) val primaryKey:Int=0,
+                val _id:String?="",
                val userId: String? =null,
                val level:String?=null,
                val subject:String?=null,
                val c_name:String?=null,
                val file:String?=null,
                val topic:String?=null,
-               val description:String?=null ):Parcelable{
+               val description:String?=null,
+    val ratting:Int?=null):Parcelable{
     constructor(parcel: Parcel) : this(
-        parcel.toString(),
+        parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(primaryKey)
         parcel.writeString(_id)
         parcel.writeString(userId)
         parcel.writeString(level)
@@ -37,6 +42,7 @@ data class OwnNotes(
         parcel.writeString(file)
         parcel.writeString(topic)
         parcel.writeString(description)
+        parcel.writeValue(ratting)
     }
 
     override fun describeContents(): Int {

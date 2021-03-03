@@ -34,16 +34,16 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
         super(bindingComponent, root, 4
             , (android.widget.TextView) bindings[8]
             , (android.widget.EditText) bindings[4]
-            , (android.widget.EditText) bindings[2]
             , (android.widget.EditText) bindings[1]
+            , (android.widget.EditText) bindings[2]
             , (android.widget.EditText) bindings[3]
             , (android.widget.Button) bindings[7]
             , (android.widget.LinearLayout) bindings[5]
             , (android.widget.CheckBox) bindings[6]
             );
         this.conPss.setTag(null);
-        this.email.setTag(null);
         this.fullName.setTag(null);
+        this.logEmail.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.pass.setTag(null);
@@ -225,15 +225,15 @@ public class ActivitySignUpBindingImpl extends ActivitySignUpBinding  {
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.conPss, signUpViewModelConPasswordGetValue);
         }
-        if ((dirtyFlags & 0x34L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.email, signUpViewModelEmailGetValue);
-        }
         if ((dirtyFlags & 0x32L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.fullName, signUpViewModelFullnameGetValue);
+        }
+        if ((dirtyFlags & 0x34L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.logEmail, signUpViewModelEmailGetValue);
         }
         if ((dirtyFlags & 0x31L) != 0) {
             // api target 1

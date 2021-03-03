@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,9 +21,19 @@ import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
 import com.example.noteasap.ui.pupup.message.MessageActivity
 import com.example.noteasap.R
+import com.example.noteasap.RoomDatabase.NoteAsapDb
+import com.example.noteasap.api.ServiceBuilder
+import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
+import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -37,6 +49,7 @@ class accountBlankFragment : Fragment() {
     private lateinit var uploadnotesframe:FrameLayout;
     private lateinit var imageviewfor3menus:ImageView;
     private lateinit var imagebtn:ImageView;
+    private lateinit var btnlog:ImageButton;
     private lateinit var imagebtn2:ImageView;
     private val listNotes=ArrayList<OwnNotes>();
     private lateinit var recyleview: RecyclerView;
@@ -62,7 +75,36 @@ class accountBlankFragment : Fragment() {
         uploadnotesframe=view.findViewById(R.id.uploadnotesframe)
         recyleview=view.findViewById(R.id.recycler_view)
         imagebtn=view.findViewById(R.id.imagebtn)
+        btnlog=view.findViewById(R.id.btnlog)
         imagebtn2=view.findViewById(R.id.imabtn2)
+
+        btnlog.setOnClickListener(){
+            val builder= AlertDialog.Builder(requireContext());
+            builder.setMessage("Do you want bookmarked this note.")
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.setPositiveButton("Yes"){dialogInterface,which->
+                            val sharedPref =requireActivity().getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
+                            val editor=sharedPref.edit()
+                            editor.remove("email")
+                            editor.remove("password")
+                            editor.remove("_id")
+                            editor.remove("name")
+                                .apply()
+                            CoroutineScope(Dispatchers.IO).launch{
+                                NoteAsapDb.getInstance(requireContext()).getUserDao().logout()
+                                withContext(Main){
+                                    startActivity(Intent(context,LoginActivity::class.java))
+                                }
+                            }
+            }
+            builder.setNegativeButton("No"){
+                    dialogInterface,which->
+            }
+            builder.show()
+
+        }
+
+
         imagebtn2.setOnClickListener(){
         popup()
         }
@@ -118,13 +160,7 @@ class accountBlankFragment : Fragment() {
             }
     }
     private fun loadvlaue(){
-//        listNotes.add(OwnNotes(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
-//        listNotes.add(OwnNotes(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
-//        listNotes.add(OwnNotes(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
-//
-//        listNotes.add(OwnNotes(1,2,"Coventry university ","Not Aviable now","IT","This is note"))
-//        listNotes.add(OwnNotes(101,201,"Trivuban university ","Not Aviable now","Physics","This is note"))
-//        listNotes.add(OwnNotes(1001,2001,"Coventry university ","Not Aviable now","Chemistry","This is note"))
+
     }
     private fun popup(){
         val popupMenu= PopupMenu(context,imagebtn)

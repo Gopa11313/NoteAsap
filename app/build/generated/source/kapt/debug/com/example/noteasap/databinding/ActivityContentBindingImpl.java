@@ -14,13 +14,17 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.download, 6);
-        sViewsWithIds.put(R.id.linearLayout, 7);
-        sViewsWithIds.put(R.id.textView6, 8);
-        sViewsWithIds.put(R.id.linearLayout2, 9);
-        sViewsWithIds.put(R.id.comment, 10);
-        sViewsWithIds.put(R.id.recycler_view1, 11);
-        sViewsWithIds.put(R.id.bookmark, 12);
+        sViewsWithIds.put(R.id.layout, 3);
+        sViewsWithIds.put(R.id.topic, 4);
+        sViewsWithIds.put(R.id.Universityname, 5);
+        sViewsWithIds.put(R.id.dis, 6);
+        sViewsWithIds.put(R.id.download, 7);
+        sViewsWithIds.put(R.id.linearLayout, 8);
+        sViewsWithIds.put(R.id.textView6, 9);
+        sViewsWithIds.put(R.id.linearLayout2, 10);
+        sViewsWithIds.put(R.id.comment, 11);
+        sViewsWithIds.put(R.id.recycler_view1, 12);
+        sViewsWithIds.put(R.id.bookmark, 13);
     }
     // views
     @NonNull
@@ -31,30 +35,28 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityContentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
     }
     private ActivityContentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 5
-            , (android.widget.TextView) bindings[2]
-            , (android.widget.ImageView) bindings[12]
-            , (android.widget.ImageView) bindings[10]
-            , (android.widget.EditText) bindings[5]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.Button) bindings[6]
-            , (android.widget.LinearLayout) bindings[7]
-            , (android.widget.LinearLayout) bindings[9]
-            , (android.widget.RatingBar) bindings[4]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[11]
-            , (android.widget.TextView) bindings[8]
-            , (android.widget.TextView) bindings[1]
+        super(bindingComponent, root, 2
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.ImageView) bindings[13]
+            , (android.widget.ImageView) bindings[11]
+            , (android.widget.EditText) bindings[2]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.Button) bindings[7]
+            , (androidx.constraintlayout.widget.ConstraintLayout) bindings[3]
+            , (android.widget.LinearLayout) bindings[8]
+            , (android.widget.LinearLayout) bindings[10]
+            , (android.widget.RatingBar) bindings[1]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[12]
+            , (android.widget.TextView) bindings[9]
+            , (android.widget.TextView) bindings[4]
             );
-        this.Universityname.setTag(null);
         this.commentbar.setTag(null);
-        this.dis.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.ratingBar1.setTag(null);
-        this.topic.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -63,7 +65,7 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x40L;
+                mDirtyFlags = 0x8L;
         }
         requestRebind();
     }
@@ -93,7 +95,7 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     public void setContentViewModel(@Nullable com.example.noteasap.ui.content.ContentviewModel ContentViewModel) {
         this.mContentViewModel = ContentViewModel;
         synchronized(this) {
-            mDirtyFlags |= 0x20L;
+            mDirtyFlags |= 0x4L;
         }
         notifyPropertyChanged(BR.ContentViewModel);
         super.requestRebind();
@@ -105,12 +107,6 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
             case 0 :
                 return onChangeContentViewModelRating((androidx.lifecycle.LiveData<java.lang.Integer>) object, fieldId);
             case 1 :
-                return onChangeContentViewModelUniName((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-            case 2 :
-                return onChangeContentViewModelTopic((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-            case 3 :
-                return onChangeContentViewModelDis((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
-            case 4 :
                 return onChangeContentViewModelCmnt((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
         }
         return false;
@@ -124,37 +120,10 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
         }
         return false;
     }
-    private boolean onChangeContentViewModelUniName(androidx.lifecycle.LiveData<java.lang.String> ContentViewModelUniName, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x2L;
-            }
-            return true;
-        }
-        return false;
-    }
-    private boolean onChangeContentViewModelTopic(androidx.lifecycle.LiveData<java.lang.String> ContentViewModelTopic, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x4L;
-            }
-            return true;
-        }
-        return false;
-    }
-    private boolean onChangeContentViewModelDis(androidx.lifecycle.LiveData<java.lang.String> ContentViewModelDis, int fieldId) {
-        if (fieldId == BR._all) {
-            synchronized(this) {
-                    mDirtyFlags |= 0x8L;
-            }
-            return true;
-        }
-        return false;
-    }
     private boolean onChangeContentViewModelCmnt(androidx.lifecycle.LiveData<java.lang.String> ContentViewModelCmnt, int fieldId) {
         if (fieldId == BR._all) {
             synchronized(this) {
-                    mDirtyFlags |= 0x10L;
+                    mDirtyFlags |= 0x2L;
             }
             return true;
         }
@@ -168,23 +137,17 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String contentViewModelDisGetValue = null;
-        androidx.lifecycle.LiveData<java.lang.Integer> contentViewModelRating = null;
-        androidx.lifecycle.LiveData<java.lang.String> contentViewModelUniName = null;
-        java.lang.String contentViewModelUniNameGetValue = null;
         java.lang.Integer contentViewModelRatingGetValue = null;
-        java.lang.String contentViewModelTopicGetValue = null;
         java.lang.String contentViewModelCmntGetValue = null;
-        androidx.lifecycle.LiveData<java.lang.String> contentViewModelTopic = null;
-        androidx.lifecycle.LiveData<java.lang.String> contentViewModelDis = null;
+        androidx.lifecycle.LiveData<java.lang.Integer> contentViewModelRating = null;
         int androidxDatabindingViewDataBindingSafeUnboxContentViewModelRatingGetValue = 0;
         androidx.lifecycle.LiveData<java.lang.String> contentViewModelCmnt = null;
         com.example.noteasap.ui.content.ContentviewModel contentViewModel = mContentViewModel;
 
-        if ((dirtyFlags & 0x7fL) != 0) {
+        if ((dirtyFlags & 0xfL) != 0) {
 
 
-            if ((dirtyFlags & 0x61L) != 0) {
+            if ((dirtyFlags & 0xdL) != 0) {
 
                     if (contentViewModel != null) {
                         // read ContentViewModel.rating
@@ -202,55 +165,13 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
                     // read androidx.databinding.ViewDataBinding.safeUnbox(ContentViewModel.rating.getValue())
                     androidxDatabindingViewDataBindingSafeUnboxContentViewModelRatingGetValue = androidx.databinding.ViewDataBinding.safeUnbox(contentViewModelRatingGetValue);
             }
-            if ((dirtyFlags & 0x62L) != 0) {
-
-                    if (contentViewModel != null) {
-                        // read ContentViewModel.uniName
-                        contentViewModelUniName = contentViewModel.getUniName();
-                    }
-                    updateLiveDataRegistration(1, contentViewModelUniName);
-
-
-                    if (contentViewModelUniName != null) {
-                        // read ContentViewModel.uniName.getValue()
-                        contentViewModelUniNameGetValue = contentViewModelUniName.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x64L) != 0) {
-
-                    if (contentViewModel != null) {
-                        // read ContentViewModel.topic
-                        contentViewModelTopic = contentViewModel.getTopic();
-                    }
-                    updateLiveDataRegistration(2, contentViewModelTopic);
-
-
-                    if (contentViewModelTopic != null) {
-                        // read ContentViewModel.topic.getValue()
-                        contentViewModelTopicGetValue = contentViewModelTopic.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x68L) != 0) {
-
-                    if (contentViewModel != null) {
-                        // read ContentViewModel.dis
-                        contentViewModelDis = contentViewModel.getDis();
-                    }
-                    updateLiveDataRegistration(3, contentViewModelDis);
-
-
-                    if (contentViewModelDis != null) {
-                        // read ContentViewModel.dis.getValue()
-                        contentViewModelDisGetValue = contentViewModelDis.getValue();
-                    }
-            }
-            if ((dirtyFlags & 0x70L) != 0) {
+            if ((dirtyFlags & 0xeL) != 0) {
 
                     if (contentViewModel != null) {
                         // read ContentViewModel.cmnt
                         contentViewModelCmnt = contentViewModel.getCmnt();
                     }
-                    updateLiveDataRegistration(4, contentViewModelCmnt);
+                    updateLiveDataRegistration(1, contentViewModelCmnt);
 
 
                     if (contentViewModelCmnt != null) {
@@ -260,30 +181,15 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
             }
         }
         // batch finished
-        if ((dirtyFlags & 0x62L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.Universityname, contentViewModelUniNameGetValue);
-        }
-        if ((dirtyFlags & 0x70L) != 0) {
+        if ((dirtyFlags & 0xeL) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.commentbar, contentViewModelCmntGetValue);
         }
-        if ((dirtyFlags & 0x68L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.dis, contentViewModelDisGetValue);
-        }
-        if ((dirtyFlags & 0x61L) != 0) {
+        if ((dirtyFlags & 0xdL) != 0) {
             // api target 1
 
             androidx.databinding.adapters.RatingBarBindingAdapter.setRating(this.ratingBar1, androidxDatabindingViewDataBindingSafeUnboxContentViewModelRatingGetValue);
-        }
-        if ((dirtyFlags & 0x64L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.topic, contentViewModelTopicGetValue);
         }
     }
     // Listener Stub Implementations
@@ -292,12 +198,9 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
         flag 0 (0x1L): ContentViewModel.rating
-        flag 1 (0x2L): ContentViewModel.uniName
-        flag 2 (0x3L): ContentViewModel.topic
-        flag 3 (0x4L): ContentViewModel.dis
-        flag 4 (0x5L): ContentViewModel.cmnt
-        flag 5 (0x6L): ContentViewModel
-        flag 6 (0x7L): null
+        flag 1 (0x2L): ContentViewModel.cmnt
+        flag 2 (0x3L): ContentViewModel
+        flag 3 (0x4L): null
     flag mapping end*/
     //end
 }

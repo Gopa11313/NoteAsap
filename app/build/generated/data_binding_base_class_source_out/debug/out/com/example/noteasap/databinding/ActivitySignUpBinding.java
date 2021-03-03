@@ -27,10 +27,10 @@ public abstract class ActivitySignUpBinding extends ViewDataBinding {
   public final EditText conPss;
 
   @NonNull
-  public final EditText email;
+  public final EditText fullName;
 
   @NonNull
-  public final EditText fullName;
+  public final EditText logEmail;
 
   @NonNull
   public final EditText pass;
@@ -48,13 +48,13 @@ public abstract class ActivitySignUpBinding extends ViewDataBinding {
   protected SignUpViewModel mSignUpViewModel;
 
   protected ActivitySignUpBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView already, EditText conPss, EditText email, EditText fullName, EditText pass,
+      TextView already, EditText conPss, EditText fullName, EditText logEmail, EditText pass,
       Button reister, LinearLayout signup, CheckBox termsnCon) {
     super(_bindingComponent, _root, _localFieldCount);
     this.already = already;
     this.conPss = conPss;
-    this.email = email;
     this.fullName = fullName;
+    this.logEmail = logEmail;
     this.pass = pass;
     this.reister = reister;
     this.signup = signup;

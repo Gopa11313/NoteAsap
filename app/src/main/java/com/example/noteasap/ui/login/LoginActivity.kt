@@ -44,8 +44,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         signup=findViewById(R.id.signup)
         forgetpassword=findViewById(R.id.forgetpassword);
         login=findViewById(R.id.login)
-        email=findViewById(R.id.email)
-        password=findViewById(R.id.password)
+        email=findViewById(R.id.log_email)
+        password=findViewById(R.id.log_password)
 
         loginViewModel=ViewModelProvider(this).get(com.example.noteasap.ui.login.LoginViewModel::class.java)
         binding.loginViewModel=loginViewModel
@@ -88,7 +88,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         Toast.makeText(this@LoginActivity, "Username and password save", Toast.LENGTH_SHORT).show()
     }
     fun login(){
-        //Toast.makeText(this@LoginActivity, "${email.text.toString()+password.text.toString()}", Toast.LENGTH_SHORT).show()
         val user=User(email = email.text.toString(),password = password.text.toString())
         CoroutineScope(Dispatchers.IO).launch {
             val repository=UserRepository()
@@ -97,7 +96,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
             val listdata= data?.get(0)
             val name= listdata?.name
             val email=listdata?.email
-
             if(response.success==true){
                 val us=User(_id= response.id!!,email = email,password = password.text.toString())
                 NoteAsapDb.getInstance(this@LoginActivity).getUserDao().RegisterUser(us)

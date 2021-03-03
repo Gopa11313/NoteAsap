@@ -101,7 +101,7 @@ class UploadNotesActivity : AppCompatActivity() {
 
         private fun openFile(){
             val intent= Intent()
-                .setType("*/*")
+                .setType("application/*")
                 .setAction(Intent.ACTION_GET_CONTENT)
             startActivityForResult(intent,REQUEST_FILE_CODE)
 
@@ -158,7 +158,7 @@ private fun uploadnotes(){
         if(resultCode== Activity.RESULT_OK){
             if(requestCode == REQUEST_FILE_CODE && data != null) {
                 val selectedFile = data.data
-                val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
+                val filePathColumn = arrayOf(MediaStore.Files.FileColumns.DATA)
                 val contentResolver = contentResolver
                 val cursor =
                     contentResolver.query(selectedFile!!, filePathColumn, null, null, null)

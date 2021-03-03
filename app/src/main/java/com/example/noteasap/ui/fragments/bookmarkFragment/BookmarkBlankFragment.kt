@@ -67,7 +67,7 @@ class BookmarkBlankFragment : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             //-------- getting noteid---------------//
             val repository=BookmarkRepository()
-            val response=repository.bookmarkedNotes(ServiceBuilder.id!!)
+            val response=repository.getallbookmarkedNotes(ServiceBuilder.id!!)
             if(response.success==true){
                 val data= response.data
                 var allnoteid:String?=null

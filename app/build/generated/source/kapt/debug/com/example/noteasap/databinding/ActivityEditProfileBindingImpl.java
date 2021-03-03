@@ -41,16 +41,16 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
             , (android.widget.LinearLayout) bindings[8]
             , (android.widget.LinearLayout) bindings[9]
             , (android.widget.LinearLayout) bindings[10]
-            , (android.widget.EditText) bindings[1]
             , (android.widget.EditText) bindings[3]
+            , (android.widget.EditText) bindings[1]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[5]
             );
         this.conpassword.setTag(null);
         this.editText.setTag(null);
+        this.logPassword.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.name.setTag(null);
-        this.password.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -234,15 +234,15 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editText, editProfileViewModelEmailGetValue);
         }
+        if ((dirtyFlags & 0x31L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.logPassword, editProfileViewModelPasswordGetValue);
+        }
         if ((dirtyFlags & 0x32L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.name, editProfileViewModelNameGetValue);
-        }
-        if ((dirtyFlags & 0x31L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.password, editProfileViewModelPasswordGetValue);
         }
     }
     // Listener Stub Implementations

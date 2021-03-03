@@ -1844,7 +1844,6 @@ id easeOut
 id edit
 id editText
 id edit_query
-id email
 id end
 id end_padder
 id enterAlways
@@ -1918,6 +1917,8 @@ id linearLayout5
 id linearLayout6
 id listMode
 id list_item
+id log_email
+id log_password
 id login
 id masked
 id media_actions
@@ -1979,7 +1980,6 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id pass
-id password
 id password_toggle
 id path
 id pathRelative

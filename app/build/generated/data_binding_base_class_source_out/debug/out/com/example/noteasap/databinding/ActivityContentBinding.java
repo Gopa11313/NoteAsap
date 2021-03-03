@@ -12,6 +12,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -41,6 +42,9 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
   public final Button download;
 
   @NonNull
+  public final ConstraintLayout layout;
+
+  @NonNull
   public final LinearLayout linearLayout;
 
   @NonNull
@@ -63,8 +67,9 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
 
   protected ActivityContentBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView Universityname, ImageView bookmark, ImageView comment, EditText commentbar,
-      TextView dis, Button download, LinearLayout linearLayout, LinearLayout linearLayout2,
-      RatingBar ratingBar1, RecyclerView recyclerView1, TextView textView6, TextView topic) {
+      TextView dis, Button download, ConstraintLayout layout, LinearLayout linearLayout,
+      LinearLayout linearLayout2, RatingBar ratingBar1, RecyclerView recyclerView1,
+      TextView textView6, TextView topic) {
     super(_bindingComponent, _root, _localFieldCount);
     this.Universityname = Universityname;
     this.bookmark = bookmark;
@@ -72,6 +77,7 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
     this.commentbar = commentbar;
     this.dis = dis;
     this.download = download;
+    this.layout = layout;
     this.linearLayout = linearLayout;
     this.linearLayout2 = linearLayout2;
     this.ratingBar1 = ratingBar1;

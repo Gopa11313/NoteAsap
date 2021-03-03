@@ -19,16 +19,16 @@ import java.lang.Object;
 
 public abstract class ActivityLoginBinding extends ViewDataBinding {
   @NonNull
-  public final EditText email;
-
-  @NonNull
   public final TextView forgetpassword;
 
   @NonNull
-  public final Button login;
+  public final EditText logEmail;
 
   @NonNull
-  public final EditText password;
+  public final EditText logPassword;
+
+  @NonNull
+  public final Button login;
 
   @NonNull
   public final Button signup;
@@ -37,12 +37,13 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   protected LoginViewModel mLoginViewModel;
 
   protected ActivityLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      EditText email, TextView forgetpassword, Button login, EditText password, Button signup) {
+      TextView forgetpassword, EditText logEmail, EditText logPassword, Button login,
+      Button signup) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.email = email;
     this.forgetpassword = forgetpassword;
+    this.logEmail = logEmail;
+    this.logPassword = logPassword;
     this.login = login;
-    this.password = password;
     this.signup = signup;
   }
 
