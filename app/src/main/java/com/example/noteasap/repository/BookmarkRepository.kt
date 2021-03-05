@@ -19,4 +19,10 @@ class BookmarkRepository: MyApiRequest(){
             myApi.bookmarkTheNote(ServiceBuilder.token!!,bookmark)
         }
     }
+
+    suspend fun getParticularNote(noteId:String):BookmarkResponse{
+        return apiRequest {
+            myApi.getParticularNote(ServiceBuilder.token!!,ServiceBuilder.id!!,noteId)
+        }
+    }
 }

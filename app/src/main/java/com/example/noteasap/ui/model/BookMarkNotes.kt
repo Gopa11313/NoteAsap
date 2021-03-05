@@ -5,16 +5,18 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 @Entity
-data class BookMarkNotes (@PrimaryKey(autoGenerate = false) val _id:String="",
+data class BookMarkNotes (@PrimaryKey (autoGenerate = true) val primaryKey:Int=0,
+                          val _id:String?="",
                           val userId: String? =null,
                           val level:String?=null,
                           val subject:String?=null,
                           val c_name:String?=null,
                           val file:String?=null,
                           val topic:String?=null,
-                          val description:String?=null ):Parcelable {
+                          val description:String?=null ):Parcelable{
     constructor(parcel: Parcel) : this(
-        parcel.toString(),
+        parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -26,6 +28,7 @@ data class BookMarkNotes (@PrimaryKey(autoGenerate = false) val _id:String="",
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(primaryKey)
         parcel.writeString(_id)
         parcel.writeString(userId)
         parcel.writeString(level)

@@ -34,50 +34,51 @@ public final class BookmarkDao_Impl implements BookmarkDao {
     this.__insertionAdapterOfBookMarkNotes = new EntityInsertionAdapter<BookMarkNotes>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `BookMarkNotes` (`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`) VALUES (?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `BookMarkNotes` (`primaryKey`,`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, BookMarkNotes value) {
+        stmt.bindLong(1, value.getPrimaryKey());
         if (value.get_id() == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, value.get_id());
-        }
-        if (value.getUserId() == null) {
           stmt.bindNull(2);
         } else {
-          stmt.bindString(2, value.getUserId());
+          stmt.bindString(2, value.get_id());
         }
-        if (value.getLevel() == null) {
+        if (value.getUserId() == null) {
           stmt.bindNull(3);
         } else {
-          stmt.bindString(3, value.getLevel());
+          stmt.bindString(3, value.getUserId());
         }
-        if (value.getSubject() == null) {
+        if (value.getLevel() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getSubject());
+          stmt.bindString(4, value.getLevel());
         }
-        if (value.getC_name() == null) {
+        if (value.getSubject() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getC_name());
+          stmt.bindString(5, value.getSubject());
         }
-        if (value.getFile() == null) {
+        if (value.getC_name() == null) {
           stmt.bindNull(6);
         } else {
-          stmt.bindString(6, value.getFile());
+          stmt.bindString(6, value.getC_name());
         }
-        if (value.getTopic() == null) {
+        if (value.getFile() == null) {
           stmt.bindNull(7);
         } else {
-          stmt.bindString(7, value.getTopic());
+          stmt.bindString(7, value.getFile());
         }
-        if (value.getDescription() == null) {
+        if (value.getTopic() == null) {
           stmt.bindNull(8);
         } else {
-          stmt.bindString(8, value.getDescription());
+          stmt.bindString(8, value.getTopic());
+        }
+        if (value.getDescription() == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindString(9, value.getDescription());
         }
       }
     };
@@ -135,6 +136,7 @@ public final class BookmarkDao_Impl implements BookmarkDao {
       public List<BookMarkNotes> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
+          final int _cursorIndexOfPrimaryKey = CursorUtil.getColumnIndexOrThrow(_cursor, "primaryKey");
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "_id");
           final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
           final int _cursorIndexOfLevel = CursorUtil.getColumnIndexOrThrow(_cursor, "level");
@@ -146,6 +148,8 @@ public final class BookmarkDao_Impl implements BookmarkDao {
           final List<BookMarkNotes> _result = new ArrayList<BookMarkNotes>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final BookMarkNotes _item;
+            final int _tmpPrimaryKey;
+            _tmpPrimaryKey = _cursor.getInt(_cursorIndexOfPrimaryKey);
             final String _tmp_id;
             _tmp_id = _cursor.getString(_cursorIndexOfId);
             final String _tmpUserId;
@@ -162,7 +166,7 @@ public final class BookmarkDao_Impl implements BookmarkDao {
             _tmpTopic = _cursor.getString(_cursorIndexOfTopic);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            _item = new BookMarkNotes(_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription);
+            _item = new BookMarkNotes(_tmpPrimaryKey,_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription);
             _result.add(_item);
           }
           return _result;

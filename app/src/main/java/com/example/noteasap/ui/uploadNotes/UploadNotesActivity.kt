@@ -2,22 +2,20 @@ package com.example.noteasap.ui.uploadNotes
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityUploadNotesBinding
 import com.example.noteasap.repository.NoteRepository
-import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.model.OwnNotes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,8 +26,7 @@ import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
-import java.text.SimpleDateFormat
-import java.util.*
+import java.io.InputStream
 
 
 class UploadNotesActivity : AppCompatActivity() {
@@ -100,14 +97,19 @@ class UploadNotesActivity : AppCompatActivity() {
     }
 
         private fun openFile(){
-            val intent= Intent()
-                .setType("application/*")
-                .setAction(Intent.ACTION_GET_CONTENT)
-            startActivityForResult(intent,REQUEST_FILE_CODE)
+//            val intent= Intent(Intent.ACTION_PICK)
+//                .setType("file/*")
+//        startActivityForResult(intent, REQUEST_FILE_CODE);
+
+
+            var intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.type = "application/*"
+             intent=Intent.createChooser(intent,"Choose a file")
+            startActivityForResult(intent, REQUEST_FILE_CODE)
 
     }
     fun validation():Boolean{
-        var flag=false;
+        var flag: Boolean;
         flag = c_name.text.toString()!==""&&topic.text.toString()!==""&&description.text.toString()!==""
         return flag
     }
@@ -132,7 +134,7 @@ private fun uploadnotes(){
         if(response.success==true){
             val id=response.id.toString()
             if(fileUrl != null){
-                uploadImage(id!!)
+                uploadImage(id)
                 withContext(Dispatchers.Main) {
                     clear()
                     Toast.makeText(this@UploadNotesActivity, "Student Added Successfully", Toast.LENGTH_SHORT).show()
@@ -153,20 +155,22 @@ private fun uploadnotes(){
             }
         }
     }
-}override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+}
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode== Activity.RESULT_OK){
             if(requestCode == REQUEST_FILE_CODE && data != null) {
-                val selectedFile = data.data
-                val filePathColumn = arrayOf(MediaStore.Files.FileColumns.DATA)
-                val contentResolver = contentResolver
-                val cursor =
-                    contentResolver.query(selectedFile!!, filePathColumn, null, null, null)
-                cursor!!.moveToFirst()
-                val columnIndex = cursor.getColumnIndex(filePathColumn[0])
-                fileUrl = cursor.getString(columnIndex)
-                chooseFile.setBackgroundColor(Color.GREEN)
-                cursor.close()
+                fileUrl = data.toUri(REQUEST_FILE_CODE)
+//                val filePathColumn = arrayOf(MediaStore.Files.FileColumns.DATA)
+//                val contentResolver = contentResolver
+//                val cursor =
+//                    contentResolver.query(selectedFile!!, filePathColumn, null, null, null)
+//                cursor!!.moveToFirst()
+//                val columnIndex = cursor.getColumnIndex(filePathColumn[0])
+//                fileUrl = cursor.getString(columnIndex)
+//                chooseFile.setBackgroundColor(Color.GREEN)
+//                print(  fileUrl)
+//                cursor.close()
             }
 
         }

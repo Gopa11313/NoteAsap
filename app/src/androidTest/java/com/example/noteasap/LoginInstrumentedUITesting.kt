@@ -2,8 +2,7 @@ package com.example.noteasap
 
 import androidx.test.espresso.Espresso.closeSoftKeyboard
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -38,7 +37,6 @@ class LoginInstrumentedUITesting {
         Thread.sleep(2000)
         onView(withId(R.id.bottom_navigation))
             .check(matches(isDisplayed()))
-
     }
 
 }

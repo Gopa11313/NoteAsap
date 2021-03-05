@@ -37,14 +37,14 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(7) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(8) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `User` (`_id` TEXT NOT NULL, `name` TEXT, `email` TEXT, `password` TEXT, `image` TEXT, PRIMARY KEY(`_id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `OwnNotes` (`primaryKey` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT, `ratting` INTEGER)");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `BookMarkNotes` (`_id` TEXT NOT NULL, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT, PRIMARY KEY(`_id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `BookMarkNotes` (`primaryKey` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '87333db53c0874afc206339b2a4472e5')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '475f42399b41c0271c23168e72ec8e05')");
       }
 
       @Override
@@ -125,8 +125,9 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
                   + " Expected:\n" + _infoOwnNotes + "\n"
                   + " Found:\n" + _existingOwnNotes);
         }
-        final HashMap<String, TableInfo.Column> _columnsBookMarkNotes = new HashMap<String, TableInfo.Column>(8);
-        _columnsBookMarkNotes.put("_id", new TableInfo.Column("_id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashMap<String, TableInfo.Column> _columnsBookMarkNotes = new HashMap<String, TableInfo.Column>(9);
+        _columnsBookMarkNotes.put("primaryKey", new TableInfo.Column("primaryKey", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsBookMarkNotes.put("_id", new TableInfo.Column("_id", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookMarkNotes.put("userId", new TableInfo.Column("userId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookMarkNotes.put("level", new TableInfo.Column("level", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsBookMarkNotes.put("subject", new TableInfo.Column("subject", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -145,7 +146,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "87333db53c0874afc206339b2a4472e5", "21fcb21d9eaad300fe6378408049e17a");
+    }, "475f42399b41c0271c23168e72ec8e05", "b28d549bf6610426420009fca460c28d");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

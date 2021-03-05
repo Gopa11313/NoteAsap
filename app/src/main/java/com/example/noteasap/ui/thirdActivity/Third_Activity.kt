@@ -43,10 +43,8 @@ class Third_Activity : AppCompatActivity() {
     }
     }
     fun replaceFragments(fragment:Fragment){
-        if(fragment!=null){
-            val transaction=supportFragmentManager.beginTransaction();
-            transaction.replace(R.id.fragment_container,fragment) //only use this here
-            transaction.commit();
-        }
+        val transaction=supportFragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_container,fragment) //only use this here
+        transaction.commit();
     }
 }

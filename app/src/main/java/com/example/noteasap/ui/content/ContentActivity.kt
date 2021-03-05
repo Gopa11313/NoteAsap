@@ -27,6 +27,7 @@ import com.example.noteasap.ui.model.OwnNotes
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -59,6 +60,20 @@ class ContentActivity : AppCompatActivity() {
         ratingBar1=findViewById(R.id.ratingBar1)
         bookamark=findViewById(R.id.bookmark)
         commentbar=findViewById(R.id.commentbar)
+        CoroutineScope(Dispatchers.IO).launch {
+            val repository=BookmarkRepository()
+            val response=repository.getParticularNote(noteid!!)
+            if(response.success==true){
+                withContext(Main){
+                    bookamark.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            applicationContext, // Context
+                            R.drawable.ic_star_orange // Drawable
+                        ))
+                }
+            }
+        }
+
         bookamark.setOnClickListener(){
             val builder= AlertDialog.Builder(this);
             builder.setMessage("Do you want bookmarked this note.")

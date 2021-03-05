@@ -2,7 +2,7 @@ package com.example.noteasap.RoomDatabase;
 
 import java.lang.System;
 
-@androidx.room.Database(entities = {com.example.noteasap.ui.model.User.class, com.example.noteasap.ui.model.OwnNotes.class, com.example.noteasap.ui.model.BookMarkNotes.class}, version = 7, exportSchema = false)
+@androidx.room.Database(entities = {com.example.noteasap.ui.model.User.class, com.example.noteasap.ui.model.OwnNotes.class, com.example.noteasap.ui.model.BookMarkNotes.class}, version = 8, exportSchema = false)
 @kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\'\u0018\u0000 \t2\u00020\u0001:\u0001\tB\u0005\u00a2\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H&J\b\u0010\u0005\u001a\u00020\u0006H&J\b\u0010\u0007\u001a\u00020\bH&\u00a8\u0006\n"}, d2 = {"Lcom/example/noteasap/RoomDatabase/NoteAsapDb;", "Landroidx/room/RoomDatabase;", "()V", "getBookmarkDao", "Lcom/example/noteasap/RoomDatabase/dao/BookmarkDao;", "getNoteDao", "Lcom/example/noteasap/RoomDatabase/dao/NoteDao;", "getUserDao", "Lcom/example/noteasap/RoomDatabase/dao/UserDao;", "Companion", "app_debug"})
 public abstract class NoteAsapDb extends androidx.room.RoomDatabase {
     private static volatile com.example.noteasap.RoomDatabase.NoteAsapDb instance;
