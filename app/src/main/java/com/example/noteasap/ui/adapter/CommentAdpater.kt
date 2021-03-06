@@ -43,15 +43,12 @@ class CommentAdpater(
 
     override fun onBindViewHolder(holder: CommentviewHolder, position: Int) {
         val comment=listcomment[position]
-        holder.name.text=comment.Sname
+//        holder.name.text=comment.name
         holder.comment.text=comment.comment
 
     }
 
     override fun getItemCount(): Int {
         return listcomment.size;
-    }
-    fun popupmenu(){
-
     }
 }

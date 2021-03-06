@@ -42,6 +42,7 @@ class ContentActivity : AppCompatActivity() {
     private lateinit var universityname:TextView;
     private lateinit var discriotion:TextView;
     private lateinit var img:ImageView;
+    private lateinit var comment:ImageView;
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar:TextView;
     var noteid:String?=null
@@ -60,20 +61,11 @@ class ContentActivity : AppCompatActivity() {
         ratingBar1=findViewById(R.id.ratingBar1)
         bookamark=findViewById(R.id.bookmark)
         commentbar=findViewById(R.id.commentbar)
-        CoroutineScope(Dispatchers.IO).launch {
-            val repository=BookmarkRepository()
-            val response=repository.getParticularNote(noteid!!)
-            if(response.success==true){
-                withContext(Main){
-                    bookamark.setImageDrawable(
-                        ContextCompat.getDrawable(
-                            applicationContext, // Context
-                            R.drawable.ic_star_orange // Drawable
-                        ))
-                }
-            }
-        }
+        comment=findViewById(R.id.comment)
 
+        comment.setOnClickListener(){
+
+}
         bookamark.setOnClickListener(){
             val builder= AlertDialog.Builder(this);
             builder.setMessage("Do you want bookmarked this note.")
@@ -141,11 +133,14 @@ class ContentActivity : AppCompatActivity() {
         recyleview.layoutManager= LinearLayoutManager(this)
         recyleview.adapter=adapter
     }
+
+
+
     private fun loadcomment(){
-        listcommet.add(Comment(1,12,"Vector","This is go damn good","13"))
-        listcommet.add(Comment(11,112,"Smith","This is average","14"))
-        listcommet.add(Comment(111,1112,"neps","really good","133"))
-        listcommet.add(Comment(1,12,"Vector","This is go damn good","13"))
+//        listcommet.add(Comment(1,12,"Vector","This is go damn good","13"))
+//        listcommet.add(Comment(11,112,"Smith","This is average","14"))
+//        listcommet.add(Comment(111,1112,"neps","really good","133"))
+//        listcommet.add(Comment(1,12,"Vector","This is go damn good","13"))
     }
 }
 

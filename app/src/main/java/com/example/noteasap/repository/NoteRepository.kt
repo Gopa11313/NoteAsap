@@ -15,9 +15,9 @@ class NoteRepository:MyApiRequest(){
             myApi.uploadnote(ServiceBuilder.token!!,ownNotes)
         }
     }
-    suspend fun getAllNote(userId:String):NoteResponse{
+    suspend fun getAllNote():NoteResponse{
         return apiRequest {
-            myApi.getAllNotes(ServiceBuilder.token!!,userId)
+            myApi.getAllNotes(ServiceBuilder.token!!)
         }
     }
     suspend fun uploadfile(id:String,file: MultipartBody.Part): NoteResponse {

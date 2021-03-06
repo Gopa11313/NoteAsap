@@ -24,5 +24,11 @@ class UserRepository:MyApiRequest(){
             myApi.uploadImage(ServiceBuilder.token!!,id,file)
         }
     }
+
+    suspend fun getme(id: String):UserResponse{
+        return apiRequest {
+            myApi.getme(ServiceBuilder.token!!,id)
+        }
+    }
 }
 

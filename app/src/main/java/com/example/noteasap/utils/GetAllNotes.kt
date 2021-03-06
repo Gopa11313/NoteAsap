@@ -8,15 +8,15 @@ import kotlinx.coroutines.launch
 
 class GetAllNotes (){
     fun getallnote(){
-        CoroutineScope(Dispatchers.IO).launch{
-            val repository=NoteRepository()
-            val response=repository.getAllNote(ServiceBuilder.id!!)
-            if(response.success==true){
-
-            }
-            else{
-
-            }
-        }
+//        CoroutineScope(Dispatchers.IO).launch{
+//            val repository=NoteRepository()
+//            val response=repository.getAllNote(ServiceBuilder.id!!)
+//            if(response.success==true){
+//
+//            }
+//            else{
+//
+//            }
+//        }
     }
 }

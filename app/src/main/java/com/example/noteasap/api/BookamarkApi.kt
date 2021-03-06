@@ -22,7 +22,6 @@ suspend fun bookmarkTheNote(
     @GET("bookmark/notes/by/note/user/{id}")
     suspend fun getParticularNote(
         @Header("Authorization") token:String,
-        @Path("id") userId:String,
-        @Field ("noteId") noteId:String
+        @Path("id") userId:String
     ):Response<BookmarkResponse>
 }

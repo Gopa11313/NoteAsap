@@ -12,10 +12,9 @@ interface NoteApi {
     @POST("upload/note")
     suspend fun uploadnote(@Header("Authorization") token:String, @Body ownnotes:OwnNotes):Response<NoteResponse>
 
-    @GET("get/notes/{userId}")
+    @GET("get/notes/")
     suspend fun getAllNotes(
         @Header("Authorization") token:String,
-        @Path("userId") userId:String,
     ):Response<NoteResponse>
 
     @Multipart

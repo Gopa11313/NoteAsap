@@ -25,4 +25,9 @@ interface UserApi {
         @Part file: MultipartBody.Part
     ): Response<UserResponse>
 
+    @GET("get/me/{id}")
+    suspend fun getme(
+        @Header("Authorization") token:String,
+        @Path("id") id:String,
+    ):Response<UserResponse>
 }
