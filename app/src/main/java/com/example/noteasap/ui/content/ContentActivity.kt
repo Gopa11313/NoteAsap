@@ -17,9 +17,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
+import com.example.noteasap.RoomDatabase.NoteAsapDb
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.repository.BookmarkRepository
+import com.example.noteasap.repository.CommentRepository
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
@@ -33,7 +35,7 @@ import kotlinx.coroutines.withContext
 
 
 class ContentActivity : AppCompatActivity() {
-    private val listcommet=ArrayList<Comment>();
+    private var listcommet:List<Comment>?=null;
     private lateinit var recyleview: RecyclerView;
     private lateinit var bookamark: ImageView;
     private lateinit var contentviewModel: ContentviewModel
@@ -64,7 +66,20 @@ class ContentActivity : AppCompatActivity() {
         comment=findViewById(R.id.comment)
 
         comment.setOnClickListener(){
-
+CoroutineScope(Dispatchers.IO).launch {
+    val repository=CommentRepository()
+    val response=repository.commentNote(Comment(userId = ServiceBuilder.id!!,noteId = noteid,comment = commentbar.text.toString()))
+    if(response.success==true){
+        withContext(Main){
+            Toast.makeText(this@ContentActivity, "successfully commented", Toast.LENGTH_SHORT).show()
+        }
+    }
+    else{
+        withContext(Main){
+            Toast.makeText(this@ContentActivity, "error", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
 }
         bookamark.setOnClickListener(){
             val builder= AlertDialog.Builder(this);
@@ -129,18 +144,28 @@ class ContentActivity : AppCompatActivity() {
             }
         }
         loadcomment()
-        val adapter=CommentAdpater(listcommet,this)
-        recyleview.layoutManager= LinearLayoutManager(this)
-        recyleview.adapter=adapter
+
+
+
     }
 
 
 
     private fun loadcomment(){
-//        listcommet.add(Comment(1,12,"Vector","This is go damn good","13"))
-//        listcommet.add(Comment(11,112,"Smith","This is average","14"))
-//        listcommet.add(Comment(111,1112,"neps","really good","133"))
-//        listcommet.add(Comment(1,12,"Vector","This is go damn good","13"))
+    CoroutineScope(Dispatchers.IO).launch {
+        val repository=CommentRepository()
+        val response=repository.getComment(noteid!!)
+        if(response.success==true)
+            listcommet=response.data
+            NoteAsapDb.getInstance(this@ContentActivity).getCommentDao().droptable()
+            NoteAsapDb.getInstance(this@ContentActivity).getCommentDao().CommentNote(listcommet)
+            val listCommentFromRoom=NoteAsapDb.getInstance(this@ContentActivity).getCommentDao().getComment()
+        withContext(Main){
+            val adapter=CommentAdpater(listCommentFromRoom as ArrayList<Comment>,this@ContentActivity)
+            recyleview.layoutManager= LinearLayoutManager(this@ContentActivity)
+            recyleview.adapter=adapter
+        }
+    }
     }
 }
 

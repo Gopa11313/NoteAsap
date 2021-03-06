@@ -2,18 +2,19 @@ package com.example.noteasap.ui.model;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u0002\n\u0002\b\u0003\u0018\u0000 \u00192\u00020\u0001:\u0001\u0019B\u000f\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004BA\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\t\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\t\u00a2\u0006\u0002\u0010\fJ\b\u0010\u0015\u001a\u00020\u0006H\u0016J\u0018\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u0006H\u0016R\u0013\u0010\b\u001a\u0004\u0018\u00010\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0013\u0010\n\u001a\u0004\u0018\u00010\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0013\u0010\u000b\u001a\u0004\u0018\u00010\t\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u000eR\u0015\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u00a2\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0011\u0010\u0012R\u0015\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u00a2\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0014\u0010\u0012\u00a8\u0006\u001a"}, d2 = {"Lcom/example/noteasap/ui/model/Comment;", "Landroid/os/Parcelable;", "parcel", "Landroid/os/Parcel;", "(Landroid/os/Parcel;)V", "s_Id", "", "t_id", "Sname", "", "comment", "note_id", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getSname", "()Ljava/lang/String;", "getComment", "getNote_id", "getS_Id", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getT_id", "describeContents", "writeToParcel", "", "flags", "CREATOR", "app_debug"})
+@androidx.room.Entity()
+@kotlin.Metadata(mv = {1, 4, 1}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0007\u0018\u0000 \u00182\u00020\u0001:\u0001\u0018B\u000f\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004B?\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\b\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\b\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\b\u00a2\u0006\u0002\u0010\fJ\b\u0010\u0014\u001a\u00020\u0006H\u0016J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u0006H\u0016R\u0016\u0010\u0005\u001a\u00020\u00068\u0006X\u0087\u0004\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0013\u0010\u000b\u001a\u0004\u0018\u00010\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0010R\u0013\u0010\n\u001a\u0004\u0018\u00010\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u0013\u0010\t\u001a\u0004\u0018\u00010\b\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0010\u00a8\u0006\u0019"}, d2 = {"Lcom/example/noteasap/ui/model/Comment;", "Landroid/os/Parcelable;", "parcel", "Landroid/os/Parcel;", "(Landroid/os/Parcel;)V", "Key", "", "_id", "", "userId", "noteId", "comment", "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getKey", "()I", "get_id", "()Ljava/lang/String;", "getComment", "getNoteId", "getUserId", "describeContents", "writeToParcel", "", "flags", "CREATOR", "app_debug"})
 public final class Comment implements android.os.Parcelable {
+    @androidx.room.PrimaryKey(autoGenerate = true)
+    private final int Key = 0;
     @org.jetbrains.annotations.Nullable()
-    private final java.lang.Integer s_Id = null;
+    private final java.lang.String _id = null;
     @org.jetbrains.annotations.Nullable()
-    private final java.lang.Integer t_id = null;
+    private final java.lang.String userId = null;
     @org.jetbrains.annotations.Nullable()
-    private final java.lang.String Sname = null;
+    private final java.lang.String noteId = null;
     @org.jetbrains.annotations.Nullable()
     private final java.lang.String comment = null;
-    @org.jetbrains.annotations.Nullable()
-    private final java.lang.String note_id = null;
     @org.jetbrains.annotations.NotNull()
     public static final com.example.noteasap.ui.model.Comment.CREATOR CREATOR = null;
     
@@ -27,18 +28,22 @@ public final class Comment implements android.os.Parcelable {
         return 0;
     }
     
+    public final int getKey() {
+        return 0;
+    }
+    
     @org.jetbrains.annotations.Nullable()
-    public final java.lang.Integer getS_Id() {
+    public final java.lang.String get_id() {
         return null;
     }
     
     @org.jetbrains.annotations.Nullable()
-    public final java.lang.Integer getT_id() {
+    public final java.lang.String getUserId() {
         return null;
     }
     
     @org.jetbrains.annotations.Nullable()
-    public final java.lang.String getSname() {
+    public final java.lang.String getNoteId() {
         return null;
     }
     
@@ -47,17 +52,11 @@ public final class Comment implements android.os.Parcelable {
         return null;
     }
     
-    @org.jetbrains.annotations.Nullable()
-    public final java.lang.String getNote_id() {
-        return null;
-    }
-    
-    public Comment(@org.jetbrains.annotations.Nullable()
-    java.lang.Integer s_Id, @org.jetbrains.annotations.Nullable()
-    java.lang.Integer t_id, @org.jetbrains.annotations.Nullable()
-    java.lang.String Sname, @org.jetbrains.annotations.Nullable()
-    java.lang.String comment, @org.jetbrains.annotations.Nullable()
-    java.lang.String note_id) {
+    public Comment(int Key, @org.jetbrains.annotations.Nullable()
+    java.lang.String _id, @org.jetbrains.annotations.Nullable()
+    java.lang.String userId, @org.jetbrains.annotations.Nullable()
+    java.lang.String noteId, @org.jetbrains.annotations.Nullable()
+    java.lang.String comment) {
         super();
     }
     

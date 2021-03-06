@@ -16,6 +16,8 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
 import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
 import com.example.noteasap.RoomDatabase.dao.BookmarkDao;
 import com.example.noteasap.RoomDatabase.dao.BookmarkDao_Impl;
+import com.example.noteasap.RoomDatabase.dao.CommentDao;
+import com.example.noteasap.RoomDatabase.dao.CommentDao_Impl;
 import com.example.noteasap.RoomDatabase.dao.NoteDao;
 import com.example.noteasap.RoomDatabase.dao.NoteDao_Impl;
 import com.example.noteasap.RoomDatabase.dao.UserDao;
@@ -35,16 +37,19 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
 
   private volatile BookmarkDao _bookmarkDao;
 
+  private volatile CommentDao _commentDao;
+
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(8) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(9) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `User` (`_id` TEXT NOT NULL, `name` TEXT, `email` TEXT, `password` TEXT, `image` TEXT, PRIMARY KEY(`_id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `OwnNotes` (`primaryKey` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT, `ratting` INTEGER)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `BookMarkNotes` (`primaryKey` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `CommentDao` ()");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '475f42399b41c0271c23168e72ec8e05')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a2a9d7b8af88fe26b290df3c5ccc6601')");
       }
 
       @Override
@@ -52,6 +57,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
         _db.execSQL("DROP TABLE IF EXISTS `User`");
         _db.execSQL("DROP TABLE IF EXISTS `OwnNotes`");
         _db.execSQL("DROP TABLE IF EXISTS `BookMarkNotes`");
+        _db.execSQL("DROP TABLE IF EXISTS `CommentDao`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -144,9 +150,19 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
                   + " Expected:\n" + _infoBookMarkNotes + "\n"
                   + " Found:\n" + _existingBookMarkNotes);
         }
+        final HashMap<String, TableInfo.Column> _columnsCommentDao = new HashMap<String, TableInfo.Column>(0);
+        final HashSet<TableInfo.ForeignKey> _foreignKeysCommentDao = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesCommentDao = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoCommentDao = new TableInfo("CommentDao", _columnsCommentDao, _foreignKeysCommentDao, _indicesCommentDao);
+        final TableInfo _existingCommentDao = TableInfo.read(_db, "CommentDao");
+        if (! _infoCommentDao.equals(_existingCommentDao)) {
+          return new RoomOpenHelper.ValidationResult(false, "CommentDao(com.example.noteasap.RoomDatabase.dao.CommentDao).\n"
+                  + " Expected:\n" + _infoCommentDao + "\n"
+                  + " Found:\n" + _existingCommentDao);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "475f42399b41c0271c23168e72ec8e05", "b28d549bf6610426420009fca460c28d");
+    }, "a2a9d7b8af88fe26b290df3c5ccc6601", "c7870329b2d416556d2c93882c97070f");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -159,7 +175,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "User","OwnNotes","BookMarkNotes");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "User","OwnNotes","BookMarkNotes","CommentDao");
   }
 
   @Override
@@ -171,6 +187,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
       _db.execSQL("DELETE FROM `User`");
       _db.execSQL("DELETE FROM `OwnNotes`");
       _db.execSQL("DELETE FROM `BookMarkNotes`");
+      _db.execSQL("DELETE FROM `CommentDao`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -219,6 +236,20 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
           _bookmarkDao = new BookmarkDao_Impl(this);
         }
         return _bookmarkDao;
+      }
+    }
+  }
+
+  @Override
+  public CommentDao getCommentDao() {
+    if (_commentDao != null) {
+      return _commentDao;
+    } else {
+      synchronized(this) {
+        if(_commentDao == null) {
+          _commentDao = new CommentDao_Impl(this);
+        }
+        return _commentDao;
       }
     }
   }
