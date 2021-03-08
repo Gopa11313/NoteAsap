@@ -30,7 +30,7 @@
         <activity android:name="com.example.noteasap.ui.pupup.message.MessageActivity" />
         <activity android:name="com.example.noteasap.ui.pupup.editProfile.EditProfileActivity" />
         <activity
-            android:name="com.example.noteasap.ui.content.ContentActivity"
+            android:name="com.example.noteasap.ui.content.contentForNote.ContentActivity"
             android:label="@string/title_activity_bookmark_content"
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
         <activity android:name="com.example.noteasap.ui.uploadNotes.UploadNotesActivity" />

@@ -1968,6 +1968,7 @@ id notif_Button
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numOfRatting
 id off
 id on
 id onAttachStateChangeListener

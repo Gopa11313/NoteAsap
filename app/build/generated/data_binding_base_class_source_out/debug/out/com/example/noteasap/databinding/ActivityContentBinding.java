@@ -19,7 +19,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.noteasap.R;
-import com.example.noteasap.ui.content.ContentviewModel;
+import com.example.noteasap.ui.content.contentForNote.ContentviewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 

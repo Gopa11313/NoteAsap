@@ -6,7 +6,7 @@
     <data>
         <variable
             name="ContentViewModel"
-            type="com.example.noteasap.ui.content.ContentviewModel" />
+            type="com.example.noteasap.ui.content.contentForNote.ContentviewModel" />
     </data>
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe"

@@ -22,7 +22,7 @@
         <activity android:name=".ui.pupup.message.MessageActivity" />
         <activity android:name=".ui.pupup.editProfile.EditProfileActivity" />
         <activity
-            android:name=".ui.content.ContentActivity"
+            android:name=".ui.content.contentForNote.ContentActivity"
             android:label="@string/title_activity_bookmark_content"
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
         <activity android:name=".ui.uploadNotes.UploadNotesActivity" />

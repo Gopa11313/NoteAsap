@@ -1,12 +1,9 @@
 package com.example.noteasap.ui.fragments
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.os.Handler
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +12,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -27,24 +23,16 @@ import com.example.noteasap.ui.pupup.message.MessageActivity
 import com.example.noteasap.R
 import com.example.noteasap.RoomDatabase.NoteAsapDb
 import com.example.noteasap.api.ServiceBuilder
-import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.repository.UserRepository
-import com.example.noteasap.ui.adapter.HomeAdapter
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
-import com.example.noteasap.ui.content.ContentActivity
-import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
 
 

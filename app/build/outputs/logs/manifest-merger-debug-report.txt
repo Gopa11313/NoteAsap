@@ -157,14 +157,14 @@ activity#com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
 ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-78
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:23:19-75
-activity#com.example.noteasap.ui.content.ContentActivity
+activity#com.example.noteasap.ui.content.contentForNote.ContentActivity
 ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:24:9-27:65
 	android:label
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:26:13-68
 	android:theme
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:27:13-62
 	android:name
-		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:25:13-55
+		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:25:13-70
 activity#com.example.noteasap.ui.uploadNotes.UploadNotesActivity
 ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-72
 	android:name

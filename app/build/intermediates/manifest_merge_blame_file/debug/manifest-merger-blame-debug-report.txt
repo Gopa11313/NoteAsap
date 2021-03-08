@@ -58,8 +58,8 @@
 31-->G:\NoteAsap\app\src\main\AndroidManifest.xml:23:19-75
 32        <activity
 32-->G:\NoteAsap\app\src\main\AndroidManifest.xml:24:9-27:65
-33            android:name="com.example.noteasap.ui.content.ContentActivity"
-33-->G:\NoteAsap\app\src\main\AndroidManifest.xml:25:13-55
+33            android:name="com.example.noteasap.ui.content.contentForNote.ContentActivity"
+33-->G:\NoteAsap\app\src\main\AndroidManifest.xml:25:13-70
 34            android:label="@string/title_activity_bookmark_content"
 34-->G:\NoteAsap\app\src\main\AndroidManifest.xml:26:13-68
 35            android:theme="@style/Theme.NoteAsap.NoActionBar" />

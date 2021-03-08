@@ -82,7 +82,7 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.ContentViewModel == variableId) {
-            setContentViewModel((com.example.noteasap.ui.content.ContentviewModel) variable);
+            setContentViewModel((com.example.noteasap.ui.content.contentForNote.ContentviewModel) variable);
         }
         else {
             variableSet = false;
@@ -90,7 +90,7 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
             return variableSet;
     }
 
-    public void setContentViewModel(@Nullable com.example.noteasap.ui.content.ContentviewModel ContentViewModel) {
+    public void setContentViewModel(@Nullable com.example.noteasap.ui.content.contentForNote.ContentviewModel ContentViewModel) {
         this.mContentViewModel = ContentViewModel;
         synchronized(this) {
             mDirtyFlags |= 0x4L;
@@ -140,7 +140,7 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
         androidx.lifecycle.LiveData<java.lang.Integer> contentViewModelRating = null;
         int androidxDatabindingViewDataBindingSafeUnboxContentViewModelRatingGetValue = 0;
         androidx.lifecycle.LiveData<java.lang.String> contentViewModelCmnt = null;
-        com.example.noteasap.ui.content.ContentviewModel contentViewModel = mContentViewModel;
+        com.example.noteasap.ui.content.contentForNote.ContentviewModel contentViewModel = mContentViewModel;
 
         if ((dirtyFlags & 0xfL) != 0) {
 
