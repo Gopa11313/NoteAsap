@@ -14,12 +14,13 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.profile, 5);
-        sViewsWithIds.put(R.id.chnageprofile, 6);
+        sViewsWithIds.put(R.id.cardProfile, 5);
+        sViewsWithIds.put(R.id.profile, 6);
         sViewsWithIds.put(R.id.linearLayout3, 7);
         sViewsWithIds.put(R.id.linearLayout4, 8);
         sViewsWithIds.put(R.id.linearLayout5, 9);
         sViewsWithIds.put(R.id.linearLayout6, 10);
+        sViewsWithIds.put(R.id.update, 11);
     }
     // views
     @NonNull
@@ -30,27 +31,28 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
     // Inverse Binding Event Handlers
 
     public ActivityEditProfileBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private ActivityEditProfileBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 4
-            , (android.widget.Button) bindings[6]
+            , (androidx.cardview.widget.CardView) bindings[5]
             , (android.widget.EditText) bindings[4]
             , (android.widget.EditText) bindings[2]
             , (android.widget.LinearLayout) bindings[7]
             , (android.widget.LinearLayout) bindings[8]
             , (android.widget.LinearLayout) bindings[9]
             , (android.widget.LinearLayout) bindings[10]
-            , (android.widget.EditText) bindings[3]
             , (android.widget.EditText) bindings[1]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[5]
+            , (android.widget.EditText) bindings[3]
+            , (android.widget.ImageView) bindings[6]
+            , (android.widget.Button) bindings[11]
             );
         this.conpassword.setTag(null);
-        this.editText.setTag(null);
-        this.logPassword.setTag(null);
+        this.email.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
         this.name.setTag(null);
+        this.password.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -232,17 +234,17 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
         if ((dirtyFlags & 0x38L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.editText, editProfileViewModelEmailGetValue);
-        }
-        if ((dirtyFlags & 0x31L) != 0) {
-            // api target 1
-
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.logPassword, editProfileViewModelPasswordGetValue);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.email, editProfileViewModelEmailGetValue);
         }
         if ((dirtyFlags & 0x32L) != 0) {
             // api target 1
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.name, editProfileViewModelNameGetValue);
+        }
+        if ((dirtyFlags & 0x31L) != 0) {
+            // api target 1
+
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.password, editProfileViewModelPasswordGetValue);
         }
     }
     // Listener Stub Implementations

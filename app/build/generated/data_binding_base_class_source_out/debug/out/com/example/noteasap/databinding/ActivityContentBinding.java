@@ -17,6 +17,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.noteasap.R;
 import com.example.noteasap.ui.content.ContentviewModel;
 import java.lang.Deprecated;
@@ -57,6 +58,9 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
   public final RecyclerView recyclerView1;
 
   @NonNull
+  public final SwipeRefreshLayout swipe;
+
+  @NonNull
   public final TextView textView6;
 
   @NonNull
@@ -69,7 +73,7 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
       TextView Universityname, ImageView bookmark, ImageView comment, EditText commentbar,
       TextView dis, Button download, ConstraintLayout layout, LinearLayout linearLayout,
       LinearLayout linearLayout2, RatingBar ratingBar1, RecyclerView recyclerView1,
-      TextView textView6, TextView topic) {
+      SwipeRefreshLayout swipe, TextView textView6, TextView topic) {
     super(_bindingComponent, _root, _localFieldCount);
     this.Universityname = Universityname;
     this.bookmark = bookmark;
@@ -82,6 +86,7 @@ public abstract class ActivityContentBinding extends ViewDataBinding {
     this.linearLayout2 = linearLayout2;
     this.ratingBar1 = ratingBar1;
     this.recyclerView1 = recyclerView1;
+    this.swipe = swipe;
     this.textView6 = textView6;
     this.topic = topic;
   }

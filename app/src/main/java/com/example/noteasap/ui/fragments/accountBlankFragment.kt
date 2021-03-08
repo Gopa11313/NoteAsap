@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.example.noteasap.ImageUploadActivity
 import com.example.noteasap.ui.login.LoginActivity
@@ -30,6 +32,7 @@ import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.adapter.HomeAdapter
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
+import com.example.noteasap.ui.content.ContentActivity
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
@@ -52,6 +55,7 @@ class accountBlankFragment : Fragment() {
     private val REQUEST_CAMERA_CODE=1;
     private var imageUrl:String?=null;
     private lateinit var account:CardView;
+    lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var uploadnotesframe:FrameLayout;
     private lateinit var imageviewfor3menus:ImageView;
     private lateinit var imagebtn:ImageView;
@@ -80,6 +84,7 @@ class accountBlankFragment : Fragment() {
         account=view.findViewById(R.id.ic_account)
         uploadnotesframe=view.findViewById(R.id.uploadnotesframe)
         recyleview=view.findViewById(R.id.recycler_view)
+        swipeRefreshLayout =view.findViewById(R.id.swipe)
         imagebtn=view.findViewById(R.id.imagebtn)
         btnlog=view.findViewById(R.id.btnlog)
         imagebtn2=view.findViewById(R.id.imabtn2)
@@ -152,7 +157,9 @@ class accountBlankFragment : Fragment() {
                 when(iteam.itemId){
                     R.id.edit ->{
                         requireActivity().run{
-                        startActivity(Intent(this, EditProfileActivity::class.java))
+                            val intent = Intent(context, EditProfileActivity::class.java)
+//                            intent.putExtra("listNotes",listNotes as ArrayList<OwnNotes>)
+                            context?.startActivity(intent);
                         }
                         true
                     }
@@ -172,6 +179,32 @@ class accountBlankFragment : Fragment() {
             popupMenu.show()
         }
         getvalues()
+
+
+        swipeRefreshLayout.setOnRefreshListener() {
+            CoroutineScope(Dispatchers.IO).launch {
+                val repository=UserRepository()
+                val response=repository.getme(ServiceBuilder.id!!)
+                if(response.success==true){
+                    val data=response.data
+                    val listdata= data?.get(0)
+                    imageUrl=listdata!!.image
+                    withContext(Main){
+
+                        val imagePath = ServiceBuilder.loadImagePath() +imageUrl
+                        if (!imageUrl.equals("noimg")) {
+                            Glide.with(requireActivity())
+                                .load(imagePath)
+                                .fitCenter()
+                                .into(imagebtn)
+                        }
+                    }
+                }
+            }
+            Handler().postDelayed(Runnable {
+                swipeRefreshLayout.isRefreshing = false
+            }, 2000)
+        }
     }
     companion object {
         fun newInstance(param1: String, param2: String) =
@@ -237,4 +270,5 @@ class accountBlankFragment : Fragment() {
         }
 
     }
+
 }

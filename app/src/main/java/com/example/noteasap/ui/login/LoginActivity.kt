@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         forgetpassword=findViewById(R.id.forgetpassword);
         login=findViewById(R.id.login)
         email=findViewById(R.id.log_email)
-        password=findViewById(R.id.log_password)
+        password=findViewById(R.id.password)
 
         loginViewModel=ViewModelProvider(this).get(com.example.noteasap.ui.login.LoginViewModel::class.java)
         binding.loginViewModel=loginViewModel

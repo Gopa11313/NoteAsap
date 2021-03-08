@@ -6,8 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Comment(
-    @PrimaryKey(autoGenerate = true) val Key:Int=0,
+data class Comment(@PrimaryKey(autoGenerate = true) val Key:Int=0,
     val _id:String?=null,
     val userId:String?=null,
     val noteId:String?=null,

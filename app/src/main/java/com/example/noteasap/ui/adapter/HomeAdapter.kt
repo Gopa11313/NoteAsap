@@ -21,13 +21,11 @@ class HomeAdapter(
     class HomwviewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val t_name: TextView;
         val u_name: TextView;
-        val dis: TextView;
         val home: RelativeLayout;
 
         init {
             t_name = view.findViewById(R.id.topic)
             u_name = view.findViewById(R.id.u_name)
-            dis = view.findViewById(R.id.dis)
             home=view.findViewById(R.id.home)
         }
     }
@@ -42,7 +40,6 @@ class HomeAdapter(
         val note=listpost[position]
         holder.t_name.text=note.topic
         holder.u_name.text=note.c_name
-        holder.dis.text=note.description
         holder.home.setOnClickListener(){
             val intent = Intent(context, ContentActivity::class.java)
             intent.putExtra("notes",note)

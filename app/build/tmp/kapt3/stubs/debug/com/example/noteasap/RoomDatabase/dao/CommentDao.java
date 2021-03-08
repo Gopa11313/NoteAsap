@@ -7,15 +7,15 @@ import java.lang.System;
 public abstract interface CommentDao {
     
     @org.jetbrains.annotations.Nullable()
-    @androidx.room.Query(value = "Delete from Comment")
-    public abstract java.lang.Object droptable(@org.jetbrains.annotations.NotNull()
-    kotlin.coroutines.Continuation<? super kotlin.Unit> p0);
-    
-    @org.jetbrains.annotations.Nullable()
     @androidx.room.Insert()
     public abstract java.lang.Object CommentNote(@org.jetbrains.annotations.Nullable()
     java.util.List<com.example.noteasap.ui.model.Comment> list, @org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super kotlin.Unit> p1);
+    
+    @org.jetbrains.annotations.Nullable()
+    @androidx.room.Query(value = "Delete from Comment")
+    public abstract java.lang.Object droptable(@org.jetbrains.annotations.NotNull()
+    kotlin.coroutines.Continuation<? super kotlin.Unit> p0);
     
     @org.jetbrains.annotations.Nullable()
     @androidx.room.Query(value = "select * from Comment")

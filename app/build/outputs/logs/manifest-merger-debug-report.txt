@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [androidx.databinding:databinding-adapters:4.1.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\cca9ed06cc00afd141b03284804743d3\databinding-adapters-4.1.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:4.1.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\531cd80ab2fa505658f0bb0f7e28b380\databinding-runtime-4.1.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\509aab27b29b8337e84c1d852d1c8552\navigation-fragment-ktx-2.3.2\AndroidManifest.xml:17:1-24:12
@@ -70,22 +70,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\User\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\e4374a2177af70d0b92eb05ddad49f4d\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\47d0918819e33d65270115b2c5f2e23d\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\ffa803657c09d4fab7ed43224c1401ac\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:4:5-35
 		INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml
 		INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml
-		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml
-		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-42:12
+		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:1-41:12
 		INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:2:11-69
@@ -110,7 +110,7 @@ ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:10:22-77
 application
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:12:5-40:19
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:12:5-39:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\eaf732c955a4a2f8020ed3ce264f93dc\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\eaf732c955a4a2f8020ed3ce264f93dc\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\User\.gradle\caches\transforms-2\files-2.1\355411c5b34e5ac28b1c2a271e99a97b\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -146,7 +146,7 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\User\.gradle\
 	android:usesCleartextTraffic
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:19:9-44
 activity#com.example.noteasap.ImageUploadActivity
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-66
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-57
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-54
 activity#com.example.noteasap.ui.pupup.message.MessageActivity
@@ -154,7 +154,7 @@ ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:22:9-70
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:22:19-67
 activity#com.example.noteasap.ui.pupup.editProfile.EditProfileActivity
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-87
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-78
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:23:19-75
 activity#com.example.noteasap.ui.content.ContentActivity
@@ -170,11 +170,11 @@ ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:28:9-72
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:28:19-69
 activity#com.example.noteasap.ui.signUpViewModel.SignUpActivity
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:29:9-80
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:29:9-71
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:29:19-68
 activity#com.example.noteasap.ui.login.LoginActivity
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:30:9-69
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:30:9-60
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:30:19-57
 activity#com.example.noteasap.ui.thirdActivity.Third_Activity
@@ -186,19 +186,19 @@ ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-52
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:32:19-49
 activity#com.example.noteasap.SplashActivity
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:33:9-39:20
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:33:9-38:20
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:33:19-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:34:13-38:29
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:34:13-37:29
 action#android.intent.action.MAIN
 ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:35:17-69
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:37:17-77
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:37:27-74
+		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:36:27-74
 uses-sdk
 INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\NoteAsap\app\src\main\AndroidManifest.xml

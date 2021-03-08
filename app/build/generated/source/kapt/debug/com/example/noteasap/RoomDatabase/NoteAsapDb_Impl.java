@@ -47,9 +47,9 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `User` (`_id` TEXT NOT NULL, `name` TEXT, `email` TEXT, `password` TEXT, `image` TEXT, PRIMARY KEY(`_id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `OwnNotes` (`primaryKey` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT, `ratting` INTEGER)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `BookMarkNotes` (`primaryKey` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `level` TEXT, `subject` TEXT, `c_name` TEXT, `file` TEXT, `topic` TEXT, `description` TEXT)");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `CommentDao` ()");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Comment` (`Key` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `_id` TEXT, `userId` TEXT, `noteId` TEXT, `comment` TEXT)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a2a9d7b8af88fe26b290df3c5ccc6601')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '664769c9538f044357b29b8b115b7ab0')");
       }
 
       @Override
@@ -57,7 +57,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
         _db.execSQL("DROP TABLE IF EXISTS `User`");
         _db.execSQL("DROP TABLE IF EXISTS `OwnNotes`");
         _db.execSQL("DROP TABLE IF EXISTS `BookMarkNotes`");
-        _db.execSQL("DROP TABLE IF EXISTS `CommentDao`");
+        _db.execSQL("DROP TABLE IF EXISTS `Comment`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -150,19 +150,24 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
                   + " Expected:\n" + _infoBookMarkNotes + "\n"
                   + " Found:\n" + _existingBookMarkNotes);
         }
-        final HashMap<String, TableInfo.Column> _columnsCommentDao = new HashMap<String, TableInfo.Column>(0);
-        final HashSet<TableInfo.ForeignKey> _foreignKeysCommentDao = new HashSet<TableInfo.ForeignKey>(0);
-        final HashSet<TableInfo.Index> _indicesCommentDao = new HashSet<TableInfo.Index>(0);
-        final TableInfo _infoCommentDao = new TableInfo("CommentDao", _columnsCommentDao, _foreignKeysCommentDao, _indicesCommentDao);
-        final TableInfo _existingCommentDao = TableInfo.read(_db, "CommentDao");
-        if (! _infoCommentDao.equals(_existingCommentDao)) {
-          return new RoomOpenHelper.ValidationResult(false, "CommentDao(com.example.noteasap.RoomDatabase.dao.CommentDao).\n"
-                  + " Expected:\n" + _infoCommentDao + "\n"
-                  + " Found:\n" + _existingCommentDao);
+        final HashMap<String, TableInfo.Column> _columnsComment = new HashMap<String, TableInfo.Column>(5);
+        _columnsComment.put("Key", new TableInfo.Column("Key", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsComment.put("_id", new TableInfo.Column("_id", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsComment.put("userId", new TableInfo.Column("userId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsComment.put("noteId", new TableInfo.Column("noteId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsComment.put("comment", new TableInfo.Column("comment", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysComment = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesComment = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoComment = new TableInfo("Comment", _columnsComment, _foreignKeysComment, _indicesComment);
+        final TableInfo _existingComment = TableInfo.read(_db, "Comment");
+        if (! _infoComment.equals(_existingComment)) {
+          return new RoomOpenHelper.ValidationResult(false, "Comment(com.example.noteasap.ui.model.Comment).\n"
+                  + " Expected:\n" + _infoComment + "\n"
+                  + " Found:\n" + _existingComment);
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "a2a9d7b8af88fe26b290df3c5ccc6601", "c7870329b2d416556d2c93882c97070f");
+    }, "664769c9538f044357b29b8b115b7ab0", "0dcf26aec696cfa95571585bb75833a0");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -175,7 +180,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "User","OwnNotes","BookMarkNotes","CommentDao");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "User","OwnNotes","BookMarkNotes","Comment");
   }
 
   @Override
@@ -187,7 +192,7 @@ public final class NoteAsapDb_Impl extends NoteAsapDb {
       _db.execSQL("DELETE FROM `User`");
       _db.execSQL("DELETE FROM `OwnNotes`");
       _db.execSQL("DELETE FROM `BookMarkNotes`");
-      _db.execSQL("DELETE FROM `CommentDao`");
+      _db.execSQL("DELETE FROM `Comment`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();

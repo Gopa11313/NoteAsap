@@ -30,5 +30,11 @@ class UserRepository:MyApiRequest(){
             myApi.getme(ServiceBuilder.token!!,id)
         }
     }
+
+    suspend fun updateUser(user: User):UserResponse{
+        return apiRequest {
+            myApi.updateUser(ServiceBuilder.token!!,user)
+        }
+    }
 }
 

@@ -27,8 +27,6 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
         sViewsWithIds.put(R.id.bookmark, 13);
     }
     // views
-    @NonNull
-    private final android.widget.ScrollView mboundView0;
     // variables
     // values
     // listeners
@@ -50,13 +48,13 @@ public class ActivityContentBindingImpl extends ActivityContentBinding  {
             , (android.widget.LinearLayout) bindings[10]
             , (android.widget.RatingBar) bindings[1]
             , (androidx.recyclerview.widget.RecyclerView) bindings[12]
+            , (androidx.swiperefreshlayout.widget.SwipeRefreshLayout) bindings[0]
             , (android.widget.TextView) bindings[9]
             , (android.widget.TextView) bindings[4]
             );
         this.commentbar.setTag(null);
-        this.mboundView0 = (android.widget.ScrollView) bindings[0];
-        this.mboundView0.setTag(null);
         this.ratingBar1.setTag(null);
+        this.swipe.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

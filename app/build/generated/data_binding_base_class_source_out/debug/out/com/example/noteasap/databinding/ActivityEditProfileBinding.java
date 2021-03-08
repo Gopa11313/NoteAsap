@@ -6,27 +6,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.example.noteasap.R;
 import com.example.noteasap.ui.pupup.editProfile.EditProfileViewModel;
-import de.hdodenhof.circleimageview.CircleImageView;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityEditProfileBinding extends ViewDataBinding {
   @NonNull
-  public final Button chnageprofile;
+  public final CardView cardProfile;
 
   @NonNull
   public final EditText conpassword;
 
   @NonNull
-  public final EditText editText;
+  public final EditText email;
 
   @NonNull
   public final LinearLayout linearLayout3;
@@ -41,32 +42,36 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
   public final LinearLayout linearLayout6;
 
   @NonNull
-  public final EditText logPassword;
-
-  @NonNull
   public final EditText name;
 
   @NonNull
-  public final CircleImageView profile;
+  public final EditText password;
+
+  @NonNull
+  public final ImageView profile;
+
+  @NonNull
+  public final Button update;
 
   @Bindable
   protected EditProfileViewModel mEditProfileViewModel;
 
   protected ActivityEditProfileBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button chnageprofile, EditText conpassword, EditText editText, LinearLayout linearLayout3,
+      CardView cardProfile, EditText conpassword, EditText email, LinearLayout linearLayout3,
       LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6,
-      EditText logPassword, EditText name, CircleImageView profile) {
+      EditText name, EditText password, ImageView profile, Button update) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.chnageprofile = chnageprofile;
+    this.cardProfile = cardProfile;
     this.conpassword = conpassword;
-    this.editText = editText;
+    this.email = email;
     this.linearLayout3 = linearLayout3;
     this.linearLayout4 = linearLayout4;
     this.linearLayout5 = linearLayout5;
     this.linearLayout6 = linearLayout6;
-    this.logPassword = logPassword;
     this.name = name;
+    this.password = password;
     this.profile = profile;
+    this.update = update;
   }
 
   public abstract void setEditProfileViewModel(@Nullable EditProfileViewModel EditProfileViewModel);

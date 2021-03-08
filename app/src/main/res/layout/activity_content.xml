@@ -8,10 +8,15 @@
             name="ContentViewModel"
             type="com.example.noteasap.ui.content.ContentviewModel" />
     </data>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -140,11 +145,13 @@
         android:id="@+id/recycler_view1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/bookmark"
@@ -157,4 +164,7 @@
         app:layout_constraintTop_toBottomOf="@+id/dis"
         app:srcCompat="@drawable/ic__star" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView></layout>
+
+</ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

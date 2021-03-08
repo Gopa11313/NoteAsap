@@ -24,4 +24,10 @@ suspend fun bookmarkTheNote(
         @Header("Authorization") token:String,
         @Path("id") userId:String
     ):Response<BookmarkResponse>
+
+    @DELETE("delete/bookmark/{noteId}")
+    suspend fun deleteDeletBookmarkNote(
+        @Header("Authorization") token:String,
+        @Path("noteId") bookmarkId:String
+    ):Response<BookmarkResponse>
 }

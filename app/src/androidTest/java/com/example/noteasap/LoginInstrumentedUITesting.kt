@@ -27,7 +27,7 @@ class LoginInstrumentedUITesting {
         closeSoftKeyboard()
 
         Thread.sleep(100)
-        onView(withId(R.id.log_password))
+        onView(withId(R.id.password))
             .perform(typeText("gopal123"))
 
         closeSoftKeyboard()

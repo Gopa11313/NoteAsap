@@ -25,4 +25,10 @@ class BookmarkRepository: MyApiRequest(){
             myApi.getParticularNote(ServiceBuilder.token!!,ServiceBuilder.id!!)
         }
     }
+
+    suspend fun deleteBookMarkedNote(noteId:String):BookmarkResponse{
+        return apiRequest {
+            myApi.deleteDeletBookmarkNote(ServiceBuilder.token!!,noteId)
+        }
+    }
 }

@@ -8,13 +8,10 @@ import com.example.noteasap.RoomDatabase.dao.BookmarkDao
 import com.example.noteasap.RoomDatabase.dao.CommentDao
 import com.example.noteasap.RoomDatabase.dao.NoteDao
 import com.example.noteasap.RoomDatabase.dao.UserDao
-import com.example.noteasap.ui.model.BookMarkNotes
-import com.example.noteasap.ui.model.Bookmark
-import com.example.noteasap.ui.model.OwnNotes
-import com.example.noteasap.ui.model.User
+import com.example.noteasap.ui.model.*
 
 @Database(
-    entities = [(User::class),(OwnNotes::class),(BookMarkNotes::class),(CommentDao::class)],
+    entities = [(User::class),(OwnNotes::class),(BookMarkNotes::class),(Comment::class)],
     version =9,
      exportSchema = false
 )abstract class NoteAsapDb :RoomDatabase(){

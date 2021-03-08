@@ -18,22 +18,21 @@
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ImageUploadActivity"></activity>
+        <activity android:name=".ImageUploadActivity" />
         <activity android:name=".ui.pupup.message.MessageActivity" />
-        <activity android:name=".ui.pupup.editProfile.EditProfileActivity"></activity>
+        <activity android:name=".ui.pupup.editProfile.EditProfileActivity" />
         <activity
             android:name=".ui.content.ContentActivity"
             android:label="@string/title_activity_bookmark_content"
             android:theme="@style/Theme.NoteAsap.NoActionBar" />
         <activity android:name=".ui.uploadNotes.UploadNotesActivity" />
-        <activity android:name=".ui.signUpViewModel.SignUpActivity"></activity>
-        <activity android:name=".ui.login.LoginActivity"></activity>
+        <activity android:name=".ui.signUpViewModel.SignUpActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".ui.thirdActivity.Third_Activity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

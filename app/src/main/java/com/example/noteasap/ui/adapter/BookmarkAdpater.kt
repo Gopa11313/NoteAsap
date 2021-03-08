@@ -4,14 +4,31 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.noteasap.ui.content.ContentActivity
 import com.example.noteasap.R
+import com.example.noteasap.RoomDatabase.NoteAsapDb
+import com.example.noteasap.api.ServiceBuilder
+import com.example.noteasap.repository.BookmarkRepository
+import com.example.noteasap.repository.UserRepository
+import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.ui.model.BookMarkNotes
-import com.example.noteasap.ui.model.Bookmark
-import com.example.noteasap.ui.model.OwnNotes
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import android.content.Intent as Intent
 
 class BookmarkAdpater(
@@ -19,13 +36,19 @@ class BookmarkAdpater(
         val context: Context):RecyclerView.Adapter<BookmarkAdpater.NoteresViewholder>() {
          class NoteresViewholder(view:View):RecyclerView.ViewHolder(view){
             val universityname:TextView;
+             var name:TextView;
              val topic:TextView;
-             val description:TextView;
+             val bookamarkImage:ImageView
              val list_item:ConstraintLayout
+
+             val imageForBookmark: ImageView
              init {
+                 name=view.findViewById(R.id.name)
                  universityname=view.findViewById(R.id.Uname)
                  topic=view.findViewById(R.id.topic)
-                 description=view.findViewById(R.id.discription)
+
+                 imageForBookmark=view.findViewById(R.id.imageForBookmark)
+                 bookamarkImage=view.findViewById(R.id.bookmarkImage)
                  list_item=view.findViewById(R.id.list_item)
              }
          }
@@ -36,24 +59,66 @@ class BookmarkAdpater(
 
     override fun onBindViewHolder(holder: NoteresViewholder, position: Int) {
         val notes=listbookmark[position]
+        holder.list_item.animation =
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.trans)
         holder.universityname.text=notes.c_name;
+        var fadein: Animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
         holder.topic.text=notes.topic;
-        holder.description.text=notes.description
+//        holder.description.text=notes.description
+        val id=notes.userId
         holder.list_item.setOnClickListener(){
             val intent = Intent(context, ContentActivity::class.java)
             intent.putExtra("notes",notes)
             context.startActivity(intent);
         }
-//        holder.universityname.setOnClickListener(){
-//            val intent = Intent(context, ContentActivity::class.java)
-//            intent.putExtra("notes",notes)
-//            context.startActivity(intent);
-//        }
-//        holder.topic.setOnClickListener() {
-//            val intent = Intent(context, ContentActivity::class.java)
-//            intent.putExtra("notes",notes)
-//            context.startActivity(intent);
-//        }
+        holder.bookamarkImage.setOnClickListener(){
+            val builder= AlertDialog.Builder(context);
+            builder.setMessage("Do you want unMarked the Note")
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.setPositiveButton("Yes"){dialogInterface,which->
+                CoroutineScope(Dispatchers.IO).launch {
+                    val repository=BookmarkRepository()
+                    val response=repository.deleteBookMarkedNote(notes._id!!)
+                    if(response.success==true){
+                        withContext(Main){
+                            notifyDataSetChanged()
+                            holder.list_item.startAnimation(fadein)
+                            val snack=  Snackbar.make(it,"${response.msg}. Unmarked the Note", Snackbar.LENGTH_SHORT)
+                            snack.setAction("Ok") {
+                                snack.dismiss()
+                            }
+                            snack.show()
+
+                        }
+
+                    }
+                }
+            }
+            builder.setNegativeButton("No"){
+                    dialogInterface,which->
+            }
+            builder.show()
+
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val repository= UserRepository()
+            val response=repository.getme(id!!)
+            if(response.success==true){
+                val data=response.data
+                withContext(Dispatchers.Main){
+                    holder.name.text= data?.get(0)?.name
+                    val imageUrl=data?.get(0)?.image
+                    val imagePath = ServiceBuilder.loadImagePath() +imageUrl
+                    if (!imageUrl.equals("noimg")) {
+                        Glide.with(context)
+                            .load(imagePath)
+                            .fitCenter()
+                            .into(holder.imageForBookmark)
+                    }
+                }
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteresViewholder {

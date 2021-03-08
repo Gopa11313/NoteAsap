@@ -33,14 +33,14 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
         super(bindingComponent, root, 2
             , (android.widget.TextView) bindings[3]
             , (android.widget.EditText) bindings[1]
-            , (android.widget.EditText) bindings[2]
             , (android.widget.Button) bindings[4]
+            , (android.widget.EditText) bindings[2]
             , (android.widget.Button) bindings[5]
             );
         this.logEmail.setTag(null);
-        this.logPassword.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
+        this.password.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();
@@ -168,7 +168,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
         if ((dirtyFlags & 0xdL) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.logPassword, loginViewModelPasswordGetValue);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.password, loginViewModelPasswordGetValue);
         }
     }
     // Listener Stub Implementations

@@ -6,6 +6,7 @@ import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
+import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.noteasap.ui.model.Comment;
@@ -14,6 +15,7 @@ import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import kotlin.Unit;
@@ -114,6 +116,27 @@ public final class CommentDao_Impl implements CommentDao {
       public List<Comment> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
+          final int _cursorIndexOfKey = CursorUtil.getColumnIndexOrThrow(_cursor, "Key");
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "_id");
+          final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
+          final int _cursorIndexOfNoteId = CursorUtil.getColumnIndexOrThrow(_cursor, "noteId");
+          final int _cursorIndexOfComment = CursorUtil.getColumnIndexOrThrow(_cursor, "comment");
+          final List<Comment> _result = new ArrayList<Comment>(_cursor.getCount());
+          while(_cursor.moveToNext()) {
+            final Comment _item;
+            final int _tmpKey;
+            _tmpKey = _cursor.getInt(_cursorIndexOfKey);
+            final String _tmp_id;
+            _tmp_id = _cursor.getString(_cursorIndexOfId);
+            final String _tmpUserId;
+            _tmpUserId = _cursor.getString(_cursorIndexOfUserId);
+            final String _tmpNoteId;
+            _tmpNoteId = _cursor.getString(_cursorIndexOfNoteId);
+            final String _tmpComment;
+            _tmpComment = _cursor.getString(_cursorIndexOfComment);
+            _item = new Comment(_tmpKey,_tmp_id,_tmpUserId,_tmpNoteId,_tmpComment);
+            _result.add(_item);
+          }
           return _result;
         } finally {
           _cursor.close();

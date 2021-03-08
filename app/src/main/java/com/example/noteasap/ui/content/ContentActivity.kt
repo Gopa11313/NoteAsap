@@ -3,6 +3,7 @@ package com.example.noteasap.ui.content
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
@@ -16,12 +17,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.bumptech.glide.Glide
 import com.example.noteasap.R
 import com.example.noteasap.RoomDatabase.NoteAsapDb
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.CommentRepository
+import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
@@ -37,6 +41,7 @@ import kotlinx.coroutines.withContext
 class ContentActivity : AppCompatActivity() {
     private var listcommet:List<Comment>?=null;
     private lateinit var recyleview: RecyclerView;
+    lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var bookamark: ImageView;
     private lateinit var contentviewModel: ContentviewModel
     private lateinit var topic:TextView;
@@ -59,6 +64,7 @@ class ContentActivity : AppCompatActivity() {
         discriotion = findViewById(R.id.dis);
         recyleview=findViewById(R.id.recycler_view1)
         img=findViewById(R.id.comment)
+        swipeRefreshLayout =findViewById(R.id.swipe)
         layout=findViewById(R.id.layout)
         ratingBar1=findViewById(R.id.ratingBar1)
         bookamark=findViewById(R.id.bookmark)
@@ -71,7 +77,13 @@ CoroutineScope(Dispatchers.IO).launch {
     val response=repository.commentNote(Comment(userId = ServiceBuilder.id!!,noteId = noteid,comment = commentbar.text.toString()))
     if(response.success==true){
         withContext(Main){
-            Toast.makeText(this@ContentActivity, "successfully commented", Toast.LENGTH_SHORT).show()
+            commentbar.setText("")
+            val snack=  Snackbar.make(layout,"${response.msg}. Swipe Down to refresh", Snackbar.LENGTH_SHORT)
+            snack.setAction("Ok") {
+                snack.dismiss()
+            }
+            snack.show()
+
         }
     }
     else{
@@ -128,6 +140,13 @@ CoroutineScope(Dispatchers.IO).launch {
 //        })
 
 
+        swipeRefreshLayout.setOnRefreshListener() {
+
+            Handler().postDelayed(Runnable {
+                loadcomment()
+                swipeRefreshLayout.isRefreshing = false
+            }, 2000)
+        }
 
         val intent = intent.getParcelableExtra<OwnNotes>("notes")
         if (intent != null) {

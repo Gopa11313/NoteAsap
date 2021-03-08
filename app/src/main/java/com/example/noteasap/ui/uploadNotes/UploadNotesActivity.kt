@@ -2,6 +2,8 @@ package com.example.noteasap.ui.uploadNotes
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -27,6 +29,8 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import java.io.File
 import java.io.InputStream
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class UploadNotesActivity : AppCompatActivity() {
@@ -102,7 +106,7 @@ class UploadNotesActivity : AppCompatActivity() {
 //        startActivityForResult(intent, REQUEST_FILE_CODE);
 
 
-            var intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            var intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "application/*"
              intent=Intent.createChooser(intent,"Choose a file")
             startActivityForResult(intent, REQUEST_FILE_CODE)
@@ -158,22 +162,19 @@ private fun uploadnotes(){
 }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode== Activity.RESULT_OK){
-            if(requestCode == REQUEST_FILE_CODE && data != null) {
-                fileUrl = data.toUri(REQUEST_FILE_CODE)
-//                val filePathColumn = arrayOf(MediaStore.Files.FileColumns.DATA)
-//                val contentResolver = contentResolver
-//                val cursor =
-//                    contentResolver.query(selectedFile!!, filePathColumn, null, null, null)
-//                cursor!!.moveToFirst()
-//                val columnIndex = cursor.getColumnIndex(filePathColumn[0])
-//                fileUrl = cursor.getString(columnIndex)
-//                chooseFile.setBackgroundColor(Color.GREEN)
-//                print(  fileUrl)
-//                cursor.close()
-            }
-
+        if(requestCode == REQUEST_FILE_CODE && data != null) {
+            val selectedImage = data.data
+            val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
+            val contentResolver = contentResolver
+            val cursor =
+                contentResolver.query(selectedImage!!, filePathColumn, null, null, null)
+            cursor!!.moveToFirst()
+            val columnIndex = cursor.getColumnIndex(filePathColumn[0])
+            fileUrl = cursor.getString(columnIndex)
+           // profilepic.setImageBitmap(BitmapFactory.decodeFile(fileUrl))
+            cursor.close()
         }
+
     }
     private fun uploadImage(studentId: String) {
         if (fileUrl != null) {

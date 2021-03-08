@@ -43,6 +43,7 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim trans
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1776,6 +1777,7 @@ id cache_measures
 id camera
 id cancel_action
 id cancel_button
+id cardProfile
 id center
 id center_horizontal
 id center_vertical
@@ -1788,7 +1790,6 @@ id chip1
 id chip2
 id chip3
 id chip_group
-id chnageprofile
 id chooseFile
 id chronometer
 id clear_text
@@ -1842,8 +1843,8 @@ id easeIn
 id easeInOut
 id easeOut
 id edit
-id editText
 id edit_query
+id email
 id end
 id end_padder
 id enterAlways
@@ -1890,6 +1891,7 @@ id ignore
 id ignoreRequest
 id imabtn2
 id image
+id imageForBookmark
 id imageView
 id imageView2
 id imageView3
@@ -1918,7 +1920,6 @@ id linearLayout6
 id listMode
 id list_item
 id log_email
-id log_password
 id login
 id masked
 id media_actions
@@ -1980,6 +1981,7 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id pass
+id password
 id password_toggle
 id path
 id pathRelative
@@ -1992,6 +1994,7 @@ id profile
 id progress_circular
 id progress_horizontal
 id radio
+id ratingBar
 id ratingBar1
 id ratio
 id rectangles
@@ -2067,6 +2070,7 @@ id stretch
 id submenuarrow
 id submit
 id submit_area
+id swipe
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2124,6 +2128,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id update
 id update_image
 id upload
 id uploadnotesframe

@@ -8,11 +8,11 @@ import com.example.noteasap.ui.model.Comment
 @Dao
 interface CommentDao {
 
-    @Query("Delete from Comment")
-    suspend fun droptable()
-
     @Insert
     suspend fun CommentNote(list: List<Comment>?)
+
+    @Query("Delete from Comment")
+    suspend fun droptable()
 
 
     @Query("select * from Comment")
