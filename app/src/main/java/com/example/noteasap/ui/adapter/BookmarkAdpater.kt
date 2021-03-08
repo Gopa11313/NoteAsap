@@ -1,6 +1,7 @@
 package com.example.noteasap.ui.adapter
 
 import android.content.Context
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,9 +63,7 @@ class BookmarkAdpater(
         holder.list_item.animation =
             AnimationUtils.loadAnimation(holder.itemView.context, R.anim.trans)
         holder.universityname.text=notes.c_name;
-        var fadein: Animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
         holder.topic.text=notes.topic;
-//        holder.description.text=notes.description
         val id=notes.userId
         holder.list_item.setOnClickListener(){
             val intent = Intent(context, ContentActivity::class.java)
@@ -81,13 +80,19 @@ class BookmarkAdpater(
                     val response=repository.deleteBookMarkedNote(notes._id!!)
                     if(response.success==true){
                         withContext(Main){
+                            //holder.list_item.animation=AnimationUtils.loadAnimation(holder.itemView.context, R.anim.fade_in)
+//                            Handler().postDelayed(Runnable {
+//
+//                            },2500)
+                            listbookmark.removeAt(position)
                             notifyDataSetChanged()
-                            holder.list_item.startAnimation(fadein)
                             val snack=  Snackbar.make(it,"${response.msg}. Unmarked the Note", Snackbar.LENGTH_SHORT)
                             snack.setAction("Ok") {
                                 snack.dismiss()
                             }
                             snack.show()
+
+
 
                         }
 

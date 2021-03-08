@@ -1830,7 +1830,6 @@ id dis
 id disableHome
 id disablePostScroll
 id disableScroll
-id discription
 id download
 id dragDown
 id dragEnd
