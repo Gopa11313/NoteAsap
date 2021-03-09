@@ -18,6 +18,7 @@
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".ui.content.contentForBookmarkednote.ContentActivityForBookmark"></activity>
         <activity android:name=".ImageUploadActivity" />
         <activity android:name=".ui.pupup.message.MessageActivity" />
         <activity android:name=".ui.pupup.editProfile.EditProfileActivity" />
@@ -33,6 +34,7 @@
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -7,6 +7,7 @@ import com.example.noteasap.response.ForBookmarkedNotesResponse
 import com.example.noteasap.response.NoteResponse
 import com.example.noteasap.ui.model.OwnNotes
 import okhttp3.MultipartBody
+import retrofit2.Response
 
 class NoteRepository:MyApiRequest(){
     val myApi= ServiceBuilder.buildServices(NoteApi::class.java)
@@ -28,6 +29,11 @@ class NoteRepository:MyApiRequest(){
     suspend fun getAllbookmarkedNotes(id:String):ForBookmarkedNotesResponse{
         return apiRequest {
             myApi.getAllbookmarkedNotes(ServiceBuilder.token!!,id)
+        }
+    }
+    suspend fun RateNote(ownnotes: OwnNotes):NoteResponse{
+        return apiRequest {
+            myApi.rateNote(ServiceBuilder.token!!,ownnotes)
         }
     }
 

@@ -30,4 +30,10 @@ interface NoteApi {
         @Header("Authorization") token:String,
         @Path("id") userId:String,
     ):Response<ForBookmarkedNotesResponse>
+
+    @PUT("rate/note/")
+    suspend fun rateNote(
+        @Header("Authorization") token:String,
+        @Body ownnotes: OwnNotes
+    ):Response<NoteResponse>
 }

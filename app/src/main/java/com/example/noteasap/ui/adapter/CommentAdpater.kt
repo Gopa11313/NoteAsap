@@ -34,7 +34,7 @@ class CommentAdpater(
             name=view.findViewById(R.id.name)
             comment=view.findViewById(R.id.comment)
             update_delete=view.findViewById(R.id.imageView4)
-            imageForComment=view.findViewById(R.id.imageForBookmark)
+            imageForComment=view.findViewById(R.id.imageForHomeView)
             update_delete.setOnClickListener(){
                 val popupMenu = PopupMenu(view.getContext(), view)
                 popupMenu.inflate(R.menu.menu3)

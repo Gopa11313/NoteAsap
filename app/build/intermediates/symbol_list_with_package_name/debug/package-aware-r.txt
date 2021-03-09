@@ -1893,7 +1893,7 @@ id ignore
 id ignoreRequest
 id imabtn2
 id image
-id imageForBookmark
+id imageForHomeView
 id imageView
 id imageView2
 id imageView3

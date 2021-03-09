@@ -17,6 +17,7 @@ data class OwnNotes(
                val file:String?=null,
                val topic:String?=null,
                val description:String?=null,
+                val noofRating:Int?=null,
     val ratting:Int?=null):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -28,6 +29,7 @@ data class OwnNotes(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int
     ) {
     }
@@ -42,6 +44,7 @@ data class OwnNotes(
         parcel.writeString(file)
         parcel.writeString(topic)
         parcel.writeString(description)
+        parcel.writeValue(noofRating)
         parcel.writeValue(ratting)
     }
 
@@ -58,5 +61,4 @@ data class OwnNotes(
             return arrayOfNulls(size)
         }
     }
-
 }

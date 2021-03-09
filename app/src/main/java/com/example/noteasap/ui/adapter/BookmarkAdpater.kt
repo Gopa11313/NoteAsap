@@ -41,7 +41,7 @@ class BookmarkAdpater(
                  universityname=view.findViewById(R.id.Uname)
                  topic=view.findViewById(R.id.topic)
 
-                 imageForBookmark=view.findViewById(R.id.imageForBookmark)
+                 imageForBookmark=view.findViewById(R.id.imageForHomeView)
                  bookamarkImage=view.findViewById(R.id.bookmarkImage)
                  list_item=view.findViewById(R.id.list_item)
              }

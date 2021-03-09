@@ -1892,7 +1892,7 @@ int id ignore 0x7f0800e0
 int id ignoreRequest 0x7f0800e1
 int id imabtn2 0x7f0800e2
 int id image 0x7f0800e3
-int id imageForBookmark 0x7f0800e4
+int id imageForHomeView 0x7f0800e4
 int id imageView 0x7f0800e5
 int id imageView2 0x7f0800e6
 int id imageView3 0x7f0800e7

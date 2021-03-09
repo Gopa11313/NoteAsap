@@ -12,7 +12,7 @@ import com.example.noteasap.ui.model.*
 
 @Database(
     entities = [(User::class),(OwnNotes::class),(BookMarkNotes::class),(Comment::class)],
-    version =9,
+    version =10,
      exportSchema = false
 )abstract class NoteAsapDb :RoomDatabase(){
     abstract fun getUserDao(): UserDao

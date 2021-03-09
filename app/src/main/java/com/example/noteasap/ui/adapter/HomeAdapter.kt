@@ -6,14 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.noteasap.R
+import com.example.noteasap.api.ServiceBuilder
+import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.content.contentForNote.ContentActivity
 import com.example.noteasap.ui.model.OwnNotes
+import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers.Main
 
 class HomeAdapter(
         val listpost:ArrayList<OwnNotes>,
@@ -25,12 +31,17 @@ class HomeAdapter(
         val home: ConstraintLayout;
         val des:TextView
         val ratingBar:RatingBar
+        val imageForHomeView:ImageView
+        val name:TextView
         init {
             t_name = view.findViewById(R.id.topic)
             u_name = view.findViewById(R.id.u_name)
             home=view.findViewById(R.id.home)
             des=view.findViewById(R.id.des)
             ratingBar=view.findViewById(R.id.ratingBar)
+            imageForHomeView=view.findViewById(R.id.imageForHomeView)
+            name=view.findViewById(R.id.name)
+
         }
     }
 
@@ -56,6 +67,28 @@ class HomeAdapter(
         val ratting=note.ratting;
         if(ratting!==null){
             holder.ratingBar.rating=ratting.toFloat()
+        }
+
+        val id=note.userId
+        CoroutineScope(Dispatchers.IO ).launch {
+            val repository=UserRepository()
+            val response=repository.getme(id!!)
+            if(response.success==true){
+                val data=response.data
+                withContext(Main){
+                    val img=data?.get(0)?.image
+                    val name=data?.get(0)?.name
+                    val imagePath = ServiceBuilder.loadImagePath() +img
+                    if (!img.equals("noimg")) {
+                        Glide.with(context)
+                            .load(imagePath)
+                            .fitCenter()
+                            .into(holder.imageForHomeView)
+                    }
+                    holder.name.text=name
+                }
+
+            }
         }
     }
 

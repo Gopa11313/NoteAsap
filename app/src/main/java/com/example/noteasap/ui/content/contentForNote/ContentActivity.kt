@@ -22,6 +22,7 @@ import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.CommentRepository
+import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
@@ -48,6 +49,7 @@ class ContentActivity : AppCompatActivity() {
     private lateinit var comment:ImageView;
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar:TextView;
+    var rattingNum:Int?=null
     var noteid:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -154,11 +156,29 @@ CoroutineScope(Dispatchers.IO).launch {
             topic.text = name.toString()
             universityname.text = uname.toString()
             discriotion.text = dis.toString()
+            rattingNum=intent.noofRating
             if(ratting!==null) {
                 ratingBar1.setRating(ratting!!.toFloat())
             }
         }
         loadcomment()
+        ratingBar1.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            val rate=ratingBar1.rating.toString()
+            Toast.makeText(this, "$rate", Toast.LENGTH_SHORT).show()
+        CoroutineScope(Dispatchers.IO).launch {
+            val repository=NoteRepository()
+            val response=repository.RateNote(OwnNotes(_id = noteid,ratting = 3,noofRating = 1))
+            if(response.success==true){
+            val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
+            snack.setAction("Ok") {
+                snack.dismiss()
+            }
+            snack.show()
+            }
+
+        }
+
+        }
 
     }
 
