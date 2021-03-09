@@ -16,6 +16,7 @@ import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.UserRepository
+import com.example.noteasap.ui.content.contentForBookmarkednote.ContentActivityForBookmark
 import com.example.noteasap.ui.model.BookMarkNotes
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
@@ -59,7 +60,7 @@ class BookmarkAdpater(
         holder.topic.text=notes.topic;
         val id=notes.userId
         holder.list_item.setOnClickListener(){
-            val intent = Intent(context, ContentActivity::class.java)
+            val intent = Intent(context, ContentActivityForBookmark::class.java)
             intent.putExtra("notes",notes)
             context.startActivity(intent);
         }

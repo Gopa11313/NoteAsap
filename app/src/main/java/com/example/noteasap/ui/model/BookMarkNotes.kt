@@ -13,7 +13,9 @@ data class BookMarkNotes (@PrimaryKey (autoGenerate = true) val primaryKey:Int=0
                           val c_name:String?=null,
                           val file:String?=null,
                           val topic:String?=null,
-                          val description:String?=null ):Parcelable{
+                          val description:String?=null,
+                          val noofRating:Int?=null,
+                          val ratting:Int?=null):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),
@@ -23,7 +25,9 @@ data class BookMarkNotes (@PrimaryKey (autoGenerate = true) val primaryKey:Int=0
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
+        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readValue(Int::class.java.classLoader) as? Int
     ) {
     }
 
@@ -37,6 +41,8 @@ data class BookMarkNotes (@PrimaryKey (autoGenerate = true) val primaryKey:Int=0
         parcel.writeString(file)
         parcel.writeString(topic)
         parcel.writeString(description)
+        parcel.writeValue(noofRating)
+        parcel.writeValue(ratting)
     }
 
     override fun describeContents(): Int {
@@ -52,4 +58,5 @@ data class BookMarkNotes (@PrimaryKey (autoGenerate = true) val primaryKey:Int=0
             return arrayOfNulls(size)
         }
     }
+
 }

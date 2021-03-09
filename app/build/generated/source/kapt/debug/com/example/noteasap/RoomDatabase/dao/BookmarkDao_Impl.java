@@ -11,6 +11,7 @@ import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.noteasap.ui.model.BookMarkNotes;
 import java.lang.Exception;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -34,7 +35,7 @@ public final class BookmarkDao_Impl implements BookmarkDao {
     this.__insertionAdapterOfBookMarkNotes = new EntityInsertionAdapter<BookMarkNotes>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `BookMarkNotes` (`primaryKey`,`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `BookMarkNotes` (`primaryKey`,`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`,`noofRating`,`ratting`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -79,6 +80,16 @@ public final class BookmarkDao_Impl implements BookmarkDao {
           stmt.bindNull(9);
         } else {
           stmt.bindString(9, value.getDescription());
+        }
+        if (value.getNoofRating() == null) {
+          stmt.bindNull(10);
+        } else {
+          stmt.bindLong(10, value.getNoofRating());
+        }
+        if (value.getRatting() == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindLong(11, value.getRatting());
         }
       }
     };
@@ -145,6 +156,8 @@ public final class BookmarkDao_Impl implements BookmarkDao {
           final int _cursorIndexOfFile = CursorUtil.getColumnIndexOrThrow(_cursor, "file");
           final int _cursorIndexOfTopic = CursorUtil.getColumnIndexOrThrow(_cursor, "topic");
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfNoofRating = CursorUtil.getColumnIndexOrThrow(_cursor, "noofRating");
+          final int _cursorIndexOfRatting = CursorUtil.getColumnIndexOrThrow(_cursor, "ratting");
           final List<BookMarkNotes> _result = new ArrayList<BookMarkNotes>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final BookMarkNotes _item;
@@ -166,7 +179,19 @@ public final class BookmarkDao_Impl implements BookmarkDao {
             _tmpTopic = _cursor.getString(_cursorIndexOfTopic);
             final String _tmpDescription;
             _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
-            _item = new BookMarkNotes(_tmpPrimaryKey,_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription);
+            final Integer _tmpNoofRating;
+            if (_cursor.isNull(_cursorIndexOfNoofRating)) {
+              _tmpNoofRating = null;
+            } else {
+              _tmpNoofRating = _cursor.getInt(_cursorIndexOfNoofRating);
+            }
+            final Integer _tmpRatting;
+            if (_cursor.isNull(_cursorIndexOfRatting)) {
+              _tmpRatting = null;
+            } else {
+              _tmpRatting = _cursor.getInt(_cursorIndexOfRatting);
+            }
+            _item = new BookMarkNotes(_tmpPrimaryKey,_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription,_tmpNoofRating,_tmpRatting);
             _result.add(_item);
           }
           return _result;

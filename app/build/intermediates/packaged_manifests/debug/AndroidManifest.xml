@@ -26,6 +26,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.noteasap.ui.content.contentForBookmarkednote.ContentActivityForBookmark" />
         <activity android:name="com.example.noteasap.ImageUploadActivity" />
         <activity android:name="com.example.noteasap.ui.pupup.message.MessageActivity" />
         <activity android:name="com.example.noteasap.ui.pupup.editProfile.EditProfileActivity" />

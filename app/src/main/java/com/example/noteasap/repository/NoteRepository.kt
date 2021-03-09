@@ -31,9 +31,9 @@ class NoteRepository:MyApiRequest(){
             myApi.getAllbookmarkedNotes(ServiceBuilder.token!!,id)
         }
     }
-    suspend fun RateNote(ownnotes: OwnNotes):NoteResponse{
+    suspend fun RateNote(id:String,ratting:String,noofRating:String):NoteResponse{
         return apiRequest {
-            myApi.rateNote(ServiceBuilder.token!!,ownnotes)
+            myApi.rateNote(ServiceBuilder.token!!,id,ratting,noofRating)
         }
     }
 

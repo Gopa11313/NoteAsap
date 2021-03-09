@@ -32,6 +32,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\shapeemail.xml"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_content_for_bookmark.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content_for_bookmark.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_content_bookmark_content.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\content_bookmark_content.xml"
     },

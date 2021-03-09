@@ -3,6 +3,8 @@ package com.example.noteasap.ui.content.contentForNote
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.MotionEvent
+import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -50,6 +52,7 @@ class ContentActivity : AppCompatActivity() {
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar:TextView;
     var rattingNum:Int?=null
+    var ratting:Int?=null
     var noteid:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -142,6 +145,9 @@ CoroutineScope(Dispatchers.IO).launch {
 
             Handler().postDelayed(Runnable {
                 loadcomment()
+                if(ratting!==null) {
+                    ratingBar1.setRating(ratting!!.toFloat())
+                }
                 swipeRefreshLayout.isRefreshing = false
             }, 2000)
         }
@@ -152,7 +158,7 @@ CoroutineScope(Dispatchers.IO).launch {
             noteid=intent._id
             val uname = intent.c_name
             val dis = intent.description
-            val ratting=intent.ratting
+            ratting= intent.ratting
             topic.text = name.toString()
             universityname.text = uname.toString()
             discriotion.text = dis.toString()
@@ -162,23 +168,47 @@ CoroutineScope(Dispatchers.IO).launch {
             }
         }
         loadcomment()
-        ratingBar1.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
-            val rate=ratingBar1.rating.toString()
-            Toast.makeText(this, "$rate", Toast.LENGTH_SHORT).show()
-        CoroutineScope(Dispatchers.IO).launch {
-            val repository=NoteRepository()
-            val response=repository.RateNote(OwnNotes(_id = noteid,ratting = 3,noofRating = 1))
-            if(response.success==true){
-            val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
-            snack.setAction("Ok") {
-                snack.dismiss()
-            }
-            snack.show()
-            }
 
-        }
 
-        }
+        ratingBar1.onRatingBarChangeListener =
+            RatingBar.OnRatingBarChangeListener { p0, p1, p2 ->
+//                val numofRat=rattingNum!!+1
+//                val actualRating=p1.toInt()+ratting!!
+//                val rat=(actualRating)/(numofRat)
+                Toast.makeText(this@ContentActivity, "Given rating is: $p1 ", Toast.LENGTH_SHORT).show()
+                CoroutineScope(Dispatchers.IO).launch {
+                    val repository=NoteRepository()
+                    val response=repository.RateNote(noteid!!,p1.toString(),3.toString())
+                    if(response.success==true){
+                        withContext(Main){
+                            val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
+                            snack.setAction("Ok") {
+                                snack.dismiss()
+                            }
+                            snack.show()
+                        }
+
+                    }
+
+                }
+            }
+//        ratingBar1.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+//            val rate=ratingBar1.rating.toString()
+//            Toast.makeText(this, "$rate", Toast.LENGTH_SHORT).show()
+//        CoroutineScope(Dispatchers.IO).launch {
+//            val repository=NoteRepository()
+//            val response=repository.RateNote(OwnNotes(_id = noteid,ratting = 3,noofRating = 1))
+//            if(response.success==true){
+//            val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
+//            snack.setAction("Ok") {
+//                snack.dismiss()
+//            }
+//            snack.show()
+//            }
+//
+//        }
+
+//        }
 
     }
 
