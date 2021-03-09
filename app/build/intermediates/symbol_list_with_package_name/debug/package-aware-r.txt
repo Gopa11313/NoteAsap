@@ -1625,6 +1625,7 @@ drawable ic_notifications
 drawable ic_send
 drawable ic_star_orange
 drawable ic_update
+drawable layout_border
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1676,6 +1677,7 @@ id FirstFragment
 id META
 id NO_DEBUG
 id Notification_Image
+id Ratting
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1817,6 +1819,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id des
 id desc
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1968,7 +1971,7 @@ id notif_Button
 id notification_background
 id notification_main_column
 id notification_main_column_container
-id numOfRatting
+id numberOfRatting
 id off
 id on
 id onAttachStateChangeListener

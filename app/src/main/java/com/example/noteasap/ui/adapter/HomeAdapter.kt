@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.RatingBar
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -22,11 +23,14 @@ class HomeAdapter(
         val t_name: TextView;
         val u_name: TextView;
         val home: ConstraintLayout;
-
+        val des:TextView
+        val ratingBar:RatingBar
         init {
             t_name = view.findViewById(R.id.topic)
             u_name = view.findViewById(R.id.u_name)
             home=view.findViewById(R.id.home)
+            des=view.findViewById(R.id.des)
+            ratingBar=view.findViewById(R.id.ratingBar)
         }
     }
 
@@ -46,6 +50,12 @@ class HomeAdapter(
             val intent = Intent(context, ContentActivity::class.java)
             intent.putExtra("notes",note)
             context.startActivity(intent);
+        }
+        holder.des.text=note.description
+
+        val ratting=note.ratting;
+        if(ratting!==null){
+            holder.ratingBar.rating=ratting.toFloat()
         }
     }
 

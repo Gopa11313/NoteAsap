@@ -8,16 +8,16 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_next.xml"
     },
     {
-        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
-        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_profile.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_profile.xml.flat",
-        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_search_24.xml.flat",
@@ -282,6 +282,10 @@
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_bookmark_blank.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_bookmark_blank.xml"
+    },
+    {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_layout_border.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\layout_border.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shapelogin.xml.flat",
