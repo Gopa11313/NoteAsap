@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
+import com.example.noteasap.repository.CommentRepository
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.content.contentForNote.ContentActivity
 import com.example.noteasap.ui.model.Notes
@@ -32,6 +33,7 @@ class HomeAdapter(
         val ratingBar:RatingBar
         val Ratting:TextView
         val numberOfRatting:TextView
+        val comntCount:TextView
         val imageForHomeView:ImageView
         val name:TextView
         init {
@@ -42,6 +44,7 @@ class HomeAdapter(
             numberOfRatting=view.findViewById(R.id.numberOfRatting)
             des=view.findViewById(R.id.des)
             ratingBar=view.findViewById(R.id.ratingBar)
+            comntCount=view.findViewById(R.id.comntCount)
             imageForHomeView=view.findViewById(R.id.imageForHomeView)
             name=view.findViewById(R.id.name)
 
@@ -92,6 +95,17 @@ class HomeAdapter(
                     holder.name.text=name
                 }
 
+            }
+        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val repository=CommentRepository()
+            val response=repository.getComment(note._id!!)
+            if(response.success==true){
+                val data=response.data?.size
+                withContext(Main){
+                    holder.comntCount.text="$data Comment"
+                }
             }
         }
     }

@@ -1800,6 +1800,7 @@ id clip_vertical
 id collapseActionView
 id comment
 id commentbar
+id comntCount
 id con_pss
 id confirm_button
 id conpassword
