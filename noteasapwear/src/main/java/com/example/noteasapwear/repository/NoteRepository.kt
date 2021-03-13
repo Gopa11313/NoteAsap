@@ -2,6 +2,7 @@ package com.example.noteasap.repository
 
 
 
+import com.example.noteasap.response.NoteResponse
 import com.example.noteasap.ui.model.Notes
 import com.example.noteasapwear.api.MyApiRequestForWear
 import com.example.noteasapwear.api.NoteApi
@@ -15,11 +16,11 @@ class NoteRepository:MyApiRequestForWear(){
 //            myApi.uploadnote(ServiceBuilder.token!!,notes)
 //        }
 //    }
-//    suspend fun getAllNote():NoteResponse{
-//        return apiRequest {
-//            myApi.getAllNotes(ServiceBuilder.token!!)
-//        }
-//    }
+    suspend fun getAllNote(): NoteResponse {
+        return apiRequest {
+            myApi.getAllNotes(ServiceBuilder.token!!)
+        }
+    }
 //    suspend fun uploadfile(id:String,file: MultipartBody.Part): NoteResponse {
 //        return apiRequest {
 //            myApi.uploadFile(ServiceBuilder.token!!,id,file)

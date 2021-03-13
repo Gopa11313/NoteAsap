@@ -34,7 +34,7 @@ class MainActivity : WearableActivity() {
                     ServiceBuilder.id=response.id
                     withContext(Dispatchers.Main){
                         Toast.makeText(this@MainActivity, "${response.id}", Toast.LENGTH_SHORT).show()
-                       // startActivity(Intent(this@MainActivity,SecondActivity::class.java))
+                        startActivity(Intent(this@MainActivity,ViewActivity::class.java))
                     }
 
                 }
