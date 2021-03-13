@@ -42,69 +42,68 @@
 24-->G:\NoteAsap\app\src\main\AndroidManifest.xml:16:9-54
 25        android:supportsRtl="true"
 25-->G:\NoteAsap\app\src\main\AndroidManifest.xml:17:9-35
-26        android:testOnly="true"
-27        android:theme="@style/Theme.NoteAsap"
-27-->G:\NoteAsap\app\src\main\AndroidManifest.xml:18:9-46
-28        android:usesCleartextTraffic="true" >
-28-->G:\NoteAsap\app\src\main\AndroidManifest.xml:19:9-44
-29        <activity android:name="com.example.noteasap.ui.content.contentForBookmarkednote.ContentActivityForBookmark" />
-29-->G:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-109
-29-->G:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-97
-30        <activity android:name="com.example.noteasap.ImageUploadActivity" />
-30-->G:\NoteAsap\app\src\main\AndroidManifest.xml:22:9-57
-30-->G:\NoteAsap\app\src\main\AndroidManifest.xml:22:19-54
-31        <activity android:name="com.example.noteasap.ui.pupup.message.MessageActivity" />
-31-->G:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-70
-31-->G:\NoteAsap\app\src\main\AndroidManifest.xml:23:19-67
-32        <activity android:name="com.example.noteasap.ui.pupup.editProfile.EditProfileActivity" />
-32-->G:\NoteAsap\app\src\main\AndroidManifest.xml:24:9-78
-32-->G:\NoteAsap\app\src\main\AndroidManifest.xml:24:19-75
-33        <activity
-33-->G:\NoteAsap\app\src\main\AndroidManifest.xml:25:9-28:65
-34            android:name="com.example.noteasap.ui.content.contentForNote.ContentActivity"
-34-->G:\NoteAsap\app\src\main\AndroidManifest.xml:26:13-70
-35            android:label="@string/title_activity_bookmark_content"
-35-->G:\NoteAsap\app\src\main\AndroidManifest.xml:27:13-68
-36            android:theme="@style/Theme.NoteAsap.NoActionBar" />
-36-->G:\NoteAsap\app\src\main\AndroidManifest.xml:28:13-62
-37        <activity android:name="com.example.noteasap.ui.uploadNotes.UploadNotesActivity" />
-37-->G:\NoteAsap\app\src\main\AndroidManifest.xml:29:9-72
-37-->G:\NoteAsap\app\src\main\AndroidManifest.xml:29:19-69
-38        <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" />
-38-->G:\NoteAsap\app\src\main\AndroidManifest.xml:30:9-71
-38-->G:\NoteAsap\app\src\main\AndroidManifest.xml:30:19-68
-39        <activity android:name="com.example.noteasap.ui.login.LoginActivity" />
-39-->G:\NoteAsap\app\src\main\AndroidManifest.xml:31:9-60
-39-->G:\NoteAsap\app\src\main\AndroidManifest.xml:31:19-57
-40        <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
-40-->G:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-69
-40-->G:\NoteAsap\app\src\main\AndroidManifest.xml:32:19-66
-41        <activity android:name="com.example.noteasap.SecondActivity" />
-41-->G:\NoteAsap\app\src\main\AndroidManifest.xml:33:9-52
-41-->G:\NoteAsap\app\src\main\AndroidManifest.xml:33:19-49
-42        <activity android:name="com.example.noteasap.SplashActivity" >
-42-->G:\NoteAsap\app\src\main\AndroidManifest.xml:34:9-40:20
-42-->G:\NoteAsap\app\src\main\AndroidManifest.xml:34:19-49
-43            <intent-filter>
-43-->G:\NoteAsap\app\src\main\AndroidManifest.xml:35:13-39:29
-44                <action android:name="android.intent.action.MAIN" />
-44-->G:\NoteAsap\app\src\main\AndroidManifest.xml:36:17-69
-44-->G:\NoteAsap\app\src\main\AndroidManifest.xml:36:25-66
-45
-46                <category android:name="android.intent.category.LAUNCHER" />
-46-->G:\NoteAsap\app\src\main\AndroidManifest.xml:38:17-77
-46-->G:\NoteAsap\app\src\main\AndroidManifest.xml:38:27-74
-47            </intent-filter>
-48        </activity>
-49
-50        <service
-50-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
-51            android:name="androidx.room.MultiInstanceInvalidationService"
-51-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
-52            android:directBootAware="true"
-52-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
-53            android:exported="false" />
-53-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
-54    </application>
-55
-56</manifest>
+26        android:theme="@style/Theme.NoteAsap"
+26-->G:\NoteAsap\app\src\main\AndroidManifest.xml:18:9-46
+27        android:usesCleartextTraffic="true" >
+27-->G:\NoteAsap\app\src\main\AndroidManifest.xml:19:9-44
+28        <activity android:name="com.example.noteasap.ui.content.contentForBookmarkednote.ContentActivityForBookmark" />
+28-->G:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-109
+28-->G:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-97
+29        <activity android:name="com.example.noteasap.ImageUploadActivity" />
+29-->G:\NoteAsap\app\src\main\AndroidManifest.xml:22:9-57
+29-->G:\NoteAsap\app\src\main\AndroidManifest.xml:22:19-54
+30        <activity android:name="com.example.noteasap.ui.pupup.message.MessageActivity" />
+30-->G:\NoteAsap\app\src\main\AndroidManifest.xml:23:9-70
+30-->G:\NoteAsap\app\src\main\AndroidManifest.xml:23:19-67
+31        <activity android:name="com.example.noteasap.ui.pupup.editProfile.EditProfileActivity" />
+31-->G:\NoteAsap\app\src\main\AndroidManifest.xml:24:9-78
+31-->G:\NoteAsap\app\src\main\AndroidManifest.xml:24:19-75
+32        <activity
+32-->G:\NoteAsap\app\src\main\AndroidManifest.xml:25:9-28:65
+33            android:name="com.example.noteasap.ui.content.contentForNote.ContentActivity"
+33-->G:\NoteAsap\app\src\main\AndroidManifest.xml:26:13-70
+34            android:label="@string/title_activity_bookmark_content"
+34-->G:\NoteAsap\app\src\main\AndroidManifest.xml:27:13-68
+35            android:theme="@style/Theme.NoteAsap.NoActionBar" />
+35-->G:\NoteAsap\app\src\main\AndroidManifest.xml:28:13-62
+36        <activity android:name="com.example.noteasap.ui.uploadNotes.UploadNotesActivity" />
+36-->G:\NoteAsap\app\src\main\AndroidManifest.xml:29:9-72
+36-->G:\NoteAsap\app\src\main\AndroidManifest.xml:29:19-69
+37        <activity android:name="com.example.noteasap.ui.signUpViewModel.SignUpActivity" />
+37-->G:\NoteAsap\app\src\main\AndroidManifest.xml:30:9-71
+37-->G:\NoteAsap\app\src\main\AndroidManifest.xml:30:19-68
+38        <activity android:name="com.example.noteasap.ui.login.LoginActivity" />
+38-->G:\NoteAsap\app\src\main\AndroidManifest.xml:31:9-60
+38-->G:\NoteAsap\app\src\main\AndroidManifest.xml:31:19-57
+39        <activity android:name="com.example.noteasap.ui.thirdActivity.Third_Activity" />
+39-->G:\NoteAsap\app\src\main\AndroidManifest.xml:32:9-69
+39-->G:\NoteAsap\app\src\main\AndroidManifest.xml:32:19-66
+40        <activity android:name="com.example.noteasap.SecondActivity" />
+40-->G:\NoteAsap\app\src\main\AndroidManifest.xml:33:9-52
+40-->G:\NoteAsap\app\src\main\AndroidManifest.xml:33:19-49
+41        <activity android:name="com.example.noteasap.SplashActivity" >
+41-->G:\NoteAsap\app\src\main\AndroidManifest.xml:34:9-40:20
+41-->G:\NoteAsap\app\src\main\AndroidManifest.xml:34:19-49
+42            <intent-filter>
+42-->G:\NoteAsap\app\src\main\AndroidManifest.xml:35:13-39:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->G:\NoteAsap\app\src\main\AndroidManifest.xml:36:17-69
+43-->G:\NoteAsap\app\src\main\AndroidManifest.xml:36:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->G:\NoteAsap\app\src\main\AndroidManifest.xml:38:17-77
+45-->G:\NoteAsap\app\src\main\AndroidManifest.xml:38:27-74
+46            </intent-filter>
+47        </activity>
+48
+49        <service
+49-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
+50            android:name="androidx.room.MultiInstanceInvalidationService"
+50-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
+51            android:directBootAware="true"
+51-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
+52            android:exported="false" />
+52-->[androidx.room:room-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c28c55489a1b436eefab32bd1dc1c1ce\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
+53    </application>
+54
+55</manifest>
