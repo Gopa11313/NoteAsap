@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
+import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.OwnNotes
 
-class OwnNotesAdpater( val listpost:ArrayList<OwnNotes>,
-val context: Context):RecyclerView.Adapter<OwnNotesAdpater.OwnnotesviewHolder>() {
+class OwnNotesAdpater(val listpost:ArrayList<OwnNotes>,
+                      val context: Context):RecyclerView.Adapter<OwnNotesAdpater.OwnnotesviewHolder>() {
 
     class OwnnotesviewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val t_name: TextView;

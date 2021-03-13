@@ -10,15 +10,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.noteasap.R
 import com.example.noteasap.RoomDatabase.NoteAsapDb
 import com.example.noteasap.api.ServiceBuilder
-import com.example.noteasap.databinding.ActivityContentBinding
 import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.CommentRepository
 import com.example.noteasap.repository.NoteRepository
@@ -27,7 +24,6 @@ import com.example.noteasap.ui.content.contentForNote.ContentviewModel
 import com.example.noteasap.ui.model.BookMarkNotes
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
-import com.example.noteasap.ui.model.OwnNotes
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -49,6 +45,7 @@ class ContentActivityForBookmark : AppCompatActivity() {
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar: TextView;
     var rattingNum:Int?=null
+    var ratting:Int?=null
     var noteid:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -129,6 +126,28 @@ class ContentActivityForBookmark : AppCompatActivity() {
                     R.drawable.ic_star_orange // Drawable
                 ))
         }
+        ratingBar1.onRatingBarChangeListener =
+            RatingBar.OnRatingBarChangeListener { p0, p1, p2 ->
+//                val numofRat=rattingNum!!+1
+//                val actualRating=p1.toInt()+ratting!!
+//                val rat=(actualRating)/(numofRat)
+                Toast.makeText(this@ContentActivityForBookmark, "Given rating is: $p1 ", Toast.LENGTH_SHORT).show()
+                CoroutineScope(Dispatchers.IO).launch {
+                    val repository= NoteRepository()
+                    val response=repository.RateNote(noteid!!,p1.toString(),3.toString())
+                    if(response.success==true){
+                        withContext(Dispatchers.Main){
+                            val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
+                            snack.setAction("Ok") {
+                                snack.dismiss()
+                            }
+                            snack.show()
+                        }
+
+                    }
+
+                }
+            }
 
         /////-------------double click on bookamrk imagebutoon----------//
 //        bookamark.setOnClickListener(object : DoubleClickListener() {
@@ -138,13 +157,7 @@ class ContentActivityForBookmark : AppCompatActivity() {
 //        })
 
 
-        swipeRefreshLayout.setOnRefreshListener() {
 
-            Handler().postDelayed(Runnable {
-                loadcomment()
-                swipeRefreshLayout.isRefreshing = false
-            }, 2000)
-        }
 
         val intent = intent.getParcelableExtra<BookMarkNotes>("notes")
         if (intent != null) {
@@ -152,7 +165,7 @@ class ContentActivityForBookmark : AppCompatActivity() {
             noteid=intent._id
             val uname = intent.c_name
             val dis = intent.description
-            val ratting=intent.ratting
+            ratting=intent.ratting
             topic.text = name.toString()
             universityname.text = uname.toString()
             discriotion.text = dis.toString()
@@ -162,23 +175,15 @@ class ContentActivityForBookmark : AppCompatActivity() {
             }
         }
         loadcomment()
-//        ratingBar1.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
-//            val rate=ratingBar1.rating.toString()
-//            Toast.makeText(this, "$rate", Toast.LENGTH_SHORT).show()
-//            CoroutineScope(Dispatchers.IO).launch {
-//                val repository= NoteRepository()
-//                val response=repository.RateNote(noteid,OwnNotes(ratting = p1,noofRating = 1))
-//                if(response.success==true){
-//                    val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
-//                    snack.setAction("Ok") {
-//                        snack.dismiss()
-//                    }
-//                    snack.show()
-//                }
-//
-//            }
-
-//        }
+        swipeRefreshLayout.setOnRefreshListener() {
+            Handler().postDelayed(Runnable {
+                loadcomment()
+                if(ratting!==null) {
+                    ratingBar1.setRating(ratting!!.toFloat())
+                }
+                swipeRefreshLayout.isRefreshing = false
+            }, 2000)
+        }
 
     }
 

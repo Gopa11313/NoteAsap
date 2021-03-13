@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteasap.R
@@ -15,8 +14,7 @@ import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.adapter.BookmarkAdpater
 import com.example.noteasap.ui.model.BookMarkNotes
-import com.example.noteasap.ui.model.Bookmark
-import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.model.Notes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -63,7 +61,7 @@ class BookmarkBlankFragment : Fragment() {
         }
 
     private fun loadvlaue(){
-        var listNotes:List<OwnNotes>?
+        var listNotes:List<Notes>?
         CoroutineScope(Dispatchers.IO).launch {
             //-------- getting noteid---------------//
             val repository=BookmarkRepository()

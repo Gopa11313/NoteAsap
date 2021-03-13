@@ -1,28 +1,25 @@
 package com.example.noteasap.ui.fragments.homeFragment
 
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AutoCompleteTextView
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.noteasap.R
 import com.example.noteasap.RoomDatabase.NoteAsapDb
-import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.FragmentHomeBlankBinding
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.adapter.HomeAdapter
-import com.example.noteasap.ui.model.Home
-import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.model.Notes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,9 +32,10 @@ private const val ARG_PARAM2 = "param2"
 class HomeBlankFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    var listStudent:List<OwnNotes>?=null
+    var listStudent:List<Notes>?=null
     private lateinit var recyclehome:RecyclerView;
     private lateinit var search:AutoCompleteTextView;
+    lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var homeFragmetViewModel: HomeFragmetViewModel
     private lateinit var binding:FragmentHomeBlankBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,9 +63,15 @@ class HomeBlankFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclehome=view.findViewById(R.id.recyclehome);
         search=view.findViewById(R.id.search)
+        swipeRefreshLayout =view.findViewById(R.id.swipe)
         getvalues()
         recyclehome.setHasFixedSize(true);
-
+        swipeRefreshLayout.setOnRefreshListener() {
+            Handler().postDelayed(Runnable {
+                getvalues()
+                swipeRefreshLayout.isRefreshing = false
+            }, 2000)
+        }
 
     }
     fun getvalues() {
@@ -82,7 +86,7 @@ class HomeBlankFragment : Fragment() {
                     val list= context?.let { NoteAsapDb.getInstance(it).getNoteDao().getAllNote() }
                     withContext(Dispatchers.Main) {
                        //val reversedLits=list!!.asReversed()
-                        val adpater= context?.let { HomeAdapter(list as ArrayList<OwnNotes>, it) }
+                        val adpater= context?.let { HomeAdapter(list as ArrayList<Notes>, it) }
                         recyclehome.layoutManager = LinearLayoutManager(activity)
                         recyclehome.adapter=adpater;
                     }

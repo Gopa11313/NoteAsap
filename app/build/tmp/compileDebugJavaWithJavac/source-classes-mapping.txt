@@ -1,5 +1,12 @@
 com/example/noteasap/databinding/FragmentHomeBlankBinding.java
  com.example.noteasap.databinding.FragmentHomeBlankBinding
+com/example/noteasap/RoomDatabase/dao/OwnnotesDao_Impl.java
+ com.example.noteasap.RoomDatabase.dao.OwnnotesDao_Impl
+ com.example.noteasap.RoomDatabase.dao.OwnnotesDao_Impl$1
+ com.example.noteasap.RoomDatabase.dao.OwnnotesDao_Impl$2
+ com.example.noteasap.RoomDatabase.dao.OwnnotesDao_Impl$3
+ com.example.noteasap.RoomDatabase.dao.OwnnotesDao_Impl$4
+ com.example.noteasap.RoomDatabase.dao.OwnnotesDao_Impl$5
 com/example/noteasap/databinding/ActivityContentForBookmarkBindingImpl.java
  com.example.noteasap.databinding.ActivityContentForBookmarkBindingImpl
 com/example/noteasap/databinding/ActivityMessageBindingImpl.java

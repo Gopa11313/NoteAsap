@@ -3,7 +3,6 @@ package com.example.noteasap.ui.uploadNotes
 import android.content.Intent
 import android.database.Cursor
 import android.graphics.Color
-import android.graphics.Color.GREEN
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
@@ -17,7 +16,7 @@ import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityUploadNotesBinding
 import com.example.noteasap.repository.NoteRepository
-import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.model.Notes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -29,7 +28,6 @@ import okhttp3.RequestBody
 import org.apache.commons.io.FileUtils.copyInputStreamToFile
 import java.io.File
 import java.io.IOException
-import java.util.*
 import kotlin.jvm.Throws
 
 
@@ -141,7 +139,7 @@ class UploadNotesActivity : AppCompatActivity() {
 
     private fun uploadnotes() {
         Toast.makeText(this, "${ServiceBuilder.id!!}", Toast.LENGTH_SHORT).show()
-        val ownnote = OwnNotes(
+        val ownnote = Notes(
             userId = ServiceBuilder.id!!,
             file = "nofile",
             subject = selectedsubject,

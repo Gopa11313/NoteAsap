@@ -9,10 +9,14 @@
                                         
                                                                                          
            
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_home_blank_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true" android:tag="layout/fragment_home_blank_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+        android:fillViewport="true">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -39,4 +43,6 @@
         android:layout_marginTop="10dp"
         android:id="@+id/recyclehome"/>
 
-</LinearLayout></ScrollView>         
+</LinearLayout></ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+         

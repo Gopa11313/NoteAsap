@@ -3,20 +3,19 @@ package com.example.noteasap.RoomDatabase.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.noteasap.ui.model.OwnNotes
-import com.example.noteasap.ui.model.User
+import com.example.noteasap.ui.model.Notes
 
 
 @Dao
 interface NoteDao {
 
     @Insert
-    suspend fun RegisterNote(list: List<OwnNotes>?)
+    suspend fun RegisterNote(list: List<Notes>?)
 
-    @Query("select * from OwnNotes")
-    suspend fun getAllNote(): List<OwnNotes>
+    @Query("select * from Notes")
+    suspend fun getAllNote(): List<Notes>
 
-    @Query ("Delete from OwnNotes")
+    @Query ("Delete from Notes")
     suspend fun droptable()
 
 }

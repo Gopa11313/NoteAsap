@@ -2,15 +2,15 @@ package com.example.noteasap.api
 
 import com.example.noteasap.response.ForBookmarkedNotesResponse
 import com.example.noteasap.response.NoteResponse
-import com.example.noteasap.response.UserResponse
-import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.response.OwnNotesResponse
+import com.example.noteasap.ui.model.Notes
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
 interface NoteApi {
     @POST("upload/note")
-    suspend fun uploadnote(@Header("Authorization") token:String, @Body ownnotes:OwnNotes):Response<NoteResponse>
+    suspend fun uploadnote(@Header("Authorization") token:String, @Body ownnotes:Notes):Response<NoteResponse>
 
     @GET("get/notes/")
     suspend fun getAllNotes(
@@ -38,4 +38,10 @@ interface NoteApi {
         @Path("ratting") ratting:String,
         @Path("noofRating") noofRating: String,
     ):Response<NoteResponse>
+
+    @GET("get/Ownnotes/{userId}")
+    suspend fun getOwnNotes(
+        @Header("Authorization") token:String,
+        @Path("userId") userId:String,
+    ):Response<OwnNotesResponse>
 }

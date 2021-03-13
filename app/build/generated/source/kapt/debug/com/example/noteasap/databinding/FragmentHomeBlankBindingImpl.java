@@ -17,8 +17,6 @@ public class FragmentHomeBlankBindingImpl extends FragmentHomeBlankBinding  {
         sViewsWithIds.put(R.id.recyclehome, 2);
     }
     // views
-    @NonNull
-    private final android.widget.ScrollView mboundView0;
     // variables
     // values
     // listeners
@@ -31,10 +29,10 @@ public class FragmentHomeBlankBindingImpl extends FragmentHomeBlankBinding  {
         super(bindingComponent, root, 1
             , (androidx.recyclerview.widget.RecyclerView) bindings[2]
             , (android.widget.AutoCompleteTextView) bindings[1]
+            , (androidx.swiperefreshlayout.widget.SwipeRefreshLayout) bindings[0]
             );
-        this.mboundView0 = (android.widget.ScrollView) bindings[0];
-        this.mboundView0.setTag(null);
         this.search.setTag(null);
+        this.swipe.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

@@ -1,7 +1,6 @@
 package com.example.noteasap.response
 
 import com.example.noteasap.ui.model.BookMarkNotes
-import com.example.noteasap.ui.model.OwnNotes
 
 //import com.example.noteasap.ui.model.OwnNotes
 

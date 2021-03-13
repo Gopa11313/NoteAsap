@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.RatingBar
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -17,13 +16,13 @@ import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.content.contentForNote.ContentActivity
-import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.model.Notes
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Main
 
 class HomeAdapter(
-        val listpost:ArrayList<OwnNotes>,
-        val context: Context):RecyclerView.Adapter<HomeAdapter.HomwviewHolder>() {
+    val listpost:ArrayList<Notes>,
+    val context: Context):RecyclerView.Adapter<HomeAdapter.HomwviewHolder>() {
 
     class HomwviewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val t_name: TextView;
@@ -31,12 +30,16 @@ class HomeAdapter(
         val home: ConstraintLayout;
         val des:TextView
         val ratingBar:RatingBar
+        val Ratting:TextView
+        val numberOfRatting:TextView
         val imageForHomeView:ImageView
         val name:TextView
         init {
             t_name = view.findViewById(R.id.topic)
             u_name = view.findViewById(R.id.u_name)
             home=view.findViewById(R.id.home)
+            Ratting=view.findViewById(R.id.Ratting)
+            numberOfRatting=view.findViewById(R.id.numberOfRatting)
             des=view.findViewById(R.id.des)
             ratingBar=view.findViewById(R.id.ratingBar)
             imageForHomeView=view.findViewById(R.id.imageForHomeView)
@@ -63,7 +66,8 @@ class HomeAdapter(
             context.startActivity(intent);
         }
         holder.des.text=note.description
-
+        holder.Ratting.text=note.ratting.toString()
+        holder.numberOfRatting.text=note.noofRating.toString()
         val ratting=note.ratting;
         if(ratting!==null){
             holder.ratingBar.rating=ratting.toFloat()

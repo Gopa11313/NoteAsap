@@ -9,7 +9,7 @@ import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
-import com.example.noteasap.ui.model.OwnNotes;
+import com.example.noteasap.ui.model.Notes;
 import java.lang.Exception;
 import java.lang.Integer;
 import java.lang.Object;
@@ -26,20 +26,20 @@ import kotlin.coroutines.Continuation;
 public final class NoteDao_Impl implements NoteDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter<OwnNotes> __insertionAdapterOfOwnNotes;
+  private final EntityInsertionAdapter<Notes> __insertionAdapterOfNotes;
 
   private final SharedSQLiteStatement __preparedStmtOfDroptable;
 
   public NoteDao_Impl(RoomDatabase __db) {
     this.__db = __db;
-    this.__insertionAdapterOfOwnNotes = new EntityInsertionAdapter<OwnNotes>(__db) {
+    this.__insertionAdapterOfNotes = new EntityInsertionAdapter<Notes>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `OwnNotes` (`primaryKey`,`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`,`noofRating`,`ratting`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `Notes` (`primaryKey`,`_id`,`userId`,`level`,`subject`,`c_name`,`file`,`topic`,`description`,`noofRating`,`ratting`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?,?,?)";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, OwnNotes value) {
+      public void bind(SupportSQLiteStatement stmt, Notes value) {
         stmt.bindLong(1, value.getPrimaryKey());
         if (value.get_id() == null) {
           stmt.bindNull(2);
@@ -96,20 +96,20 @@ public final class NoteDao_Impl implements NoteDao {
     this.__preparedStmtOfDroptable = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "Delete from OwnNotes";
+        final String _query = "Delete from Notes";
         return _query;
       }
     };
   }
 
   @Override
-  public Object RegisterNote(final List<OwnNotes> list, final Continuation<? super Unit> p1) {
+  public Object RegisterNote(final List<Notes> list, final Continuation<? super Unit> p1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfOwnNotes.insert(list);
+          __insertionAdapterOfNotes.insert(list);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -139,12 +139,12 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
-  public Object getAllNote(final Continuation<? super List<OwnNotes>> p0) {
-    final String _sql = "select * from OwnNotes";
+  public Object getAllNote(final Continuation<? super List<Notes>> p0) {
+    final String _sql = "select * from Notes";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return CoroutinesRoom.execute(__db, false, new Callable<List<OwnNotes>>() {
+    return CoroutinesRoom.execute(__db, false, new Callable<List<Notes>>() {
       @Override
-      public List<OwnNotes> call() throws Exception {
+      public List<Notes> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfPrimaryKey = CursorUtil.getColumnIndexOrThrow(_cursor, "primaryKey");
@@ -158,9 +158,9 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
           final int _cursorIndexOfNoofRating = CursorUtil.getColumnIndexOrThrow(_cursor, "noofRating");
           final int _cursorIndexOfRatting = CursorUtil.getColumnIndexOrThrow(_cursor, "ratting");
-          final List<OwnNotes> _result = new ArrayList<OwnNotes>(_cursor.getCount());
+          final List<Notes> _result = new ArrayList<Notes>(_cursor.getCount());
           while(_cursor.moveToNext()) {
-            final OwnNotes _item;
+            final Notes _item;
             final int _tmpPrimaryKey;
             _tmpPrimaryKey = _cursor.getInt(_cursorIndexOfPrimaryKey);
             final String _tmp_id;
@@ -191,7 +191,7 @@ public final class NoteDao_Impl implements NoteDao {
             } else {
               _tmpRatting = _cursor.getInt(_cursorIndexOfRatting);
             }
-            _item = new OwnNotes(_tmpPrimaryKey,_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription,_tmpNoofRating,_tmpRatting);
+            _item = new Notes(_tmpPrimaryKey,_tmp_id,_tmpUserId,_tmpLevel,_tmpSubject,_tmpC_name,_tmpFile,_tmpTopic,_tmpDescription,_tmpNoofRating,_tmpRatting);
             _result.add(_item);
           }
           return _result;

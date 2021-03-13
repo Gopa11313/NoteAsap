@@ -26,6 +26,7 @@ import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
+import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
 import kotlinx.coroutines.CoroutineScope
@@ -232,12 +233,12 @@ class accountBlankFragment : Fragment() {
         try {
             CoroutineScope(Dispatchers.IO).launch {
                 val repository= NoteRepository()
-                val response=repository.getAllNote();
+                val response=repository.getOwnNotes(ServiceBuilder.id!!);
                 listNotes= response.data!!
                 if(response.success==true) {
-                    context?.let { NoteAsapDb.getInstance(it).getNoteDao().droptable() }
-                    context?.let { NoteAsapDb.getInstance(it).getNoteDao().RegisterNote(listNotes) }
-                    val list= context?.let { NoteAsapDb.getInstance(it).getNoteDao().getAllNote() }
+                    context?.let { NoteAsapDb.getInstance(it).getOwnNotes().droptable() }
+                    context?.let { NoteAsapDb.getInstance(it).getOwnNotes().RegisterNote(listNotes) }
+                    val list= context?.let { NoteAsapDb.getInstance(it).getOwnNotes().getAllNote() }
                     withContext(Dispatchers.Main) {
                         Toast.makeText(context, "this is recycle", Toast.LENGTH_SHORT).show()
                         val reversedLits=list!!.asReversed()

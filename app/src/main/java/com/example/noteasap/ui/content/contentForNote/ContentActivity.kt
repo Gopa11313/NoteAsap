@@ -1,14 +1,13 @@
 package com.example.noteasap.ui.content.contentForNote
 
+import android.app.DownloadManager
+import android.content.Context
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
-import android.view.MotionEvent
-import android.view.View
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -28,7 +27,7 @@ import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.adapter.CommentAdpater
 import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Comment
-import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.model.Notes
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -47,6 +46,7 @@ class ContentActivity : AppCompatActivity() {
     private lateinit var ratingBar1:RatingBar
     private lateinit var universityname:TextView;
     private lateinit var discriotion:TextView;
+    private lateinit var download:Button;
     private lateinit var img:ImageView;
     private lateinit var comment:ImageView;
     private  lateinit var layout: ConstraintLayout;
@@ -54,6 +54,7 @@ class ContentActivity : AppCompatActivity() {
     var rattingNum:Int?=null
     var ratting:Int?=null
     var noteid:String?=null
+    var fileUrl:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binnding:ActivityContentBinding=DataBindingUtil.setContentView(this,R.layout.activity_content)
@@ -65,6 +66,7 @@ class ContentActivity : AppCompatActivity() {
         discriotion = findViewById(R.id.dis);
         recyleview=findViewById(R.id.recycler_view1)
         img=findViewById(R.id.comment)
+        download=findViewById(R.id.download)
         swipeRefreshLayout =findViewById(R.id.swipe)
         layout=findViewById(R.id.layout)
         ratingBar1=findViewById(R.id.ratingBar1)
@@ -132,6 +134,18 @@ CoroutineScope(Dispatchers.IO).launch {
                 R.drawable.ic_star_orange // Drawable
             ))
         }
+        download.setOnClickListener(){
+            val request=DownloadManager.Request(Uri.parse(fileUrl))
+            request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+            request.setTitle("Download")
+            request.setDescription("The File is Dowloading............")
+            request.allowScanningByMediaScanner()
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"${System.currentTimeMillis()}")
+
+            val manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+            manager.enqueue(request)
+        }
 
         /////-------------double click on bookamrk imagebutoon----------//
 //        bookamark.setOnClickListener(object : DoubleClickListener() {
@@ -152,7 +166,7 @@ CoroutineScope(Dispatchers.IO).launch {
             }, 2000)
         }
 
-        val intent = intent.getParcelableExtra<OwnNotes>("notes")
+        val intent = intent.getParcelableExtra<Notes>("notes")
         if (intent != null) {
             val name = intent.topic;
             noteid=intent._id
@@ -163,6 +177,7 @@ CoroutineScope(Dispatchers.IO).launch {
             universityname.text = uname.toString()
             discriotion.text = dis.toString()
             rattingNum=intent.noofRating
+            fileUrl=intent.file
             if(ratting!==null) {
                 ratingBar1.setRating(ratting!!.toFloat())
             }

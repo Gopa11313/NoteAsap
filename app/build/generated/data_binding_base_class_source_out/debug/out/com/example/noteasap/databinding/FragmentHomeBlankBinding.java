@@ -11,6 +11,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.noteasap.R;
 import com.example.noteasap.ui.fragments.homeFragment.HomeFragmetViewModel;
 import java.lang.Deprecated;
@@ -23,14 +24,18 @@ public abstract class FragmentHomeBlankBinding extends ViewDataBinding {
   @NonNull
   public final AutoCompleteTextView search;
 
+  @NonNull
+  public final SwipeRefreshLayout swipe;
+
   @Bindable
   protected HomeFragmetViewModel mHomeFragmentViewModel;
 
   protected FragmentHomeBlankBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView recyclehome, AutoCompleteTextView search) {
+      RecyclerView recyclehome, AutoCompleteTextView search, SwipeRefreshLayout swipe) {
     super(_bindingComponent, _root, _localFieldCount);
     this.recyclehome = recyclehome;
     this.search = search;
+    this.swipe = swipe;
   }
 
   public abstract void setHomeFragmentViewModel(
