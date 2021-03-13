@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/NoteAsap.iml" filepath="$PROJECT_DIR$/.idea/modules/NoteAsap.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NoteAsap.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NoteAsap.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/noteasapwear/NoteAsap.noteasapwear.iml" filepath="$PROJECT_DIR$/.idea/modules/noteasapwear/NoteAsap.noteasapwear.iml" />
     </modules>
   </component>
 </project>
