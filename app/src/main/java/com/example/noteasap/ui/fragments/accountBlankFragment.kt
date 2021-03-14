@@ -50,6 +50,7 @@ class accountBlankFragment : Fragment() {
     private lateinit var imagebtn:ImageView;
     private lateinit var btnlog:ImageButton;
     private lateinit var imagebtn2:ImageView;
+    private lateinit var Welcomtxt:TextView;
     private var listNotes:MutableList<OwnNotes>?=null;
     private lateinit var recyleview: RecyclerView;
     private var param1: String? = null
@@ -70,14 +71,17 @@ class accountBlankFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val sharedPref =activity?.getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
+        val namePref = sharedPref?.getString("name", null)
         account=view.findViewById(R.id.ic_account)
         uploadnotesframe=view.findViewById(R.id.uploadnotesframe)
         recyleview=view.findViewById(R.id.recycler_view)
+        Welcomtxt=view.findViewById(R.id.Welcomtxt)
         swipeRefreshLayout =view.findViewById(R.id.swipe)
         imagebtn=view.findViewById(R.id.imagebtn)
         btnlog=view.findViewById(R.id.btnlog)
         imagebtn2=view.findViewById(R.id.imabtn2)
-
+        Welcomtxt.setText("$namePref, Welcome to NoteAsap")
         CoroutineScope(Dispatchers.IO).launch {
             val repository=UserRepository()
             val response=repository.getme(ServiceBuilder.id!!)

@@ -20,7 +20,7 @@ class NoteAsapTesting {
         val user =
             User(name = "this is test", email = "thisisemail1212@gmail.com", password = "testing12")
         repository = UserRepository()
-        val expectedResult = true
+        val expectedResult = false
         val response = repository.registerUser(user)
         val actualResult = response.success!!
         Assert.assertEquals(expectedResult, actualResult)
@@ -92,7 +92,7 @@ class NoteAsapTesting {
     fun getAllbookmarkedNotes()= runBlocking {
         val user = User(email = "gopal@gmail.com", password = "gopal123")
         repository = UserRepository()
-        val expectedResult = true
+        val expectedResult = false
         val response = repository.checkUSer(user)
         ServiceBuilder.token = "Bearer " + response.token
         ServiceBuilder.id = response.id

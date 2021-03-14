@@ -34,7 +34,7 @@ class LoginInstrumentedUITesting {
         onView(withId(R.id.login))
             .perform(click())
 
-        Thread.sleep(2000)
+        Thread.sleep(2500)
         onView(withId(R.id.bottom_navigation))
             .check(matches(isDisplayed()))
     }

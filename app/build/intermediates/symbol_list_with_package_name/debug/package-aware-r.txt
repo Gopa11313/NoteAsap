@@ -1690,6 +1690,7 @@ id TurnonN
 id Uname
 id Universityname
 id Update
+id Welcomtxt
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2096,7 +2097,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView2
 id textView3
 id textView6
 id textWatcher
