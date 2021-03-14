@@ -74,6 +74,18 @@ class NoteAsapTesting {
         val actualResult=repo.uploadnotes(Notes(userId = ServiceBuilder.id!!,level = "testing",subject = "testing",c_name = "testing",file = "nofile",topic = "testing",description = "testing")).success
         Assert.assertEquals(expectedResult, actualResult)
     }
+    @Test
+    fun getAllNotes()= runBlocking {
+        val user = User(email = "gopal@gmail.com", password = "gopal123")
+        repository = UserRepository()
+        val expectedResult = true
+        val response = repository.checkUSer(user)
+        ServiceBuilder.token = "Bearer " + response.token
+        ServiceBuilder.id = response.id
+        val repo=NoteRepository()
+        val actualResult=repo.getAllNote().success
+        Assert.assertEquals(expectedResult, actualResult)
+    }
 }
 // -----------------------------Student Testing-----------------------------
 //@Test
