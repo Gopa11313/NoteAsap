@@ -4,6 +4,7 @@ import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.repository.BookmarkRepository
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.repository.UserRepository
+import com.example.noteasap.ui.model.Bookmark
 import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.User
 import kotlinx.coroutines.*
@@ -136,6 +137,18 @@ class NoteAsapTesting {
         ServiceBuilder.id = response.id
         val repo=BookmarkRepository()
         val actualResult=repo.getallbookmarkedNotes(ServiceBuilder.id!!).success
+        Assert.assertEquals(expectedResult, actualResult)
+    }
+    @Test
+    fun bookmarkTheNote()= runBlocking {
+        val user = User(email = "gopal@gmail.com", password = "gopal123")
+        repository = UserRepository()
+        val expectedResult = true
+        val response = repository.checkUSer(user)
+        ServiceBuilder.token = "Bearer " + response.token
+        ServiceBuilder.id = response.id
+        val repo=BookmarkRepository()
+        val actualResult=repo.BookamarkNote(Bookmark(userId = ServiceBuilder.id!!,noteId = "604e2a5a85f36912e44bddc8")).success
         Assert.assertEquals(expectedResult, actualResult)
     }
 }
