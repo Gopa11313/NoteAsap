@@ -98,6 +98,18 @@ class NoteAsapTesting {
         val actualResult=repo.getAllbookmarkedNotes("6034cf1a6857a9b7c859990a").success
         Assert.assertEquals(expectedResult, actualResult)
     }
+    @Test
+    fun rateNote()= runBlocking {
+        val user = User(email = "gopal@gmail.com", password = "gopal123")
+        repository = UserRepository()
+        val expectedResult = true
+        val response = repository.checkUSer(user)
+        ServiceBuilder.token = "Bearer " + response.token
+        ServiceBuilder.id = response.id
+        val repo=NoteRepository()
+        val actualResult=repo.RateNote(id = "6034cf1a6857a9b7c859990a",noofRating = "3",ratting = "4").success
+        Assert.assertEquals(expectedResult, actualResult)
+    }
 }
 // -----------------------------Student Testing-----------------------------
 //@Test
