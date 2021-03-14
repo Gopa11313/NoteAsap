@@ -77,7 +77,7 @@ class EditProfileActivity : AppCompatActivity() {
     update.setOnClickListener(){
         val valid=validate()
         if(valid==true){
-            val user = User(name = name.text.toString(), email = email.text.toString(), password = password.text.toString())
+            val user = User(_id=ServiceBuilder.id!!,name = name.text.toString(), email = email.text.toString(), password = password.text.toString())
             CoroutineScope(Dispatchers.IO).launch {
                 val repository = UserRepository()
                 val response = repository.updateUser(user)

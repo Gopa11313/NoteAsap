@@ -32,7 +32,7 @@ interface UserApi {
     ):Response<UserResponse>
 
 
-    @PUT("user/update/{UserID}")
+    @PUT("user/update")
     suspend fun updateUser(
         @Header("Authorization") token:String,
         @Body users: User

@@ -41,7 +41,7 @@ public abstract interface UserApi {
     kotlin.coroutines.Continuation<? super retrofit2.Response<com.example.noteasap.response.UserResponse>> p2);
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.PUT(value = "user/update/{UserID}")
+    @retrofit2.http.PUT(value = "user/update")
     public abstract java.lang.Object updateUser(@org.jetbrains.annotations.NotNull()
     @retrofit2.http.Header(value = "Authorization")
     java.lang.String token, @org.jetbrains.annotations.NotNull()
