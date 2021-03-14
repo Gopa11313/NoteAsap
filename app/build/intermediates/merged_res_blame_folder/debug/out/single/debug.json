@@ -1,11 +1,11 @@
 [
     {
-        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_image_upload.xml.flat",
-        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_image_upload.xml"
-    },
-    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_next.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_next.xml"
+    },
+    {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_image_upload.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_image_upload.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
@@ -298,5 +298,9 @@
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_sms_24.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_sms_24.xml"
     }
 ]

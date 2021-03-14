@@ -10,6 +10,8 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
@@ -17,6 +19,7 @@ import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.databinding.ActivityUploadNotesBinding
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.model.Notes
+import com.example.noteasap.ui.notification.NotificationChannels
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
@@ -47,7 +50,7 @@ class UploadNotesActivity : AppCompatActivity() {
     private lateinit var uploadNotesViewModel: UploadNotesViewModel
     var selectedlevel: String = ""
     var selectedsubject: String = ""
-
+    var namePref: String ?=null
     var level = arrayOf("University", "Masters", "Bachelors", "+2", "9/10")
     var subject = arrayOf("Science", "Management")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +62,9 @@ class UploadNotesActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         uploadNotesViewModel = ViewModelProvider(this).get(UploadNotesViewModel::class.java)
         binding.uploadNoteViewModel = uploadNotesViewModel
+
+        val sharedPref =getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
+        namePref = sharedPref?.getString("name", null)
         spinner1 = findViewById(R.id.spinner1)
         spinner2 = findViewById(R.id.spinner2)
         c_name = findViewById(R.id.c_name)
@@ -113,6 +119,8 @@ class UploadNotesActivity : AppCompatActivity() {
         }
         submit.setOnClickListener {
             uploadnotes()
+            showHighPriorityNotification()
+//            showLowPriorityNotification()
         }
     }
 
@@ -177,6 +185,38 @@ class UploadNotesActivity : AppCompatActivity() {
             }
         }
     }
+
+//------------notification----------------//
+private fun showHighPriorityNotification(){
+    val notificationManager= NotificationManagerCompat.from(this)
+
+    val notificationChannels= NotificationChannels(this)
+    notificationChannels.createNotificationChannels()
+
+    val notification= NotificationCompat.Builder(this,notificationChannels.CHANNEL_1)
+        .setSmallIcon(R.drawable.ic_baseline_sms_24)
+        .setContentTitle(namePref)
+        .setContentText("Uploaded ${topic.text.toString()} note.")
+        .setColor(Color.BLUE)
+        .build()
+    notificationManager.notify(1,notification)
+}
+
+    private fun showLowPriorityNotification(){
+        val notificationManager= NotificationManagerCompat.from(this)
+        val notificationChannels=NotificationChannels(this)
+        notificationChannels.createNotificationChannels()
+
+        val notification= NotificationCompat.Builder(this,notificationChannels.CHANNEL_2)
+            .setSmallIcon(R.drawable.ic_baseline_sms_24)
+            .setContentTitle(namePref)
+            .setContentText("Uploaded ${topic.text.toString()} note.")
+            .setColor(Color.BLUE)
+            .build()
+        notificationManager.notify(2,notification)
+    }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_FILE_CODE && data != null) {
