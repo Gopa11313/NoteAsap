@@ -135,14 +135,13 @@ CoroutineScope(Dispatchers.IO).launch {
             ))
         }
         download.setOnClickListener(){
-            val request=DownloadManager.Request(Uri.parse(fileUrl))
+            val request=DownloadManager.Request(Uri.parse(ServiceBuilder.loadImagePath() +fileUrl))
             request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
             request.setTitle("Download")
-            request.setDescription("The File is Dowloading............")
+            request.setDescription("The File is Downloading............")
             request.allowScanningByMediaScanner()
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"${System.currentTimeMillis()}")
-
             val manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
             manager.enqueue(request)
         }

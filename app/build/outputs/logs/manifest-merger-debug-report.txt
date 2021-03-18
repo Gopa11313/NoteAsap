@@ -109,6 +109,10 @@ uses-permission#android.permission.READ_INTERNAL_STORAGE
 ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:11:5-74
+	android:name
+		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:11:22-72
 application
 ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:12:5-41:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\eaf732c955a4a2f8020ed3ce264f93dc\material-1.2.1\AndroidManifest.xml:22:5-20
@@ -146,7 +150,7 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.11.0] C:\Users\User\.gradle\
 	android:usesCleartextTraffic
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:19:9-44
 activity#com.example.noteasap.ui.content.contentForBookmarkednote.ContentActivityForBookmark
-ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-109
+ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:21:9-100
 	android:name
 		ADDED from G:\NoteAsap\app\src\main\AndroidManifest.xml:21:19-97
 activity#com.example.noteasap.ImageUploadActivity

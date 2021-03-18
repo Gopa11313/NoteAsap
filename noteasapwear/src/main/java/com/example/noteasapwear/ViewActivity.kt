@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class ViewActivity : AppCompatActivity() {
     private lateinit var recipe_list_view:ListView
-    var listView:Array<Notes>?=null
+    var listView= arrayOfNulls<String>(10)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view)
@@ -20,12 +20,19 @@ class ViewActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val repository=NoteRepository()
             val response=repository.getAllNote()
+
             if(response.success==true){
-                listView=response.data
+               val  listView1=response.data
+//                listView= arrayOfNulls<String>(listView1!!.size)
+                for (i in listView1!!.indices){
+                    val title=listView1[i]
+                    listView = arrayOf(title.topic)
+
+                }
             }
         }
 
-        val adapter = listView?.let { ArrayAdapter(this, android.R.layout.simple_list_item_1, it) }
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listView)
         recipe_list_view.adapter = adapter
     }
 }
