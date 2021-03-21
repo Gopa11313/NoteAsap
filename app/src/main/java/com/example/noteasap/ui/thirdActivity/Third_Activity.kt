@@ -1,5 +1,9 @@
 package com.example.noteasap.ui.thirdActivity
 
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.FrameLayout
@@ -13,13 +17,15 @@ import com.example.noteasap.ui.fragments.accountBlankFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class Third_Activity : AppCompatActivity() {
+class Third_Activity : AppCompatActivity(), SensorEventListener {
     private lateinit var frament_container:FrameLayout;
     private val Home= HomeBlankFragment();
     private val Bookmark= BookmarkBlankFragment();
     private val Account=accountBlankFragment();
     private lateinit var bottom_navigation:BottomNavigationView;
     private lateinit var thirdViewModel: ThirdActivityViewModel
+    private lateinit var sensorManager: SensorManager
+    private var sensor: Sensor? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third_)
@@ -41,7 +47,38 @@ class Third_Activity : AppCompatActivity() {
         }
         true;
     }
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+
+        if (!checkSensor())
+            return
+        else {
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
     }
+
+    private fun checkSensor(): Boolean {
+        var flag = true
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) == null) {
+            flag = false
+        }
+        return flag
+    }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        val values = event!!.values[1]
+        if (values < 0)
+            replaceFragments(Bookmark)
+        else if (values > 0){
+
+        }
+
+
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+    }
+
     fun replaceFragments(fragment:Fragment){
         val transaction=supportFragmentManager.beginTransaction();
         transaction.replace(R.id.fragment_container,fragment) //only use this here
