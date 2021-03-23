@@ -98,6 +98,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
             val email=listdata?.email
             if(response.success==true){
                 val us=User(_id= response.id!!,email = email,password = password.text.toString())
+                NoteAsapDb.getInstance(this@LoginActivity).getUserDao().logout()
                 NoteAsapDb.getInstance(this@LoginActivity).getUserDao().RegisterUser(us)
                 saveSharedPref(_id = response.id!!, email = email.toString(), password =  password.text.toString(), name =  name.toString())
                 ServiceBuilder.token="Bearer ${response.token}"

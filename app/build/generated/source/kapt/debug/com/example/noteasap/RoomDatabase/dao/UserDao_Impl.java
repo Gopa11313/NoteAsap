@@ -32,35 +32,36 @@ public final class UserDao_Impl implements UserDao {
     this.__insertionAdapterOfUser = new EntityInsertionAdapter<User>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `User` (`_id`,`name`,`email`,`password`,`image`) VALUES (?,?,?,?,?)";
+        return "INSERT OR ABORT INTO `User` (`pKey`,`_id`,`name`,`email`,`password`,`image`) VALUES (?,?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, User value) {
+        stmt.bindLong(1, value.getPKey());
         if (value.get_id() == null) {
-          stmt.bindNull(1);
-        } else {
-          stmt.bindString(1, value.get_id());
-        }
-        if (value.getName() == null) {
           stmt.bindNull(2);
         } else {
-          stmt.bindString(2, value.getName());
+          stmt.bindString(2, value.get_id());
         }
-        if (value.getEmail() == null) {
+        if (value.getName() == null) {
           stmt.bindNull(3);
         } else {
-          stmt.bindString(3, value.getEmail());
+          stmt.bindString(3, value.getName());
         }
-        if (value.getPassword() == null) {
+        if (value.getEmail() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getPassword());
+          stmt.bindString(4, value.getEmail());
         }
-        if (value.getImage() == null) {
+        if (value.getPassword() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getImage());
+          stmt.bindString(5, value.getPassword());
+        }
+        if (value.getImage() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getImage());
         }
       }
     };
@@ -74,24 +75,24 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public Object RegisterUser(final User user, final Continuation<? super Unit> p1) {
+  public Object RegisterUser(final User arg0, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfUser.insert(user);
+          __insertionAdapterOfUser.insert(arg0);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
         }
       }
-    }, p1);
+    }, arg1);
   }
 
   @Override
-  public Object logout(final Continuation<? super Unit> p0) {
+  public Object logout(final Continuation<? super Unit> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -106,31 +107,32 @@ public final class UserDao_Impl implements UserDao {
           __preparedStmtOfLogout.release(_stmt);
         }
       }
-    }, p0);
+    }, arg0);
   }
 
   @Override
-  public Object checkUSer(final String email, final String password,
-      final Continuation<? super User> p2) {
+  public Object checkUSer(final String arg0, final String arg1,
+      final Continuation<? super User> arg2) {
     final String _sql = "select * from User where email=(?) and password=(?)";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
-    if (email == null) {
+    if (arg0 == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, email);
+      _statement.bindString(_argIndex, arg0);
     }
     _argIndex = 2;
-    if (password == null) {
+    if (arg1 == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, password);
+      _statement.bindString(_argIndex, arg1);
     }
     return CoroutinesRoom.execute(__db, false, new Callable<User>() {
       @Override
       public User call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
+          final int _cursorIndexOfPKey = CursorUtil.getColumnIndexOrThrow(_cursor, "pKey");
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "_id");
           final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
           final int _cursorIndexOfEmail = CursorUtil.getColumnIndexOrThrow(_cursor, "email");
@@ -138,6 +140,8 @@ public final class UserDao_Impl implements UserDao {
           final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
           final User _result;
           if(_cursor.moveToFirst()) {
+            final int _tmpPKey;
+            _tmpPKey = _cursor.getInt(_cursorIndexOfPKey);
             final String _tmp_id;
             _tmp_id = _cursor.getString(_cursorIndexOfId);
             final String _tmpName;
@@ -148,7 +152,7 @@ public final class UserDao_Impl implements UserDao {
             _tmpPassword = _cursor.getString(_cursorIndexOfPassword);
             final String _tmpImage;
             _tmpImage = _cursor.getString(_cursorIndexOfImage);
-            _result = new User(_tmp_id,_tmpName,_tmpEmail,_tmpPassword,_tmpImage);
+            _result = new User(_tmpPKey,_tmp_id,_tmpName,_tmpEmail,_tmpPassword,_tmpImage);
           } else {
             _result = null;
           }
@@ -158,6 +162,6 @@ public final class UserDao_Impl implements UserDao {
           _statement.release();
         }
       }
-    }, p2);
+    }, arg2);
   }
 }

@@ -2,11 +2,16 @@ package com.example.noteasap.ui.content.contentForNote
 
 import android.app.DownloadManager
 import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +41,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class ContentActivity : AppCompatActivity() {
+class ContentActivity : AppCompatActivity(), SensorEventListener {
     private var listcommet:List<Comment>?=null;
     private lateinit var recyleview: RecyclerView;
     lateinit var swipeRefreshLayout: SwipeRefreshLayout
@@ -51,6 +56,10 @@ class ContentActivity : AppCompatActivity() {
     private lateinit var comment:ImageView;
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar:TextView;
+
+    private lateinit var sensorManager: SensorManager
+    private var sensor: Sensor? = null
+
     var rattingNum:Int?=null
     var ratting:Int?=null
     var noteid:String?=null
@@ -73,6 +82,15 @@ class ContentActivity : AppCompatActivity() {
         bookamark=findViewById(R.id.bookmark)
         commentbar=findViewById(R.id.commentbar)
         comment=findViewById(R.id.comment)
+//        layout.visibility = View.INVISIBLE
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+
+        if (!checkSensor())
+            return
+        else {
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
 
         comment.setOnClickListener(){
 CoroutineScope(Dispatchers.IO).launch {
@@ -186,13 +204,13 @@ CoroutineScope(Dispatchers.IO).launch {
 
         ratingBar1.onRatingBarChangeListener =
             RatingBar.OnRatingBarChangeListener { p0, p1, p2 ->
-//                val numofRat=rattingNum!!+1
-//                val actualRating=p1.toInt()+ratting!!
-//                val rat=(actualRating)/(numofRat)
+                val numofRat=rattingNum!!+1
+                val actualRating=p1.toInt()+ratting!!
+                val rat=(actualRating)/(numofRat)
                 Toast.makeText(this@ContentActivity, "Given rating is: $p1 ", Toast.LENGTH_SHORT).show()
                 CoroutineScope(Dispatchers.IO).launch {
                     val repository=NoteRepository()
-                    val response=repository.RateNote(noteid!!,p1.toString(),3.toString())
+                    val response=repository.RateNote(noteid!!,rat.toString(),numofRat.toString())
                     if(response.success==true){
                         withContext(Main){
                             val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
@@ -241,6 +259,29 @@ CoroutineScope(Dispatchers.IO).launch {
             recyleview.adapter=adapter
         }
     }
+    }
+
+    private fun checkSensor(): Boolean {
+        var flag = true
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT) == null) {
+            flag = false
+        }
+        return flag
+    }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        val values = event!!.values[0]
+        if(values.toInt()<4){
+            layout.visibility = View.INVISIBLE
+        }
+        else{
+            layout.visibility = View.INVISIBLE
+        }
+
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        TODO("Not yet implemented")
     }
 }
 

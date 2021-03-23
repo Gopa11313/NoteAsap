@@ -103,24 +103,24 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
-  public Object RegisterNote(final List<Notes> list, final Continuation<? super Unit> p1) {
+  public Object RegisterNote(final List<Notes> arg0, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfNotes.insert(list);
+          __insertionAdapterOfNotes.insert(arg0);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
         }
       }
-    }, p1);
+    }, arg1);
   }
 
   @Override
-  public Object droptable(final Continuation<? super Unit> p0) {
+  public Object droptable(final Continuation<? super Unit> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -135,11 +135,11 @@ public final class NoteDao_Impl implements NoteDao {
           __preparedStmtOfDroptable.release(_stmt);
         }
       }
-    }, p0);
+    }, arg0);
   }
 
   @Override
-  public Object getAllNote(final Continuation<? super List<Notes>> p0) {
+  public Object getAllNote(final Continuation<? super List<Notes>> arg0) {
     final String _sql = "select * from Notes";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.execute(__db, false, new Callable<List<Notes>>() {
@@ -200,6 +200,6 @@ public final class NoteDao_Impl implements NoteDao {
           _statement.release();
         }
       }
-    }, p0);
+    }, arg0);
   }
 }

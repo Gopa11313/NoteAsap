@@ -72,24 +72,24 @@ public final class CommentDao_Impl implements CommentDao {
   }
 
   @Override
-  public Object CommentNote(final List<Comment> list, final Continuation<? super Unit> p1) {
+  public Object CommentNote(final List<Comment> arg0, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfComment.insert(list);
+          __insertionAdapterOfComment.insert(arg0);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
         }
       }
-    }, p1);
+    }, arg1);
   }
 
   @Override
-  public Object droptable(final Continuation<? super Unit> p0) {
+  public Object droptable(final Continuation<? super Unit> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -104,11 +104,11 @@ public final class CommentDao_Impl implements CommentDao {
           __preparedStmtOfDroptable.release(_stmt);
         }
       }
-    }, p0);
+    }, arg0);
   }
 
   @Override
-  public Object getComment(final Continuation<? super List<Comment>> p0) {
+  public Object getComment(final Continuation<? super List<Comment>> arg0) {
     final String _sql = "select * from Comment";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.execute(__db, false, new Callable<List<Comment>>() {
@@ -143,6 +143,6 @@ public final class CommentDao_Impl implements CommentDao {
           _statement.release();
         }
       }
-    }, p0);
+    }, arg0);
   }
 }

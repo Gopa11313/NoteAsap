@@ -103,24 +103,25 @@ public final class BookmarkDao_Impl implements BookmarkDao {
   }
 
   @Override
-  public Object bookmarkNote(final List<BookMarkNotes> list, final Continuation<? super Unit> p1) {
+  public Object bookmarkNote(final List<BookMarkNotes> arg0,
+      final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfBookMarkNotes.insert(list);
+          __insertionAdapterOfBookMarkNotes.insert(arg0);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
         }
       }
-    }, p1);
+    }, arg1);
   }
 
   @Override
-  public Object droptable(final Continuation<? super Unit> p0) {
+  public Object droptable(final Continuation<? super Unit> arg0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -135,11 +136,11 @@ public final class BookmarkDao_Impl implements BookmarkDao {
           __preparedStmtOfDroptable.release(_stmt);
         }
       }
-    }, p0);
+    }, arg0);
   }
 
   @Override
-  public Object getBookmarkNote(final Continuation<? super List<BookMarkNotes>> p0) {
+  public Object getBookmarkNote(final Continuation<? super List<BookMarkNotes>> arg0) {
     final String _sql = "select * from BookMarkNotes";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.execute(__db, false, new Callable<List<BookMarkNotes>>() {
@@ -200,6 +201,6 @@ public final class BookmarkDao_Impl implements BookmarkDao {
           _statement.release();
         }
       }
-    }, p0);
+    }, arg0);
   }
 }

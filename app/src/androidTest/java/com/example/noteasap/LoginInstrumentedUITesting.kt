@@ -26,7 +26,7 @@ class LoginInstrumentedUITesting {
             .perform(typeText("gopal@gmail.com"))
         closeSoftKeyboard()
 
-        Thread.sleep(100)
+//        Thread.sleep(100)
         onView(withId(R.id.password))
             .perform(typeText("gopal123"))
         
@@ -36,7 +36,7 @@ class LoginInstrumentedUITesting {
             .perform(click())
 
         Thread.sleep(2500)
-        onView(withId(R.id.bottom_navigation))
+        onView(withId(R.id.notif_Button))
             .check(matches(isDisplayed()))
     }
 
