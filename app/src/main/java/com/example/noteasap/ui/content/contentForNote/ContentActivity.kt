@@ -173,7 +173,6 @@ CoroutineScope(Dispatchers.IO).launch {
 
 
         swipeRefreshLayout.setOnRefreshListener() {
-
             Handler().postDelayed(Runnable {
                 loadcomment()
                 if(ratting!==null) {

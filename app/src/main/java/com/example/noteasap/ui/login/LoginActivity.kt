@@ -99,6 +99,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
             if(response.success==true){
                 val us=User(_id= response.id!!,email = email,password = password.text.toString())
                 NoteAsapDb.getInstance(this@LoginActivity).getUserDao().logout()
+                val sharedPref =getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
+                val editor=sharedPref.edit()
+                editor.remove("email")
+                editor.remove("password")
+                editor.remove("_id")
+                editor.remove("name")
+                    .apply()
                 NoteAsapDb.getInstance(this@LoginActivity).getUserDao().RegisterUser(us)
                 saveSharedPref(_id = response.id!!, email = email.toString(), password =  password.text.toString(), name =  name.toString())
                 ServiceBuilder.token="Bearer ${response.token}"

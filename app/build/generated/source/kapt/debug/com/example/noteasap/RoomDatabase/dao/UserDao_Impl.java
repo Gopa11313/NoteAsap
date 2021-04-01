@@ -75,24 +75,24 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public Object RegisterUser(final User arg0, final Continuation<? super Unit> arg1) {
+  public Object RegisterUser(final User user, final Continuation<? super Unit> p1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfUser.insert(arg0);
+          __insertionAdapterOfUser.insert(user);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, p1);
   }
 
   @Override
-  public Object logout(final Continuation<? super Unit> arg0) {
+  public Object logout(final Continuation<? super Unit> p0) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -107,25 +107,25 @@ public final class UserDao_Impl implements UserDao {
           __preparedStmtOfLogout.release(_stmt);
         }
       }
-    }, arg0);
+    }, p0);
   }
 
   @Override
-  public Object checkUSer(final String arg0, final String arg1,
-      final Continuation<? super User> arg2) {
+  public Object checkUSer(final String email, final String password,
+      final Continuation<? super User> p2) {
     final String _sql = "select * from User where email=(?) and password=(?)";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
-    if (arg0 == null) {
+    if (email == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, arg0);
+      _statement.bindString(_argIndex, email);
     }
     _argIndex = 2;
-    if (arg1 == null) {
+    if (password == null) {
       _statement.bindNull(_argIndex);
     } else {
-      _statement.bindString(_argIndex, arg1);
+      _statement.bindString(_argIndex, password);
     }
     return CoroutinesRoom.execute(__db, false, new Callable<User>() {
       @Override
@@ -162,6 +162,6 @@ public final class UserDao_Impl implements UserDao {
           _statement.release();
         }
       }
-    }, arg2);
+    }, p2);
   }
 }

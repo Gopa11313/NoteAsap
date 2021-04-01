@@ -127,7 +127,7 @@ class accountBlankFragment : Fragment() {
                     dialogInterface,which->
             }
             builder.show()
-
+            getActivity()?.finish();
         }
 
 

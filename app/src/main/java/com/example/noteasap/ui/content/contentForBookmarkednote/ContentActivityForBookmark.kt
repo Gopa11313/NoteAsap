@@ -128,13 +128,13 @@ class ContentActivityForBookmark : AppCompatActivity() {
         }
         ratingBar1.onRatingBarChangeListener =
             RatingBar.OnRatingBarChangeListener { p0, p1, p2 ->
-//                val numofRat=rattingNum!!+1
-//                val actualRating=p1.toInt()+ratting!!
-//                val rat=(actualRating)/(numofRat)
+                val numofRat=rattingNum!!+1
+                val actualRating=p1.toInt()+ratting!!
+                val rat=(actualRating)/(numofRat)
                 Toast.makeText(this@ContentActivityForBookmark, "Given rating is: $p1 ", Toast.LENGTH_SHORT).show()
                 CoroutineScope(Dispatchers.IO).launch {
-                    val repository= NoteRepository()
-                    val response=repository.RateNote(noteid!!,p1.toString(),3.toString())
+                    val repository=NoteRepository()
+                    val response=repository.RateNote(noteid!!,rat.toString(),numofRat.toString())
                     if(response.success==true){
                         withContext(Dispatchers.Main){
                             val snack=  Snackbar.make(layout,"${response.msg}", Snackbar.LENGTH_SHORT)
