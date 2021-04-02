@@ -1,12 +1,13 @@
 package com.example.noteasap.ui.content.contentForBookmarkednote
 
+import android.app.DownloadManager
+import android.content.Context
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -41,12 +42,14 @@ class ContentActivityForBookmark : AppCompatActivity() {
     private lateinit var universityname: TextView;
     private lateinit var discriotion: TextView;
     private lateinit var img: ImageView;
+    private lateinit var download: Button;
     private lateinit var comment: ImageView;
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar: TextView;
     var rattingNum:Int?=null
     var ratting:Int?=null
     var noteid:String?=null
+    var fileUrl:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_for_bookmark)
@@ -58,6 +61,7 @@ class ContentActivityForBookmark : AppCompatActivity() {
         universityname = findViewById(R.id.Universityname)
         discriotion = findViewById(R.id.dis);
         recyleview=findViewById(R.id.recycler_view1)
+        download=findViewById(R.id.download)
         img=findViewById(R.id.comment)
         swipeRefreshLayout =findViewById(R.id.swipe)
         layout=findViewById(R.id.layout)
@@ -126,6 +130,26 @@ class ContentActivityForBookmark : AppCompatActivity() {
                     R.drawable.ic_star_orange // Drawable
                 ))
         }
+        download.setOnClickListener(){
+            val request= DownloadManager.Request(Uri.parse(ServiceBuilder.loadImagePath() +fileUrl))
+            request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+            request.setTitle("Download")
+            request.setDescription("The File is Downloading............")
+            request.allowScanningByMediaScanner()
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"${System.currentTimeMillis()}")
+            val manager=getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+            manager.enqueue(request)
+        }
+        swipeRefreshLayout.setOnRefreshListener() {
+            Handler().postDelayed(Runnable {
+                loadcomment()
+                if(ratting!==null) {
+                    ratingBar1.setRating(ratting!!.toFloat())
+                }
+                swipeRefreshLayout.isRefreshing = false
+            }, 2000)
+        }
         ratingBar1.onRatingBarChangeListener =
             RatingBar.OnRatingBarChangeListener { p0, p1, p2 ->
                 val numofRat=rattingNum!!+1
@@ -170,6 +194,7 @@ class ContentActivityForBookmark : AppCompatActivity() {
             universityname.text = uname.toString()
             discriotion.text = dis.toString()
             rattingNum=intent.noofRating
+            fileUrl=intent.file
             if(ratting!==null) {
                 ratingBar1.setRating(ratting!!.toFloat())
             }
