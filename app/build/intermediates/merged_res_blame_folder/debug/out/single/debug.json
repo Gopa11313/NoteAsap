@@ -168,6 +168,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_star_1.xml"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_edit.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_login_24.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_login_24.xml"
     },

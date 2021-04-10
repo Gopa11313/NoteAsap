@@ -42,5 +42,10 @@ class NoteRepository:MyApiRequest(){
             myApi.getOwnNotes(ServiceBuilder.token!!,userId)
         }
     }
+    suspend fun deleteNote(Nid:String):OwnNotesResponse{
+        return apiRequest {
+            myApi.deleteNote(ServiceBuilder.token!!,Nid)
+        }
+    }
 
 }

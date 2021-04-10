@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ic_account" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/deleteNote"
         android:layout_width="17dp"
         android:layout_height="16dp"
         android:layout_marginTop="8dp"
@@ -78,7 +78,7 @@
         android:textColor="#FFFCFC"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/deleteNote"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

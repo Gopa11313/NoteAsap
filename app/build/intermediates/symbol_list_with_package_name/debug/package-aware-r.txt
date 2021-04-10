@@ -1673,6 +1673,7 @@ drawable ic_bookmark
 drawable ic_camera
 drawable ic_delete
 drawable ic_download
+drawable ic_edit
 drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1886,6 +1887,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteNote
 id deltaRelative
 id dependency_ordering
 id des
@@ -1966,7 +1968,6 @@ id ignoreRequest
 id imabtn2
 id image
 id imageForHomeView
-id imageView
 id imageView2
 id imageView3
 id imageView4
@@ -2208,6 +2209,7 @@ id uniform
 id unlabeled
 id up
 id update
+id updateNote
 id update_image
 id upload
 id uploadnotesframe

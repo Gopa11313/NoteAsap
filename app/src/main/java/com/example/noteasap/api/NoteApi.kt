@@ -44,4 +44,10 @@ interface NoteApi {
         @Header("Authorization") token:String,
         @Path("userId") userId:String,
     ):Response<OwnNotesResponse>
+
+    @DELETE("/delete/note/{Nid}")
+    suspend fun deleteNote(
+        @Header("Authorization") token:String,
+        @Path("Nid") Nid:String,
+    ):Response<OwnNotesResponse>
 }

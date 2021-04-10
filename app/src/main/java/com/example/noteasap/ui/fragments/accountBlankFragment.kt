@@ -27,7 +27,6 @@ import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
 import com.example.noteasap.ui.location.MapsActivity
-import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.ownnotes.OwnNotesActivity
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
@@ -148,7 +147,7 @@ class accountBlankFragment : Fragment() {
                 startActivity(Intent(this, UploadNotesActivity::class.java))
             }
         }
-        imageviewfor3menus=view.findViewById(R.id.imageView)
+        imageviewfor3menus=view.findViewById(R.id.deleteNote)
         imageviewfor3menus.setOnClickListener(){
             val popupMenu=PopupMenu(activity, it)
             popupMenu.menuInflater.inflate(R.menu.menu2,popupMenu.menu)
