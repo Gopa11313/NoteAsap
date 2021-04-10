@@ -7,7 +7,6 @@
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="30" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -41,7 +40,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true" >
-
+        <activity android:name="com.example.noteasap.ui.ownnotes.OwnNotesActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

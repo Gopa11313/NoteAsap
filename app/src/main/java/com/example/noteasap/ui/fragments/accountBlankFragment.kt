@@ -29,6 +29,7 @@ import com.example.noteasap.ui.adapter.OwnNotesAdpater
 import com.example.noteasap.ui.location.MapsActivity
 import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.ownnotes.OwnNotesActivity
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -54,6 +55,7 @@ class accountBlankFragment : Fragment() {
     private lateinit var Welcomtxt:TextView;
     private var listNotes:MutableList<OwnNotes>?=null;
     private lateinit var recyleview: RecyclerView;
+    private lateinit var viewMore: Button;
     private var param1: String? = null
     private var param2: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,6 +84,7 @@ class accountBlankFragment : Fragment() {
         imagebtn=view.findViewById(R.id.imagebtn)
         btnlog=view.findViewById(R.id.btnlog)
         imagebtn2=view.findViewById(R.id.imabtn2)
+        viewMore=view.findViewById(R.id.viewMore)
         Welcomtxt.setText("$namePref, Welcome to NoteAsap")
         CoroutineScope(Dispatchers.IO).launch {
             val repository=UserRepository()
@@ -103,7 +106,9 @@ class accountBlankFragment : Fragment() {
             }
         }
 
-
+        viewMore.setOnClickListener(){
+            startActivity(Intent(activity,OwnNotesActivity::class.java))
+        }
 
         btnlog.setOnClickListener(){
             val builder= AlertDialog.Builder(requireContext());

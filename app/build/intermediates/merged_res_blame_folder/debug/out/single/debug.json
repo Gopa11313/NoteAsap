@@ -204,6 +204,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_send.xml"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_own_notes.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_own_notes.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu3.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\menu\\menu3.xml"
     },
