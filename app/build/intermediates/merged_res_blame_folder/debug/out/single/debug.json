@@ -8,16 +8,16 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_image_upload.xml"
     },
     {
-        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
-        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
-    },
-    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\navigation\\nav_graph.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_profile.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
+    },
+    {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_forgetpassword.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\fragment_forgetpassword.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_search_24.xml.flat",
@@ -46,6 +46,10 @@
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_maps.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.xml.flat",
@@ -104,12 +108,12 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\ownnotes.xml"
     },
     {
-        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "G:\\NoteAsap\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_second.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_second.xml"
+    },
+    {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_pmenu.xml.flat",
@@ -148,6 +152,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\anim\\fade_out.xml"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_content.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
@@ -158,10 +166,6 @@
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_star_1.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\drawable\\ic_baseline_star_1.xml"
-    },
-    {
-        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_content.xml.flat",
-        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
     },
     {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_login_24.xml.flat",

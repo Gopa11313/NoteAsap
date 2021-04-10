@@ -52,6 +52,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
     implementation files('C:\\Users\\User\\Downloads\\sir\\commons-io-2.8.0\\commons-io-2.8.0.jar')
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

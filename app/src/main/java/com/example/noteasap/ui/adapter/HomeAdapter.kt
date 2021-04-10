@@ -82,6 +82,7 @@ class HomeAdapter(
             val response=repository.getme(id!!)
             if(response.success==true){
                 val data=response.data
+                val img=data?.get(0)?.image
                 withContext(Main){
                     val img=data?.get(0)?.image
                     val name=data?.get(0)?.name

@@ -81,8 +81,9 @@ class EditProfileActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 val repository = UserRepository()
                 val response = repository.updateUser(user)
+                val suc=response
                 if (response.success == true) {
-                    val id=response.id.toString()
+                    val id=ServiceBuilder.id!!
                     if(imageUrl != null){
                         uploadImage(id!!)
                         withContext(Dispatchers.Main) {
@@ -189,6 +190,7 @@ class EditProfileActivity : AppCompatActivity() {
                 try{
                     val userRepository = UserRepository()
                     val response = userRepository.uploadimage(studentId, body)
+                    val respon=response
                     if (response.success == true) {
                         withContext(Dispatchers.Main) {
                             Toast.makeText(this@EditProfileActivity, "Uploaded", Toast.LENGTH_SHORT)

@@ -5,6 +5,6 @@
         android:title="Edit Comment"
         />
     <item
-        android:id="@+id/Update"
-        android:title="Update Comment"/>
+        android:id="@+id/Delete"
+        android:title="Delete Comment"/>
 </menu>

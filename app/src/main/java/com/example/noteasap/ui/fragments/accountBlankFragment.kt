@@ -26,6 +26,7 @@ import com.example.noteasap.api.ServiceBuilder
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.repository.UserRepository
 import com.example.noteasap.ui.adapter.OwnNotesAdpater
+import com.example.noteasap.ui.location.MapsActivity
 import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.OwnNotes
 import com.example.noteasap.ui.uploadNotes.UploadNotesActivity
@@ -165,6 +166,12 @@ class accountBlankFragment : Fragment() {
                     R.id.About->{
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://Gopal")))
                      true
+                    }
+                    R.id.Map->{
+                        requireActivity().run {
+                            startActivity(Intent(this, MapsActivity::class.java))
+                        }
+                        true
                     }
                     else -> false
                 }

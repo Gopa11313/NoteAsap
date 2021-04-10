@@ -79,8 +79,8 @@ class HomeBlankFragment : Fragment() {
             CoroutineScope(Dispatchers.IO).launch {
                 val repository=NoteRepository()
                 val response=repository.getAllNote();
-                listStudent=response.data
                 if(response.success==true) {
+                    listStudent=response.data
                     context?.let { NoteAsapDb.getInstance(it).getNoteDao().droptable() }
                     context?.let { NoteAsapDb.getInstance(it).getNoteDao().RegisterNote(listStudent) }
                     val list= context?.let { NoteAsapDb.getInstance(it).getNoteDao().getAllNote() }
