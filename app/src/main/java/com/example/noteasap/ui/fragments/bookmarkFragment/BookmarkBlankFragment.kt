@@ -56,7 +56,7 @@ class BookmarkBlankFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyleview=view.findViewById(R.id.recycler_view);
+        recyleview=view.findViewById(R.id.recycler_viewB);
         loadvlaue()
         }
 

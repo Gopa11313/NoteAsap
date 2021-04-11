@@ -14,7 +14,7 @@ public class FragmentBookmarkBlankBindingImpl extends FragmentBookmarkBlankBindi
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.recycler_view, 2);
+        sViewsWithIds.put(R.id.recycler_viewB, 2);
     }
     // views
     @NonNull

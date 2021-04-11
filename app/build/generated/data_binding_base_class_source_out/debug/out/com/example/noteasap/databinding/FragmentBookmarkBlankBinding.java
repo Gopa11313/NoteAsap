@@ -17,15 +17,15 @@ import java.lang.Object;
 
 public abstract class FragmentBookmarkBlankBinding extends ViewDataBinding {
   @NonNull
-  public final RecyclerView recyclerView;
+  public final RecyclerView recyclerViewB;
 
   @Bindable
   protected BookMarkFragmentViewModel mBookmarkViewModel;
 
   protected FragmentBookmarkBlankBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView recyclerView) {
+      RecyclerView recyclerViewB) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.recyclerView = recyclerView;
+    this.recyclerViewB = recyclerViewB;
   }
 
   public abstract void setBookmarkViewModel(@Nullable BookMarkFragmentViewModel BookmarkViewModel);

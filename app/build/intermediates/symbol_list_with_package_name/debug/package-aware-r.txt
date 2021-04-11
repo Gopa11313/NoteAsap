@@ -2080,6 +2080,7 @@ id rectangles
 id recyclehome
 id recycler_view
 id recycler_view1
+id recycler_viewB
 id reister
 id reverseSawtooth
 id right
