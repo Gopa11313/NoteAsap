@@ -52,7 +52,7 @@ class HomeDisplayNotesUITesting {
         Thread.sleep(2500)
         Espresso.onView(withId(R.id.bottom_navigation))
             .check(ViewAssertions.matches(isDisplayed()))
-        Thread.sleep(5000)
+//        Thread.sleep(5000)
 
 
 
