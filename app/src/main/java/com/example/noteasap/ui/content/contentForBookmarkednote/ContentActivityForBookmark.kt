@@ -2,6 +2,10 @@ package com.example.noteasap.ui.content.contentForBookmarkednote
 
 import android.app.DownloadManager
 import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +13,7 @@ import android.os.Environment
 import android.os.Handler
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,7 +36,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ContentActivityForBookmark : AppCompatActivity() {
+class ContentActivityForBookmark : AppCompatActivity(), SensorEventListener {
     private var listcommet:List<Comment>?=null;
     private lateinit var recyleview: RecyclerView;
     lateinit var swipeRefreshLayout: SwipeRefreshLayout
@@ -46,6 +51,9 @@ class ContentActivityForBookmark : AppCompatActivity() {
     private lateinit var comment: ImageView;
     private  lateinit var layout: ConstraintLayout;
     private lateinit var commentbar: TextView;
+
+    private lateinit var sensorManager: SensorManager
+    private var sensor: Sensor? = null
     var rattingNum:Int?=null
     var ratting:Int?=null
     var noteid:String?=null
@@ -70,6 +78,13 @@ class ContentActivityForBookmark : AppCompatActivity() {
         commentbar=findViewById(R.id.commentbar)
         comment=findViewById(R.id.comment)
 
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+        if (!checkSensor())
+            return
+        else {
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
         comment.setOnClickListener(){
             CoroutineScope(Dispatchers.IO).launch {
                 val repository= CommentRepository()
@@ -227,5 +242,32 @@ class ContentActivityForBookmark : AppCompatActivity() {
                 recyleview.adapter=adapter
             }
         }
+    }
+    private fun checkSensor(): Boolean {
+        var flag = true
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY) == null) {
+            flag = false
+        }
+        return flag
+    }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        val values = event!!.values[0]
+        if(values<=4)
+            swipeRefreshLayout.setOnRefreshListener() {
+                Handler().postDelayed(Runnable {
+                    loadcomment()
+                    swipeRefreshLayout.isRefreshing = false
+                }, 2000)
+            }
+        else {
+//            swipeRefreshLayout.isRefreshing = false;
+//            swipeRefreshLayout.isEnabled = false;
+        }
+
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+
     }
 }

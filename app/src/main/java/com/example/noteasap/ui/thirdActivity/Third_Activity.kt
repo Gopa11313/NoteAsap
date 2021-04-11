@@ -70,7 +70,7 @@ class Third_Activity : AppCompatActivity(), SensorEventListener {
         if (values < 0)
             replaceFragments(Bookmark)
         else if (values > 0){
-
+            replaceFragments(Home)
         }
 
 

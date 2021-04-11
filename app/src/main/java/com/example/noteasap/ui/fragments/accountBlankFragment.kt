@@ -1,6 +1,10 @@
 package com.example.noteasap.ui.fragments
 
 import android.content.Intent
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +15,7 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,7 +45,7 @@ import java.io.IOException
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-class accountBlankFragment : Fragment() {
+class accountBlankFragment : Fragment(),SensorEventListener {
     private val REQUEST_GALLERY_CODE=0;
     private val REQUEST_CAMERA_CODE=1;
     private var imageUrl:String?=null;
@@ -53,6 +58,8 @@ class accountBlankFragment : Fragment() {
     private lateinit var imagebtn2:ImageView;
     private lateinit var Welcomtxt:TextView;
     private var listNotes:MutableList<OwnNotes>?=null;
+    private lateinit var sensorManager: SensorManager
+    private var sensor: Sensor? = null
     private lateinit var recyleview: RecyclerView;
     private lateinit var viewMore: Button;
     private var param1: String? = null
@@ -83,6 +90,14 @@ class accountBlankFragment : Fragment() {
         imagebtn=view.findViewById(R.id.imagebtn)
         btnlog=view.findViewById(R.id.btnlog)
         imagebtn2=view.findViewById(R.id.imabtn2)
+
+        sensorManager = activity?.getSystemService(AppCompatActivity.SENSOR_SERVICE) as SensorManager
+        if (!checkSensor())
+            return
+        else {
+            sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
         viewMore=view.findViewById(R.id.viewMore)
         Welcomtxt.setText("$namePref, Welcome to NoteAsap")
         CoroutineScope(Dispatchers.IO).launch {
@@ -110,29 +125,8 @@ class accountBlankFragment : Fragment() {
         }
 
         btnlog.setOnClickListener(){
-            val builder= AlertDialog.Builder(requireContext());
-            builder.setMessage("Do you want logout")
-            builder.setIcon(android.R.drawable.ic_dialog_alert);
-            builder.setPositiveButton("Yes"){dialogInterface,which->
-                            val sharedPref =requireActivity().getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
-                            val editor=sharedPref.edit()
-                            editor.remove("email")
-                            editor.remove("password")
-                            editor.remove("_id")
-                            editor.remove("name")
-                                .apply()
-                            CoroutineScope(Dispatchers.IO).launch{
-                                NoteAsapDb.getInstance(requireContext()).getUserDao().logout()
-                                withContext(Main){
-                                    startActivity(Intent(context,LoginActivity::class.java))
-                                }
-                            }
-            }
-            builder.setNegativeButton("No"){
-                    dialogInterface,which->
-            }
-            builder.show()
-            getActivity()?.finish();
+
+logout()
         }
 
 
@@ -242,7 +236,30 @@ class accountBlankFragment : Fragment() {
     private fun gotoAnotherFragment(){
 
     }
-
+    fun logout(){
+        val builder= AlertDialog.Builder(requireContext());
+        builder.setMessage("Do you want logout")
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+        builder.setPositiveButton("Yes"){dialogInterface,which->
+            val sharedPref =requireActivity().getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
+            val editor=sharedPref.edit()
+            editor.remove("email")
+            editor.remove("password")
+            editor.remove("_id")
+            editor.remove("name")
+                .apply()
+            CoroutineScope(Dispatchers.IO).launch{
+                NoteAsapDb.getInstance(requireContext()).getUserDao().logout()
+                withContext(Main){
+                    startActivity(Intent(context,LoginActivity::class.java))
+                }
+            }
+        }
+        builder.setNegativeButton("No"){
+                dialogInterface,which->
+        }
+        builder.show()
+    }
 
     fun getvalues() {
         try {
@@ -256,7 +273,7 @@ class accountBlankFragment : Fragment() {
                     val list= context?.let { NoteAsapDb.getInstance(it).getOwnNotes().getAllNote() }
                     withContext(Dispatchers.Main) {
                         Toast.makeText(context, "this is recycle", Toast.LENGTH_SHORT).show()
-                        val reversedLits=list!!.asReversed()
+//                        val reversedLits=list!!.asReversed()
                         val adpater= context?.let { OwnNotesAdpater(list as ArrayList<OwnNotes>, it) }
                         recyleview.layoutManager = LinearLayoutManager(activity)
                         recyleview.adapter=adpater;
@@ -274,5 +291,28 @@ class accountBlankFragment : Fragment() {
         }
 
     }
+    private fun checkSensor(): Boolean {
+        var flag = true
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) == null) {
+            flag = false
+        }
+        return flag
+    }
+
+    override fun onSensorChanged(event: SensorEvent?) {
+        val values = event!!.values
+        val xAxis = values[0]
+        val yAxis = values[1]
+        val zAxis = values[2]
+    if(xAxis==180f&&yAxis==0F && zAxis==180f){
+        btnlog.callOnClick()
+    }
+//        tvAcceleroemter.text = "x: $xAxis , y: $yAxis , z: $zAxis"
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+
+    }
+
 
 }

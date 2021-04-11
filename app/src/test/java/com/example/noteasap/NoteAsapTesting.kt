@@ -97,7 +97,7 @@ class NoteAsapTesting {
         ServiceBuilder.token = "Bearer " + response.token
         ServiceBuilder.id = response.id
         val repo=NoteRepository()
-        val actualResult=repo.getAllbookmarkedNotes("6034cf1a6857a9b7c859990a").success
+        val actualResult=repo.getAllbookmarkedNotes(ServiceBuilder.id!!).success
         Assert.assertEquals(expectedResult, actualResult)
     }
     @Test

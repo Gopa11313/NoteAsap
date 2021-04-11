@@ -2,6 +2,7 @@ package com.example.noteasap.ui.content.contentForNote
 
 import android.app.DownloadManager
 import android.content.Context
+import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -14,6 +15,7 @@ import android.os.Handler
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 
@@ -84,7 +86,6 @@ class ContentActivity : AppCompatActivity(), SensorEventListener {
         comment=findViewById(R.id.comment)
 //        layout.visibility = View.INVISIBLE
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
-
         if (!checkSensor())
             return
         else {
@@ -175,9 +176,6 @@ CoroutineScope(Dispatchers.IO).launch {
         swipeRefreshLayout.setOnRefreshListener() {
             Handler().postDelayed(Runnable {
                 loadcomment()
-                if(ratting!==null) {
-                    ratingBar1.setRating(ratting!!.toFloat())
-                }
                 swipeRefreshLayout.isRefreshing = false
             }, 2000)
         }
@@ -270,17 +268,17 @@ CoroutineScope(Dispatchers.IO).launch {
 
     override fun onSensorChanged(event: SensorEvent?) {
         val values = event!!.values[0]
-        if(values.toInt()<4){
-            layout.visibility = View.INVISIBLE
+        if(values.toInt()>20000){
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
         }
         else{
-            layout.visibility = View.INVISIBLE
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
         }
 
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        TODO("Not yet implemented")
+
     }
 }
 

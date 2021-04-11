@@ -31,8 +31,6 @@
         android:layout_marginTop="32dp"
         android:gravity="center"
         android:hint="topic"
-        android:textColorLink="@color/black"
-        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +45,6 @@
         android:gravity="center"
         android:hint="TextView"
         android:textSize="18sp"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +56,6 @@
         android:layout_height="226dp"
         android:layout_marginTop="12dp"
         android:enabled="false"
-        android:textColor="@color/black"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -96,7 +92,7 @@
             android:layout_marginTop="28dp"
             android:layout_weight="2"
             android:text="Comment"
-            android:textColor="@color/black" />
+            />
 
         <RatingBar
             android:id="@+id/ratingBar1"
