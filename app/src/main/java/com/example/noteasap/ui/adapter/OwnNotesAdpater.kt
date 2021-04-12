@@ -21,6 +21,7 @@ import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.login.LoginActivity
 import com.example.noteasap.ui.model.Notes
 import com.example.noteasap.ui.model.OwnNotes
+import com.example.noteasap.ui.uploadNotes.UpdateNoteActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -76,6 +77,11 @@ class OwnNotesAdpater(val listpost:ArrayList<OwnNotes>,
         }
         builder.show()
     }
+        holder.updatenote.setOnClickListener(){
+            val intent=Intent(context,UpdateNoteActivity::class.java)
+            intent.putExtra("Note",post)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

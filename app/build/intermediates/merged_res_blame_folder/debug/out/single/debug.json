@@ -68,6 +68,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_update_note.xml.flat",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_update_note.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu2.xml.flat",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\menu\\menu2.xml"
     },

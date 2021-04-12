@@ -25,7 +25,8 @@
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.ownnotes.OwnNotesActivity"></activity>
+        <activity android:name=".ui.uploadNotes.UpdateNoteActivity"></activity>
+        <activity android:name=".ui.ownnotes.OwnNotesActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

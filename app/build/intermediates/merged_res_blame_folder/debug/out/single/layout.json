@@ -4,6 +4,10 @@
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_content.xml"
     },
     {
+        "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_update_note.xml",
+        "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_update_note.xml"
+    },
+    {
         "merged": "G:\\NoteAsap\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_message.xml",
         "source": "G:\\NoteAsap\\app\\src\\main\\res\\layout\\activity_message.xml"
     },

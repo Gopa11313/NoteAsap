@@ -42,6 +42,8 @@ com/example/noteasap/databinding/ActivitySignUpBinding.java
  com.example.noteasap.databinding.ActivitySignUpBinding
 com/example/noteasap/databinding/ActivityUploadNotesBinding.java
  com.example.noteasap.databinding.ActivityUploadNotesBinding
+com/example/noteasap/databinding/ActivityUpdateNoteBindingImpl.java
+ com.example.noteasap.databinding.ActivityUpdateNoteBindingImpl
 com/example/noteasap/DataBinderMapperImpl.java
  com.example.noteasap.DataBinderMapperImpl
  com.example.noteasap.DataBinderMapperImpl$InnerBrLookup
@@ -53,6 +55,8 @@ com/example/noteasap/RoomDatabase/dao/CommentDao_Impl.java
  com.example.noteasap.RoomDatabase.dao.CommentDao_Impl$3
  com.example.noteasap.RoomDatabase.dao.CommentDao_Impl$4
  com.example.noteasap.RoomDatabase.dao.CommentDao_Impl$5
+com/example/noteasap/databinding/ActivityUpdateNoteBinding.java
+ com.example.noteasap.databinding.ActivityUpdateNoteBinding
 com/example/noteasap/databinding/ActivityContentBinding.java
  com.example.noteasap.databinding.ActivityContentBinding
 com/example/noteasap/databinding/ActivitySignUpBindingImpl.java

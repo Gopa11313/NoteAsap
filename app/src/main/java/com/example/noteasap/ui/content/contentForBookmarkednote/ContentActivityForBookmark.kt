@@ -254,12 +254,13 @@ class ContentActivityForBookmark : AppCompatActivity(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
         val values = event!!.values[0]
         if(values<=4)
-            swipeRefreshLayout.setOnRefreshListener() {
-                Handler().postDelayed(Runnable {
-                    loadcomment()
-                    swipeRefreshLayout.isRefreshing = false
-                }, 2000)
-            }
+            loadcomment()
+//            swipeRefreshLayout.setOnRefreshListener() {
+//                Handler().postDelayed(Runnable {
+//                    loadcomment()
+//                    swipeRefreshLayout.isRefreshing = false
+//                }, 2000)
+//            }
         else {
 //            swipeRefreshLayout.isRefreshing = false;
 //            swipeRefreshLayout.isEnabled = false;

@@ -12,6 +12,7 @@ import com.example.noteasap.databinding.ActivityEditProfileBindingImpl;
 import com.example.noteasap.databinding.ActivityLoginBindingImpl;
 import com.example.noteasap.databinding.ActivityMessageBindingImpl;
 import com.example.noteasap.databinding.ActivitySignUpBindingImpl;
+import com.example.noteasap.databinding.ActivityUpdateNoteBindingImpl;
 import com.example.noteasap.databinding.ActivityUploadNotesBindingImpl;
 import com.example.noteasap.databinding.FragmentBookmarkBlankBindingImpl;
 import com.example.noteasap.databinding.FragmentForgetpasswordBindingImpl;
@@ -39,15 +40,17 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYSIGNUP = 6;
 
-  private static final int LAYOUT_ACTIVITYUPLOADNOTES = 7;
+  private static final int LAYOUT_ACTIVITYUPDATENOTE = 7;
 
-  private static final int LAYOUT_FRAGMENTBOOKMARKBLANK = 8;
+  private static final int LAYOUT_ACTIVITYUPLOADNOTES = 8;
 
-  private static final int LAYOUT_FRAGMENTFORGETPASSWORD = 9;
+  private static final int LAYOUT_FRAGMENTBOOKMARKBLANK = 9;
 
-  private static final int LAYOUT_FRAGMENTHOMEBLANK = 10;
+  private static final int LAYOUT_FRAGMENTFORGETPASSWORD = 10;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(10);
+  private static final int LAYOUT_FRAGMENTHOMEBLANK = 11;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(11);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_content, LAYOUT_ACTIVITYCONTENT);
@@ -56,6 +59,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_message, LAYOUT_ACTIVITYMESSAGE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_sign_up, LAYOUT_ACTIVITYSIGNUP);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_update_note, LAYOUT_ACTIVITYUPDATENOTE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.activity_upload_notes, LAYOUT_ACTIVITYUPLOADNOTES);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.fragment_bookmark_blank, LAYOUT_FRAGMENTBOOKMARKBLANK);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.noteasap.R.layout.fragment_forgetpassword, LAYOUT_FRAGMENTFORGETPASSWORD);
@@ -106,6 +110,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivitySignUpBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_sign_up is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYUPDATENOTE: {
+          if ("layout/activity_update_note_0".equals(tag)) {
+            return new ActivityUpdateNoteBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_update_note is invalid. Received: " + tag);
         }
         case  LAYOUT_ACTIVITYUPLOADNOTES: {
           if ("layout/activity_upload_notes_0".equals(tag)) {
@@ -193,7 +203,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(10);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(11);
 
     static {
       sKeys.put("layout/activity_content_0", com.example.noteasap.R.layout.activity_content);
@@ -202,6 +212,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/activity_login_0", com.example.noteasap.R.layout.activity_login);
       sKeys.put("layout/activity_message_0", com.example.noteasap.R.layout.activity_message);
       sKeys.put("layout/activity_sign_up_0", com.example.noteasap.R.layout.activity_sign_up);
+      sKeys.put("layout/activity_update_note_0", com.example.noteasap.R.layout.activity_update_note);
       sKeys.put("layout/activity_upload_notes_0", com.example.noteasap.R.layout.activity_upload_notes);
       sKeys.put("layout/fragment_bookmark_blank_0", com.example.noteasap.R.layout.fragment_bookmark_blank);
       sKeys.put("layout/fragment_forgetpassword_0", com.example.noteasap.R.layout.fragment_forgetpassword);

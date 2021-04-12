@@ -272,7 +272,7 @@ logout()
                     context?.let { NoteAsapDb.getInstance(it).getOwnNotes().RegisterNote(listNotes) }
                     val list= context?.let { NoteAsapDb.getInstance(it).getOwnNotes().getAllNote() }
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(context, "this is recycle", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(context, "this is recycle", Toast.LENGTH_SHORT).show()
 //                        val reversedLits=list!!.asReversed()
                         val adpater= context?.let { OwnNotesAdpater(list as ArrayList<OwnNotes>, it) }
                         recyleview.layoutManager = LinearLayoutManager(activity)
@@ -304,8 +304,9 @@ logout()
         val xAxis = values[0]
         val yAxis = values[1]
         val zAxis = values[2]
-    if(xAxis==180f&&yAxis==0F && zAxis==180f){
-        btnlog.callOnClick()
+
+        if(xAxis == 8.57617E-7F && zAxis == 8.57617E-7F && yAxis == 9.81F){
+//        logout()
     }
 //        tvAcceleroemter.text = "x: $xAxis , y: $yAxis , z: $zAxis"
     }

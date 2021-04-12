@@ -2300,6 +2300,7 @@ layout activity_second
 layout activity_sign_up
 layout activity_splash
 layout activity_third_
+layout activity_update_note
 layout activity_upload_notes
 layout bookmark
 layout comment

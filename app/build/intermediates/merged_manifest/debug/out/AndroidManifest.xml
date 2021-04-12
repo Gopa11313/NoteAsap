@@ -40,6 +40,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.NoteAsap"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.noteasap.ui.uploadNotes.UpdateNoteActivity" />
         <activity android:name="com.example.noteasap.ui.ownnotes.OwnNotesActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
