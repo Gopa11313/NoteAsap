@@ -65,9 +65,10 @@ class OwnNotesAdpater(val listpost:ArrayList<OwnNotes>,
             CoroutineScope(Dispatchers.IO).launch{
                 val repository=NoteRepository()
                 val response=repository.deleteNote(post._id!!)
-                notifyDataSetChanged()
+
                 if(response.success==true)
                 withContext(Dispatchers.Main){
+                    notifyDataSetChanged()
                     Toast.makeText(context, "${response.msg}", Toast.LENGTH_SHORT).show()
                 }
             }
