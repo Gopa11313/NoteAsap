@@ -44,7 +44,7 @@ class UpdateNoteActivity : AppCompatActivity() {
     lateinit var displayName:String;
     private lateinit var uploadNotesViewModel: UploadNotesViewModel
     var selectedlevel: String = ""
-    var _id:String?=""
+    var _Nid:String?=""
     var ratting:String?=""
     var selectedsubject: String = ""
     var namePref: String ?=null
@@ -59,7 +59,6 @@ class UpdateNoteActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         uploadNotesViewModel = ViewModelProvider(this).get(UploadNotesViewModel::class.java)
         binding.uploadNoteViewModel = uploadNotesViewModel
-
         val sharedPref = getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
         namePref = sharedPref?.getString("name", null)
         spinner1 = findViewById(R.id.spinner1)
@@ -120,7 +119,7 @@ class UpdateNoteActivity : AppCompatActivity() {
         val intent = intent.getParcelableExtra<OwnNotes>("Note")
         if (intent != null) {
             val name = intent.topic;
-            _id = intent._id
+            _Nid = intent._id
             val uname = intent.c_name
             val dis = intent.description
             val topi = intent.topic
@@ -158,8 +157,8 @@ class UpdateNoteActivity : AppCompatActivity() {
 
     private fun Updatenotes() {
         Toast.makeText(this, "${ServiceBuilder.id!!}", Toast.LENGTH_SHORT).show()
-        val ownnote = OwnNotes(
-            _id = _id,
+        val ownnotes = OwnNotes(
+            _id = _Nid,
             userId = ServiceBuilder.id!!,
             file = "nofile",
             subject = selectedsubject,
@@ -169,32 +168,38 @@ class UpdateNoteActivity : AppCompatActivity() {
             description = description.text.toString()
         )
         CoroutineScope(Dispatchers.IO).launch {
-            val repository = NoteRepository()
-            val response = repository.updateNote(ownnote)
-            val res=response
-            if (response.success == true) {
-                if (fileUrl != null) {
-                    updateFile(_id!!)
-                    withContext(Dispatchers.Main) {
-                        clear()
-                        Toast.makeText(
-                            this@UpdateNoteActivity,
-                            "Student Updated Successfully",
-                            Toast.LENGTH_SHORT
-                        ).show()
+            try {
+                val repository = NoteRepository()
+                val response = repository.updateNote(ownnotes)
+                if (response.success == true) {
+                    if (fileUrl != null) {
+                        updateFile(_Nid!!)
+                        withContext(Dispatchers.Main) {
+                            clear()
+                            Toast.makeText(
+                                this@UpdateNoteActivity,
+                                "Student Updated Successfully",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            clear()
+                            Toast.makeText(this@UpdateNoteActivity,
+                                "error here",
+                                Toast.LENGTH_SHORT)
+                                .show()
+                        }
                     }
-                } else {
-                    withContext(Dispatchers.Main) {
-                        clear()
-                        Toast.makeText(this@UpdateNoteActivity, "error here", Toast.LENGTH_SHORT)
-                            .show()
-                    }
-                }
-            } else {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@UpdateNoteActivity, "here", Toast.LENGTH_SHORT).show()
                 }
             }
+                catch (ex: Exception) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@UpdateNoteActivity, "error", Toast.LENGTH_SHORT).show()
+                        Log.d("Error updating file ", ex.toString())
+                        Toast.makeText(this@UpdateNoteActivity, ex.localizedMessage, Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
     }
 
@@ -206,8 +211,7 @@ class UpdateNoteActivity : AppCompatActivity() {
             data.data?.also {
                 fileUrl = it.path
                 mFile = importFile(it);
-                chooseFile.setText("$mFile")
-                chooseFile.setTextColor(Color.parseColor("#006400"))
+
             }
         }
     }
@@ -240,6 +244,8 @@ class UpdateNoteActivity : AppCompatActivity() {
                 val fileName: String =
                     it.getString(it.getColumnIndex(OpenableColumns.DISPLAY_NAME))
                 displayName = fileName
+                chooseFile.setText("$displayName")
+                chooseFile.setTextColor(Color.parseColor("#006400"))
             }
         }
         return displayName;

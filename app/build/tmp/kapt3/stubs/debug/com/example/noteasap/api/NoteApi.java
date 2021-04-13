@@ -65,7 +65,7 @@ public abstract interface NoteApi {
     kotlin.coroutines.Continuation<? super retrofit2.Response<com.example.noteasap.response.OwnNotesResponse>> p2);
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.DELETE(value = "/delete/note/{Nid}")
+    @retrofit2.http.DELETE(value = "delete/note/{Nid}")
     public abstract java.lang.Object deleteNote(@org.jetbrains.annotations.NotNull()
     @retrofit2.http.Header(value = "Authorization")
     java.lang.String token, @org.jetbrains.annotations.NotNull()
@@ -74,7 +74,7 @@ public abstract interface NoteApi {
     kotlin.coroutines.Continuation<? super retrofit2.Response<com.example.noteasap.response.OwnNotesResponse>> p2);
     
     @org.jetbrains.annotations.Nullable()
-    @retrofit2.http.PUT(value = "Update/note/and")
+    @retrofit2.http.PUT(value = "Update/note")
     public abstract java.lang.Object updateNote(@org.jetbrains.annotations.NotNull()
     @retrofit2.http.Header(value = "Authorization")
     java.lang.String token, @org.jetbrains.annotations.NotNull()

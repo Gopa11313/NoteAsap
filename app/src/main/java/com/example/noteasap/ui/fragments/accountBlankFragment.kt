@@ -306,7 +306,7 @@ logout()
         val zAxis = values[2]
 
         if(xAxis == 8.57617E-7F && zAxis == 8.57617E-7F && yAxis == 9.81F){
-//        logout()
+        logout()
     }
 //        tvAcceleroemter.text = "x: $xAxis , y: $yAxis , z: $zAxis"
     }

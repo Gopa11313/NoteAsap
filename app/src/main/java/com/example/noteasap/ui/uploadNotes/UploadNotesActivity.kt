@@ -224,8 +224,7 @@ private fun showHighPriorityNotification(){
             data.data?.also {
                 fileUrl = it.path
                 mFile = importFile(it);
-                chooseFile.setText("$mFile")
-                chooseFile.setTextColor(Color.parseColor("#006400"))
+
             }
         }
     }
@@ -258,6 +257,8 @@ private fun showHighPriorityNotification(){
                 val fileName: String =
                     it.getString(it.getColumnIndex(OpenableColumns.DISPLAY_NAME))
                 displayName = fileName
+                chooseFile.setText("$displayName")
+                chooseFile.setTextColor(Color.parseColor("#006400"))
             }
         }
         return displayName;

@@ -46,13 +46,13 @@ interface NoteApi {
         @Path("userId") userId:String,
     ):Response<OwnNotesResponse>
 
-    @DELETE("/delete/note/{Nid}")
+    @DELETE("delete/note/{Nid}")
     suspend fun deleteNote(
         @Header("Authorization") token:String,
         @Path("Nid") Nid:String,
     ):Response<OwnNotesResponse>
 
-    @PUT ("Update/note/and")
+    @PUT ("Update/note")
     suspend fun updateNote(
         @Header("Authorization") token:String,
         @Body ownNotes: OwnNotes
