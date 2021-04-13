@@ -31,7 +31,7 @@ interface UserApi {
         @Path("id") id:String,
     ):Response<UserResponse>
 
-    @PUT("/user/update/and")
+    @PUT("user/update/and")
     suspend fun updateUser(
         @Header("Authorization") token:String,
         @Body users: User
