@@ -40,7 +40,7 @@ class OwnNotesAdpater(val listpost:ArrayList<OwnNotes>,
             t_name = view.findViewById(R.id.topic)
             u_name = view.findViewById(R.id.Uname)
             list_item=view.findViewById(R.id.list_item)
-            deletenote=view.findViewById(R.id.deleteNote)
+            deletenote=view.findViewById(R.id.deleteOwnNote)
             updatenote=view.findViewById(R.id.updateNote)
         }
     }
@@ -65,10 +65,8 @@ class OwnNotesAdpater(val listpost:ArrayList<OwnNotes>,
             CoroutineScope(Dispatchers.IO).launch{
                 val repository=NoteRepository()
                 val response=repository.deleteNote(post._id!!)
-
                 if(response.success==true)
                 withContext(Dispatchers.Main){
-                    notifyDataSetChanged()
                     Toast.makeText(context, "${response.msg}", Toast.LENGTH_SHORT).show()
                 }
             }

@@ -66,12 +66,12 @@ class Third_Activity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
-        val values = event!!.values[1]
-        if (values < 0)
-            replaceFragments(Bookmark)
-        else if (values > 0){
-            replaceFragments(Home)
-        }
+//        val values = event!!.values[1]
+//        if (values < 0)
+//            replaceFragments(Bookmark)
+//        else if (values > 0){
+//            replaceFragments(Home)
+//        }
 
 
     }

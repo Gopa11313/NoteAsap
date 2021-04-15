@@ -45,7 +45,7 @@ class ContentActivityRecylarViewUITesting {
         Espresso.onView(ViewMatchers.withId(R.id.ic_home))
             .perform(ViewActions.click())
 
-        Thread.sleep(1500)
+        Thread.sleep(2000)
         Espresso.onView((withId(R.id.recyclehome)))
             .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(1,click()))
 

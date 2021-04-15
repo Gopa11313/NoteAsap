@@ -43,7 +43,7 @@ class AccountUploadnotesUITesting {
         Espresso.onView(ViewMatchers.withId(R.id.ic_account))
             .perform(ViewActions.click())
 
-        Thread.sleep(1500)
+        Thread.sleep(2000)
         Espresso.onView((ViewMatchers.withId(R.id.uploadnotesframe)))
             .perform(ViewActions.click())
 

@@ -14,7 +14,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.noteasap.R
 import com.example.noteasap.api.ServiceBuilder
-import com.example.noteasap.databinding.ActivityUpdateNoteBinding
 import com.example.noteasap.repository.NoteRepository
 import com.example.noteasap.ui.model.OwnNotes
 import kotlinx.coroutines.CoroutineScope
@@ -52,13 +51,8 @@ class UpdateNoteActivity : AppCompatActivity() {
     var subject = arrayOf("Science", "Management")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityUpdateNoteBinding = DataBindingUtil.setContentView(
-            this,
-            R.layout.activity_update_note
-        )
-        binding.lifecycleOwner = this
-        uploadNotesViewModel = ViewModelProvider(this).get(UploadNotesViewModel::class.java)
-        binding.uploadNoteViewModel = uploadNotesViewModel
+        setContentView(R.layout.activity_update_note)
+
         val sharedPref = getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
         namePref = sharedPref?.getString("name", null)
         spinner1 = findViewById(R.id.spinner1)

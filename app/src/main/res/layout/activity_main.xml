@@ -8,6 +8,7 @@
     tools:context=".ui.model.MainActivity"
     android:orientation="vertical"
     android:background="@drawable/mybutton"
+    android:layout_gravity="center"
     android:gravity="center"
     android:id="@+id/layoutc"
     >

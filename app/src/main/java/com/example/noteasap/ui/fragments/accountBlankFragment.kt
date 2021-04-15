@@ -196,6 +196,7 @@ logout()
                                 .fitCenter()
                                 .into(imagebtn)
                         }
+                        getvalues()
                     }
                 }
             }

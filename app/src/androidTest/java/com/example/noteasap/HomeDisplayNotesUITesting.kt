@@ -45,7 +45,7 @@ class HomeDisplayNotesUITesting {
         Espresso.onView(withId(R.id.login))
             .perform(click())
 
-        Thread.sleep(1000)
+        Thread.sleep(1500)
         Espresso.onView(withId(R.id.notif_Button))
             .perform(click())
 
