@@ -267,13 +267,13 @@ CoroutineScope(Dispatchers.IO).launch {
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
-//        val values = event!!.values[0]
-//        if(values.toInt()>20000){
-//            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
-//        }
-//        else{
-//            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
-//        }
+        val values = event!!.values[0]
+        if(values.toInt()>20000){
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
+        }
+        else{
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
+        }
 
     }
 
