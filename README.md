@@ -61,7 +61,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or inquiries, feel free to contact us at [gopalaa9819525993@gmail.com](mailto:gopalaa9819525993@gmail.com).
+For questions or inquiries, feel free to contact us at [gopalaa9819525993@gmail.com].
 
 
   
